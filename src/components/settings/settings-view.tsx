@@ -183,6 +183,7 @@ function initialDraft(
     apiMcpEnabled: apiConfig.mcpEnabled,
     apiToken: apiConfig.token,
     autostart: generalConfig.autostart,
+    autoProcessReviews: generalConfig.autoProcessReviews,
     closeBehavior: generalConfig.closeBehavior,
     uiLanguage,
     theme: theme ?? "system",
@@ -442,6 +443,7 @@ export function SettingsView() {
     const newGeneralConfig = {
       autostart: draft.autostart,
       closeBehavior: draft.closeBehavior,
+      autoProcessReviews: draft.autoProcessReviews,
     }
 
     // Push all config values to zustand before any awaited save below. The
