@@ -39,6 +39,7 @@ def cover(n,set_,c):
 <div class="a serif" style="left:0;width:100%;top:190px;text-align:center;font-size:84px;line-height:1">{c['title']}</div>
 <img class="a bt" src="ph/{set_['bt']}" style="top:300px">
 <div class="a photo" style="top:420px;height:600px"><img src="ph/{c['img']}.png"></div>
+<div class="a price" style="right:120px;top:380px"><small>{c.get('pre','ONLY')}</small><b>R{c['price']}</b></div>
 <div class="a" style="left:0;width:100%;top:1052px;text-align:center"><span class="pill">{c['pill']}</span></div>
 <img class="a bb" src="ph/{set_['bb']}"><div class="a foot">Swipe to see every style →</div></div>'''
 def grid_slide(n,i,set_,g,items,cols,imh):
@@ -63,7 +64,7 @@ HATSET=dict(bg='#F6F0E9',acc='#C3312B',bt='border_ndebele_top.png',bb='border_nd
 hats=[('Beige','beige',200,'58'),('White','white',200,'58'),('Beaded','beaded',200,'58'),('Black','black',200,'58'),
       ('Brown','brown',200,'58'),('Brown Pattern','brownpattern',200,'58'),("Women’s Hat",'womens',200,'One size'),('Painted Cap','cap',150,'58')]
 N=len(hats)+3
-hs=[cover(N,HATSET,dict(eyebrow='HATS · HAND-PAINTED',title='Ndebele Painted Hats',img='beige',pill='8 STYLES IN STOCK · FROM R150'))]
+hs=[cover(N,HATSET,dict(eyebrow='HATS · HAND-PAINTED',title='Ndebele Painted Hats',img='beige',price=200,pill='8 STYLES IN STOCK · FROM R150'))]
 for k,(nm,img,pr,sz) in enumerate(hats):
     hs.append(product_slide(N,k+1,HATSET,dict(name=nm,img=img,price=pr,eyebrow=f'{k+1:02d}<span class="ln"></span>SIZE {sz.upper()}')))
 hs.append(grid_slide(N,N-2,HATSET,dict(title='Pick your style.',sub='Hand-painted Ndebele hats',foot='Wholesale & retail · bulk buyers, ask us for trade pricing'),
@@ -73,7 +74,7 @@ hs.append(order_slide(N,HATSET,'Delivery across South Africa · PAXI to any PEP 
 XSET=dict(bg='#F2EBDB',acc='#C8642A',bt='border_xhosa_top.png',bb='border_xhosa_bot.png')
 xs_=[('Black Stripe','xblack',300,'180 × 200 CM'),('Purple Stripe','xpurple',300,'180 × 220 CM'),('Red Stripe','xred',300,'180 × 220 CM')]
 N2=len(xs_)+3
-xs=[cover(N2,XSET,dict(eyebrow='TRIBAL BLANKETS · XHOSA',title='Xhosa Tribal Stripe',img='xblack',pill='3 COLOURS · R300 EACH'))]
+xs=[cover(N2,XSET,dict(eyebrow='TRIBAL BLANKETS · XHOSA',title='Xhosa Tribal Stripe',img='xblack',price=300,pill='3 COLOURS · R300 EACH'))]
 for k,(nm,img,pr,sz) in enumerate(xs_):
     xs.append(product_slide(N2,k+1,XSET,dict(name=nm,img=img,price=pr,eyebrow=f'{k+1:02d}<span class="ln"></span>{sz}')))
 xs.append(grid_slide(N2,N2-2,XSET,dict(title='One classic. Three colours.',sub='Felt finish · 95% polyester, 5% cotton',foot='Wholesale & retail · bulk buyers, ask us for trade pricing'),
@@ -84,7 +85,7 @@ xs.append(order_slide(N2,XSET,'Delivery across South Africa · PAXI to any PEP s
 BSET=dict(bg='#F2EBDB',acc='#B23A2E',bt='border_basotho_top.png',bb='border_basotho_bot.png')
 fr=[('Black / White','fblack',225),('Red / White','fred',225),('Grey / White','fgrey',225)]
 N3=len(fr)+3
-fs=[cover(N3,BSET,dict(eyebrow='TRIBAL BLANKETS · BASOTHO',title='Basotho Frill',img='fblack',pill='3 COLOURS · R225 EACH'))]
+fs=[cover(N3,BSET,dict(eyebrow='TRIBAL BLANKETS · BASOTHO',title='Basotho Frill',img='fblack',price=225,pill='3 COLOURS · R225 EACH'))]
 for k,(nm,img,pr) in enumerate(fr):
     fs.append(product_slide(N3,k+1,BSET,dict(name=nm,img=img,price=pr,eyebrow=f'{k+1:02d}<span class="ln"></span>150 × 160 CM')))
 fs.append(grid_slide(N3,N3-2,BSET,dict(title='Pick your colour.',sub='Fringed Basotho blanket · 150 × 160 cm',foot='Wholesale & retail · bulk buyers, ask us for trade pricing'),
@@ -93,7 +94,7 @@ fs.append(order_slide(N3,BSET,'Delivery across South Africa · PAXI to any PEP s
 
 el=[('Black / White','eblack',275),('Blue','eblue',275),('Orange','eorange',275),('Red','ered',275),('Turquoise','eturq',275)]
 N4=len(el)+3
-es=[cover(N4,BSET,dict(eyebrow='TRIBAL BLANKETS · BASOTHO',title='Elizabeth Basotho',img='eturq',pill='5 COLOURS · R275 EACH'))]
+es=[cover(N4,BSET,dict(eyebrow='TRIBAL BLANKETS · BASOTHO',title='Elizabeth Basotho',img='eturq',price=275,pill='5 COLOURS · R275 EACH'))]
 for k,(nm,img,pr) in enumerate(el):
     es.append(product_slide(N4,k+1,BSET,dict(name=nm,img=img,price=pr,eyebrow=f'{k+1:02d}<span class="ln"></span>150 × 160 CM')))
 es.append(grid_slide(N4,N4-2,BSET,dict(title='Pick your colour.',sub='Basotho heritage blanket · 150 × 160 cm',foot='Wholesale & retail · bulk buyers, ask us for trade pricing'),
@@ -105,7 +106,7 @@ SSET=dict(bg='#F6F0E9',acc='#B23A2E',bt='border_shawl_top.png',bb='border_shawl_
 ORDER='Delivery across South Africa · PAXI to any PEP store<br>or collect from Shop D4, Pretoria Oriental Complex, Marabastad'
 def shawl_set(title,items,price,size,pill,gsub,cols,imh,eyeword='COLOURS'):
     N=len(items)+3
-    out=[cover(N,SSET,dict(eyebrow='SHAWLS · THROWS',title=title,img=items[0][1],pill=pill))]
+    out=[cover(N,SSET,dict(eyebrow='SHAWLS · THROWS',title=title,img=items[0][1],price=price,pill=pill))]
     for k,(nm,img) in enumerate(items):
         out.append(product_slide(N,k+1,SSET,dict(name=nm,img=img,price=price,eyebrow=f'{k+1:02d}<span class="ln"></span>{size}')))
     out.append(grid_slide(N,N-2,SSET,dict(title='Pick your colour.' if eyeword=='COLOURS' else 'Pick your design.',sub=gsub,foot='Wholesale & retail · bulk buyers, ask us for trade pricing'),
@@ -123,7 +124,8 @@ cs=shawl_set('Small Check Shawls',[('Multi Stripe','cmulti'),('Rose','crose'),('
 NSET=HATSET
 def coll(title,eyebrow,hero,pill,items,gtitle,gsub,cols,imh):
     N=len(items)+3
-    out=[cover(N,NSET,dict(eyebrow=eyebrow,title=title,img=hero,pill=pill))]
+    h=[it for it in items if it['i']==hero][0]
+    out=[cover(N,NSET,dict(eyebrow=eyebrow,title=title,img=hero,price=h['p'],pre=h.get('pre','ONLY'),pill=pill))]
     for k,it in enumerate(items):
         out.append(product_slide(N,k+1,NSET,dict(name=it['n'],img=it['i'],price=it['p'],pre=it.get('pre','ONLY'),eyebrow=f"{k+1:02d}<span class='ln'></span>{it['e']}")))
     out.append(grid_slide(N,N-2,NSET,dict(title=gtitle,sub=gsub,foot='Wholesale & retail · bulk buyers, ask us for trade pricing'),
