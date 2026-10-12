@@ -1,0 +1,132 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link rel="stylesheet" href="fonts/local.css">
+<style>
+:root{--red:#C3312B;--red2:#D8232A;--ink:#221F1D;--cream:#F8F5EF;--yel:#FFC814;--blu:#1B4FD8;--grn:#0E9F57;--plum:#3A1F2E;--muted:#8a7f73}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#888}
+.slide{position:relative;width:1080px;height:1350px;overflow:hidden;font-family:'Source Sans 3',sans-serif;color:var(--cream)}
+.abs{position:absolute}
+.serif{font-family:'DM Serif Display',serif;font-weight:400}
+.mono{font-family:'Space Mono',monospace;font-weight:700}
+.stripes{position:absolute;left:0;width:100%;display:flex;flex-direction:column}
+.stripes i{display:block;height:18px}
+.s-y{background:var(--yel)}.s-b{background:var(--blu)}.s-r{background:var(--red2)}.s-g{background:var(--grn)}.s-p{background:var(--plum)}
+.brand{left:0;width:100%;text-align:center;font-weight:700;letter-spacing:12px;font-size:34px}
+.swipe{right:56px;bottom:52px;font-size:34px;font-weight:700;letter-spacing:3px}
+.dots{left:0;width:100%;bottom:58px;display:flex;justify-content:center;gap:14px}
+.dots i{width:14px;height:14px;border-radius:50%;background:currentColor;opacity:.3}
+.dots i.on{opacity:1}
+/* 1 hook */
+#s1{background:radial-gradient(circle at 50% 45%,#3b1714 0%,var(--ink) 65%)}
+#s1 .big{left:0;width:100%;top:300px;text-align:center;font-weight:900;font-size:430px;line-height:1;color:var(--red2);letter-spacing:-16px;text-shadow:0 14px 0 #7a1512,0 30px 60px rgba(0,0,0,.55);transform:rotate(-3deg)}
+#s1 .off{left:0;width:100%;top:700px;text-align:center;font-weight:900;font-size:210px;line-height:1;letter-spacing:6px}
+#s1 .ent{left:0;width:100%;top:945px;text-align:center;font-size:68px;font-weight:700;letter-spacing:3px;color:var(--yel)}
+/* 2 products */
+#s2{background:var(--cream);color:var(--ink)}
+#s2 h2{left:0;width:100%;top:92px;text-align:center;font-size:44px;font-weight:900;letter-spacing:6px}
+#s2 h2 em{font-style:normal;color:var(--red2)}
+.grid{left:60px;top:175px;width:960px;display:grid;grid-template-columns:1fr 1fr;gap:30px}
+.pc{background:#fff;border-radius:28px;overflow:hidden;box-shadow:0 14px 34px rgba(34,31,29,.16)}
+.pc .ph{height:330px;background-size:cover;background-position:center 75%}
+.pc .tx{padding:16px 22px 18px}
+.pc .nm{font-size:40px;line-height:1.05}
+.pc .pr{display:flex;align-items:baseline;gap:14px;margin-top:6px}
+.pc .was{font-size:30px;font-weight:700;color:var(--muted);text-decoration:line-through;text-decoration-color:var(--red2);text-decoration-thickness:4px}
+.pc .now{font-size:52px;font-weight:900;color:var(--red2)}
+#s2 .note{left:0;width:100%;top:1205px;text-align:center;font-size:32px;font-weight:700;color:var(--muted)}
+/* 3 code */
+#s3{background:var(--red)}
+#s3 .bg{inset:0;background:repeating-linear-gradient(135deg,rgba(0,0,0,.07) 0 40px,transparent 40px 80px)}
+#s3 .top{left:0;width:100%;top:190px;text-align:center;font-size:64px;font-weight:900;letter-spacing:8px}
+#s3 .tk{left:90px;top:330px;width:900px;height:600px;background:var(--cream);border-radius:36px;color:var(--ink);box-shadow:0 40px 80px rgba(0,0,0,.35);transform:rotate(-1.5deg)}
+#s3 .tk:before,#s3 .tk:after{content:'';position:absolute;top:360px;width:84px;height:84px;border-radius:50%;background:var(--red)}
+#s3 .tk:before{left:-42px}#s3 .tk:after{right:-42px}
+#s3 .tl{position:absolute;left:0;width:100%;top:70px;text-align:center;font-size:42px;letter-spacing:10px;font-weight:700;color:var(--muted)}
+#s3 .code{position:absolute;left:0;width:100%;top:145px;text-align:center;font-size:124px}
+#s3 .dash{position:absolute;left:70px;right:70px;top:400px;border-top:8px dashed #d4c9bb}
+#s3 .tb{position:absolute;left:0;width:100%;top:452px;text-align:center;font-size:58px;font-weight:900;color:var(--red2)}
+#s3 .stamp{left:60px;top:860px;width:300px;height:300px;border-radius:50%;border:12px solid var(--yel);background:var(--ink);color:var(--yel);display:flex;flex-direction:column;align-items:center;justify-content:center;font-weight:900;line-height:.88;transform:rotate(-12deg);box-shadow:0 20px 40px rgba(0,0,0,.4)}
+#s3 .stamp b{font-size:118px}#s3 .stamp span{font-size:52px;letter-spacing:6px}
+#s3 .foot{left:380px;width:640px;top:1000px;font-size:46px;font-weight:700;line-height:1.3}
+/* 4 validity */
+#s4{background:radial-gradient(circle at 50% 40%,#3b1714 0%,var(--ink) 65%)}
+#s4 .top{left:0;width:100%;top:120px;text-align:center;font-size:66px;font-weight:900;letter-spacing:6px}
+#s4 .cal{left:290px;top:240px;width:500px;height:560px;border-radius:40px;background:#fff;overflow:hidden;box-shadow:0 40px 80px rgba(0,0,0,.5)}
+#s4 .cal .hd{height:150px;background:var(--red2);color:#fff;font-size:70px;font-weight:900;letter-spacing:8px;display:flex;align-items:center;justify-content:center}
+#s4 .cal .dd{font-size:330px;line-height:1;color:var(--ink);text-align:center;margin-top:30px}
+#s4 .date{left:0;width:100%;top:850px;text-align:center;font-size:96px;font-weight:900;color:var(--yel)}
+#s4 .stock{left:0;width:100%;top:990px;text-align:center;font-size:70px;font-weight:900}
+#s4 .bar{left:160px;top:1110px;width:760px;height:52px;border-radius:30px;background:#4a403a;overflow:hidden}
+#s4 .bar i{position:absolute;left:0;top:0;bottom:0;width:22%;background:linear-gradient(90deg,var(--red2),#ff6a3d);border-radius:30px}
+#s4 .lbl{left:0;width:100%;top:1180px;text-align:center;font-size:36px;font-weight:700;letter-spacing:6px;color:#d9cfc2}
+/* 5 end */
+#s5{background:var(--cream);color:var(--ink)}
+#s5 .logo{left:290px;top:120px;width:500px}
+#s5 .nm{left:0;width:100%;top:410px;text-align:center;font-size:96px}
+#s5 .sub{left:0;width:100%;top:525px;text-align:center;font-size:34px;letter-spacing:9px;font-weight:700;color:var(--muted)}
+#s5 .url{left:0;width:100%;top:620px;text-align:center;font-size:116px;font-weight:900;color:var(--red2)}
+#s5 .btn{left:240px;top:790px;width:600px;height:140px;border-radius:80px;background:var(--red2);color:#fff;display:flex;align-items:center;justify-content:center;font-size:58px;font-weight:900;letter-spacing:4px;box-shadow:0 18px 40px rgba(216,35,42,.4)}
+#s5 .rem{left:0;width:100%;top:985px;text-align:center;font-size:48px;font-weight:700}
+#s5 .rem .mono{background:var(--ink);color:var(--yel);padding:4px 22px;border-radius:14px}
+#s5 .del{left:0;width:100%;top:1080px;text-align:center;font-size:38px;color:#5e554c;line-height:1.4}
+#s5 .val{left:0;width:100%;top:1200px;text-align:center;font-size:34px;font-weight:700;color:var(--red2)}
+</style></head><body>
+
+<div class="slide" id="s1">
+  <div class="stripes" style="top:0"><i class="s-y"></i><i class="s-b"></i><i class="s-r"></i><i class="s-g"></i><i class="s-p"></i></div>
+  <div class="abs brand" style="top:160px;color:#d9cfc2">MAKKIE WHOLESALERS</div>
+  <div class="abs big">10%</div>
+  <div class="abs off">OFF</div>
+  <div class="abs ent">ON YOUR ENTIRE ORDER</div>
+  <div class="abs swipe" style="color:var(--yel)">SWIPE →</div>
+  <div class="abs dots" style="color:#fff"><i class="on"></i><i></i><i></i><i></i><i></i></div>
+</div>
+
+<div class="slide" id="s2">
+  <div class="stripes" style="top:0"><i class="s-y"></i><i class="s-b"></i><i class="s-r"></i><i class="s-g"></i></div>
+  <h2 class="abs">PRICES <em>WITH THE CODE</em></h2>
+  <div class="abs grid" id="grid"></div>
+  <div class="abs note">Blankets · Beads · Shawls · Traditional wear — everything is 10% off</div>
+  <div class="abs dots" style="color:var(--ink)"><i></i><i class="on"></i><i></i><i></i><i></i></div>
+</div>
+
+<div class="slide" id="s3">
+  <div class="abs bg"></div>
+  <div class="abs top">USE CODE AT CHECKOUT</div>
+  <div class="abs tk"><div class="tl">PROMO CODE</div><div class="code mono">oct26tiktok</div><div class="dash"></div><div class="tb">TO RECEIVE THE 10% DISCOUNT</div></div>
+  <div class="abs stamp"><b>10%</b><span>OFF</span></div>
+  <div class="abs foot">10% off your entire order at makkies.co.za</div>
+  <div class="abs dots" style="color:#fff"><i></i><i></i><i class="on"></i><i></i><i></i></div>
+</div>
+
+<div class="slide" id="s4">
+  <div class="stripes" style="top:0"><i class="s-y"></i><i class="s-b"></i><i class="s-r"></i><i class="s-g"></i><i class="s-p"></i></div>
+  <div class="abs top">VALID ONLY UNTIL</div>
+  <div class="abs cal"><div class="hd">OCTOBER</div><div class="dd serif">31</div></div>
+  <div class="abs date">31 OCTOBER</div>
+  <div class="abs stock">OR WHILE STOCKS LAST</div>
+  <div class="abs bar"><i></i></div>
+  <div class="abs lbl">STOCK RUNNING LOW</div>
+  <div class="abs dots" style="color:#fff"><i></i><i></i><i></i><i class="on"></i><i></i></div>
+</div>
+
+<div class="slide" id="s5">
+  <div class="stripes" style="top:0"><i class="s-y"></i><i class="s-b"></i><i class="s-r"></i><i class="s-g"></i><i class="s-p"></i></div>
+  <img class="abs logo" src="img/logo.png">
+  <div class="abs nm serif">Makkie Wholesalers</div>
+  <div class="abs sub">BLANKETS · BEADS · TRADITIONAL GOODS</div>
+  <div class="abs url">makkies.co.za</div>
+  <div class="abs btn">SHOP NOW →</div>
+  <div class="abs rem">Code <span class="mono">oct26tiktok</span> = 10% off</div>
+  <div class="abs del">Delivery across South Africa · PAXI to any PEP<br>or collect in Marabastad, Pretoria</div>
+  <div class="abs val">Valid until 31 October or while stocks last</div>
+  <div class="abs dots" style="color:var(--ink)"><i></i><i></i><i></i><i></i><i class="on"></i></div>
+</div>
+
+<script>
+const fmt=v=>'R'+v.toFixed(2).replace('.',',');
+const P=[['ukhamba','Ukhamba',595,'center 40%'],['elizabeth','Elizabeth Basotho',275,'60% 90%'],['umbhalo','Umbhalo',595,'center 55%'],['topcheck','Top Check Shawl',275,'60% 90%']];
+document.getElementById('grid').innerHTML=P.map(([i,n,p,pos])=>`<div class="pc"><div class="ph" style="background-image:url(img/${i}.jpg);background-position:${pos};background-size:118%"></div><div class="tx"><div class="nm serif">${n}</div><div class="pr"><span class="was">${fmt(p)}</span><span class="now">${fmt(Math.round(p*90)/100)}</span></div></div></div>`).join('');
+</script>
+</body></html>
