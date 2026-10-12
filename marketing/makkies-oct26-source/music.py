@@ -1,5 +1,5 @@
 import numpy as np, wave
-SR=44100; DUR=15.0; BPM=120; B=60/BPM
+SR=44100; DUR=22.0; BPM=120; B=60/BPM
 N=int(SR*DUR); mix=np.zeros(N); rng=np.random.default_rng(7)
 def add(sig,t,g=1.0):
     i=int(t*SR); j=min(N,i+len(sig))
@@ -35,7 +35,7 @@ def pad(freqs,l):
 nf=lambda m: 440*2**((m-69)/12)
 chords=[[57,60,64],[53,57,60],[48,52,55],[55,59,62]]
 bassroot=[45,41,48,43]
-for bar in range(8):
+for bar in range(11):
     t0=bar*4*B; ch=chords[bar%4]; r=bassroot[bar%4]
     if t0>=DUR: break
     add(pad([nf(m) for m in ch],4*B),t0)
@@ -71,9 +71,9 @@ def whoosh():
     o=np.concatenate([np.zeros(w),(c[w:]-c[:-w])/w]); t=np.arange(n)/SR
     return o*np.sin(np.pi*t/.35)**2*0.5
 add(impact(),0.12,0.9)
-for t in (2.0,3.0,4.0,5.0,6.0,12.0): add(whoosh(),t-0.12,0.7)
-add(riser(1.0),7.0,0.8); add(impact(),8.0,0.8)
-add(impact(),9.9,0.5)
+for t in (2.0,3.2,4.4,5.6,6.8,8.0,15.5,18.5): add(whoosh(),t-0.12,0.7)
+add(riser(1.0),9.0,0.8); add(impact(),10.0,0.8)
+add(impact(),12.0,0.5); add(impact(),15.6,0.6); add(impact(),16.1,0.4)
 # master
 mix=np.tanh(mix*1.1); mix/=np.max(np.abs(mix))*1.08
 fade=np.ones(N); fl=int(.6*SR); fade[-fl:]=np.linspace(1,0,fl); mix*=fade

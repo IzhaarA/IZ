@@ -7,7 +7,7 @@ const path=require('path');
   await p.goto('file://'+path.join(dir,'ad.html'));
   await p.evaluate(()=>document.fonts.ready);
   await p.waitForTimeout(500);
-  const times = mode==='preview' ? [0.3,1.0,1.7,2.7,3.7,4.7,5.7,6.6,7.5,9.0,10.5,13.5] : [...Array(450).keys()].map(i=>i/30);
+  const times = mode==='preview' ? [1.7,5.9,9.5,11.0,12.0,13.5,15.9,16.4,17.8,21.5] : [...Array(660).keys()].map(i=>i/30);
   let i=0;
   for(const t of times){
     await p.evaluate(t=>render(t),t);
