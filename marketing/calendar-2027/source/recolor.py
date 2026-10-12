@@ -38,6 +38,17 @@ for (yy_,xx_) in zip(*np.where(letters)):
     if wgt<=0: continue
     fill=mcolor(gy) if isM[yy_,xx_] else tex[gy-wy0,gx-wx0]
     out[gy,gx,:3]=wgt*fill+(1-wgt)*out[gy,gx,:3]
+# colour the white ring arcs (and their end dots) in the logo stripe colours
+ringm=dil((lab==1)|(lab==3),1)&~letters
+cx,cy=841,172
+SEG=[(245,196,0),(0,72,216),(237,25,27),(0,168,96)]  # yellow, blue, red, green
+for (yy_,xx_) in zip(*np.where(ringm)):
+    gx,gy=xx_+x0,yy_+y0
+    wgt=np.clip((src[gy,gx].min()-40)/(230-40),0,1)
+    if wgt<=0: continue
+    ang=(np.degrees(np.arctan2(gy-cy,gx-cx))+360)%360
+    c=np.array(SEG[int(ang//30)%4],float)
+    out[gy,gx,:3]=wgt*c+(1-wgt)*out[gy,gx,:3]
 # white outline around each letter (and between M and W) so they stand off the black circle
 core=np.zeros((H,W),bool)
 for (yy_,xx_) in zip(*np.where(letters)):
