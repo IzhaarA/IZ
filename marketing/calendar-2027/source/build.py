@@ -3,7 +3,7 @@ import calendar, os, sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 YEAR = 2027
-SOC = "#6E0B10"  # deep maroon for website/socials on the gold background
+SOC = "#fff"  # colour of the website/socials/WhatsApp lines
 BLANK = True  # leave dates, holidays and school terms empty for the publisher
 calendar.setfirstweekday(6)  # Sunday first
 
@@ -45,7 +45,7 @@ def icon(name, color="#fff"):
 
 def header(theme, logo):
     if logo == "old":
-        f = "banner.png" if theme in ("gold", "gold26") else "banner_light.png"
+        f = "banner_colour.png" if theme == "gold26" else ("banner.png" if theme == "gold" else "banner_light.png")
         return f'<img id="banner" src="assets/{f}">'
     return '<img id="banner" src="assets/banner_newlogo.png">'
 
