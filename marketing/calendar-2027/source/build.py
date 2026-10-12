@@ -3,6 +3,7 @@ import calendar, os, sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 YEAR = 2027
+BLANK = True  # leave dates, holidays and school terms empty for the publisher
 calendar.setfirstweekday(6)  # Sunday first
 
 HOLIDAYS = {(1, 1), (3, 21), (3, 22), (3, 26), (3, 29), (4, 27), (5, 1), (6, 16),
@@ -58,7 +59,7 @@ def month_block(m, th):
         extra = weeks.pop()
         weeks[0] = [e if e else f for f, e in zip(weeks[0], extra)]
     cells = []
-    for r, wk in enumerate(weeks):
+    for r, wk in enumerate([] if BLANK else weeks):
         for c, d in enumerate(wk):
             if not d:
                 continue
@@ -147,7 +148,7 @@ html,body{{width:673.937pt;height:1340.079pt;background:#fff;-webkit-print-color
 .lg{{position:absolute;object-fit:contain}}
 #nh{{position:absolute;left:35.7pt;top:27.6pt;width:512.4pt;height:93.6pt;display:flex;align-items:center;justify-content:center;gap:14pt}}
 #nh .nl{{height:70pt;width:auto;filter:drop-shadow(0 1.5pt 2pt rgba(0,0,0,.35))}}
-#nh .nn{{font-family:'DM Serif Display',serif;font-size:36pt;line-height:1;white-space:nowrap;color:#fff;-webkit-text-stroke:2.2pt #231F20;paint-order:stroke fill;letter-spacing:.3pt}}
+#nh .nn{{font-family:'DM Serif Display',serif;font-size:36pt;line-height:1;white-space:nowrap;color:#fff;-webkit-text-stroke:3.4pt #000;paint-order:stroke fill;letter-spacing:.5pt}}
 #nh .ns{{display:flex;height:3.2pt;margin:5pt 0 5pt 2pt;width:100%}} #nh .ns i{{flex:1}}
 #nh .ntag{{font-family:Montserrat,sans-serif;font-weight:800;font-size:10.5pt;letter-spacing:5pt;white-space:nowrap;color:#231F20;margin-left:2pt}}
 </style></head><body>
@@ -174,10 +175,10 @@ html,body{{width:673.937pt;height:1340.079pt;background:#fff;-webkit-print-color
    <polygon points="289.5,56 473,56 473,62 291,62" fill="{th['dark']}"/>
   </svg>
   <div id="ht">PUBLIC HOLIDAYS</div>
-  <div class="hc" style="left:42pt">{hol(HOL_COL1)}</div>
-  <div class="hc" style="left:152pt">{hol(HOL_COL2)}</div>
+  <div class="hc" style="left:42pt">{"" if BLANK else hol(HOL_COL1)}</div>
+  <div class="hc" style="left:152pt">{"" if BLANK else hol(HOL_COL2)}</div>
   <div id="tt">SCHOOL TERMS</div><div id="ts">INLAND &amp; COASTAL PROVINCES</div>
-  <div id="terms">{terms}</div>
+  <div id="terms">{"" if BLANK else terms}</div>
   <div id="fp1">At the time of going to press, all information, dates &amp; school terms were correct</div>
   <div id="fp2">DESIGNED &amp; PRINTED BY ZIPPY PRESS - www.zippypress.co.za - Tel: 012 666 7093</div>
  </div>
