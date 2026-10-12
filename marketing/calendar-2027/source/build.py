@@ -24,7 +24,7 @@ THEMES = {
     "green": dict(bg="#128A4F", accent="#FFC814", dark="#1C2420", grid="#EAF5EC", sun="#DCE8DF", fade="#D3EBDB", termtxt="#1C2420"),
 }
 PHOTOS = {
-    "gold26": ["basotho_stack", "hat", "checks", "berets_o", "mink_sesli", "ndebele_cape",
+    "gold26": ["basotho_stack", "hat", "checks", "berets_o", "mink_amigo_teal", "ndebele_cape",
                "wool", "mohair_o", "sticks_o", "tekkies_o", "beadstrands", "neckrings"],
     "gold":  ["ndebele_women", "chinese", "hero", "chenille", "hat", "kangas",
               "czech", "ndebele_cape", "berets_w", "mink_w", "plastic", "sticks_w"],
