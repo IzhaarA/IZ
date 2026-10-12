@@ -113,9 +113,9 @@ html,body{{width:673.937pt;height:1340.079pt;background:#fff;-webkit-print-color
 #panel{{position:absolute;left:33.65pt;top:24.29pt;width:515.4pt;height:1240pt;border:3pt solid #fff;border-bottom:none}}
 .cm{{position:absolute;background:#000}}
 #banner{{position:absolute;left:35.7pt;top:27.6pt;width:512.4pt;height:93.6pt}}
-#addr{{position:absolute;left:45.7pt;top:128.5pt;font-family:Tinos,serif;font-weight:700;font-size:12.6pt;line-height:13.4pt;color:#fff}} #addr .wa{{color:{SOC}}}
+#addr{{position:absolute;left:45.7pt;top:135pt;font-family:Tinos,serif;font-weight:700;font-size:12.6pt;line-height:13.4pt;color:#fff}} #addr .wa{{color:{SOC}}}
 #year{{position:absolute;left:0;width:583.937pt;top:117pt;text-align:center;font-family:Fredoka,sans-serif;font-weight:700;font-size:62pt;line-height:1;color:#fff;-webkit-text-stroke:3.2pt #231F20;paint-order:stroke fill;letter-spacing:1pt}}
-#soc{{position:absolute;left:363pt;top:136pt;font-family:Tinos,serif;font-weight:700;font-size:12.6pt;line-height:14pt;color:{SOC}}}
+#soc{{position:absolute;left:363pt;top:128pt;font-family:Tinos,serif;font-weight:700;font-size:12.6pt;line-height:14pt;color:{SOC}}}
 #soc div{{display:flex;align-items:center;gap:3.2pt;white-space:nowrap;margin-bottom:3pt}}
 .ic{{width:10.5pt;height:10.5pt;flex:none}}
 #addr .ic{{width:10pt;height:10pt;vertical-align:-1.2pt;margin-right:2pt}}
@@ -154,11 +154,12 @@ html,body{{width:673.937pt;height:1340.079pt;background:#fff;-webkit-print-color
 <div id="trim">
  <div id="bg"></div><div id="panel"></div>
  {header(theme, logo)}
- <div id="addr">Shop No. D4<br>Pretoria Oriental Complex<br>Marabastad, Pretoria<br><span class="wa">{icon('whatsapp', SOC)}072 323 5469</span></div>
+ <div id="addr">Shop No. D4<br>Pretoria Oriental Complex<br>Marabastad, Pretoria</div>
  <div id="year">{YEAR}</div>
  <div id="soc">
    <div>{icon('globe', SOC)}<span>www.makkies.co.za</span></div>
    <div>{icon('tiktok', SOC)}{icon('instagram', SOC)}{icon('facebook', SOC)}<span>@makkiewholesalers</span></div>
+   <div>{icon('whatsapp', SOC)}<span>072 323 5469</span></div>
  </div>
  {''.join(ph)}
  {''.join(months)}
