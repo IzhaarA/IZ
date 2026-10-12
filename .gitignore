@@ -52,3 +52,6 @@ pnpm-debug.log*
 
 # Customer invoices (contain customer and banking details) — keep out of git
 marketing/invoices/
+
+# Generated download bundles
+marketing/instagram/zips/
