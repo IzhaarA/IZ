@@ -142,3 +142,61 @@ Buying for resale? Ask us for wholesale prices.
 🚚 Delivery across SA · PAXI to any PEP · or collect in Marabastad
 
 #shawls #checkshawl #affordablefashion #pretoria #southafrica
+
+---
+
+## 9. Ndebele Blankets (makkies-ndebele-blankets-carousel-01..12.jpg)
+
+Wear your heritage with pride 🇿🇦✨
+
+9 Ndebele blanket designs, all in stock:
+• Umbhalo, Ukhamba & Ibhidi, R595 (150 × 160 cm)
+• Unosinky, R595 (140 × 180 cm, 2 colours)
+• Indlovukazi, R550 (150 × 160 cm)
+• Mini Umbhalo & Msosiswa, R365 (110 × 130 cm)
+• Ndebele & Beetee Furpile, from R170
+
+Perfect for weddings, umembeso, gifting the makoti or keeping warm in style. Swipe to find yours 👉
+
+🛒 makkies.co.za · 💬 WhatsApp 072 323 5469
+🚚 Delivery across SA · PAXI to any PEP · or collect in Marabastad
+
+#ndebele #ndebeleblanket #heritageblanket #pretoria #southafrica
+
+---
+
+## 10. Ndebele Accessories (makkies-ndebele-accessories-carousel-01..10.jpg)
+
+Complete the look 💛 Traditional Ndebele accessories, now in stock.
+
+• Leg Ziela & Thick Ziela, from R60 (5 m R60 · 10 m R120 · 100 m R1100)
+• Button Neck Ziela, gold or silver, R150 (ready-made)
+• Ndebele Choker, R75
+• Ndebele Bracelet, from R40
+• Ndebele Belt, R120
+
+Getting ready for a traditional wedding or cultural day? We've got you from neck to ankle 👑
+
+🛒 makkies.co.za · 💬 WhatsApp 072 323 5469
+🚚 Delivery across SA · PAXI to any PEP · or collect in Marabastad
+Buying for a group? Ask us for wholesale prices.
+
+#ndebele #ziela #traditionalwedding #pretoria #southafrica
+
+---
+
+## 11. Ndebele Tekkies (makkies-ndebele-tekkies-carousel-01..06.jpg)
+
+Step out in culture 👟🎨
+
+Hand-finished canvas tekkies in sizes UK3–UK8:
+• Beaded Tekkies, R150
+• Ndebele Painted Tekkies, R200
+• Beetee Painted Tekkies, R250
+
+Comfortable, colourful and made to be noticed. Which pair is yours? 👇
+
+🛒 makkies.co.za · 💬 WhatsApp 072 323 5469
+🚚 Delivery across SA · PAXI to any PEP · or collect in Marabastad
+
+#ndebele #ndebeletekkies #traditionalwear #pretoria #southafrica

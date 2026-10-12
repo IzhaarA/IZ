@@ -28,9 +28,9 @@ CSS="""*{box-sizing:border-box;margin:0;padding:0}body{background:#777}
 """
 def product_slide(n,i,set_,p):
     return f'''<div class="slide" style="--bg:{set_['bg']};--acc:{set_['acc']}">{dots(n,i,set_['acc'])}
-<div class="a eyebrow">{p['eyebrow']}</div><div class="a title">{p['name']}</div>
+<div class="a eyebrow">{p['eyebrow']}</div><div class="a title" style="font-size:{82 if len(p['name'])<=16 else (66 if len(p['name'])<=22 else 56)}px;top:{120 if len(p['name'])<=16 else 128}px">{p['name']}</div>
 <img class="a bt" src="ph/{set_['bt']}"><div class="a photo"><img src="ph/{p['img']}.png"></div>
-<div class="a price"><small>ONLY</small><b>R{p['price']}</b></div>
+<div class="a price"><small>{p.get('pre','ONLY')}</small><b>R{p['price']}</b></div>
 <img class="a bb" src="ph/{set_['bb']}"><div class="a foot">Order at makkies.co.za · WhatsApp {WA}</div></div>'''
 def cover(n,set_,c):
     return f'''<div class="slide" style="--bg:{set_['bg']};--acc:{set_['acc']}">{dots(n,0,set_['acc'])}
@@ -42,7 +42,7 @@ def cover(n,set_,c):
 <div class="a" style="left:0;width:100%;top:1052px;text-align:center"><span class="pill">{c['pill']}</span></div>
 <img class="a bb" src="ph/{set_['bb']}"><div class="a foot">Swipe to see every style →</div></div>'''
 def grid_slide(n,i,set_,g,items,cols,imh):
-    cells=''.join(f'<div class="gi"><div class="im" style="height:{imh}px;background-image:url(ph/{p["img"]}.png)"></div><div class="nm">{p["short"]}</div><div class="pr">R{p["price"]}</div></div>' for p in items)
+    cells=''.join(f'<div class="gi"><div class="im" style="height:{imh}px;background-image:url(ph/{p["img"]}.png)"></div><div class="nm">{p["short"]}</div><div class="pr">{p.get("ptxt","R"+str(p["price"]))}</div></div>' for p in items)
     return f'''<div class="slide" style="--bg:{set_['bg']};--acc:{set_['acc']}">{dots(n,i,set_['acc'])}
 <div class="a serif" style="left:0;width:100%;top:92px;text-align:center;font-size:78px">{g['title']}</div>
 <div class="a" style="left:0;width:100%;top:190px;text-align:center;font-size:28px;font-weight:600;color:#6b625a">{g['sub']}</div>
@@ -119,6 +119,43 @@ ss=shawl_set('Soft Touch Shawls',[('Green','sgreen'),('Blue','sblue'),('Red','sr
 cs=shawl_set('Small Check Shawls',[('Multi Stripe','cmulti'),('Rose','crose'),('Navy Check','cnavy'),('Brown Check','cbrown'),('Black Check','cblack')],
    60,'120 × 120 CM','5 DESIGNS IN STOCK · R60 EACH','Small check shawl · 120 × 120 cm',3,300,eyeword='DESIGNS')
 
-for name,slides in (('hats',hs),('xhosa',xs),('frill',fs),('elizabeth',es),('plain',ps),('soft',ss),('check',cs)):
+
+NSET=HATSET
+def coll(title,eyebrow,hero,pill,items,gtitle,gsub,cols,imh):
+    N=len(items)+3
+    out=[cover(N,NSET,dict(eyebrow=eyebrow,title=title,img=hero,pill=pill))]
+    for k,it in enumerate(items):
+        out.append(product_slide(N,k+1,NSET,dict(name=it['n'],img=it['i'],price=it['p'],pre=it.get('pre','ONLY'),eyebrow=f"{k+1:02d}<span class='ln'></span>{it['e']}")))
+    out.append(grid_slide(N,N-2,NSET,dict(title=gtitle,sub=gsub,foot='Wholesale & retail · bulk buyers, ask us for trade pricing'),
+        [dict(short=it.get('s',it['n']),img=it['i'],price=it['p'],ptxt=('from ' if it.get('pre')=='FROM' else '')+'R'+str(it['p'])) for it in items],cols,imh))
+    out.append(order_slide(N,NSET,ORDER))
+    return out
+nb=coll('Ndebele Blankets','NDEBELE COLLECTION','nukhamba','9 DESIGNS · FROM R170',[
+  dict(n='Mini Umbhalo',i='nminiumbhalo',p=365,e='110 × 130 CM'),
+  dict(n='Umbhalo',i='numbhalo',p=595,e='150 × 160 CM'),
+  dict(n='Ukhamba',i='nukhamba',p=595,e='150 × 160 CM'),
+  dict(n='Ibhidi',i='nibhidi',p=595,e='150 × 160 CM'),
+  dict(n='Msosiswa',i='nmsosiswa',p=365,e='110 × 130 CM · 7 COLOURS'),
+  dict(n='Ndebele Furpile',s='Ndebele Furpile',i='nfurpile',p=170,pre='FROM',e='2 SIZES · R170 / R230'),
+  dict(n='Beetee Furpile',i='nbeetee',p=170,pre='FROM',e='2 SIZES · R170 / R230'),
+  dict(n='Unosinky',i='nunosinky',p=595,e='140 × 180 CM · 2 COLOURS'),
+  dict(n='Indlovukazi',i='nindlovukazi',p=550,e='150 × 160 CM')],
+  'Pick your blanket.','Ndebele heritage blankets · 9 designs',3,172)
+na=coll('Ndebele Accessories','NDEBELE COLLECTION','nneckgold','ZIELA · CHOKERS · BELTS · FROM R40',[
+  dict(n='Leg Ziela',i='nlegziela',p=60,pre='FROM',e='5M R60 · 10M R120 · 100M R1100'),
+  dict(n='Thick Ziela',i='nthickziela',p=60,pre='FROM',e='5M R60 · 10M R120 · 100M R1100'),
+  dict(n='Neck Ziela — Gold',s='Neck Ziela Gold',i='nneckgold',p=150,e='BUTTON NECK ZIELA · READY-MADE'),
+  dict(n='Neck Ziela — Silver',s='Neck Ziela Silver',i='nnecksilver',p=150,e='BUTTON NECK ZIELA · READY-MADE'),
+  dict(n='Ndebele Choker',s='Choker',i='nchoker',p=75,e='TRADITIONAL RING CHOKER'),
+  dict(n='Ndebele Bracelet',s='Bracelet',i='nbracelet',p=40,pre='FROM',e='SHORT R40 · LONG R80'),
+  dict(n='Ndebele Belt',s='Belt',i='nbelt',p=120,e='TRADITIONAL GOLD BELT')],
+  'Complete the look.','Traditional Ndebele accessories',4,250)
+nt=coll('Ndebele Tekkies','NDEBELE COLLECTION','ntekndebele','3 STYLES · UK3–UK8 · FROM R150',[
+  dict(n='Beaded Tekkies',s='Beaded',i='ntekbeaded',p=150,e='UK3–UK8 · CANVAS'),
+  dict(n='Beetee Tekkies',s='Beetee Painted',i='ntekbeetee',p=250,e='HAND-PAINTED · UK3–UK8 · CANVAS'),
+  dict(n='Ndebele Tekkies',s='Ndebele Painted',i='ntekndebele',p=200,e='HAND-PAINTED · UK3–UK8 · CANVAS')],
+  'Pick your pair.','Hand-finished canvas tekkies · UK3–UK8',3,520)
+
+for name,slides in (('hats',hs),('xhosa',xs),('frill',fs),('elizabeth',es),('plain',ps),('soft',ss),('check',cs),('nblankets',nb),('naccess',na),('ntekkies',nt)):
     open(os.path.join(H,f'ig_{name}.html'),'w').write(f'<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="{FONTS}"><style>{CSS}</style></head><body>'+''.join(slides)+'</body></html>')
 print(len(hs),len(xs))
