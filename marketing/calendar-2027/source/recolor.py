@@ -43,9 +43,9 @@ core=np.zeros((H,W),bool)
 for (yy_,xx_) in zip(*np.where(letters)):
     core[yy_,xx_]=src[yy_+y0,xx_+x0].min()>120
 coreM=core&isM; coreW=core&isW
-seam=(dil(coreM,2)&coreW)|(dil(coreW,2)&coreM)
+seam=(dil(coreM,1)&coreW)|(dil(coreW,1)&coreM)
 ring=(lab==1)|(lab==3)
-outline=((dil(coreM,3)|dil(coreW,3))&~core&~dil(ring,1))|seam
+outline=((dil(coreM,1)|dil(coreW,1))&~core&~dil(ring,1))|seam
 for (yy_,xx_) in zip(*np.where(outline)):
     out[yy_+y0,xx_+x0,:3]=(255,255,255)
 # soften: one-pixel halo at 50% for anti-aliasing
