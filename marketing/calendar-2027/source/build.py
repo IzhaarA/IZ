@@ -3,6 +3,7 @@ import calendar, os, sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 YEAR = 2027
+SOC = "#6E0B10"  # deep maroon for website/socials on the gold background
 BLANK = True  # leave dates, holidays and school terms empty for the publisher
 calendar.setfirstweekday(6)  # Sunday first
 
@@ -46,12 +47,7 @@ def header(theme, logo):
     if logo == "old":
         f = "banner.png" if theme in ("gold", "gold26") else "banner_light.png"
         return f'<img id="banner" src="assets/{f}">'
-    return """<div id="nh">
-  <img src="assets/logo_new.png" class="nl">
-  <div class="nt"><div class="nn">Makkie Wholesalers</div>
-  <div class="ns"><i style="background:#FFC814"></i><i style="background:#1B4FD8"></i><i style="background:#D8232A"></i><i style="background:#0E9F57"></i></div>
-  <div class="ntag">BLANKETS &#183; SHAWLS &#183; BEADS</div></div>
-</div>"""
+    return '<img id="banner" src="assets/banner_newlogo.png">'
 
 def month_block(m, th):
     weeks = calendar.monthcalendar(YEAR, m)
@@ -118,7 +114,7 @@ html,body{{width:673.937pt;height:1340.079pt;background:#fff;-webkit-print-color
 #banner{{position:absolute;left:35.7pt;top:27.6pt;width:512.4pt;height:93.6pt}}
 #addr{{position:absolute;left:45.7pt;top:128.5pt;font-family:Tinos,serif;font-weight:700;font-size:12.6pt;line-height:13.4pt;color:#fff}}
 #year{{position:absolute;left:0;width:583.937pt;top:117pt;text-align:center;font-family:Fredoka,sans-serif;font-weight:700;font-size:62pt;line-height:1;color:#fff;-webkit-text-stroke:3.2pt #231F20;paint-order:stroke fill;letter-spacing:1pt}}
-#soc{{position:absolute;left:366pt;top:137pt;font-family:Tinos,serif;font-weight:700;font-size:11.6pt;line-height:14pt;color:#fff}}
+#soc{{position:absolute;left:363pt;top:136pt;font-family:Tinos,serif;font-weight:700;font-size:12.6pt;line-height:14pt;color:{SOC}}}
 #soc div{{display:flex;align-items:center;gap:3.2pt;white-space:nowrap;margin-bottom:3pt}}
 .ic{{width:10.5pt;height:10.5pt;flex:none}}
 #addr .ic{{width:10pt;height:10pt;vertical-align:-1.2pt;margin-right:2pt}}
@@ -159,8 +155,8 @@ html,body{{width:673.937pt;height:1340.079pt;background:#fff;-webkit-print-color
  <div id="addr">Shop No. D4<br>Pretoria Oriental Complex<br>Marabastad, Pretoria<br>{icon('whatsapp')}072 323 5469</div>
  <div id="year">{YEAR}</div>
  <div id="soc">
-   <div>{icon('globe')}<span>www.makkies.co.za</span></div>
-   <div>{icon('tiktok')}{icon('instagram')}{icon('facebook')}<span>@makkiewholesalers</span></div>
+   <div>{icon('globe', SOC)}<span>www.makkies.co.za</span></div>
+   <div>{icon('tiktok', SOC)}{icon('instagram', SOC)}{icon('facebook', SOC)}<span>@makkiewholesalers</span></div>
  </div>
  {''.join(ph)}
  {''.join(months)}
