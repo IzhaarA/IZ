@@ -25,7 +25,7 @@ THEMES = {
     "green": dict(bg="#128A4F", accent="#FFC814", dark="#1C2420", grid="#EAF5EC", sun="#DCE8DF", fade="#D3EBDB", termtxt="#1C2420"),
 }
 PHOTOS = {
-    "gold26": ["basotho_stack", "hat", "checks", "berets_o", "mink_amigo_teal", "ndebele_cape",
+    "gold26": ["basotho_stack", "hat", "checks", "berets_o", "wedding_shawl", "ndebele_cape",
                "wool", "mohair_o", "sticks_o", "tekkies_o", "beadstrands", "neckrings"],
     "gold":  ["ndebele_women", "chinese", "hero", "chenille", "hat", "kangas",
               "czech", "ndebele_cape", "berets_w", "mink_w", "plastic", "sticks_w"],
@@ -83,7 +83,8 @@ def build(theme, logo="old"):
     for i, p in enumerate(photos):
         r, c = divmod(i, 3)
         pos = POS.get(p, "center")
-        ph.append(f'<div class="ph" style="left:{54.3+c*157.67:.2f}pt;top:{rows[r]}pt;background-image:url(assets/{p}.jpg);background-position:{pos}"></div>')
+        cap = '<div class="cap">Wedding Shawl</div>' if p == "wedding_shawl" else ""
+        ph.append(f'<div class="ph" style="left:{54.3+c*157.67:.2f}pt;top:{rows[r]}pt;background-image:url(assets/{p}.jpg);background-position:{pos}">{cap}</div>')
     mrows, mcols = [386.6, 515.5, 844.6, 973.5], [54.3, 218.0, 381.7]
     months = []
     for i in range(12):
@@ -142,6 +143,7 @@ html,body{{width:673.937pt;height:1340.079pt;background:#fff;-webkit-print-color
 #fp1{{position:absolute;left:62pt;width:200pt;top:64.6pt;text-align:center;color:#fff;font-size:3.3pt;font-weight:500}}
 #fp2{{position:absolute;left:283pt;width:190pt;top:64.6pt;text-align:center;color:#fff;font-size:3.3pt;font-weight:600}}
 .lg{{position:absolute;object-fit:contain}}
+.cap{{position:absolute;left:26%;width:50%;top:31%;text-align:center;font-family:'Great Vibes',cursive;font-size:13pt;line-height:1;color:#7A5A0C;text-shadow:0 0 1.5pt #fff;white-space:nowrap}}
 #nh{{position:absolute;left:35.7pt;top:27.6pt;width:512.4pt;height:93.6pt;display:flex;align-items:center;justify-content:center;gap:14pt}}
 #nh .nl{{height:70pt;width:auto;filter:drop-shadow(0 1.5pt 2pt rgba(0,0,0,.35))}}
 #nh .nn{{font-family:'DM Serif Display',serif;font-size:36pt;line-height:1;white-space:nowrap;color:#fff;-webkit-text-stroke:3.4pt #000;paint-order:stroke fill;letter-spacing:.5pt}}
