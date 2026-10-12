@@ -16,12 +16,15 @@ TERMS = [("1", "(11) 13 JANUARY", "19 MARCH"), ("2", "06 APRIL", "25 JUNE"),
          ("3", "20 JULY", "22 SEPTEMBER"), ("4", "05 OCTOBER", "08 (10) DECEMBER")]
 
 THEMES = {
+    "gold26": None,
     "gold":  dict(bg="#C0911E", accent="#C79521", dark="#231F20", grid="#F1E5C7", sun="#ECE9E0", fade="#EEDCB3", termtxt="#231F20"),
     "red":   dict(bg="#B8272A", accent="#F2B705", dark="#231F20", grid="#FBEFE0", sun="#EFE6E0", fade="#F3D9D2", termtxt="#231F20"),
     "blue":  dict(bg="#1F4FB4", accent="#FFC814", dark="#14152B", grid="#EAF0FB", sun="#DDE3EE", fade="#D5E0F5", termtxt="#14152B"),
     "green": dict(bg="#128A4F", accent="#FFC814", dark="#1C2420", grid="#EAF5EC", sun="#DCE8DF", fade="#D3EBDB", termtxt="#1C2420"),
 }
 PHOTOS = {
+    "gold26": ["basotho_stack", "hat", "checks", "berets_o", "mink_sesli", "ndebele_cape",
+               "wool", "mohair_o", "sticks_o", "tekkies_o", "beadstrands", "neckrings"],
     "gold":  ["ndebele_women", "chinese", "hero", "chenille", "hat", "kangas",
               "czech", "ndebele_cape", "berets_w", "mink_w", "plastic", "sticks_w"],
     "red":   ["basotho_stack", "polymohair", "neckrings", "tekkies_w", "beadstrands", "haberdash",
@@ -37,6 +40,17 @@ POS = {"tekkies_w": "center 60%", "hero": "center 45%", "ndebele_women": "center
 def icon(name, color="#fff"):
     svg = open(os.path.join(HERE, "icons", name + ".svg")).read()
     return svg.replace("<svg ", f'<svg fill="{color}" class="ic" ', 1)
+
+def header(theme, logo):
+    if logo == "old":
+        f = "banner.png" if theme in ("gold", "gold26") else "banner_light.png"
+        return f'<img id="banner" src="assets/{f}">'
+    return """<div id="nh">
+  <img src="assets/logo_new.png" class="nl">
+  <div class="nt"><div class="nn">Makkie Wholesalers</div>
+  <div class="ns"><i style="background:#FFC814"></i><i style="background:#1B4FD8"></i><i style="background:#D8232A"></i><i style="background:#0E9F57"></i></div>
+  <div class="ntag">BLANKETS &#183; SHAWLS &#183; BEADS</div></div>
+</div>"""
 
 def month_block(m, th):
     weeks = calendar.monthcalendar(YEAR, m)
@@ -64,8 +78,8 @@ def month_block(m, th):
   <div class="gr"><div class="sunc"></div>{''.join(cells)}</div>
 </div>'''
 
-def build(theme):
-    th = THEMES[theme]
+def build(theme, logo="old"):
+    th = THEMES[theme] or THEMES["gold"]
     photos = PHOTOS[theme]
     rows = [186.4, 286.5, 644.5, 744.5]
     ph = []
@@ -103,8 +117,8 @@ html,body{{width:673.937pt;height:1340.079pt;background:#fff;-webkit-print-color
 #banner{{position:absolute;left:35.7pt;top:27.6pt;width:512.4pt;height:93.6pt}}
 #addr{{position:absolute;left:45.7pt;top:128.5pt;font-family:Tinos,serif;font-weight:700;font-size:12.6pt;line-height:13.4pt;color:#fff}}
 #year{{position:absolute;left:0;width:583.937pt;top:117pt;text-align:center;font-family:Fredoka,sans-serif;font-weight:700;font-size:62pt;line-height:1;color:#fff;-webkit-text-stroke:3.2pt #231F20;paint-order:stroke fill;letter-spacing:1pt}}
-#soc{{position:absolute;left:372pt;top:130pt;font-family:Tinos,serif;font-weight:700;font-size:11.6pt;line-height:14pt;color:#fff}}
-#soc div{{display:flex;align-items:center;gap:3.5pt;white-space:nowrap}}
+#soc{{position:absolute;left:366pt;top:137pt;font-family:Tinos,serif;font-weight:700;font-size:11.6pt;line-height:14pt;color:#fff}}
+#soc div{{display:flex;align-items:center;gap:3.2pt;white-space:nowrap;margin-bottom:3pt}}
 .ic{{width:10.5pt;height:10.5pt;flex:none}}
 #addr .ic{{width:10pt;height:10pt;vertical-align:-1.2pt;margin-right:2pt}}
 .ph{{position:absolute;width:157.67pt;height:91.7pt;background-size:cover;background-repeat:no-repeat}}
@@ -131,17 +145,21 @@ html,body{{width:673.937pt;height:1340.079pt;background:#fff;-webkit-print-color
 #fp1{{position:absolute;left:62pt;width:200pt;top:64.6pt;text-align:center;color:#fff;font-size:3.3pt;font-weight:500}}
 #fp2{{position:absolute;left:283pt;width:190pt;top:64.6pt;text-align:center;color:#fff;font-size:3.3pt;font-weight:600}}
 .lg{{position:absolute;object-fit:contain}}
+#nh{{position:absolute;left:35.7pt;top:27.6pt;width:512.4pt;height:93.6pt;display:flex;align-items:center;justify-content:center;gap:14pt}}
+#nh .nl{{height:70pt;width:auto;filter:drop-shadow(0 1.5pt 2pt rgba(0,0,0,.35))}}
+#nh .nn{{font-family:'DM Serif Display',serif;font-size:36pt;line-height:1;white-space:nowrap;color:#fff;-webkit-text-stroke:2.2pt #231F20;paint-order:stroke fill;letter-spacing:.3pt}}
+#nh .ns{{display:flex;height:3.2pt;margin:5pt 0 5pt 2pt;width:100%}} #nh .ns i{{flex:1}}
+#nh .ntag{{font-family:Montserrat,sans-serif;font-weight:800;font-size:10.5pt;letter-spacing:5pt;white-space:nowrap;color:#231F20;margin-left:2pt}}
 </style></head><body>
 {''.join(marks)}
 <div id="trim">
  <div id="bg"></div><div id="panel"></div>
- <img id="banner" src="assets/{'banner.png' if theme=='gold' else 'banner_light.png'}">
+ {header(theme, logo)}
  <div id="addr">Shop No. D4<br>Pretoria Oriental Complex<br>Marabastad, Pretoria<br>{icon('whatsapp')}072 323 5469</div>
  <div id="year">{YEAR}</div>
  <div id="soc">
    <div>{icon('globe')}<span>www.makkies.co.za</span></div>
-   <div>{icon('tiktok')}<span>@makkiewholesalers</span></div>
-   <div>{icon('instagram')}<span>@makkiewholesalers</span></div>
+   <div>{icon('tiktok')}{icon('instagram')}{icon('facebook')}<span>@makkiewholesalers</span></div>
  </div>
  {''.join(ph)}
  {''.join(months)}
@@ -167,6 +185,8 @@ html,body{{width:673.937pt;height:1340.079pt;background:#fff;-webkit-print-color
 </div></body></html>'''
 
 if __name__ == "__main__":
-    for t in (sys.argv[1:] or THEMES):
-        open(os.path.join(HERE, f"cal_{t}.html"), "w").write(build(t))
-        print("wrote", t)
+    for arg in (sys.argv[1:] or THEMES):
+        t, _, logo = arg.partition(":")
+        name = f"{t}_{logo}" if logo else t
+        open(os.path.join(HERE, f"cal_{name}.html"), "w").write(build(t, logo or "old"))
+        print("wrote", name)
