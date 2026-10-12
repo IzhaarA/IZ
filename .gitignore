@@ -49,3 +49,6 @@ pnpm-debug.log*
 # Brainstorm assets (not tracked in source control)
 .superpowers/
 .claude/
+
+# Customer invoices (contain customer and banking details) — keep out of git
+marketing/invoices/
