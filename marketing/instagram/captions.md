@@ -60,3 +60,30 @@ Swipe to pick your colour 👉
 🚚 Delivery across SA · PAXI to any PEP · or collect in Marabastad, Pretoria
 
 #basothoblanket #basotho #heritageblanket #pretoria #southafrica
+
+## Plain Shawls carousel (makkies-plain-shawls-carousel-01..11.jpg)
+29 colours. One price. R95 each! 🌈
+
+Our Plain Shawls (120 × 120 cm) in Emerald, Black, Grey, Royal Blue, Yellow, Magenta, Dusty Pink, Red… and 21 more colours on makkies.co.za. Swipe to pick yours 👉
+
+🛒 Order at makkies.co.za or WhatsApp 072 323 5469
+🚚 Delivery across SA · PAXI to any PEP · or collect in Marabastad, Pretoria
+
+#shawls #plainshawl #traditionalwear #pretoria #southafrica
+
+## Soft Touch Shawls carousel (makkies-soft-touch-shawls-carousel-01..09.jpg)
+Soft, warm and beautifully fringed 🧣 Soft Touch Shawls (130 × 130 cm) in Green, Blue, Red, Charcoal, Mustard & Pink, R150 each.
+
+🛒 Order at makkies.co.za or WhatsApp 072 323 5469
+🚚 Delivery across SA · PAXI to any PEP · or collect in Marabastad, Pretoria
+
+#shawls #softtouchshawl #traditionalwear #pretoria #southafrica
+
+## Small Check Shawls carousel (makkies-small-check-shawls-carousel-01..08.jpg)
+Only R60! 😍 Small Check Shawls (120 × 120 cm) in Multi Stripe, Rose, Navy Check, Brown Check & Black Check.
+
+🛒 Order at makkies.co.za or WhatsApp 072 323 5469
+🚚 Delivery across SA · PAXI to any PEP · or collect in Marabastad, Pretoria
+Bulk buyers: ask us for wholesale pricing.
+
+#shawls #checkshawl #traditionalwear #pretoria #southafrica

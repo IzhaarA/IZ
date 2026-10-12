@@ -100,6 +100,25 @@ es.append(grid_slide(N4,N4-2,BSET,dict(title='Pick your colour.',sub='Basotho he
    [dict(short=x[0],img=x[1],price=x[2]) for x in el],3,300))
 es.append(order_slide(N4,BSET,'Delivery across South Africa · PAXI to any PEP store<br>or collect from Shop D4, Pretoria Oriental Complex, Marabastad'))
 
-for name,slides in (('hats',hs),('xhosa',xs),('frill',fs),('elizabeth',es)):
+
+SSET=dict(bg='#F6F0E9',acc='#B23A2E',bt='border_shawl_top.png',bb='border_shawl_bot.png')
+ORDER='Delivery across South Africa · PAXI to any PEP store<br>or collect from Shop D4, Pretoria Oriental Complex, Marabastad'
+def shawl_set(title,items,price,size,pill,gsub,cols,imh,eyeword='COLOURS'):
+    N=len(items)+3
+    out=[cover(N,SSET,dict(eyebrow='SHAWLS · THROWS',title=title,img=items[0][1],pill=pill))]
+    for k,(nm,img) in enumerate(items):
+        out.append(product_slide(N,k+1,SSET,dict(name=nm,img=img,price=price,eyebrow=f'{k+1:02d}<span class="ln"></span>{size}')))
+    out.append(grid_slide(N,N-2,SSET,dict(title='Pick your colour.' if eyeword=='COLOURS' else 'Pick your design.',sub=gsub,foot='Wholesale & retail · bulk buyers, ask us for trade pricing'),
+        [dict(short=i[0],img=i[1],price=price) for i in items],cols,imh))
+    out.append(order_slide(N,SSET,ORDER))
+    return out
+ps=shawl_set('Plain Shawls',[('Emerald','pemerald'),('Black','pblack'),('Grey','pgrey'),('Royal Blue','proyal'),('Yellow','pyellow'),('Magenta','pmagenta'),('Dusty Pink','pdusty'),('Red','pred')],
+   95,'120 × 120 CM','29 COLOURS IN STOCK · R95 EACH','8 shown · 29 colours in stock · see them all at makkies.co.za',4,262)
+ss=shawl_set('Soft Touch Shawls',[('Green','sgreen'),('Blue','sblue'),('Red','sred'),('Charcoal','scharcoal'),('Mustard','smustard'),('Pink','spink')],
+   150,'130 × 130 CM','6 COLOURS IN STOCK · R150 EACH','Soft touch shawl · 130 × 130 cm',3,300)
+cs=shawl_set('Small Check Shawls',[('Multi Stripe','cmulti'),('Rose','crose'),('Navy Check','cnavy'),('Brown Check','cbrown'),('Black Check','cblack')],
+   60,'120 × 120 CM','5 DESIGNS IN STOCK · R60 EACH','Small check shawl · 120 × 120 cm',3,300,eyeword='DESIGNS')
+
+for name,slides in (('hats',hs),('xhosa',xs),('frill',fs),('elizabeth',es),('plain',ps),('soft',ss),('check',cs)):
     open(os.path.join(H,f'ig_{name}.html'),'w').write(f'<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="{FONTS}"><style>{CSS}</style></head><body>'+''.join(slides)+'</body></html>')
 print(len(hs),len(xs))
