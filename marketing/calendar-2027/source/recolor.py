@@ -38,10 +38,20 @@ for (yy_,xx_) in zip(*np.where(letters)):
     if wgt<=0: continue
     fill=mcolor(gy) if isM[yy_,xx_] else tex[gy-wy0,gx-wx0]
     out[gy,gx,:3]=wgt*fill+(1-wgt)*out[gy,gx,:3]
-# thin dark seam where the M meets the W
-seam=(dil(isM,2)&isW)|(dil(isW,2)&isM)
-for (yy_,xx_) in zip(*np.where(seam)):
-    out[yy_+y0,xx_+x0,:3]=(26,18,16)
+# white outline around each letter (and between M and W) so they stand off the black circle
+core=np.zeros((H,W),bool)
+for (yy_,xx_) in zip(*np.where(letters)):
+    core[yy_,xx_]=src[yy_+y0,xx_+x0].min()>120
+coreM=core&isM; coreW=core&isW
+seam=(dil(coreM,2)&coreW)|(dil(coreW,2)&coreM)
+ring=(lab==1)|(lab==3)
+outline=((dil(coreM,3)|dil(coreW,3))&~core&~dil(ring,1))|seam
+for (yy_,xx_) in zip(*np.where(outline)):
+    out[yy_+y0,xx_+x0,:3]=(255,255,255)
+# soften: one-pixel halo at 50% for anti-aliasing
+halo=(dil(outline,1)&~outline&~core&~dil(ring,1))
+for (yy_,xx_) in zip(*np.where(halo)):
+    out[yy_+y0,xx_+x0,:3]=0.5*out[yy_+y0,xx_+x0,:3]+0.5*255
 Image.fromarray(out.astype(np.uint8),'RGBA').save('assets/banner_colour.png')
 bg=Image.new('RGBA',ban.shape[1::-1],(192,145,30,255)); bg.alpha_composite(Image.open('assets/banner_colour.png'))
 bg.convert('RGB').crop((650,20,1050,330)).resize((800,620)).save('circle_test.jpg')
