@@ -1,0 +1,287 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link rel="stylesheet" href="fonts/local.css">
+<style>
+:root{--red:#C3312B;--red2:#D8232A;--ink:#221F1D;--cream:#F8F5EF;--yel:#FFC814;--blu:#1B4FD8;--grn:#0E9F57;--plum:#3A1F2E}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1080px;height:1920px;overflow:hidden;background:var(--ink)}
+#stage{position:relative;width:1080px;height:1920px;overflow:hidden;font-family:'Source Sans 3',sans-serif;color:var(--cream)}
+.scene{position:absolute;inset:0;opacity:0}
+.abs{position:absolute}
+.serif{font-family:'DM Serif Display',serif;font-weight:400}
+.mono{font-family:'Space Mono',monospace;font-weight:700}
+.stripes{position:absolute;left:0;width:100%;display:flex;flex-direction:column}
+.stripes i{display:block;height:22px}
+.s-y{background:var(--yel)}.s-b{background:var(--blu)}.s-r{background:var(--red2)}.s-g{background:var(--grn)}.s-p{background:var(--plum)}
+/* scene 1 */
+#s1{background:radial-gradient(circle at 50% 42%,#3b1714 0%,var(--ink) 62%)}
+#big10{left:0;width:1080px;top:470px;text-align:center;font-weight:900;font-size:470px;line-height:1;color:var(--red2);letter-spacing:-18px;text-shadow:0 14px 0 #7a1512,0 30px 60px rgba(0,0,0,.55)}
+#off{left:0;width:1080px;top:905px;text-align:center;font-weight:900;font-size:230px;line-height:1;letter-spacing:6px;color:var(--cream)}
+#entire{left:0;width:1080px;top:1170px;text-align:center;font-size:74px;font-weight:700;letter-spacing:3px;color:var(--yel)}
+#brand1{left:0;width:1080px;top:250px;text-align:center;font-size:40px;letter-spacing:12px;font-weight:700;color:#d9cfc2}
+/* scene 2 */
+#s2{background:var(--cream)}
+.card{position:absolute;left:110px;top:300px;width:860px;height:880px;border-radius:44px;overflow:hidden;box-shadow:0 40px 80px rgba(34,31,29,.35);background:#ddd}
+.card .ph{position:absolute;inset:-16%;background-size:cover;background-position:center 70%}
+.cat{position:absolute;left:150px;top:1215px;font-size:34px;letter-spacing:8px;font-weight:700;color:#8a7f73}
+.pname{position:absolute;left:150px;top:1260px;font-size:92px;color:var(--ink);line-height:1.05}
+.was{position:absolute;left:150px;top:1390px;font-size:64px;font-weight:700;color:#8a7f73}
+.was s{text-decoration:none;position:relative}
+.was s:after{content:'';position:absolute;left:-6px;right:-6px;top:52%;height:7px;background:var(--red2);transform-origin:left;transform:scaleX(var(--strike,0))}
+.now{position:absolute;left:150px;top:1455px;font-size:128px;font-weight:900;color:var(--red2);letter-spacing:-2px}
+.tag{position:absolute;right:70px;top:230px;width:210px;height:210px;border-radius:50%;background:var(--red2);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;font-weight:900;line-height:.9;box-shadow:0 14px 30px rgba(195,49,43,.45)}
+.tag b{font-size:84px}.tag span{font-size:40px;letter-spacing:4px}
+#s2top{left:0;width:1080px;top:175px;text-align:center;font-size:44px;font-weight:900;letter-spacing:6px;color:var(--ink)}
+#s2top em{font-style:normal;color:var(--red2)}
+/* scene 3 */
+#s3{background:var(--ink)}
+.tile{position:absolute;width:440px;height:300px;border-radius:30px;background-size:cover;background-position:center;box-shadow:0 20px 40px rgba(0,0,0,.5)}
+#s3h{left:0;width:1080px;top:1265px;text-align:center}
+#s3h .l1{font-size:58px;font-weight:700;color:#d9cfc2;letter-spacing:2px}
+#s3h .l2{font-size:112px;font-weight:900;line-height:1;margin-top:10px;color:var(--cream)}
+#s3h .l2 em{font-style:normal;color:var(--yel)}
+/* scene 4 */
+#s4{background:var(--red)}
+#s4bg{inset:0;background:repeating-linear-gradient(135deg,rgba(0,0,0,.07) 0 40px,transparent 40px 80px)}
+#s4top{left:0;width:1080px;top:250px;text-align:center;font-size:62px;font-weight:900;letter-spacing:8px;color:#fff}
+#ticket{left:90px;top:520px;width:900px;height:640px;background:var(--cream);border-radius:36px;color:var(--ink);box-shadow:0 40px 80px rgba(0,0,0,.35)}
+#ticket:before,#ticket:after{content:'';position:absolute;top:380px;width:84px;height:84px;border-radius:50%;background:var(--red)}
+#ticket:before{left:-42px}#ticket:after{right:-42px}
+#tk-l{position:absolute;left:0;width:100%;top:70px;text-align:center;font-size:44px;letter-spacing:10px;font-weight:700;color:#8a7f73}
+#code{position:absolute;left:0;width:100%;top:150px;text-align:center;font-size:122px;color:var(--ink);letter-spacing:2px}
+#caret{display:inline-block;width:10px;height:110px;background:var(--red2);vertical-align:-14px;margin-left:6px}
+#tk-dash{position:absolute;left:70px;right:70px;top:420px;border-top:8px dashed #d4c9bb}
+#tk-b{position:absolute;left:0;width:100%;top:480px;text-align:center;font-size:58px;font-weight:900;color:var(--red2)}
+#stamp{left:50px;top:1110px;width:330px;height:330px;border-radius:50%;border:12px solid var(--yel);background:var(--ink);color:var(--yel);display:flex;flex-direction:column;align-items:center;justify-content:center;font-weight:900;line-height:.88;box-shadow:0 20px 40px rgba(0,0,0,.4)}
+#stamp b{font-size:130px}#stamp span{font-size:58px;letter-spacing:6px}
+#s4foot{left:0;width:1080px;top:1470px;text-align:center;font-size:52px;font-weight:700;color:#fff;line-height:1.3}
+/* scene 5 */
+#s5{background:var(--cream)}
+#logo{left:290px;top:250px;width:500px}
+#s5name{left:0;width:1080px;top:540px;text-align:center;font-size:96px;color:var(--ink)}
+#s5sub{left:0;width:1080px;top:655px;text-align:center;font-size:36px;letter-spacing:9px;font-weight:700;color:#8a7f73}
+#url{left:0;width:1080px;top:790px;text-align:center;font-size:118px;font-weight:900;color:var(--red2);letter-spacing:-1px}
+#btn{left:240px;top:975px;width:600px;height:150px;border-radius:80px;background:var(--red2);color:#fff;display:flex;align-items:center;justify-content:center;font-size:62px;font-weight:900;letter-spacing:4px;box-shadow:0 18px 40px rgba(216,35,42,.45)}
+#remind{left:0;width:1080px;top:1180px;text-align:center;font-size:50px;color:var(--ink);font-weight:700}
+#remind .mono{background:var(--ink);color:var(--yel);padding:4px 22px;border-radius:14px;font-size:50px}
+#deliv{left:0;width:1080px;top:1290px;text-align:center;font-size:40px;color:#5e554c;line-height:1.35}
+#s6{background:radial-gradient(circle at 50% 40%,#3b1714 0%,var(--ink) 65%)}
+#s6top{left:0;width:1080px;top:230px;text-align:center;font-size:66px;font-weight:900;letter-spacing:6px;color:var(--cream)}
+#cal{left:290px;top:385px;width:500px;height:560px;border-radius:40px;background:#fff;overflow:hidden;box-shadow:0 40px 80px rgba(0,0,0,.5);transform-origin:50% 0}
+#cal .hd{height:150px;background:var(--red2);color:#fff;font-size:70px;font-weight:900;letter-spacing:8px;display:flex;align-items:center;justify-content:center}
+#cal .dd{font-family:'DM Serif Display',serif;font-size:330px;line-height:1;color:var(--ink);text-align:center;margin-top:30px}
+#s6date{left:0;width:1080px;top:960px;text-align:center;font-size:96px;font-weight:900;color:var(--yel);letter-spacing:2px}
+#s6stock{left:0;width:1080px;top:1110px;text-align:center;font-size:70px;font-weight:900;color:var(--cream)}
+#bar{left:160px;top:1240px;width:760px;height:56px;border-radius:30px;background:#4a403a;overflow:hidden}
+#barfill{position:absolute;left:0;top:0;bottom:0;width:100%;background:linear-gradient(90deg,var(--red2),#ff6a3d);border-radius:30px}
+#barlbl{left:160px;width:760px;top:1310px;text-align:center;font-size:38px;font-weight:700;letter-spacing:6px;color:#d9cfc2}
+#valid{left:0;width:1080px;top:1420px;text-align:center;font-size:38px;font-weight:700;color:var(--red2)}
+#flash{position:absolute;inset:0;background:#fff;opacity:0;pointer-events:none}
+</style></head>
+<body><div id="stage">
+
+<!-- S1 hook -->
+<div class="scene" id="s1">
+  <div class="stripes" id="s1stT" style="top:0"><i class="s-y"></i><i class="s-b"></i><i class="s-r"></i><i class="s-g"></i><i class="s-p"></i></div>
+  <div class="stripes" id="s1stB" style="bottom:0"><i class="s-p"></i><i class="s-g"></i><i class="s-r"></i><i class="s-b"></i><i class="s-y"></i></div>
+  <div class="abs" id="brand1">MAKKIE WHOLESALERS</div>
+  <div class="abs" id="big10">10%</div>
+  <div class="abs" id="off">OFF</div>
+  <div class="abs" id="entire"><span id="entireTxt"></span></div>
+</div>
+
+<!-- S2 products -->
+<div class="scene" id="s2">
+  <div class="stripes" style="top:0"><i class="s-y"></i><i class="s-b"></i><i class="s-r"></i><i class="s-g"></i></div>
+  <div class="abs" id="s2top">PRICES <em>WITH THE CODE</em></div>
+  <div id="prods"></div>
+</div>
+
+<!-- S3 range -->
+<div class="scene" id="s3">
+  <div id="tiles"></div>
+  <div class="abs" id="s3h"><div class="l1">Blankets · Beads · Traditional wear</div><div class="l2"><em>EVERYTHING</em><br>10% OFF</div></div>
+</div>
+
+<!-- S4 code -->
+<div class="scene" id="s4">
+  <div class="abs" id="s4bg"></div>
+  <div class="abs" id="s4top">USE CODE AT CHECKOUT</div>
+  <div class="abs" id="ticket">
+    <div id="tk-l">PROMO CODE</div>
+    <div id="code" class="mono"><span id="codeTxt"></span><span id="caret"></span></div>
+    <div id="tk-dash"></div>
+    <div id="tk-b">TO RECEIVE THE 10% DISCOUNT</div>
+  </div>
+  <div class="abs" id="stamp"><b>10%</b><span>OFF</span></div>
+  <div class="abs" id="s4foot">10% off your entire order<br>at makkies.co.za</div>
+</div>
+
+<!-- S6 urgency -->
+<div class="scene" id="s6">
+  <div class="stripes" style="top:0"><i class="s-y"></i><i class="s-b"></i><i class="s-r"></i><i class="s-g"></i><i class="s-p"></i></div>
+  <div class="abs" id="s6top">VALID ONLY UNTIL</div>
+  <div class="abs" id="cal"><div class="hd">OCTOBER</div><div class="dd">31</div></div>
+  <div class="abs" id="s6date">31 OCTOBER</div>
+  <div class="abs" id="s6stock">OR WHILE STOCKS LAST</div>
+  <div class="abs" id="bar"><div id="barfill"></div></div>
+  <div class="abs" id="barlbl">STOCK RUNNING LOW</div>
+</div>
+
+<!-- S5 end card -->
+<div class="scene" id="s5">
+  <div class="stripes" style="top:0"><i class="s-y"></i><i class="s-b"></i><i class="s-r"></i><i class="s-g"></i><i class="s-p"></i></div>
+  <img class="abs" id="logo" src="img/logo.png">
+  <div class="abs serif" id="s5name">Makkie Wholesalers</div>
+  <div class="abs" id="s5sub">BLANKETS · BEADS · TRADITIONAL GOODS</div>
+  <div class="abs" id="url">makkies.co.za</div>
+  <div class="abs" id="btn">SHOP NOW →</div>
+  <div class="abs" id="remind">Code <span class="mono">oct26insta</span> = 10% off</div>
+  <div class="abs" id="deliv">Delivery across South Africa<br>or collect in Marabastad, Pretoria</div>
+  <div class="abs" id="valid">Valid until 31 October or while stocks last</div>
+</div>
+
+<div id="flash"></div>
+</div>
+<script>
+const $=id=>document.getElementById(id);
+const clamp=(x,a=0,b=1)=>Math.max(a,Math.min(b,x));
+const lin=(t,a,b)=>clamp((t-a)/(b-a));
+const eOut=x=>1-Math.pow(1-x,3);
+const eIn=x=>x*x*x;
+const eBack=x=>{const c=1.9;return 1+(c+1)*Math.pow(x-1,3)+c*Math.pow(x-1,2)};
+const eEl=x=>x===0?0:x===1?1:Math.pow(2,-10*x)*Math.sin((x*10-.75)*2*Math.PI/3)+1;
+const mix=(a,b,p)=>a+(b-a)*p;
+const fmt=v=>'R'+v.toFixed(2).replace('.',',');
+
+const PRODUCTS=[
+ {img:'ukhamba',cat:'NDEBELE BLANKET',name:'Ukhamba',price:595,pos:'center 40%'},
+ {img:'elizabeth',cat:'BASOTHO BLANKET',name:'Elizabeth Basotho',price:275,pos:'60% 85%'},
+ {img:'umbhalo',cat:'NDEBELE BLANKET',name:'Umbhalo',price:595,pos:'center 50%'},
+ {img:'miniumbhalo',cat:'NDEBELE BLANKET',name:'Mini Umbhalo',price:365,pos:'center 60%'},
+ {img:'topcheck',cat:'SHAWLS & THROWS',name:'Top Check Shawl',price:275,pos:'60% 85%'},
+];
+const P0=2.0, PD=1.2;
+let h='';
+PRODUCTS.forEach((p,i)=>{h+=`<div class="pr" id="pr${i}" style="position:absolute;inset:0">
+ <div class="card"><div class="ph" style="background-image:url(img/${p.img}.jpg);background-position:${p.pos}"></div></div>
+ <div class="cat">${p.cat}</div><div class="pname serif">${p.name}</div>
+ <div class="was"><s>${fmt(p.price)}</s></div><div class="now">${fmt(Math.round(p.price*90)/100)}</div>
+ <div class="tag"><b>-10%</b><span>OFF</span></div></div>`});
+$('prods').innerHTML=h;
+
+const TILES=[['czech',60,170],['ndebele',580,240],['berets',60,500],['tribal',580,570],['chinese',60,830],['tekkies',580,900]];
+$('tiles').innerHTML=TILES.map((t,i)=>`<div class="tile" id="t${i}" style="left:${t[1]}px;top:${t[2]}px;background-image:url(img/${t[0]}.jpg)"></div>`).join('');
+
+const SC=[['s1',0,2.0],['s2',2.0,8.0],['s3',8.0,10.0],['s4',10.0,15.5],['s6',15.5,18.5],['s5',18.5,22.1]];
+const ENTIRE='ON YOUR ENTIRE ORDER', CODE='oct26insta';
+
+function render(t){
+  for(const [id,a,b] of SC){const on=t>=a&&t<b;$(id).style.opacity=on?1:0;$(id).style.display=on?'block':'none'}
+  let flash=0;
+  for(const c of [0.15,2.0,8.0,10.0,15.5,18.5]){const d=t-c;if(d>=0&&d<0.18)flash=Math.max(flash,(1-d/0.18)*0.55)}
+  $('flash').style.opacity=flash;
+
+  // ---- S1
+  if(t<2.0){
+    const st=eOut(lin(t,0,.35));
+    $('s1stT').style.transform=`translateX(${(1-st)*-1080}px)`;
+    $('s1stB').style.transform=`translateX(${(1-st)*1080}px)`;
+    $('brand1').style.opacity=lin(t,.2,.5);
+    const p=lin(t,.05,.3);
+    const sh=t>.15&&t<.5?Math.sin(t*90)*14*(1-lin(t,.15,.5)):0;
+    $('big10').style.transform=`translate(${sh}px,${sh*.6}px) scale(${mix(3.2,1,eOut(p))}) rotate(${mix(-12,-3,eOut(p))}deg)`;
+    $('big10').style.opacity=p>0?1:0;
+    const po=eBack(lin(t,.45,.75));
+    $('off').style.transform=`translateY(${(1-po)*160}px) scale(${.6+.4*po})`;$('off').style.opacity=lin(t,.45,.6);
+    const n=Math.floor(lin(t,.85,1.45)*ENTIRE.length);
+    $('entireTxt').textContent=ENTIRE.slice(0,n);
+    const pulse=1+0.04*Math.sin(Math.max(0,t-1.5)*Math.PI*4);
+    $('entire').style.transform=`scale(${t>1.5?pulse:1})`;
+    // exit
+    const ex=eIn(lin(t,1.82,2.0));
+    $('s1').style.transform=`scale(${1+ex*.4})`;$('s1').style.filter=`blur(${ex*12}px)`;
+  }
+  // ---- S2
+  if(t>=2.0&&t<8.0){
+    $('s2top').style.opacity=lin(t,2.05,2.3);
+    PRODUCTS.forEach((p,i)=>{
+      const a=P0+i*PD, e=$('pr'+i), lt=t-a;
+      if(lt<0||lt>=PD){e.style.display='none';return}
+      e.style.display='block';
+      const inp=eOut(lin(lt,0,.28)), outp=eIn(lin(lt,PD-.14,PD));
+      const card=e.querySelector('.card');
+      card.style.transform=`translateX(${(1-inp)*1100-outp*1100}px) rotate(${(1-inp)*8-outp*8}deg)`;
+      e.querySelector('.ph').style.transform=`scale(${1.0+lt*.08})`;
+      const txt=lin(lt,.12,.3);
+      for(const k of ['.cat','.pname','.was']){const q=e.querySelector(k);q.style.opacity=txt*(1-outp);q.style.transform=`translateY(${(1-eOut(txt))*40}px)`}
+      e.querySelector('.was s').style.setProperty('--strike',eOut(lin(lt,.32,.45)));
+      const np=lin(lt,.42,.6);
+      const now=e.querySelector('.now');now.style.opacity=np*(1-outp);now.style.transform=`scale(${eBack(np)})`;now.style.transformOrigin='left center';
+      const tg=e.querySelector('.tag');const tp=lin(lt,.25,.5);tg.style.opacity=(tp>0?1:0)*(1-outp);
+      tg.style.transform=`scale(${eEl(tp)}) rotate(${-15+Math.sin(lt*6)*4}deg)`;
+    });
+  }
+  // ---- S3
+  if(t>=8.0&&t<10.0){const u=t-2.0;
+    TILES.forEach((_,i)=>{const e=$('t'+i);const p=lin(u,6.0+i*.09,6.0+i*.09+.35);
+      const drift=(u-6)*(i%2?-14:14);
+      e.style.opacity=p>0?1:0;e.style.transform=`translateY(${drift}px) scale(${eBack(p)}) rotate(${(i%2?3:-3)*(1-p)+ (i%2?1.5:-1.5)}deg)`});
+    const hp=lin(u,6.5,6.8);
+    $('s3h').style.opacity=hp;$('s3h').querySelector('.l2').style.transform=`scale(${eBack(hp)})`;
+    const ex=eIn(lin(u,7.85,8.0));$('s3').style.transform=`translateY(${-ex*300}px)`;$('s3').style.opacity=1-ex*.6;
+  }
+  // ---- S4
+  if(t>=10.0&&t<15.5){
+    $('s4bg').style.transform=`translateX(${((t-10)*60)%113}px)`;
+    $('s4top').style.opacity=lin(t,10.05,10.3);
+    $('s4top').style.transform=`scale(${t>12.5?1+.04*Math.sin((t-12.5)*Math.PI*4):1})`;
+    const tk=eBack(lin(t,10.05,10.45));
+    const n=Math.floor(lin(t,10.5,11.7)*CODE.length);
+    $('codeTxt').textContent=CODE.slice(0,n);
+    $('caret').style.opacity=(n<CODE.length||Math.floor(t*3)%2===0)?1:0;
+    const glow=t>11.7?.5+.5*Math.sin((t-11.7)*7):0;
+    $('code').style.textShadow=`0 0 ${glow*24}px rgba(216,35,42,${glow*.6})`;
+    const bp=lin(t,11.6,11.9);
+    $('tk-b').style.opacity=bp;$('tk-b').style.transform=`scale(${eBack(bp)})`;
+    const sp=lin(t,12.0,12.25);
+    $('stamp').style.opacity=sp>0?1:0;
+    $('stamp').style.transform=`scale(${mix(2.6,1,eOut(sp))}) rotate(${mix(-40,-12,eOut(sp))}deg)`;
+    const sh=t>12.2&&t<12.45?Math.sin(t*120)*10:0;
+    $('ticket').style.transform=`translate(${sh}px,${(1-tk)*700}px) rotate(${(1-tk)*-10 - 1.5}deg)`;
+    $('s4foot').style.opacity=lin(t,12.5,12.8);
+    const ex=eIn(lin(t,15.35,15.5));$('s4').style.transform=`scale(${1-ex*.15})`;$('s4').style.filter=`blur(${ex*10}px)`;
+  }
+  // ---- S6 urgency
+  if(t>=15.5&&t<18.5){
+    $('s6top').style.opacity=lin(t,15.55,15.8);
+    const cp=lin(t,15.6,16.1);
+    $('cal').style.opacity=cp>0?1:0;
+    $('cal').style.transform=`translateY(${(1-eOut(cp))*-700}px) rotate(${Math.sin(Math.max(0,t-15.9)*5)*6*Math.exp(-Math.max(0,t-15.9)*2.2)}deg)`;
+    const dp=lin(t,16.1,16.35);
+    $('s6date').style.opacity=dp;$('s6date').style.transform=`scale(${eBack(dp)})`;
+    const sp=lin(t,16.6,16.85);
+    $('s6stock').style.opacity=sp;$('s6stock').style.transform=`translateY(${(1-eOut(sp))*50}px)`;
+    $('bar').style.opacity=lin(t,16.7,16.9);$('barlbl').style.opacity=lin(t,16.9,17.1)*(Math.floor(t*4)%2?1:.45);
+    $('barfill').style.width=(100-82*eOut(lin(t,16.8,18.2)))+'%';
+    const ex=eIn(lin(t,18.35,18.5));$('s6').style.transform=`scale(${1+ex*.3})`;$('s6').style.filter=`blur(${ex*10}px)`;
+  }
+  // ---- S5
+  if(t>=18.5){const u=t-6.5;
+    const lp=lin(u,12.0,12.45);
+    $('logo').style.transform=`scale(${eEl(lp)}) rotate(${(1-lp)*-20}deg)`;$('logo').style.opacity=lp>0?1:0;
+    $('s5name').style.opacity=lin(u,12.25,12.5);$('s5sub').style.opacity=lin(u,12.35,12.6);
+    const up=eBack(lin(u,12.4,12.7));
+    $('url').style.opacity=lin(u,12.4,12.55);$('url').style.transform=`scale(${up})`;
+    const bp=eBack(lin(u,12.6,12.9));
+    const pulse=u>13.0?1+.05*Math.sin((u-13)*Math.PI*4):1;
+    $('btn').style.transform=`translateY(${(1-bp)*80}px) scale(${pulse})`;$('btn').style.opacity=lin(u,12.6,12.75);
+    $('remind').style.opacity=lin(u,12.8,13.05);
+    $('deliv').style.opacity=lin(u,13.0,13.25);
+    $('valid').style.opacity=lin(u,13.2,13.45);
+  }
+}
+window.render=render;
+render(0);
+</script>
+</body></html>

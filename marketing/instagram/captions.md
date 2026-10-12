@@ -11,7 +11,7 @@ Tip: put makkies.co.za in your bio, since links in captions aren't clickable.
 
 Blankets, beads, shawls, hats, traditional wear: all of it is 10% off on makkies.co.za 🛍️
 
-🏷️ Use code oct26tiktok at checkout to receive the 10% discount
+🏷️ Use code oct26insta at checkout to receive the 10% discount
 ⏳ Valid only until 31 October or while stocks last
 🚚 Delivery across SA · PAXI to any PEP · or collect in Marabastad
 
