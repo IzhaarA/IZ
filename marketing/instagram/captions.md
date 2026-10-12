@@ -1,89 +1,144 @@
-# Instagram captions: oct26tiktok 10% off
+# Instagram captions: Makkie Wholesalers carousels
 
-## Reel (makkies-oct26-reel.mp4)
-🚨 10% OFF YOUR ENTIRE ORDER 🚨
+Paste each caption with its carousel. Every caption has 5 hashtags.
+Tip: put makkies.co.za in your bio, since links in captions aren't clickable.
 
-Basotho & Ndebele blankets, shawls, Czech & Chinese seed beads, berets, tekkies & more. Everything is 10% off!
+---
 
-🛒 Shop at makkies.co.za (link in bio 🔗)
+## 1. 10% OFF promo (makkies-oct26-carousel-1..5.jpg, or the Reel makkies-oct26-reel.mp4)
+
+10% OFF EVERYTHING 🚨 Yes, your entire order.
+
+Blankets, beads, shawls, hats, traditional wear: all of it is 10% off on makkies.co.za 🛍️
+
 🏷️ Use code oct26tiktok at checkout to receive the 10% discount
 ⏳ Valid only until 31 October or while stocks last
-🚚 Delivery across South Africa, PAXI to any PEP, or collect in Marabastad, Pretoria
+🚚 Delivery across SA · PAXI to any PEP · or collect in Marabastad
 
-#basothoblanket #ndebele #seedbeads #pretoria #southafrica
+Tag someone who needs a new blanket this season 👇
 
-## Carousel (makkies-oct26-carousel-1..5.jpg)
-Swipe to see what 10% off looks like 👉
+#makkiewholesalers #basothoblanket #seedbeads #pretoria #southafrica
 
-Use code oct26tiktok at checkout on makkies.co.za to receive 10% off your ENTIRE order. Blankets, beads, shawls & traditional wear included.
+---
 
-⏳ Only until 31 October or while stocks last.
-📍 Shop D4, Pretoria Oriental Complex, Marabastad · 💬 WhatsApp 072 323 5469
+## 2. Ndebele Painted Hats (makkies-ndebele-hats-carousel-01..11.jpg)
 
-#basothoblanket #ndebele #seedbeads #pretoria #southafrica
+Hand-painted. One of a kind. Proudly Ndebele 🎨
 
-## Ndebele Painted Hats carousel (makkies-ndebele-hats-carousel-01..11.jpg)
-Hand-painted Ndebele hats 🎨 8 styles in stock, from just R150!
+8 styles in stock: Beige, White, Beaded, Black, Brown, Brown Pattern and our Women's Hat, R200 each. Plus the Painted Cap, only R150 🧢
 
-Beige, White, Beaded, Black, Brown, Brown Pattern & the Women’s Hat: R200 each. Painted Cap: R150. Swipe to pick your favourite 👉
+Swipe to choose your favourite 👉 Which one are you wearing to the next family function?
 
-🛒 Order at makkies.co.za or WhatsApp 072 323 5469
-🚚 Delivery across SA · PAXI to any PEP · or collect in Marabastad, Pretoria
-Bulk buyers: ask us for wholesale pricing.
+🛒 makkies.co.za · 💬 WhatsApp 072 323 5469
+🚚 Delivery across SA · PAXI to any PEP · or collect in Marabastad
+Buying for a group or your shop? Ask us for wholesale prices.
 
 #ndebele #ndebelehat #traditionalwear #pretoria #southafrica
 
-## Xhosa Tribal Stripe carousel (makkies-xhosa-stripe-carousel-01..06.jpg)
+---
+
+## 3. Xhosa Tribal Stripe (makkies-xhosa-stripe-carousel-01..06.jpg)
+
 One classic. Three colours. 🖤💜❤️
 
-Our Xhosa Tribal Stripe blanket in Black Stripe (180 × 200 cm), Purple Stripe & Red Stripe (180 × 220 cm), R300 each. Felt finish, 95% polyester / 5% cotton.
+The Xhosa Tribal Stripe blanket, a timeless piece for ceremonies, umgidi and everyday pride.
 
-🛒 Order at makkies.co.za or WhatsApp 072 323 5469
-🚚 Delivery across SA · PAXI to any PEP · or collect in Marabastad, Pretoria
+• Black Stripe, 180 × 200 cm
+• Purple Stripe, 180 × 220 cm
+• Red Stripe, 180 × 220 cm
+
+R300 each · felt finish · 95% polyester, 5% cotton
+
+Which stripe is yours? Comment below 👇
+
+🛒 makkies.co.za · 💬 WhatsApp 072 323 5469
+🚚 Delivery across SA · PAXI to any PEP · or collect in Marabastad
 
 #xhosa #xhosablanket #traditionalwear #pretoria #southafrica
 
-## Basotho Frill carousel (makkies-basotho-frill-carousel-01..06.jpg)
-The Basotho Frill 🤍 fringed heritage blanket in Black/White, Red/White & Grey/White. 150 × 160 cm, only R225 each!
+---
 
-🛒 Order at makkies.co.za or WhatsApp 072 323 5469
-🚚 Delivery across SA · PAXI to any PEP · or collect in Marabastad, Pretoria
+## 4. Basotho Frill (makkies-basotho-frill-carousel-01..06.jpg)
 
-#basothoblanket #basotho #traditionalwear #pretoria #southafrica
+Heritage, with a frill 🤍
 
-## Elizabeth Basotho carousel (makkies-elizabeth-basotho-carousel-01..08.jpg)
-Elizabeth Basotho blanket in 5 beautiful colours ✨ Black/White, Blue, Orange, Red & Turquoise. 150 × 160 cm, R275 each.
+The Basotho Frill blanket: the classic houndstooth-and-swirl design, finished with a soft fringe. Black/White, Red/White and Grey/White.
 
-Swipe to pick your colour 👉
+📏 150 × 160 cm
+💰 Only R225 each
 
-🛒 Order at makkies.co.za or WhatsApp 072 323 5469
-🚚 Delivery across SA · PAXI to any PEP · or collect in Marabastad, Pretoria
+Swipe to see all three 👉
+
+🛒 makkies.co.za · 💬 WhatsApp 072 323 5469
+🚚 Delivery across SA · PAXI to any PEP · or collect in Marabastad
+
+#basothoblanket #basotho #seanamarena #pretoria #southafrica
+
+---
+
+## 5. Elizabeth Basotho (makkies-elizabeth-basotho-carousel-01..08.jpg)
+
+Five colours. One iconic blanket ✨
+
+The Elizabeth Basotho blanket in Black/White, Blue, Orange, Red and Turquoise. Bold heritage design that looks just as good on the couch as it does on your shoulders.
+
+📏 150 × 160 cm
+💰 R275 each
+
+Which colour would you pick? Tell us in the comments 👇
+
+🛒 makkies.co.za · 💬 WhatsApp 072 323 5469
+🚚 Delivery across SA · PAXI to any PEP · or collect in Marabastad
 
 #basothoblanket #basotho #heritageblanket #pretoria #southafrica
 
-## Plain Shawls carousel (makkies-plain-shawls-carousel-01..11.jpg)
-29 colours. One price. R95 each! 🌈
+---
 
-Our Plain Shawls (120 × 120 cm) in Emerald, Black, Grey, Royal Blue, Yellow, Magenta, Dusty Pink, Red… and 21 more colours on makkies.co.za. Swipe to pick yours 👉
+## 6. Plain Shawls (makkies-plain-shawls-carousel-01..11.jpg)
 
-🛒 Order at makkies.co.za or WhatsApp 072 323 5469
-🚚 Delivery across SA · PAXI to any PEP · or collect in Marabastad, Pretoria
+29 colours. One price. R95 🌈
+
+Our Plain Shawls are the easy way to match any outfit, uniform or occasion: church, weddings, umembeso or everyday.
+
+Here's 8 of them: Emerald, Black, Grey, Royal Blue, Yellow, Magenta, Dusty Pink and Red. See all 29 on makkies.co.za 👀
+
+📏 120 × 120 cm · 💰 R95 each
+Need a whole group in one colour? WhatsApp us for bulk pricing.
+
+🛒 makkies.co.za · 💬 WhatsApp 072 323 5469
+🚚 Delivery across SA · PAXI to any PEP · or collect in Marabastad
 
 #shawls #plainshawl #traditionalwear #pretoria #southafrica
 
-## Soft Touch Shawls carousel (makkies-soft-touch-shawls-carousel-01..09.jpg)
-Soft, warm and beautifully fringed 🧣 Soft Touch Shawls (130 × 130 cm) in Green, Blue, Red, Charcoal, Mustard & Pink, R150 each.
+---
 
-🛒 Order at makkies.co.za or WhatsApp 072 323 5469
-🚚 Delivery across SA · PAXI to any PEP · or collect in Marabastad, Pretoria
+## 7. Soft Touch Shawls (makkies-soft-touch-shawls-carousel-01..09.jpg)
 
-#shawls #softtouchshawl #traditionalwear #pretoria #southafrica
+Soft. Warm. Beautifully fringed 🧣
 
-## Small Check Shawls carousel (makkies-small-check-shawls-carousel-01..08.jpg)
-Only R60! 😍 Small Check Shawls (120 × 120 cm) in Multi Stripe, Rose, Navy Check, Brown Check & Black Check.
+The Soft Touch Shawl, now in 6 colours: Green, Blue, Red, Charcoal, Mustard and Pink. The perfect cosy layer for chilly mornings and evening functions.
 
-🛒 Order at makkies.co.za or WhatsApp 072 323 5469
-🚚 Delivery across SA · PAXI to any PEP · or collect in Marabastad, Pretoria
-Bulk buyers: ask us for wholesale pricing.
+📏 130 × 130 cm · 💰 R150 each
 
-#shawls #checkshawl #traditionalwear #pretoria #southafrica
+Swipe and pick your shade 👉
+
+🛒 makkies.co.za · 💬 WhatsApp 072 323 5469
+🚚 Delivery across SA · PAXI to any PEP · or collect in Marabastad
+
+#shawls #softtouchshawl #winterfashion #pretoria #southafrica
+
+---
+
+## 8. Small Check Shawls (makkies-small-check-shawls-carousel-01..08.jpg)
+
+Only R60?! Yes really 😍
+
+Small Check Shawls in 5 designs: Multi Stripe, Rose, Navy Check, Brown Check and Black Check. Light, stylish and easy on the pocket. Grab one for yourself and one for your mom 💝
+
+📏 120 × 120 cm · 💰 R60 each
+Buying for resale? Ask us for wholesale prices.
+
+🛒 makkies.co.za · 💬 WhatsApp 072 323 5469
+🚚 Delivery across SA · PAXI to any PEP · or collect in Marabastad
+
+#shawls #checkshawl #affordablefashion #pretoria #southafrica
