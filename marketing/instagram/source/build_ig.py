@@ -158,6 +158,24 @@ nt=coll('Ndebele Tekkies','NDEBELE COLLECTION','ntekndebele','3 STYLES · UK3–
   dict(n='Ndebele Tekkies',s='Ndebele Painted',i='ntekndebele',p=200,e='HAND-PAINTED · UK3–UK8 · CANVAS')],
   'Pick your pair.','Hand-finished canvas tekkies · UK3–UK8',3,520)
 
-for name,slides in (('hats',hs),('xhosa',xs),('frill',fs),('elizabeth',es),('plain',ps),('soft',ss),('check',cs),('nblankets',nb),('naccess',na),('ntekkies',nt)):
+
+STSET=dict(bg='#F6F0E9',acc='#8A5A2B',bt='border_straw_top.png',bb='border_straw_bot.png')
+def simple_set(SET,title,eyebrow,items,price,size,pill,gtitle,gsub,cols,imh):
+    N=len(items)+3
+    out=[cover(N,SET,dict(eyebrow=eyebrow,title=title,img=items[0][1],price=price,pill=pill))]
+    for k,(nm,img) in enumerate(items):
+        out.append(product_slide(N,k+1,SET,dict(name=nm,img=img,price=price,eyebrow=f'{k+1:02d}<span class="ln"></span>{size}')))
+    out.append(grid_slide(N,N-2,SET,dict(title=gtitle,sub=gsub,foot='Wholesale & retail · bulk buyers, ask us for trade pricing'),
+        [dict(short=i[0],img=i[1],price=price) for i in items],cols,imh))
+    out.append(order_slide(N,SET,ORDER))
+    return out
+ws=shawl_set('Small Wooly Shawls',[('Camel','wcamel'),('Mauve','wmauve'),('Grey','wgrey'),('Brown','wbrown'),('Black','wblack')],
+   90,'100 × 100 CM','5 COLOURS IN STOCK · R90 EACH','Small wooly shawl · 100 × 100 cm',3,300)
+sts=simple_set(STSET,'Straw Hats','HATS · CLASSIC STRAW',[('Cream White','stcream'),('Black','stblack'),('Brown','stbrown'),('White','stwhite')],
+   125,'SIZE 58','4 COLOURS IN STOCK · R125 EACH','Pick your colour.','Classic straw hat · size 58',2,300)
+pas=simple_set(STSET,'Pacino Felted Hats',"MEN'S HATS · FELTED",[('Black','pablack'),('Brown','pabrown'),('Grey','pagrey'),('Navy','panavy')],
+   125,'SIZE 57','4 COLOURS IN STOCK · R125 EACH','Pick your colour.',"Men's felted hat · size 57",2,300)
+
+for name,slides in (('hats',hs),('xhosa',xs),('frill',fs),('elizabeth',es),('plain',ps),('soft',ss),('check',cs),('nblankets',nb),('naccess',na),('ntekkies',nt),('wooly',ws),('straw',sts),('pacino',pas)):
     open(os.path.join(H,f'ig_{name}.html'),'w').write(f'<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="{FONTS}"><style>{CSS}</style></head><body>'+''.join(slides)+'</body></html>')
 print(len(hs),len(xs))

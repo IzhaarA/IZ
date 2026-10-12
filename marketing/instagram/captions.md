@@ -200,3 +200,53 @@ Comfortable, colourful and made to be noticed. Which pair is yours? 👇
 🚚 Delivery across SA · PAXI to any PEP · or collect in Marabastad
 
 #ndebele #ndebeletekkies #traditionalwear #pretoria #southafrica
+
+---
+
+## 12. Small Wooly Shawls (makkies-small-wooly-shawls-carousel-01..08.jpg)
+
+Cosy, fringed and only R90 🤎
+
+Small Wooly Shawls in 5 warm colours: Camel, Mauve, Grey, Brown and Black. The perfect throw-on layer for cool mornings, church or evening functions.
+
+📏 100 × 100 cm · 💰 R90 each
+Buying for resale? Ask us for wholesale prices.
+
+🛒 makkies.co.za · 💬 WhatsApp 072 323 5469
+🚚 Delivery across SA · PAXI to any PEP · or collect in Marabastad
+
+#shawls #woolyshawl #winterfashion #pretoria #southafrica
+
+---
+
+## 13. Straw Hats (makkies-straw-hats-carousel-01..07.jpg)
+
+Classic straw. Effortless style 👒
+
+Our Straw Hats come in 4 colours: Cream White, Black, Brown and White, each with a smart black band. Perfect for sunny days, weddings and weekend outings ☀️
+
+📏 Size 58 · 💰 R125 each
+
+Which colour suits you? 👇
+
+🛒 makkies.co.za · 💬 WhatsApp 072 323 5469
+🚚 Delivery across SA · PAXI to any PEP · or collect in Marabastad
+
+#strawhat #hats #summerstyle #pretoria #southafrica
+
+---
+
+## 14. Pacino Felted Hats (makkies-pacino-hats-carousel-01..07.jpg)
+
+Gentlemen, this one's for you 🎩
+
+The Pacino men's felted hat with a feather detail, in Black, Brown, Grey and Navy. Sharp enough for a wedding, smart enough for Sunday.
+
+📏 Size 57 · 💰 R125 each
+
+Tag the man who needs this hat 👇
+
+🛒 makkies.co.za · 💬 WhatsApp 072 323 5469
+🚚 Delivery across SA · PAXI to any PEP · or collect in Marabastad
+
+#menshats #fedora #mensstyle #pretoria #southafrica
