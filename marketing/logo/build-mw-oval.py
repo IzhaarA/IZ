@@ -61,7 +61,7 @@ mid={a_:(np.min(v),np.max(v)) for a_,v in bins.items() if len(v)>3}
 th_=np.median([hi-lo for lo,hi in mid.values()]); print('ring thickness',th_/S)
 thin=[a_ for a_,(lo,hi) in mid.items() if hi-lo<1.35*th_]
 # walk the ring centre line and place a dash every STEP pixels of arc length
-step=10*S; lw=int(1.6*S)
+step=10*S; lw=int(2.3*S)
 pts=[]
 for a_ in sorted(thin):
     lo,hi=mid[a_]; rm=(lo+hi)/2; t=np.radians(a_)
