@@ -19,7 +19,7 @@ function logOrder(o) {
       payment: o.pay === 'eft' ? 'EFT' : o.pay === 'payfast' ? 'Card (PayFast)' : 'WhatsApp',
       delivery: o.mode === 'collect' ? 'Collect' : o.mode === 'paxi' ? 'PAXI' : 'Courier',
       address: so.addr,
-      lines: so.lines, sub: o.sub, sh: o.sh || 0, tot: o.tot
+      lines: so.lines, sub: o.sub, promo: o.promo || '', disc: o.disc || 0, sh: o.sh || 0, tot: o.tot
     };
     // text/plain + no-cors = no browser pre-check; keepalive lets it finish
     // even when the page moves on (WhatsApp / PayFast).
@@ -30,11 +30,17 @@ function logOrder(o) {
 /*
  * 3) In `function placeOrder(e)`, right after the line
  *
- *      const o = {no: orderNo(), lines: ls, sub, sh, tot, mode, pay, c};
+ *      const o = {no: orderNo(), lines: ls, sub, disc, promo: ...};
  *
  *    add:
  *
  *      logOrder(o);
  *
  *    That one spot covers every payment type (WhatsApp, EFT and card).
+ */
+/*
+ * 4) (Promo fix) oct26insta is advertised on Instagram but is missing from the
+ *    site. Find the line starting `const PROMOS = {` and replace it with:
+ *
+ *      const PROMOS = { 'oct26tiktok': { pct: 10, from: '2026-10-12', to: '2026-10-31' }, 'oct26insta': { pct: 10, from: '2026-10-12', to: '2026-10-31' } };
  */
