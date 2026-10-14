@@ -277,3 +277,30 @@ Buying for a group, school or church? Ask us for wholesale prices.
 NEW IN: Lamberet berets 🔥 100% wool, made in South Africa, 8 colours, R195 each. Which colour are you choosing? 👇 Shop at makkies.co.za or WhatsApp 072 323 5469 🚚 We deliver across SA
 
 #beret #woolberet #proudlysouthafrican #pretoria #southafrica
+
+---
+
+## 16. Plain Berets (makkies-plain-berets-carousel-01..10.jpg)
+
+Classic plain berets, now in stock 🧢
+
+7 colours to match any uniform, church outfit or everyday look:
+Black, Blue, Cream White, Green, Navy, Red and Yellow.
+
+📏 Size 12'' · 💰 Only R85 each
+
+Swipe and pick your colour 👉
+
+🛒 makkies.co.za · 💬 WhatsApp 072 323 5469
+🚚 Delivery across SA · PAXI to any PEP · or collect in Marabastad
+Buying for a group, school or church? Ask us for wholesale prices.
+
+#beret #berets #churchuniform #pretoria #southafrica
+
+---
+
+## TikTok: Plain Berets video (makkies-plain-berets-tiktok.mp4)
+
+Plain berets in 7 colours, only R85 each 🔥 Black, blue, cream white, green, navy, red and yellow. Which colour do you need? 👇 Shop at makkies.co.za or WhatsApp 072 323 5469 🚚 We deliver across SA
+
+#beret #berets #churchuniform #pretoria #southafrica

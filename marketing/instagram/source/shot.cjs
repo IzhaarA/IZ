@@ -3,7 +3,7 @@ const path=require('path');
 (async()=>{
   const b=await chromium.launch({executablePath:'/opt/pw-browsers/chromium-1194/chrome-linux/chrome'});
   const p=await b.newPage({viewport:{width:1080,height:1350}});
-  for(const [name,out] of [['lamberets','makkies-lamberets-carousel']]){
+  for(const [name,out] of [['lamberets','makkies-lamberets-carousel'],['plainberets','makkies-plain-berets-carousel']]){
     await p.goto('file://'+path.join(__dirname,`ig_${name}.html`));
     await p.evaluate(()=>document.fonts.ready); await p.waitForTimeout(500);
     const els=await p.$$('.slide');

@@ -39,7 +39,7 @@ def cover(n,set_,c):
 <div class="a eyebrow" style="top:150px">{c['eyebrow']}</div>
 <div class="a serif" style="left:0;width:100%;top:190px;text-align:center;font-size:84px;line-height:1">{c['title']}</div>
 <img class="a bt" src="ph/{set_['bt']}" style="top:300px">
-<div class="a photo" style="top:420px;height:600px"><img src="ph/{c['img']}.png"></div>
+<div class="a photo" style="top:420px;height:600px;{c.get('pstyle','')}"><img src="ph/{c['img']}.png"></div>
 <div class="a price" style="right:120px;top:380px"><small>{c.get('pre','ONLY')}</small><b>R{c['price']}</b></div>
 <div class="a" style="left:0;width:100%;top:1052px;text-align:center"><span class="pill">{c['pill']}</span></div>
 <img class="a bb" src="ph/{set_['bb']}"><div class="a foot">Swipe to see every style →</div></div>'''
@@ -184,13 +184,24 @@ OVAL_ORDER='<img class="a" src="ph/mw_oval.png" style="left:400px;top:318px;widt
 lams=[('Bottle Green','lam_bottle-green'),('Maroon','lam_maroon'),('Mustard','lam_mustard'),('Emerald Green','lam_emerald'),
       ('Navy','lam_navy'),('Royal Blue','lam_royal-blue'),('Pink','lam_pink'),('Black','lam_black')]
 NL=len(lams)+3
-ls=[cover(NL,HATSET,dict(eyebrow='BERETS · LAMBERETS',title='Lamberet Berets',img='lam_group',price=195,pill='8 COLOURS · 100% WOOL · R195',logo=OVAL_COVER))]
+FANSTYLE='box-shadow:none;border-radius:0;height:520px;top:450px'
+ls=[cover(NL,HATSET,dict(eyebrow='BERETS · LAMBERETS',title='Lamberet Berets',img='lam_fan',price=195,pill='8 COLOURS · 100% WOOL · R195',logo=OVAL_COVER,pstyle=FANSTYLE))]
 for k,(nm,img) in enumerate(lams):
     ls.append(product_slide(NL,k+1,HATSET,dict(name=nm,img=img,price=195,eyebrow=f'{k+1:02d}<span class="ln"></span>12\'\' CROWN · 100% WOOL')))
 ls.append(grid_slide(NL,NL-2,HATSET,dict(title='Pick your colour.',sub='Lamberet berets · 100% wool · made in South Africa',foot='Wholesale & retail · bulk buyers, ask us for trade pricing'),
    [dict(short=x[0],img=x[1],price=195) for x in lams],4,214))
 ls.append(order_slide(NL,HATSET,ORDER,logo=OVAL_ORDER))
 
-for name,slides in (('hats',hs),('xhosa',xs),('frill',fs),('elizabeth',es),('plain',ps),('soft',ss),('check',cs),('nblankets',nb),('naccess',na),('ntekkies',nt),('wooly',ws),('straw',sts),('pacino',pas),('lamberets',ls)):
+# Plain Berets (new MW oval, no shelf photo)
+pbs=[('Black','pb_black'),('Blue','pb_blue'),('Cream White','pb_cream-white'),('Green','pb_green'),('Navy','pb_navy'),('Red','pb_red'),('Yellow','pb_yellow')]
+NP=len(pbs)+3
+pls=[cover(NP,HATSET,dict(eyebrow='BERETS · PLAIN',title='Plain Berets',img='plain_fan',price=85,pill='7 COLOURS · SIZE 12\'\' · R85 EACH',logo=OVAL_COVER,pstyle=FANSTYLE))]
+for k,(nm,img) in enumerate(pbs):
+    pls.append(product_slide(NP,k+1,HATSET,dict(name=nm,img=img,price=85,eyebrow=f'{k+1:02d}<span class="ln"></span>SIZE 12\'\'')))
+pls.append(grid_slide(NP,NP-2,HATSET,dict(title='Pick your colour.',sub="Plain berets · size 12'' · R85 each",foot='Wholesale & retail · bulk buyers, ask us for trade pricing'),
+   [dict(short=x[0],img=x[1],price=85) for x in pbs],4,214))
+pls.append(order_slide(NP,HATSET,ORDER,logo=OVAL_ORDER))
+
+for name,slides in (('hats',hs),('xhosa',xs),('frill',fs),('elizabeth',es),('plain',ps),('soft',ss),('check',cs),('nblankets',nb),('naccess',na),('ntekkies',nt),('wooly',ws),('straw',sts),('pacino',pas),('lamberets',ls),('plainberets',pls)):
     open(os.path.join(H,f'ig_{name}.html'),'w').write(f'<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="{FONTS}"><style>{CSS}</style></head><body>'+''.join(slides)+'</body></html>')
 print(len(hs),len(xs))
