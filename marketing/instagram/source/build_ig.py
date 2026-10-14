@@ -193,13 +193,13 @@ ls.append(grid_slide(NL,NL-2,HATSET,dict(title='Pick your colour.',sub='Lamberet
 ls.append(order_slide(NL,HATSET,ORDER,logo=OVAL_ORDER))
 
 # Plain Berets (new MW oval, no shelf photo)
-pbs=[('Black','pb_black'),('Blue','pb_blue'),('Cream White','pb_cream-white'),('Green','pb_green'),('Navy','pb_navy'),('Red','pb_red'),('Yellow','pb_yellow')]
+pbs=[('Black','pb_black',85,"SIZE 12''"),('Blue','pb_blue',85,"SIZE 12''"),('Cream White','pb_cream-white',85,"SIZE 12''"),('Green','pb_green',85,"SIZE 12''"),('Navy','pb_navy',85,"SIZE 12''"),('Red','pb_red',85,"SIZE 12''"),('Yellow','pb_yellow',85,"SIZE 12''"),('ZCC Green','pb_zcc-green',105,"SIZE 12'' · LAMBSWOOL")]
 NP=len(pbs)+3
-pls=[cover(NP,HATSET,dict(eyebrow='BERETS · PLAIN',title='Plain Berets',img='plain_fan',price=85,pill='7 COLOURS · SIZE 12\'\' · R85 EACH',logo=OVAL_COVER,pstyle=FANSTYLE))]
-for k,(nm,img) in enumerate(pbs):
-    pls.append(product_slide(NP,k+1,HATSET,dict(name=nm,img=img,price=85,eyebrow=f'{k+1:02d}<span class="ln"></span>SIZE 12\'\'')))
-pls.append(grid_slide(NP,NP-2,HATSET,dict(title='Pick your colour.',sub="Plain berets · size 12'' · R85 each",foot='Wholesale & retail · bulk buyers, ask us for trade pricing'),
-   [dict(short=x[0],img=x[1],price=85) for x in pbs],4,214))
+pls=[cover(NP,HATSET,dict(eyebrow='BERETS · PLAIN',title='Plain Berets',img='plain_fan',price=85,pre='FROM',pill='8 COLOURS · SIZE 12\'\' · FROM R85',logo=OVAL_COVER,pstyle=FANSTYLE))]
+for k,(nm,img,pr,ey) in enumerate(pbs):
+    pls.append(product_slide(NP,k+1,HATSET,dict(name=nm,img=img,price=pr,eyebrow=f'{k+1:02d}<span class="ln"></span>{ey}')))
+pls.append(grid_slide(NP,NP-2,HATSET,dict(title='Pick your colour.',sub="Plain berets · size 12'' · from R85",foot='Wholesale & retail · bulk buyers, ask us for trade pricing'),
+   [dict(short=x[0],img=x[1],price=x[2]) for x in pbs],4,214))
 pls.append(order_slide(NP,HATSET,ORDER,logo=OVAL_ORDER))
 
 for name,slides in (('hats',hs),('xhosa',xs),('frill',fs),('elizabeth',es),('plain',ps),('soft',ss),('check',cs),('nblankets',nb),('naccess',na),('ntekkies',nt),('wooly',ws),('straw',sts),('pacino',pas),('lamberets',ls),('plainberets',pls)):

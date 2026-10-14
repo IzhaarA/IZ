@@ -2,7 +2,7 @@
 
 These are picture-only videos with no audio, 1080×1920 at 30fps:
 - `../makkies-lamberets-tiktok.mp4` (20s)
-- `../makkies-plain-berets-tiktok.mp4` (16.5s)
+- `../makkies-plain-berets-tiktok.mp4` (17.5s)
 
 They don't use a shelf photo. Each opens with a fan of cut-out berets and uses the new MW oval.
 

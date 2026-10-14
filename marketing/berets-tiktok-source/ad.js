@@ -19,13 +19,13 @@ window.DURATION = t0;
 
 const STRIPES = '<div class="a stripes" style="top:0"></div><div class="a stripes" style="bottom:0"></div>';
 document.body.innerHTML = `
-<div class="sc" id="s1" style="background:radial-gradient(circle at 50% 42%,#2c2630 0%,#1b181d 72%)">${STRIPES}
+<div class="sc" id="s1" style="background:#ffffff;color:#1b181d">${STRIPES}
   <img class="a" id="s1logo" src="img/mw-oval.png" style="left:420px;top:110px;width:240px">
   <div id="fan"></div>
   <div class="a ctr" id="s1tag" style="top:1180px"><span class="tag">${C.tag||"NEW IN"}</span></div>
-  <div class="a ctr big" id="s1t1" style="top:1300px">${C.title1}</div>
-  <div class="a ctr big" id="s1t2" style="top:1450px;color:#FFC814">${C.title2}</div>
-  <div class="a ctr" id="s1sub" style="top:1640px;font-size:44px;font-weight:700;letter-spacing:6px">${C.cols.length} COLOURS · R${C.price}</div>
+  <div class="a ctr big" id="s1t1" style="top:1300px;text-shadow:none;color:#1b181d">${C.title1}</div>
+  <div class="a ctr big" id="s1t2" style="top:1450px;color:#C3312B;text-shadow:none">${C.title2}</div>
+  <div class="a ctr" id="s1sub" style="top:1640px;font-size:44px;font-weight:700;letter-spacing:6px;color:#1b181d">${C.hookSub || (C.cols.length+" COLOURS · R"+C.price)}</div>
 </div>
 ${C.features ? `<div class="sc" id="s2" style="background:radial-gradient(circle at 50% 38%,#2c2630 0%,#1b181d 70%)">${STRIPES}
   <div class="a circ" id="s2ph" style="left:140px;top:250px;width:800px;height:800px;background-image:url(img/${C.featureImg})"></div>
@@ -36,7 +36,7 @@ ${C.features ? `<div class="sc" id="s2" style="background:radial-gradient(circle
   <div class="a" style="inset:0;background:radial-gradient(circle at 50% 38%,rgba(255,255,255,.65) 0%,rgba(255,255,255,0) 60%)"></div>${STRIPES}
   <div class="a ctr" id="s3n" style="top:140px;font-size:40px;font-weight:800;letter-spacing:10px"></div>
   <div class="a circ" id="s3ph" style="left:120px;top:300px;width:840px;height:840px"></div>
-  <div class="a badge" id="s3b" style="left:760px;top:250px"><small>ONLY</small><b>R${C.price}</b></div>
+  <div class="a badge" id="s3b" style="left:760px;top:250px"><small>ONLY</small><b id="s3p">R${C.price}</b></div>
   <div class="a ctr big" id="s3name" style="top:1250px;font-size:128px;text-shadow:none"></div>
   <div class="a ctr" id="s3sub" style="top:1520px;font-size:40px;font-weight:700;letter-spacing:5px">${C.sub}</div>
 </div>
@@ -83,16 +83,17 @@ window.render = function (t) {
   const [a3, b3] = T.s3;
   if (t >= a3 && t < b3) { const i = Math.min(C.cols.length - 1, Math.floor(t - a3)), lt = (t - a3) - i, c = C.cols[i];
     $('s3bg').style.background = c.tint; ['s3name', 's3n', 's3sub'].forEach(id => $(id).style.color = c.ink);
-    $('s3n').textContent = String(i + 1).padStart(2, '0') + ' / ' + String(C.cols.length).padStart(2, '0');
+    $('s3sub').textContent = c.sub || C.sub; $('s3n').textContent = String(i + 1).padStart(2, '0') + ' / ' + String(C.cols.length).padStart(2, '0');
     const ph = $('s3ph'); ph.style.backgroundImage = `url(img/${c.hero})`;
     ph.style.transform = `scale(${.7 + .3 * bk(lt / .35)}) rotate(${(1 - eo(lt / .5)) * -25}deg)`; ph.style.opacity = cl(lt / .12);
-    $('s3name').textContent = c.name.toUpperCase(); rise($('s3name'), lt, 0.08, .3, 80);
+    $('s3p').textContent = 'R' + (c.price || C.price); $('s3name').textContent = c.name.toUpperCase(); rise($('s3name'), lt, 0.08, .3, 80);
     pop($('s3b'), lt, 0.15, .3, .5); $('s3b').style.transform += ' rotate(-10deg)'; }
   // S4 grid
   const a4 = T.s4[0]; pop($('s4t'), t, a4 + .05, .35, .7); rise($('s4s'), t, a4 + .3, .3, 40);
   C.cols.forEach((c, i) => pop($('g' + i), t, a4 + .4 + i * .12, .3, .3));
   // S5 end card
   const a5 = T.s5[0]; pop($('s5logo'), t, a5 + .05, .45, .3); rise($('s5t'), t, a5 + .4, .35, 60); pop($('s5url'), t, a5 + .7, .35, .5);
+  if (t > a5 + 1.1) { const ph = (t - (a5 + 1.1)) / 0.6; const s = 1 + 0.16 * Math.pow(Math.sin(Math.PI * ph), 2); $('s5url').style.transform = `scale(${s})`; }
   rise($('s5wa'), t, a5 + 1.0, .3, 40); rise($('s5d'), t, a5 + 1.25, .3, 40); rise($('s5h'), t, a5 + 1.5, .3, 30);
 };
 render(0);

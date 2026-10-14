@@ -280,14 +280,14 @@ NEW IN: Lamberet berets 🔥 100% wool, made in South Africa, 8 colours, R195 ea
 
 ---
 
-## 16. Plain Berets (makkies-plain-berets-carousel-01..10.jpg)
+## 16. Plain Berets (makkies-plain-berets-carousel-01..11.jpg)
 
 Classic plain berets, now in stock 🧢
 
-7 colours to match any uniform, church outfit or everyday look:
-Black, Blue, Cream White, Green, Navy, Red and Yellow.
+8 colours to match any uniform, church outfit or everyday look:
+Black, Blue, Cream White, Green, Navy, Red, Yellow and ZCC Green.
 
-📏 Size 12'' · 💰 Only R85 each
+📏 Size 12'' · 💰 From R85 (ZCC Green lambswool beret R105)
 
 Swipe and pick your colour 👉
 
@@ -301,6 +301,6 @@ Buying for a group, school or church? Ask us for wholesale prices.
 
 ## TikTok: Plain Berets video (makkies-plain-berets-tiktok.mp4)
 
-Plain berets in 7 colours, only R85 each 🔥 Black, blue, cream white, green, navy, red and yellow. Which colour do you need? 👇 Shop at makkies.co.za or WhatsApp 072 323 5469 🚚 We deliver across SA
+Plain berets in 8 colours, from R85 🔥 Black, blue, cream white, green, navy, red, yellow and ZCC green. Which colour do you need? 👇 Shop at makkies.co.za or WhatsApp 072 323 5469 🚚 We deliver across SA
 
 #beret #berets #churchuniform #pretoria #southafrica
