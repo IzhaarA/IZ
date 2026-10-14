@@ -10,11 +10,11 @@ def dil(m,k):
     for dy in range(-k,k+1):
         for dx in range(-k,k+1): o|=np.roll(np.roll(m,dy,0),dx,1)
     return o
-def smooth(soft):     # soft 0..1 mask at 1x -> smooth binary mask at Sx
-    im=Image.fromarray((soft*255).astype(np.uint8),'L').resize((W*S,H*S),Image.BICUBIC).filter(ImageFilter.GaussianBlur(S*0.7))
+def smooth(soft,blur=0.7):     # soft 0..1 mask at 1x -> smooth binary mask at Sx
+    im=Image.fromarray((soft*255).astype(np.uint8),'L').resize((W*S,H*S),Image.BICUBIC).filter(ImageFilter.GaussianBlur(S*blur))
     return np.asarray(im)>127
 letters=dil(lab==2,2)&~dil((lab==1)|(lab==3),2)
-L=smooth(wgt*letters); T=smooth(wgt*(dil(lab==1,1)&~letters)); B=smooth(wgt*(dil(lab==3,1)&~letters))
+L=smooth(wgt*letters); T=smooth(wgt*(dil(lab==1,1)&~letters),1.8); B=smooth(wgt*(dil(lab==3,1)&~letters),1.8)
 yy,xx=np.mgrid[0:H*S,0:W*S]; X=xx/S+x0; Y=yy/S+y0
 isM=L&(X<843)&(Y<212); isW=L&~isM
 # oval: perfect ellipse fitted to the original black circle
@@ -49,7 +49,40 @@ Wfill=tex[np.clip(((Y-wy0)*S).astype(int),0,th-1),np.clip(((X-wx0)*S).astype(int
 # bottom ring: red with black dashes by angle (same as before)
 cx,cy=841,172
 ang=(np.degrees(np.arctan2(Y-cy,X-cx))+360)%360
-Bfill=np.where(((ang%7)<2.4)[...,None]&((X>725)&(X<950))[...,None],np.array([26,18,16.]),np.array([237,25,27.]))
+Bfill=np.zeros(X.shape+(3,))+np.array([237,25,27.])
+# neat dashes: equal spacing along the ring, equal width, straight across the ring
+ocx,ocy=(ex0+ex1)/2*S,(ey0+ey1)/2*S          # oval centre (Sx canvas)
+ys_,xs_=np.where(B); rr=np.hypot(xs_-ocx,ys_-ocy); aa=np.degrees(np.arctan2(ys_-ocy,xs_-ocx))%360
+bins={}
+for a_,r_ in zip(np.round(aa*2)/2,rr): bins.setdefault(a_,[]).append(r_)
+angs=sorted(bins)
+# the ring's angular extent (ignore the ball: keep angles where the band is thin)
+mid={a_:(np.min(v),np.max(v)) for a_,v in bins.items() if len(v)>3}
+th_=np.median([hi-lo for lo,hi in mid.values()]); print('ring thickness',th_/S)
+thin=[a_ for a_,(lo,hi) in mid.items() if hi-lo<1.35*th_]
+# walk the ring centre line and place a dash every STEP pixels of arc length
+step=10*S; lw=int(1.6*S)
+pts=[]
+for a_ in sorted(thin):
+    lo,hi=mid[a_]; rm=(lo+hi)/2; t=np.radians(a_)
+    pts.append((a_,ocx+rm*np.cos(t),ocy+rm*np.sin(t),lo,hi))
+# split into the continuous run (largest gap is where the ring is open)
+import math
+runs=[[pts[0]]]
+for p in pts[1:]:
+    (runs[-1].append(p) if p[0]-runs[-1][-1][0]<=2 else runs.append([p]))
+run=max(runs,key=len)
+dl=Image.new('L',(W*S,H*S),0); dd=ImageDraw.Draw(dl)
+acc=0; nxt=step*0.8
+for i in range(1,len(run)-1):
+    acc+=math.hypot(run[i][1]-run[i-1][1],run[i][2]-run[i-1][2])
+    if acc>=nxt and i>6 and i<len(run)-10:
+        a_,x_,y_,lo,hi=run[i]; t=np.radians(a_)
+        dd.line([(ocx+(lo-S)*np.cos(t),ocy+(lo-S)*np.sin(t)),(ocx+(hi+S)*np.cos(t),ocy+(hi+S)*np.sin(t))],fill=255,width=lw)
+        nxt+=step
+dash=(np.asarray(dl)>127)&B
+Bfill[dash]=(26,18,16)
+print('dashes drawn on', len(run),'ring samples')
 # white outline around the letters + seam between M and W
 def dilS(m,r):
     im=Image.fromarray((m*255).astype(np.uint8)).filter(ImageFilter.MaxFilter(2*r+1)); return np.asarray(im)>127
