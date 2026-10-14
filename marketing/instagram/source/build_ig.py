@@ -33,8 +33,9 @@ def product_slide(n,i,set_,p):
 <div class="a price"><small>{p.get('pre','ONLY')}</small><b>R{p['price']}</b></div>
 <img class="a bb" src="ph/{set_['bb']}"><div class="a foot">Order at makkies.co.za · WhatsApp {WA}</div></div>'''
 def cover(n,set_,c):
+    lg=c.get('logo','<img class="a" src="ph/logo.png" style="left:470px;top:62px;width:140px">')
     return f'''<div class="slide" style="--bg:{set_['bg']};--acc:{set_['acc']}">{dots(n,0,set_['acc'])}
-<img class="a" src="ph/logo.png" style="left:470px;top:62px;width:140px">
+{lg}
 <div class="a eyebrow" style="top:150px">{c['eyebrow']}</div>
 <div class="a serif" style="left:0;width:100%;top:190px;text-align:center;font-size:84px;line-height:1">{c['title']}</div>
 <img class="a bt" src="ph/{set_['bt']}" style="top:300px">
@@ -50,10 +51,11 @@ def grid_slide(n,i,set_,g,items,cols,imh):
 <img class="a bt" src="ph/{set_['bt']}">
 <div class="a grid" style="grid-template-columns:repeat({cols},1fr)">{cells}</div>
 <img class="a bb" src="ph/{set_['bb']}"><div class="a foot">{g['foot']}</div></div>'''
-def order_slide(n,set_,o):
+def order_slide(n,set_,o,logo=None):
+    lg=logo or '<img class="a" src="ph/logo.png" style="left:340px;top:350px;width:400px">'
     return f'''<div class="slide" style="--bg:{set_['bg']};--acc:{set_['acc']}">{dots(n,n-1,set_['acc'])}
 <img class="a bt" src="ph/{set_['bt']}" style="top:150px">
-<img class="a" src="ph/logo.png" style="left:340px;top:350px;width:400px">
+{lg}
 <div class="a serif" style="left:0;width:100%;top:580px;text-align:center;font-size:76px">Order today</div>
 <div class="a" style="left:0;width:100%;top:700px;text-align:center"><span class="pill" style="font-size:54px;padding:22px 60px;letter-spacing:1px;text-transform:none">makkies.co.za</span></div>
 <div class="a" style="left:0;width:100%;top:840px;text-align:center;font-size:40px;font-weight:700"><span style="color:#25D366">●</span> WhatsApp {WA}</div>
@@ -176,6 +178,19 @@ sts=simple_set(STSET,'Straw Hats','HATS · CLASSIC STRAW',[('Cream White','stcre
 pas=simple_set(STSET,'Pacino Felted Hats',"MEN'S HATS · FELTED",[('Black','pablack'),('Brown','pabrown'),('Grey','pagrey'),('Navy','panavy')],
    125,'SIZE 57','4 COLOURS IN STOCK · R125 EACH','Pick your colour.',"Men's felted hat · size 57",2,300)
 
-for name,slides in (('hats',hs),('xhosa',xs),('frill',fs),('elizabeth',es),('plain',ps),('soft',ss),('check',cs),('nblankets',nb),('naccess',na),('ntekkies',nt),('wooly',ws),('straw',sts),('pacino',pas)):
+# Lamberets (new MW oval for all future ads)
+OVAL_COVER='<img class="a" src="ph/mw_oval.png" style="left:483px;top:44px;width:114px">'
+OVAL_ORDER='<img class="a" src="ph/mw_oval.png" style="left:400px;top:318px;width:280px">'
+lams=[('Bottle Green','lam_bottle-green'),('Maroon','lam_maroon'),('Mustard','lam_mustard'),('Emerald Green','lam_emerald'),
+      ('Navy','lam_navy'),('Royal Blue','lam_royal-blue'),('Pink','lam_pink'),('Black','lam_black')]
+NL=len(lams)+3
+ls=[cover(NL,HATSET,dict(eyebrow='BERETS · LAMBERETS',title='Lamberet Berets',img='lam_group',price=195,pill='8 COLOURS · 100% WOOL · R195',logo=OVAL_COVER))]
+for k,(nm,img) in enumerate(lams):
+    ls.append(product_slide(NL,k+1,HATSET,dict(name=nm,img=img,price=195,eyebrow=f'{k+1:02d}<span class="ln"></span>12\'\' CROWN · 100% WOOL')))
+ls.append(grid_slide(NL,NL-2,HATSET,dict(title='Pick your colour.',sub='Lamberet berets · 100% wool · made in South Africa',foot='Wholesale & retail · bulk buyers, ask us for trade pricing'),
+   [dict(short=x[0],img=x[1],price=195) for x in lams],4,214))
+ls.append(order_slide(NL,HATSET,ORDER,logo=OVAL_ORDER))
+
+for name,slides in (('hats',hs),('xhosa',xs),('frill',fs),('elizabeth',es),('plain',ps),('soft',ss),('check',cs),('nblankets',nb),('naccess',na),('ntekkies',nt),('wooly',ws),('straw',sts),('pacino',pas),('lamberets',ls)):
     open(os.path.join(H,f'ig_{name}.html'),'w').write(f'<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="{FONTS}"><style>{CSS}</style></head><body>'+''.join(slides)+'</body></html>')
 print(len(hs),len(xs))

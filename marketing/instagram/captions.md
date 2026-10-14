@@ -250,3 +250,30 @@ Tag the man who needs this hat 👇
 🚚 Delivery across SA · PAXI to any PEP · or collect in Marabastad
 
 #menshats #fedora #mensstyle #pretoria #southafrica
+
+---
+
+## 15. Lamberet Berets (makkies-lamberets-carousel-01..11.jpg)
+
+New in: Lamberet berets 🎨✨
+
+Made in South Africa from 100% wool, with a 12'' crown. Proper quality berets in 8 colours:
+Bottle Green, Maroon, Mustard, Emerald Green, Navy, Royal Blue, Pink and Black.
+
+💰 R195 each
+
+Swipe to pick your colour 👉 Which one is yours?
+
+🛒 makkies.co.za · 💬 WhatsApp 072 323 5469
+🚚 Delivery across SA · PAXI to any PEP · or collect in Marabastad
+Buying for a group, school or church? Ask us for wholesale prices.
+
+#beret #woolberet #proudlysouthafrican #pretoria #southafrica
+
+---
+
+## TikTok: Lamberet Berets video (makkies-lamberets-tiktok.mp4)
+
+NEW IN: Lamberet berets 🔥 100% wool, made in South Africa, 8 colours, R195 each. Which colour are you choosing? 👇 Shop at makkies.co.za or WhatsApp 072 323 5469 🚚 We deliver across SA
+
+#beret #woolberet #proudlysouthafrican #pretoria #southafrica

@@ -1,0 +1,125 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link rel="stylesheet" href="fonts/local.css">
+<style>
+@font-face{font-family:'DMSerif';src:url(fonts/dmserif.woff2) format('woff2')}
+*{margin:0;padding:0;box-sizing:border-box}
+body{width:1080px;height:1920px;overflow:hidden;background:#1b181d;font-family:Montserrat,sans-serif;color:#fff}
+.sc{position:absolute;inset:0;opacity:0;overflow:hidden}
+.a{position:absolute}
+.ctr{left:0;width:100%;text-align:center}
+.serif{font-family:'DMSerif',serif;font-weight:400}
+.tag{display:inline-block;background:#FFC814;color:#1b181d;font-weight:800;letter-spacing:8px;font-size:46px;padding:16px 40px;border-radius:12px}
+.big{font-weight:900;font-size:150px;line-height:.95;letter-spacing:2px;text-shadow:0 10px 40px rgba(0,0,0,.55)}
+.pill{display:inline-block;background:#fff;color:#1b181d;border-radius:80px;font-weight:800}
+.badge{width:260px;height:260px;border-radius:50%;background:#D8232A;border:8px solid #fff;display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 18px 40px rgba(0,0,0,.4)}
+.badge small{font-size:32px;font-weight:800;letter-spacing:4px}.badge b{font-size:86px;font-weight:900;line-height:1}
+.circ{background-size:contain;background-repeat:no-repeat;background-position:center;filter:drop-shadow(0 28px 34px rgba(0,0,0,.5))}
+.stripes{left:0;width:100%;height:22px;background:linear-gradient(90deg,#45203F 0 12%,#FFE14F 12% 30%,#0350EA 30% 46%,#FF0141 46% 62%,#05B56D 62% 74%,#FF0141 74% 84%,#FFE14F 84% 96%,#45203F 96% 100%)}
+.feat{font-weight:800;font-size:58px;letter-spacing:3px}
+.feat span{color:#FFC814}
+.gcell{position:absolute;width:300px;height:300px}
+.gcell .circ{width:300px;height:300px;filter:drop-shadow(0 14px 16px rgba(0,0,0,.25))}
+.gcell .nm{position:absolute;left:-40px;width:380px;top:312px;text-align:center;font-weight:800;font-size:30px;letter-spacing:2px}
+</style></head><body>
+
+<!-- S1 hook: shelf photo -->
+<div class="sc" id="s1">
+  <div class="a" id="s1bg" style="inset:-80px;background:url(img/group.jpg) center/cover"></div>
+  <div class="a" style="inset:0;background:linear-gradient(180deg,rgba(27,24,29,.55) 0%,rgba(27,24,29,0) 30%,rgba(27,24,29,0) 45%,rgba(27,24,29,.92) 78%)"></div>
+  <img class="a" id="s1logo" src="img/mw-oval.png" style="left:420px;top:90px;width:240px">
+  <div class="a ctr" id="s1tag" style="top:1240px"><span class="tag">NEW IN</span></div>
+  <div class="a ctr big" id="s1t1" style="top:1350px">LAMBERET</div>
+  <div class="a ctr big" id="s1t2" style="top:1500px;color:#FFC814">BERETS</div>
+  <div class="a ctr" id="s1sub" style="top:1690px;font-size:44px;font-weight:700;letter-spacing:6px">8 COLOURS · R195</div>
+</div>
+
+<!-- S2 quality -->
+<div class="sc" id="s2" style="background:radial-gradient(circle at 50% 38%,#2c2630 0%,#1b181d 70%)">
+  <div class="a stripes" style="top:0"></div>
+  <div class="a circ" id="s2ph" style="left:140px;top:250px;width:800px;height:800px;background-image:url(img/emerald-label-cut.png)"></div>
+  <div class="a ctr feat" id="f1" style="top:1180px"><span>✓</span> 100% WOOL</div>
+  <div class="a ctr feat" id="f2" style="top:1290px"><span>✓</span> MADE IN SOUTH AFRICA</div>
+  <div class="a ctr feat" id="f3" style="top:1400px"><span>✓</span> 12'' CROWN</div>
+  <div class="a ctr serif" id="f4" style="top:1560px;font-size:84px">Proper quality berets.</div>
+  <div class="a stripes" style="bottom:0"></div>
+</div>
+
+<!-- S3 colours -->
+<div class="sc" id="s3">
+  <div class="a" id="s3bg" style="inset:0"></div>
+  <div class="a" style="inset:0;background:radial-gradient(circle at 50% 38%,rgba(255,255,255,.65) 0%,rgba(255,255,255,0) 60%)"></div><div class="a stripes" style="top:0"></div><div class="a stripes" style="bottom:0"></div>
+  <div class="a ctr" id="s3n" style="top:140px;font-size:40px;font-weight:800;letter-spacing:10px;opacity:.85"></div>
+  <div class="a circ" id="s3ph" style="left:120px;top:300px;width:840px;height:840px"></div>
+  <div class="a badge" id="s3b" style="left:760px;top:250px"><small>ONLY</small><b>R195</b></div>
+  <div class="a ctr big" id="s3name" style="top:1250px;font-size:128px;text-shadow:none"></div>
+  <div class="a ctr" id="s3sub" style="top:1520px;font-size:40px;font-weight:700;letter-spacing:5px">LAMBERET BERET · 100% WOOL</div>
+</div>
+
+<!-- S4 grid -->
+<div class="sc" id="s4" style="background:#F6F0E9;color:#1b181d">
+  <div class="a stripes" style="top:0"></div>
+  <div class="a ctr serif" id="s4t" style="top:120px;font-size:110px">8 colours.</div>
+  <div class="a ctr" id="s4s" style="top:270px;font-size:46px;font-weight:800;letter-spacing:4px;color:#C3312B">R195 EACH · 100% WOOL</div>
+  <div id="grid"></div>
+  <div class="a stripes" style="bottom:0"></div>
+</div>
+
+<!-- S5 end card -->
+<div class="sc" id="s5" style="background:radial-gradient(circle at 50% 35%,#2c2630 0%,#1b181d 70%)">
+  <div class="a stripes" style="top:0"></div>
+  <img class="a" id="s5logo" src="img/mw-oval.png" style="left:290px;top:250px;width:500px">
+  <div class="a ctr serif" id="s5t" style="top:760px;font-size:100px">Shop Lamberets</div>
+  <div class="a ctr" id="s5url" style="top:910px"><span class="pill" style="font-size:84px;padding:26px 70px">makkies.co.za</span></div>
+  <div class="a ctr" id="s5wa" style="top:1110px;font-size:56px;font-weight:800"><span style="color:#25D366">●</span> WhatsApp 072 323 5469</div>
+  <div class="a ctr" id="s5d" style="top:1230px;font-size:40px;line-height:1.5;opacity:.9">Delivery across South Africa<br>PAXI to any PEP · or collect in Marabastad</div>
+  <div class="a ctr" id="s5h" style="top:1480px;font-size:40px;font-weight:700;letter-spacing:4px;color:#FFC814">@makkiewholesalers</div>
+  <div class="a stripes" style="bottom:0"></div>
+</div>
+
+<script>
+// [name, file, text colour, light background tint]
+const COLS=[['Bottle Green','bottle-green','#1f3a33','#DCE6E1'],['Maroon','maroon','#5a1f35','#EFDDE3'],['Mustard','mustard','#8a6608','#F7EBC8'],['Emerald Green','emerald','#17583e','#D9EEE4'],
+            ['Navy','navy','#1a2347','#DDE1EE'],['Royal Blue','royal-blue','#1f3a9e','#DCE3F8'],['Pink','pink','#a8334c','#F8DDE3'],['Black','black','#18171a','#E8E4DE']];
+const SC={s1:[0,3.0],s2:[3.0,5.5],s3:[5.5,13.5],s4:[13.5,16.5],s5:[16.5,20.0]};
+const $=id=>document.getElementById(id);
+const cl=(x,a=0,b=1)=>Math.max(a,Math.min(b,x));
+const eo=x=>1-Math.pow(1-cl(x),3);                       // ease out
+const bk=x=>{x=cl(x);const c=1.7;return 1+(c+1)*Math.pow(x-1,3)+c*Math.pow(x-1,2)};  // back out (pop)
+const pop=(el,t,t0,d=.35,from=.6)=>{const k=bk((t-t0)/d);el.style.opacity=cl((t-t0)/(d*.5));el.style.transform=`scale(${from+(1-from)*k})`};
+const rise=(el,t,t0,d=.4,dy=60)=>{const k=eo((t-t0)/d);el.style.opacity=k;el.style.transform=`translateY(${dy*(1-k)}px)`};
+// grid cells
+const g=$('grid'); COLS.forEach((c,i)=>{const x=60+(i%3)*330, y=430+Math.floor(i/3)*420;
+  g.insertAdjacentHTML('beforeend',`<div class="gcell" id="g${i}" style="left:${i<6?x+0:0}px;top:${y}px"><div class="circ" style="background-image:url(img/${c[1]}-label-cut.png)"></div><div class="nm">${c[0].toUpperCase()}</div></div>`)});
+// place 8 cells: rows of 3,3,2 centred
+COLS.forEach((c,i)=>{const row=Math.floor(i/3), inRow=row<2?3:2, col=i%3; const w=300,gap=50; const tw=inRow*w+(inRow-1)*gap; const x=(1080-tw)/2+col*(w+gap); const el=$('g'+i); el.style.left=x+'px'; el.style.top=(420+row*430)+'px';});
+function vis(id,t){const [a,b]=SC[id]; const fadeIn=cl((t-a)/.12), fadeOut=id==='s5'?1:cl((b-t)/.12); $(id).style.opacity=(t>=a&&t<b+0.0001)?Math.min(fadeIn,fadeOut):0; return t-a;}
+function render(t){
+  // S1
+  let l=vis('s1',t);
+  $('s1bg').style.transform=`scale(${1+0.10*cl(t/3)})`;
+  pop($('s1logo'),t,0.1,.4,.4); pop($('s1tag'),t,0.35,.35,.4);
+  rise($('s1t1'),t,0.6,.35,120); rise($('s1t2'),t,0.9,.35,120); rise($('s1sub'),t,1.4,.4,40);
+  // S2
+  l=vis('s2',t);
+  {const k=bk((t-3.0)/.6); const ph=$('s2ph'); ph.style.opacity=cl((t-3.0)/.2); ph.style.transform=`rotate(${-140*(1-eo((t-3.0)/.8))}deg) scale(${.5+.5*k})`;}
+  rise($('f1'),t,3.5,.3); rise($('f2'),t,3.9,.3); rise($('f3'),t,4.3,.3); pop($('f4'),t,4.7,.35,.8);
+  // S3: one colour per second
+  l=vis('s3',t);
+  if(t>=5.5&&t<13.5){const i=Math.min(7,Math.floor(t-5.5)), lt=(t-5.5)-i; const c=COLS[i];
+    $('s3bg').style.background=c[3]; $('s3name').style.color=c[2]; $('s3n').style.color=c[2]; $('s3sub').style.color=c[2];
+    $('s3n').textContent=String(i+1).padStart(2,'0')+' / 08';
+    const ph=$('s3ph'); ph.style.backgroundImage=`url(img/${c[1]}-top-cut.png)`;
+    const k=bk(lt/.35); ph.style.transform=`scale(${.7+.3*k}) rotate(${(1-eo(lt/.5))*-25}deg)`; ph.style.opacity=cl(lt/.12);
+    $('s3name').textContent=c[0].toUpperCase(); rise($('s3name'),lt,0.08,.3,80);
+    pop($('s3b'),lt,0.15,.3,.5); $('s3b').style.transform+=` rotate(-10deg)`;}
+  // S4
+  l=vis('s4',t);
+  pop($('s4t'),t,13.55,.35,.7); rise($('s4s'),t,13.8,.3,40);
+  COLS.forEach((c,i)=>pop($('g'+i),t,13.9+i*0.12,.3,.3));
+  // S5
+  l=vis('s5',t);
+  pop($('s5logo'),t,16.55,.45,.3); rise($('s5t'),t,16.9,.35,60); pop($('s5url'),t,17.2,.35,.5);
+  rise($('s5wa'),t,17.5,.3,40); rise($('s5d'),t,17.75,.3,40); rise($('s5h'),t,18.0,.3,30);
+}
+render(0);
+</script></body></html>
