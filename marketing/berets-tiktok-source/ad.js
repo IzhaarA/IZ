@@ -19,7 +19,7 @@ window.DURATION = t0;
 
 const STRIPES = '<div class="a stripes" style="top:0"></div><div class="a stripes" style="bottom:0"></div>';
 document.body.innerHTML = `
-<div class="sc" id="s1" style="background:#ffffff;color:#1b181d">${STRIPES}
+<div class="sc" id="s1" style="background:#F2E8D8;color:#1b181d">${STRIPES}
   <img class="a" id="s1logo" src="img/mw-oval.png" style="left:420px;top:110px;width:240px">
   <div id="fan"></div>
   <div class="a ctr" id="s1tag" style="top:1180px"><span class="tag">${C.tag||"NEW IN"}</span></div>
