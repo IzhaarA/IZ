@@ -276,7 +276,7 @@ Buying for a group, school or church? Ask us for wholesale prices.
 
 NEW IN: Lamberet berets 🔥 100% wool, made in South Africa, 8 colours, R195 each. Which colour are you choosing? 👇 Shop at makkies.co.za or WhatsApp 072 323 5469 🚚 We deliver across SA
 
-#beret #woolberet #proudlysouthafrican #pretoria #southafrica
+#beret #woolberet #proudlysouthafrican #lamberet #southafrica
 
 ---
 
