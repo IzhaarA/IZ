@@ -27,8 +27,9 @@ if 'name="payments"' not in h and "name='payments'" not in h:
         '<form id="pfForm" method="post" style="display:none"></form>\n' + form)
 
 # 3) settings: card payments on, live merchant, signing done on the server
-sub("payments: { card: false, eft: true, whatsapp: true },", "payments: { card: true, eft: true, whatsapp: true },")
-sub(r"payfast: \{\s*sandbox: true.*?notify_url: ''[^\n]*\n\s*\}",
+if "sign_url: '/api/payfast-sign'" not in h:
+  sub("payments: { card: false, eft: true, whatsapp: true },", "payments: { card: true, eft: true, whatsapp: true },")
+  sub(r"payfast: \{\s*sandbox: true.*?notify_url: ''[^\n]*\n\s*\}",
     """payfast: {
     sign_url: '/api/payfast-sign',   // merchant ID, key and passphrase live on the server (netlify/functions)
     return_url: location.href.split('#')[0] + '#paid',
@@ -36,9 +37,10 @@ sub(r"payfast: \{\s*sandbox: true.*?notify_url: ''[^\n]*\n\s*\}",
   }""", regex=True)
 
 # 4) payfast(): ask the server to sign, then send the customer to PayFast
-start = h.index("function payfast(o) {")
-end = h.index("\nfunction md5(", start)
-h = h[:start] + r"""async function payfast(o) {
+if "async function payfast(o)" not in h:
+  start = h.index("function payfast(o) {")
+  end = h.index("\nfunction md5(", start)
+  h = h[:start] + r"""async function payfast(o) {
   const pf = CONFIG.payfast, btn = document.getElementById('payBtn'), btnTxt = btn ? btn.textContent : '';
   const fields = [['return_url', pf.return_url], ['cancel_url', pf.cancel_url],
     ['name_first', o.c.first], ['name_last', o.c.last], ['email_address', o.c.email], ['cell_number', o.c.cell.replace(/\D/g, '')],
@@ -61,6 +63,11 @@ h = h[:start] + r"""async function payfast(o) {
   if (btn) { btn.disabled = false; btn.textContent = btnTxt; }   // so the button works if they come back with the Back button
   form.submit();
 }""" + h[end:]
+
+# 5) checkout fits phone screens (it was wider than the screen, with Delivery and Payment side by side)
+PHONE_CSS = "@media(max-width:600px){.form{grid-template-columns:1fr}.form>*{min-width:0;grid-column:1/-1}.form input:not([type=radio]):not([type=checkbox]),.form select,.form textarea{width:100%;box-sizing:border-box}}"
+if PHONE_CSS not in h:
+    sub(".form label.full{grid-column:1/-1}", ".form label.full{grid-column:1/-1}" + PHONE_CSS)
 
 open(p, "w", encoding="utf-8").write(h)
 print("patched", p)
