@@ -11,6 +11,7 @@ pieces that are not in the downloaded page, so a fresh deploy can be rebuilt fro
 - `patch-payfast.py` — turns on card payments in index.html and restores the Netlify Forms markup
 - `patch-checkout.py` — the redesigned checkout (numbered steps, order summary, secure pay button)
 - `checkout-new-*.jpg` — previews of the checkout
+- `PAYFAST-STATUS.md` — **card payments are paused until PayFast activates the account; how to switch them back on**
 
 ## Rebuilding a deploy
 1. Download the live `index.html`, every `images/…` it references, the matching `thumbs/…`,
