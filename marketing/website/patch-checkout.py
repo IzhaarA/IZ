@@ -41,7 +41,7 @@ SECTION = f'''<section class="checkout" id="checkout">
           <label>Postal code<input name="postal" inputmode="numeric" autocomplete="postal-code" placeholder="e.g. 0002"></label>
           <label>Province<select name="prov">{PROVS}</select></label>
         </div>
-        <label class="full co-paxi" id="paxiPointField" style="display:none">Your PAXI point (PEP store name or code)<input name="paxipoint" placeholder="e.g. PEP Marabastad or P4325"><span class="co-hint">Find your nearest PAXI point at paxi.co.za — any PEP store works.</span></label>
+        <label class="full co-paxi" id="paxiPointField" style="display:none">Which PEP store should we send it to?<input name="paxipoint" placeholder="e.g. PEP Sunnyside, Pretoria or P4325"><span class="co-hint">Any PEP store with PAXI works. Not sure? <a href="https://www.paxi.co.za/paxi-points" target="_blank" rel="noopener">Find your nearest PAXI point</a>. PAXI will SMS you when it's ready to collect.</span></label>
         <label class="full co-notes"><span>Order notes <em>(optional)</em></span><textarea name="notes" rows="2" placeholder="Anything we should know?"></textarea></label>
       </fieldset>
       <fieldset class="co-sec"><legend><i>3</i>Payment</legend>
@@ -116,7 +116,8 @@ CSS = f"""<style id="co-style">
 #coForm .co-logos .mc s+s{{background:#F79E1B;margin-left:-6px;mix-blend-mode:multiply}}
 #coForm .co-addr{{margin-top:18px;padding-top:18px;border-top:1px dashed var(--line)}}
 #coForm:not([data-ship=courier]) .co-addr{{display:none}}
-#coForm .co-paxi{{margin-top:18px}}
+#coForm .co-paxi{{margin-top:18px;padding:16px;border-radius:10px;background:var(--bg);border:1px solid var(--line)}}
+#coForm .co-hint a{{color:var(--teal);font-weight:600}}
 #coForm .co-notes,#coForm .co-promo{{margin-top:18px}}
 #coForm .co-actions{{display:flex;flex-direction:column;align-items:stretch;gap:12px;margin-top:4px}}
 #coForm .co-pay{{width:100%;font-size:17px;font-weight:700;padding:16px 20px;border-radius:10px;gap:10px;box-shadow:0 6px 16px rgba(195,49,43,.22)}}
