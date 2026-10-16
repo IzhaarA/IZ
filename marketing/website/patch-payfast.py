@@ -14,10 +14,11 @@ def sub(old, new, count=1, regex=False):
         sys.exit(f"expected {count} match(es), found {n}: {old[:80]!r}")
     h = re.sub(old, lambda m: new, h, flags=re.S) if regex else h.replace(old, new)
 
-# 1) Netlify Forms: undo Netlify's deploy-time rewrite of the hidden orders form
-if "name='orders'><input type='hidden' name='form-name' value='orders' />" in h:
-    sub("<form aria-hidden='true' hidden method='post' name='orders'><input type='hidden' name='form-name' value='orders' />",
-        '<form name="orders" data-netlify="true" netlify-honeypot="bot-field" hidden>')
+# 1) Netlify Forms: undo Netlify's deploy-time rewrite of the hidden forms (orders, payments)
+for name, attrs in (("orders", ' netlify-honeypot="bot-field"'), ("payments", "")):
+    rewritten = f"<form aria-hidden='true' hidden method='post' name='{name}'><input type='hidden' name='form-name' value='{name}' />"
+    if rewritten in h:
+        sub(rewritten, f'<form name="{name}" data-netlify="true"{attrs} hidden>')
 
 # 2) hidden "payments" form so confirmed PayFast payments show in Netlify Forms
 if 'name="payments"' not in h and "name='payments'" not in h:
