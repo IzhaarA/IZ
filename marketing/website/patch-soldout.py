@@ -37,6 +37,8 @@ SOLD_OUT = [
     "CZ-98140-8/0-L",                         # Opaque Dark Orange Sfinx 8/0 loose
     "CZ-98170",                               # Opaque Red Coral Sfinx (all)
     "CZ-98190-8/0-S",                         # Opaque Dark Red Coral Sfinx 8/0 strung
+    # Plastic beads
+    "PBO-E61",                                # E61 Sweet Pink, 8mm Oval
 ]
 
 p = sys.argv[1]
