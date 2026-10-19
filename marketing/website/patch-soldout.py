@@ -10,6 +10,33 @@ SOLD_OUT = [
     "CH-44-8/0",     # Opaque Light Green 44, size 8/0
     "CH-5003-6/0",   # Pearly White 5003, size 6/0
     "CH-5004-8/0",   # Cream Pearl 5004, size 8/0
+    # Czech Glass Seed Beads (19 Oct 2026)
+    "CZ-00050-32/0-L",                        # Transparent Crystal 32/0 loose
+    "CZ-03590-1/0-S",                         # Black Stripes on Chalk White 1/0 strung
+    "CZ-07631",                               # Rose Terra Sfinx (all)
+    "CZ-13600",                               # Opaque Brown (all)
+    "CZ-13780-8/0-L", "CZ-13780-11/0-L",      # Opaque Dark Brown 8/0 loose and 11/0 loose
+    "CZ-23040-8/0-S",                         # Opaque Dark Violet 8/0 strung
+    "CZ-28020-8/0-L",                         # Opaque Violet Sfinx 8/0 loose
+    "CZ-33060-1/0-L",                         # Opaque Royal Blue 1/0 loose
+    "CZ-38220",                               # Opaque Teal Sfinx (all)
+    "CZ-46112",                               # Shell Yellow/Brown Luster (all)
+    "CZ-47185",                               # Shell Yellow/White Luster (all)
+    "CZ-49102-8/0-S", "CZ-49102-11/0-S",      # Hematite strung (8/0 and 11/0)
+    "CZ-53250-3/0-L", "CZ-53250-5/0-L", "CZ-53250-8/0-L",   # Opaque Bright Green loose (3/0, 5/0, 8/0)
+    "CZ-53410-8/0-L",                         # Opaque Light Green 8/0 loose
+    "CZ-58230",                               # Opaque Pale Green Sfinx (all)
+    "CZ-58410",                               # Opaque Mint Sfinx (all)
+    "CZ-58430-8/0-S",                         # Opaque Olive Green Sfinx 8/0 strung
+    "CZ-67150-3/0-S", "CZ-67150-8/0-S",       # Aquamarine Silver Lined 3/0 strung and 8/0 strung
+    "CZ-68020", "CZ-68050", "CZ-68130",       # Light Turquoise / Turquoise / Green Turquoise Sfinx (all)
+    "CZ-83130-32/0-S",                        # Opaque Yellow 32/0 strung
+    "CZ-88130",                               # Opaque Golden Yellow Sfinx (all)
+    "CZ-93110",                               # Opaque Orange (all)
+    "CZ-93140-11/0-L",                        # Opaque Dark Orange 11/0 loose
+    "CZ-98140-8/0-L",                         # Opaque Dark Orange Sfinx 8/0 loose
+    "CZ-98170",                               # Opaque Red Coral Sfinx (all)
+    "CZ-98190-8/0-S",                         # Opaque Dark Red Coral Sfinx 8/0 strung
 ]
 
 p = sys.argv[1]
