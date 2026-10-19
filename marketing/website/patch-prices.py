@@ -30,13 +30,13 @@ h = h[:s] + json.dumps(P, ensure_ascii=False, separators=(",", ":")) + h[s + end
 
 # 2) always recalculate on load
 RECALC = "PRODUCTS.forEach(p => { const pr = p.variants.map(v => v.price).filter(x => x != null); if (pr.length) { p.minPrice = Math.min(...pr); p.maxPrice = Math.max(...pr); } });   // card prices always match the options\n"
-if RECALC not in h:
+if "// card prices always match the options" not in h:   # (patch-soldout.py later rewrites this line)
     one("const tn = u =>", RECALC + "const tn = u =>")
 
 # 3) product page opens on the cheapest option
 one("const p = byId[id]; cur = {p, v: p.variants[0], qty: 1, gi: 0}; drawModal();",
     "const p = byId[id]; cur = {p, v: p.variants.reduce((a, x) => x.price < a.price ? x : a), qty: 1, gi: 0}; drawModal();",
-    optional="p.variants.reduce((a, x) => x.price < a.price ? x : a)" in h)
+    optional="x.price < a.price ? x : a)" in h)   # already done (also when patch-soldout.py has extended it)
 
 # 4) chat assistant
 one("<b>Elizabeth Basotho</b> comes in 8 colours at R275", "<b>Elizabeth Basotho</b> comes in 5 colours at R305", optional=True)
