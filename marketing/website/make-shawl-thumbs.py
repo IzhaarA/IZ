@@ -11,7 +11,7 @@ pub = sys.argv[1]
 TOP, BOTTOM = 0.04, 0.93          # keep from just above the stand's head to below the hem (fractions of photo height)
 # Photos taken from further away get a closer crop: product id -> (top, bottom, centre x), fractions of the photo
 CLOSER = {
-    "CSH-001": (0.031, 0.791, 0.487),   # C1 Black chenille throw (photo taken from further back)
+    "CSH-001": (0.107, 0.867, 0.487),   # C1 Black chenille throw (photo taken from further back)
 }
 
 def square(src, top=TOP, bottom=BOTTOM, cx=0.5):
