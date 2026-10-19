@@ -3,8 +3,8 @@ Usage: python3 patch-chenille.py public/index.html"""
 import json, re, sys
 
 CODES = {"CSH-012": "C3", "CSH-014": "C5", "CSH-015": "C14", "CSH-013": "C15"}          # Ivory, Yellow, Purple, Red
-NAMES = {"CSH-004": "Terracotta", "CSH-007": "Maroon", "CSH-008": "Charcoal Blue",
-         "CSH-009": "Hunter Green", "CSH-010": "Navy Blue"}                              # C7, C10, C13, C16, C17
+NAMES = {"CSH-004": "Orange", "CSH-006": "Terracotta", "CSH-007": "Maroon", "CSH-008": "Charcoal Blue",
+         "CSH-009": "Hunter Green", "CSH-010": "Navy Blue"}                              # C7, C9, C10, C13, C16, C17
 REMOVE = {"CSH-003"}                                                                     # Honey (C5) is no longer made
 
 p = sys.argv[1]
