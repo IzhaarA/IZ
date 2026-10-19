@@ -11,6 +11,8 @@ pieces that are not in the downloaded page, so a fresh deploy can be rebuilt fro
 - `patch-payfast.py` — turns on card payments in index.html and restores the Netlify Forms markup
 - `patch-prices.py` — card prices always match the product page (and the chat assistant's prices)
 - `patch-soldout.py` — the sold-out list (edit SOLD_OUT at the top)
+- `patch-chenille.py` — chenille throw codes and colour names (Honey removed)
+- `make-shawl-thumbs.py` — square whole-shawl card photos (run after the photos are downloaded)
 - `patch-shawlphotos.py` — shawl/throw photos front-first (front is the thumbnail)
 - `patch-checkout.py` — the redesigned checkout (numbered steps, order summary, secure pay button)
 - `checkout-new-*.jpg` — previews of the checkout
