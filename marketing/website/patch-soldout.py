@@ -6,7 +6,10 @@ an option code (e.g. CH-5009-02) marks only that option. Find codes on the produ
 import sys
 
 SOLD_OUT = [
-    "CH-5009",   # Cerise Pink, Chinese Glass Seed Beads (all sizes)
+    "CH-5009",       # Cerise Pink, Chinese Glass Seed Beads (all sizes)
+    "CH-44-8/0",     # Opaque Light Green 44, size 8/0
+    "CH-5003-6/0",   # Pearly White 5003, size 6/0
+    "CH-5004-8/0",   # Cream Pearl 5004, size 8/0
 ]
 
 p = sys.argv[1]
