@@ -39,6 +39,9 @@ SOLD_OUT = [
     "CZ-98190-8/0-S",                         # Opaque Dark Red Coral Sfinx 8/0 strung
     # Plastic beads
     "PBO-E61",                                # E61 Sweet Pink, 8mm Oval
+    # Ndebele
+    "NDH-006",                                # Ndebele Beaded Hat
+    "TEK-001",                                # Beaded Tekkies (all sizes)
 ]
 
 p = sys.argv[1]
