@@ -9,14 +9,18 @@ from PIL import Image, ImageFilter
 
 pub = sys.argv[1]
 TOP, BOTTOM = 0.04, 0.93          # keep from just above the stand's head to below the hem (fractions of photo height)
+# Photos taken from further away get a closer crop: product id -> (top, bottom, centre x), fractions of the photo
+CLOSER = {
+    "CSH-001": (0.115, 0.785, 0.487),   # C1 Black chenille throw
+}
 
-def square(src):
+def square(src, top=TOP, bottom=BOTTOM, cx=0.5):
     im = Image.open(src).convert("RGB")
     W, H = im.size
-    y0, y1 = int(H * TOP), int(H * BOTTOM)
+    y0, y1 = int(H * top), int(H * bottom)
     band = im.crop((0, y0, W, y1)); h = y1 - y0
-    if W >= h:                                   # already wide enough: centre crop
-        x0 = (W - h) // 2; return band.crop((x0, 0, x0 + h, h))
+    if W >= h:                                   # wide enough: crop around the stand
+        x0 = min(max(0, int(W * cx - h / 2)), W - h); return band.crop((x0, 0, x0 + h, h))
     pad = (h - W + 1) // 2
     out = Image.new("RGB", (W + 2 * pad, h))
     out.paste(band, (pad, 0))
@@ -38,11 +42,12 @@ for prod in P:
         g = v.get("gallery") or []
         if len(g) != 2: continue
         front = g[0]
-        if v.get("img") not in (front, front[:-4] + "-sq.jpg"): continue      # only our own front-first photos
-        sq = front[:-4] + "-sq.jpg"
+        if v.get("img") not in (front, front[:-4] + "-sq.jpg", front[:-4] + "-sqz.jpg"): continue      # only our own front-first photos
+        close = CLOSER.get(prod["id"])
+        sq = front[:-4] + ("-sqz.jpg" if close else "-sq.jpg")
         src = os.path.join(pub, front)
         if not os.path.exists(os.path.join(pub, sq)):
-            img = square(src)
+            img = square(src, *close) if close else square(src)
             img.resize((900, 900), Image.LANCZOS).save(os.path.join(pub, sq), quality=84, optimize=True)
             os.makedirs(os.path.join(pub, "thumbs"), exist_ok=True)
             img.resize((360, 360), Image.LANCZOS).save(os.path.join(pub, "thumbs", sq[7:]), quality=82, optimize=True)

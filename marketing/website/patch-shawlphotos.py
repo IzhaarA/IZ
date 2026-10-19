@@ -13,7 +13,9 @@ for prod in P:
     if not prod["category"].startswith("Shawls & Throws"): continue
     for v in prod["variants"]:
         g = v.get("gallery") or []
-        if len(g) == 2 and v.get("img") != g[0]:      # still back-first: img is the back copy, g = [back, front]
+        img = v.get("img") or ""
+        done = img == g[0] or img.endswith("-sq.jpg") or img.endswith("-sqz.jpg") if g else True   # already front-first
+        if len(g) == 2 and not done:      # still back-first: img is the back copy, g = [back, front]
             old = v["img"]
             v["gallery"] = [g[1], g[0]]                # front, then back
             v["img"] = g[1]                            # thumbnail = front
