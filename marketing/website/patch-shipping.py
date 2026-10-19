@@ -6,6 +6,8 @@ BAND1 = 135          # up to 5 kg (was R100; The Courier Guy charged R132 for a 
 
 p = sys.argv[1]
 h = open(p, encoding="utf-8").read()
+if "const TCG_RATES" in h:
+    print("courier priced from the rate card (patch-courier-rates.py) - nothing to do"); sys.exit(0)
 h, n = re.subn(r"band1Kg:   5,   band1: \d+,      // up to 5 kg            -> R\d+",
                f"band1Kg:   5,   band1: {BAND1},      // up to 5 kg            -> R{BAND1}", h)
 if n != 1: sys.exit("band1 setting not found")

@@ -10,6 +10,7 @@ pieces that are not in the downloaded page, so a fresh deploy can be rebuilt fro
   saved, shown in Netlify Forms → **payments**, and emailed to orders@makkies.co.za
 - `patch-payfast.py` — turns on card payments in index.html and restores the Netlify Forms markup
 - `patch-price-changes.py` — price changes by option code (add new ones at the bottom; run before patch-prices.py)
+- `patch-courier-rates.py` — courier price = The Courier Guy rate card (IZH008, 19 Oct 2026) for the customer's area + R5
 - `patch-shipping.py` — courier delivery prices (up to 5 kg: R135)
 - `patch-prices.py` — card prices always match the product page (and the chat assistant's prices)
 - `patch-soldout.py` — the sold-out list (edit SOLD_OUT at the top)
