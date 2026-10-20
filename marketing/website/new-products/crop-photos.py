@@ -4,7 +4,7 @@ from PIL import Image, ImageFilter
 CROPS = {
  'army_navy_needles_1': (.55,.44,.89), 'army_navy_needles_2': (.56,.495,1.27), 'upholstery_needles': (.5,.49,1.0),
  'measuring_tape': (.51,.43,.98), 'thick_needle_12cm': (.56,.43,.82), 'block_hand_towel': (.545,.505,1.32),
- 'colibri_guest_towel_1': (.525,.57,.86), 'colibri_guset_towel_2': (.525,.47,.98), 'colibri_guset_towel_3': (.525,.415,.93),
+ 'colibri_guest_towel_1': (.5625,.49,.88), 'colibri_guset_towel_2': (.525,.47,.98), 'colibri_guset_towel_3': (.525,.415,.93),
  'dice_100pkt_5mm': (.565,.405,.82), 'dice_100pkt_9mm': (.54,.435,.82), 'dice_20pkt': (.56,.405,.68),
  'shirring_elastic_black_10g': (.485,.47,.68), 'shirring_elastic_white_10g': (.535,.475,.6), 'shirring_elastic_black_30m': (.475,.435,.56),
  'shirring_elastic_white_30m_1': (.51,.475,.66), 'shirring_elastic_white_30m_2': (.41,.385,.66), 'sisal_dry_twine': (.435,.425,.98),
