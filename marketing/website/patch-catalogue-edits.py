@@ -91,10 +91,10 @@ for pid in [m for m in MATSEKA if m in by and by[m]["category"] != "Bangles"]:
 for pid in [d for d in ("TRD-005", "TRD-006", "TRD-007", "TRD-008") if d in by and by[d]["category"] != "Dimit Coins"]:
     by[pid].update(category="Dimit Coins", group="Beads"); P.remove(by[pid])   # dimit coins: own category under Beads
     last = max(i for i, x in enumerate(P) if x["group"] == "Beads"); P.insert(last + 1, by[pid])
-for pid in [b for b in ("TRD-009", "TRD-010", "TRD-011", "TRD-012", "TRD-023", "TRD-031")   # beaded items -> Beads · Beaded Accessories
-            if b in by and by[b]["category"] != "Beaded Accessories"]:
-    by[pid].update(category="Beaded Accessories", group="Beads"); P.remove(by[pid])
-    last = max(i for i, x in enumerate(P) if x["group"] == "Beads"); P.insert(last + 1, by[pid])
+for pid in [b for b in ("TRD-009", "TRD-010", "TRD-011", "TRD-012", "TRD-023", "TRD-031")   # beaded items -> Beaded Accessories (Clothing)
+            if b in by and (by[b]["category"], by[b]["group"]) != ("Beaded Accessories", "Clothing & Traditional Wear")]:
+    by[pid].update(category="Beaded Accessories", group="Clothing & Traditional Wear"); P.remove(by[pid])
+    last = max(i for i, x in enumerate(P) if x["category"] in ("Bangles", "Beaded Accessories")); P.insert(last + 1, by[pid])
 ska = by["SKA-003"]                                                    # painted and plain wooden axes -> Scissors, Knives & Axes
 for pid in [a for a in ("TRD-016", "TRD-020") if a in by and by[a]["category"] != ska["category"]]:
     by[pid].update(category=ska["category"], group=ska["group"]); P.remove(by[pid])
