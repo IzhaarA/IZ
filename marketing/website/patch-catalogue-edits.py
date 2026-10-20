@@ -95,8 +95,8 @@ for pid in [b for b in ("TRD-010", "TRD-011", "TRD-012", "TRD-023", "TRD-031")  
             if b in by and (by[b]["category"], by[b]["group"]) != ("Beaded Accessories", "Clothing & Traditional Wear")]:
     by[pid].update(category="Beaded Accessories", group="Clothing & Traditional Wear"); P.remove(by[pid])
     last = max(i for i, x in enumerate(P) if x["category"] in ("Bangles", "Beaded Accessories")); P.insert(last + 1, by[pid])
-NDA = "Traditional Ndebele Accessories"                                  # beaded knob stick and both wooden axes -> Ndebele accessories
-for pid in [a for a in ("TRD-009", "TRD-016", "TRD-020") if a in by and by[a]["category"] != NDA]:
+NDA = "Traditional Ndebele Accessories"                                  # knob stick, wooden axes, Mapoto apron -> Ndebele accessories
+for pid in [a for a in ("TRD-009", "TRD-016", "TRD-020", "TRD-018") if a in by and by[a]["category"] != NDA]:
     by[pid].update(category=NDA, group="Clothing & Traditional Wear"); P.remove(by[pid])
     last = max(i for i, x in enumerate(P) if x["category"] == NDA); P.insert(last + 1, by[pid])
 for pid in [b for b in ("TRD-032", "TRD-033") if b in by and by[b]["category"] != "Brooches"]:   # brooches: own category under Clothing
