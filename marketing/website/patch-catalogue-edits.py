@@ -99,12 +99,17 @@ ska = by["SKA-003"]                                                    # painted
 for pid in [a for a in ("TRD-016", "TRD-020") if a in by and by[a]["category"] != ska["category"]]:
     by[pid].update(category=ska["category"], group=ska["group"]); P.remove(by[pid])
     last = max(i for i, x in enumerate(P) if x["category"] == ska["category"]); P.insert(last + 1, by[pid])
+for pid in [b for b in ("TRD-032", "TRD-033") if b in by and by[b]["category"] != "Haberdashery · Brooches"]:   # brooches
+    by[pid].update(category="Haberdashery · Brooches", group="Haberdashery & General Goods"); P.remove(by[pid])
+    last = max(i for i, x in enumerate(P) if x["category"].startswith("Haberdashery · ")); P.insert(last + 1, by[pid])
 for x in P:
     pr = [v["price"] for v in x["variants"]]; x["minPrice"], x["maxPrice"] = min(pr), max(pr)
 
 h = h[:s] + json.dumps(P, ensure_ascii=False, separators=(",", ":")) + h[s + end:]
 if "'Berets \\u00b7 Plain Berets'" not in h:                          # delivery weight for the new subcategory
     h = h.replace("'Berets \\u00b7 Lamberets': 0.3,", "'Berets \\u00b7 Lamberets': 0.3, 'Berets \\u00b7 Plain Berets': 0.3,", 1)
+if "'Haberdashery \\u00b7 Brooches'" not in h:
+    h = h.replace("'Haberdashery \\u00b7 Pins & Needles': 0.1,", "'Haberdashery \\u00b7 Pins & Needles': 0.1, 'Haberdashery \\u00b7 Brooches': 0.1,", 1)
 if "'Dimit Coins'" not in h:
     h = h.replace("'Beading Accessories': 0.2,", "'Beading Accessories': 0.2, 'Dimit Coins': 0.2, 'Beaded Accessories': 0.4,", 1)
 open(p, "w", encoding="utf-8").write(h)
