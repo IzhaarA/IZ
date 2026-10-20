@@ -2,7 +2,7 @@
 
 **Waiting for "upload"**: painted axe colours renamed (Ndebele Stripe / Blue & Pink / Black & Red), Mapoto apron photo
 flipped (same file name, new picture), Shell Belt Set described as a 2-piece set (65cm & 35cm),
-beaded necklace sizes (5cm of beads, kids size / 10cm / 20cm), the 7 matseka bangles and 2 matseka leg rings moved to Bangles.
+beaded necklace sizes (5cm of beads, kids size / 10cm / 20cm), the 7 matseka bangles and 2 matseka leg rings moved to Bangles, dimit coins in their own "Dimit Coins" category under Beads.
 
 Last upload: 20 Oct 2026 (deploy 6ad764fa39bc0f176a6d826a): Traditional Items category (33 products),
 animal print berets, Colibri towels in 3 colours, bangles single/6-pack, whistle sizes swapped, Plain Berets with ZCC first.

@@ -88,11 +88,16 @@ MATSEKA = ["TRD-021", "TRD-022", "TRD-024", "TRD-025", "TRD-026", "TRD-027", "TR
 for pid in [m for m in MATSEKA if m in by and by[m]["category"] != "Bangles"]:
     by[pid]["category"] = "Bangles"; P.remove(by[pid])
     last = max(i for i, x in enumerate(P) if x["category"] == "Bangles"); P.insert(last + 1, by[pid])
+for pid in [d for d in ("TRD-005", "TRD-006", "TRD-007", "TRD-008") if d in by and by[d]["category"] != "Dimit Coins"]:
+    by[pid].update(category="Dimit Coins", group="Beads"); P.remove(by[pid])   # dimit coins: own category under Beads
+    last = max(i for i, x in enumerate(P) if x["group"] == "Beads"); P.insert(last + 1, by[pid])
 for x in P:
     pr = [v["price"] for v in x["variants"]]; x["minPrice"], x["maxPrice"] = min(pr), max(pr)
 
 h = h[:s] + json.dumps(P, ensure_ascii=False, separators=(",", ":")) + h[s + end:]
 if "'Berets \\u00b7 Plain Berets'" not in h:                          # delivery weight for the new subcategory
     h = h.replace("'Berets \\u00b7 Lamberets': 0.3,", "'Berets \\u00b7 Lamberets': 0.3, 'Berets \\u00b7 Plain Berets': 0.3,", 1)
+if "'Dimit Coins'" not in h:
+    h = h.replace("'Beading Accessories': 0.2,", "'Beading Accessories': 0.2, 'Dimit Coins': 0.2,", 1)
 open(p, "w", encoding="utf-8").write(h)
 print("patched", p, "-", len(P), "products")
