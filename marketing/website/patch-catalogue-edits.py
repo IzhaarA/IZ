@@ -99,9 +99,9 @@ ska = by["SKA-003"]                                                    # painted
 for pid in [a for a in ("TRD-016", "TRD-020") if a in by and by[a]["category"] != ska["category"]]:
     by[pid].update(category=ska["category"], group=ska["group"]); P.remove(by[pid])
     last = max(i for i, x in enumerate(P) if x["category"] == ska["category"]); P.insert(last + 1, by[pid])
-for pid in [b for b in ("TRD-032", "TRD-033") if b in by and by[b]["category"] != "Haberdashery · Brooches"]:   # brooches
-    by[pid].update(category="Haberdashery · Brooches", group="Haberdashery & General Goods"); P.remove(by[pid])
-    last = max(i for i, x in enumerate(P) if x["category"].startswith("Haberdashery · ")); P.insert(last + 1, by[pid])
+for pid in [b for b in ("TRD-032", "TRD-033") if b in by and by[b]["category"] != "Brooches"]:   # brooches: own category under Clothing
+    by[pid].update(category="Brooches", group="Clothing & Traditional Wear"); P.remove(by[pid])
+    last = max(i for i, x in enumerate(P) if x["category"] in ("Bangles", "Brooches")); P.insert(last + 1, by[pid])
 for pid in [b for b in ("TRD-001", "TRD-002", "TRD-004") if b in by and by[b]["category"] != "Shells"]:   # leopard & cowrie shells -> Beads · Shells
     by[pid].update(category="Shells", group="Beads"); P.remove(by[pid])
     last = max(i for i, x in enumerate(P) if x["group"] == "Beads"); P.insert(last + 1, by[pid])
@@ -111,8 +111,9 @@ for x in P:
 h = h[:s] + json.dumps(P, ensure_ascii=False, separators=(",", ":")) + h[s + end:]
 if "'Berets \\u00b7 Plain Berets'" not in h:                          # delivery weight for the new subcategory
     h = h.replace("'Berets \\u00b7 Lamberets': 0.3,", "'Berets \\u00b7 Lamberets': 0.3, 'Berets \\u00b7 Plain Berets': 0.3,", 1)
-if "'Haberdashery \\u00b7 Brooches'" not in h:
-    h = h.replace("'Haberdashery \\u00b7 Pins & Needles': 0.1,", "'Haberdashery \\u00b7 Pins & Needles': 0.1, 'Haberdashery \\u00b7 Brooches': 0.1,", 1)
+h = h.replace(" 'Haberdashery \\u00b7 Brooches': 0.1,", "")                # brooches moved out of Haberdashery
+if "'Brooches'" not in h:
+    h = h.replace("'Tekkies/Shoes': 0.8,", "'Tekkies/Shoes': 0.8, 'Brooches': 0.1,", 1)
 if "'Dimit Coins'" not in h:
     h = h.replace("'Beading Accessories': 0.2,", "'Beading Accessories': 0.2, 'Dimit Coins': 0.2, 'Beaded Accessories': 0.4, 'Shells': 0.2,", 1)
 open(p, "w", encoding="utf-8").write(h)

@@ -1,6 +1,8 @@
 # Upload status
 
-Nothing waiting. Last upload: 20 Oct 2026 (deploy 6ad76dd86dd95d71a8d8d374): axe colour names, flipped Mapoto photo, shell belt
+**Waiting for "upload"**: brooches moved from Haberdashery to their own "Brooches" category under Clothing & Traditional Wear.
+
+Last upload: 20 Oct 2026 (deploy 6ad76dd86dd95d71a8d8d374): axe colour names, flipped Mapoto photo, shell belt
 and necklace sizes, matseka items to Bangles, new Dimit Coins / Beaded Accessories / Shells categories under Beads, axes to
 Scissors, Knives & Axes, Haberdashery · Brooches.
 Before that: 20 Oct 2026 (deploy 6ad764fa39bc0f176a6d826a): Traditional Items category (33 products),
