@@ -8,17 +8,20 @@ CROPS = {
  'shiny_gold_dimit_coins': (.6,.55,.5), 'shiny_silver_dimit_coins': (.6,.57,.58),
  'beaded_knob_stick': (.57,.47,.84), 'beaded_necklace_large': (.51,.5,1.02), 'beaded_necklace_medium': (.55,.52,.85),
  'beaded_necklace_small': (.5,.48,.78), 'mini_wooden_knob': (.5,.5,1.36), 'mini_wooden_spear': (.53,.51,1.36),
- 'shell_belt': (.51,.51,1.3), 'ndebele_painted_axe_all': (.47,.44,1.12), 'ndebele_painted_axe_1': (.47,.43,.95),
- 'ndebele_painted_axe_2': (.48,.41,.95), 'ndebele_painted_axe_3': (.48,.5,.96), 'poryan_animal_skin': (.55,.5,1.3),
+ 'shell_belt': (.51,.51,1.3), 'ndebele_painted_axe_all': (.47,.44,1.12), 'ndebele_painted_axe_1': (.47,.43,1.05),
+ 'ndebele_painted_axe_2': (.48,.41,1.05), 'ndebele_painted_axe_3': (.48,.5,1.05), 'poryan_animal_skin': (.55,.5,1.3),
  'mapoto_canvas_apron': (.5,.5,1.16), 'animal_fur_headband_1': (.5,.55,.74), 'animal_fur_headband_2': (.5,.51,1.18),
  'plain_wooden_axe': (.48,.46,.96), 'matseka_wire_leg_thick': (.55,.49,.74), 'matseka_wire_leg_thin': (.53,.42,.75),
  'animal_print_beret_beige_black': (.515,.44,.95), 'animal_print_beret_white_black': (.505,.415,.93),
  'beaded_neck_ring_and_tie_chinese': (.5,.52,1.26),
  'matseka_wire_bangle_hand_thick': (.57,.48,.78), 'matseka_wire_bangle_hand_thin': (.55,.475,.76),
  'stretchy_matseka_bangle_12pkt_maroon': (.5,.42,.82), 'stretchy_matseka_bangle_gold': (.56,.455,.72), 'stretchy_matseka_bangle_silver': (.565,.45,.72),
+ 'stretchy_matseka_bangle_12pkt_silver': (.53,.38,.82), 'stretchy_matseka_bangle_12pkt_copper': (.56,.41,.82),
 }
 # dark table edges in the photo: (side, width fraction) replaced by the plain background next to them
 CLEAN = {'shell_belt': [('l', .05), ('r', .1)], 'poryan_animal_skin': [('l', .1), ('r', .08)], 'mapoto_canvas_apron': [('l', .05)], 'beaded_neck_ring_and_tie_chinese': [('l', .04), ('r', .07)]}
+# long flat items turned to lie corner to corner (degrees anticlockwise), so they fill the square
+DIAG = {'ndebele_painted_axe_1': 40, 'ndebele_painted_axe_2': 40, 'ndebele_painted_axe_3': 40, 'plain_wooden_axe': 40}
 ROT = json.loads(sys.argv[3]) if len(sys.argv) > 3 else {}
 def clean(im, edges):
     W, H = im.size
@@ -45,7 +48,10 @@ for n in order:
     cx, cy, side = CROPS[n]
     im = Image.open(f'{src}/{n}.jpg').convert('RGB')
     if n in CLEAN: im = clean(im, CLEAN[n])
-    c = crop(im, cx, cy, side).resize((1000, 1000), Image.LANCZOS)
+    if n in DIAG:
+        big = crop(im, cx, cy, side * 1.45).rotate(DIAG[n], resample=Image.BICUBIC)
+        m = int(big.width * (1 - 1 / 1.45) / 2); c = big.crop((m, m, big.width - m, big.width - m)).resize((1000, 1000), Image.LANCZOS)
+    else: c = crop(im, cx, cy, side).resize((1000, 1000), Image.LANCZOS)
     if n in ROT: c = c.rotate(-ROT[n], expand=False)
     c.save(f'{out}/{n}.jpg', quality=90)
 # numbered sheets, 15 per sheet
