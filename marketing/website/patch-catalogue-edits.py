@@ -40,6 +40,12 @@ if "TWL-004" in by and "TWL-005" not in by:
         towels.append(x)
     P[at:at + 1] = towels
     for x in towels: by[x["id"]] = x
+# Copper, brass and aluminium bangles: single R20 or pack of 6 R100
+for pid in ("BNG-001", "BNG-002", "BNG-003"):
+    x = by[pid]; img = x["img"]
+    x["variants"] = [{"id": f"{pid}-1", "label": "Single bangle", "price": 20, "img": img},
+                     {"id": f"{pid}-STD", "label": "Pack of 6", "price": 100, "img": img}]   # pack keeps its old code
+    x["unit"] = "unit"; x["desc"] = "sold single or in a pack of 6"
 for i in ("BNG-004", "BNG-005"): by[i]["desc"] = "sold per pair"
 for i in ("BEL-001", "BEL-005"): by[i]["desc"] = "jingle bells"
 
