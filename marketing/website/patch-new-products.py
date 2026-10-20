@@ -25,7 +25,7 @@ NEW = [
   prod("PIN-010", "Army & Navy Needles", PN, "19 needles", "book", [("Standard", 10, ph("army_navy_needles_1", "army_navy_needles_2"))], "Needle book with assorted hand-sewing needles."),
   prod("PIN-011", "Upholstery Needles", PN, "Sizes 5, 6, 7 & 10", "pack of 4", [("Standard", 30, ph("upholstery_needles"))], "Curved and straight upholstery needles."),
   prod("PIN-012", "Measuring Tape", PN, "150cm", "unit", [("Standard", 10, ph("measuring_tape"))], "Soft sewing tape measure, cm and inches."),
-  prod("PIN-013", "Thick Needle", PN, "12cm long · 1mm thick", "unit", [("Standard", 7, ph("thick_needle_12cm"))], "12cm long, 1mm thick."),
+  prod("PIN-013", "Thick Needle", PN, "12cm long · 1mm thick", "unit", [("Standard", 7, ph("thick_needle_12cm"))]),
   prod("TWL-003", "Block Hand Towel", "Towels", "50x90cm", "unit", [("Standard", 75, ph("block_hand_towel"))]),
   prod("TWL-004", "Colibri Guest Towel", "Towels", "30x50cm", "unit", [
       ("Single towel", 35, ph("colibri_guest_towel_1", "colibri_guset_towel_2", "colibri_guset_towel_3")),
