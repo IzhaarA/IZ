@@ -1,8 +1,7 @@
 # Upload status
 
-**Waiting for "upload"**: Mapoto Canvas Apron moved to Traditional Ndebele Accessories.
-
-Last upload: 20 Oct 2026: Beaded Knob Stick and both wooden axes moved to Traditional Ndebele Accessories.
+Nothing waiting. Last upload: 20 Oct 2026: Mapoto Canvas Apron moved to Traditional Ndebele Accessories.
+Before that: 20 Oct 2026: Beaded Knob Stick and both wooden axes moved to Traditional Ndebele Accessories.
 Before that: 20 Oct 2026 (deploy 6ad76f2f6e05d5a0dcc32d3b): Brooches and Beaded Accessories as their own
 categories under Clothing & Traditional Wear.
 Before that: 20 Oct 2026 (deploy 6ad76dd86dd95d71a8d8d374): axe colour names, flipped Mapoto photo, shell belt
