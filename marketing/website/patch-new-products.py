@@ -33,13 +33,13 @@ NEW = [
   prod("DCE-001", "Dice 100 Pack — 5mm", "Dice & Dominoes", "5mm", "pack of 100", [("Standard", 50, ph("dice_100pkt_5mm"))]),
   prod("DCE-002", "Dice 100 Pack — 9mm", "Dice & Dominoes", "9mm", "pack of 100", [("Standard", 50, ph("dice_100pkt_9mm"))]),
   prod("DCE-003", "Dice 20 Pack — Colour Dots", "Dice & Dominoes", "14mm", "pack of 20", [("Standard", 30, ph("dice_20pkt"))], "Red and blue dots."),
-  prod("COT-010", "Shirring Elastic", CT, "", "unit", [
-      ("Black · 10g", 10, ph("shirring_elastic_black_10g")), ("White · 10g", 10, ph("shirring_elastic_white_10g")),
-      ("Black · 30m", 50, ph("shirring_elastic_black_30m")), ("White · 30m", 50, ph("shirring_elastic_white_30m_1", "shirring_elastic_white_30m_2"))],
-      "10g reel 0.6mm, 30m reel 0.8mm."),
+  prod("COT-010", "Shirring Elastic 10g — Black", CT, "10g", "reel", [("Standard", 10, ph("shirring_elastic_black_10g"))], "0.6mm shirring elastic."),
+  prod("COT-012", "Shirring Elastic 10g — White", CT, "10g", "reel", [("Standard", 10, ph("shirring_elastic_white_10g"))], "0.6mm shirring elastic."),
+  prod("COT-013", "Shirring Elastic 30m — Black", CT, "30m", "reel", [("Standard", 50, ph("shirring_elastic_black_30m"))], "0.8mm shirring elastic."),
+  prod("COT-014", "Shirring Elastic 30m — White", CT, "30m", "reel", [("Standard", 50, ph("shirring_elastic_white_30m_1", "shirring_elastic_white_30m_2"))], "0.8mm shirring elastic."),
   prod("TWN-007", "Sisal Dry Twine", CT, "500g", "unit", [("Standard", 95, ph("sisal_dry_twine", "sisal_dry_twine_2"))], "100% natural fibre."),
-  prod("COT-011", "Crochet Cotton no.5 — Spring Time", CT, "500g", "unit", [
-      ("Black", 105, ph("springtime_black_500g", "springtime_black_500g_2")), ("White", 105, ph("springtime_white_500g", "springtime_white_500g_2"))]),
+  prod("COT-011", "Crochet Cotton no.5 Spring Time — Black", CT, "500g", "cone", [("Standard", 105, ph("springtime_black_500g", "springtime_black_500g_2"))]),
+  prod("COT-015", "Crochet Cotton no.5 Spring Time — White", CT, "500g", "cone", [("Standard", 105, ph("springtime_white_500g", "springtime_white_500g_2"))]),
   prod("PIP-001", "Smoking Pipe", "Smoking Pipes", "", "unit", [("Standard", 40, ph("smoking_pipe_1", "smoking_pipe_2"))], "Comes in a gift tray."),
 ]
 # product id -> new photos (first one is the card photo)
