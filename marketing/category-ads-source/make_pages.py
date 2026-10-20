@@ -34,20 +34,20 @@ CSS2 = """@font-face{font-family:'DMSerif';src:url(fonts/dmserif.woff2) format('
 body{width:1080px;height:1920px;overflow:hidden;background:#1b181d;font-family:Montserrat,sans-serif;color:#fff;position:relative}
 .sc{position:absolute;inset:0;opacity:0}.a{position:absolute}.ctr{left:0;width:100%;text-align:center}.serif{font-family:'DMSerif',serif;font-weight:400}
 .big{font-weight:900;font-size:150px;line-height:1;letter-spacing:1px}
-.chip{display:inline-block;font-weight:900;letter-spacing:6px;font-size:40px;padding:14px 34px;border:5px solid #1b181d;border-radius:14px}
-.hl{display:inline-block;font-weight:900;font-size:150px;line-height:1.05;padding:4px 30px;color:#FFC814;
+.chip{display:inline-block;font-weight:800;letter-spacing:6px;font-size:38px;padding:14px 34px;border-radius:60px}
+.hl{display:inline-block;font-weight:900;font-size:150px;line-height:1.05;padding:4px 30px;color:#fff;
   background:linear-gradient(#D8232A,#D8232A) no-repeat left/0% 100%;border-radius:12px}
-.sticker{width:270px;height:270px;border-radius:50%;background:#D8232A;color:#fff;border:9px solid #1b181d;display:flex;flex-direction:column;
-  align-items:center;justify-content:center;box-shadow:12px 12px 0 #1b181d}
+.sticker{width:260px;height:260px;border-radius:50%;background:#D8232A;color:#fff;border:8px solid #fff;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;box-shadow:0 18px 36px rgba(216,35,42,.35)}
 .sticker small{font-size:34px;font-weight:900;letter-spacing:4px}.sticker b{font-size:92px;font-weight:900;line-height:1}
-.frame{background:#1b181d;padding:14px;box-shadow:18px 18px 0 rgba(27,24,29,.35)}
-.fin{width:100%;height:100%;border:12px solid #fff;overflow:hidden}.ph{width:100%;height:100%;background-size:cover;background-position:center}
+.frame{background:#fff;padding:18px;border-radius:10px;box-shadow:0 34px 70px rgba(27,24,29,.28),0 6px 16px rgba(27,24,29,.12)}
+.fin{width:100%;height:100%;overflow:hidden;border-radius:4px}.ph{width:100%;height:100%;background-size:cover;background-position:center}
 .pill{display:inline-block;background:#fff;color:#1b181d;border-radius:80px;font-weight:800}
 .stripes{left:0;width:100%;background:linear-gradient(90deg,#45203F 0 12%,#FFE14F 12% 30%,#0350EA 30% 46%,#FF0141 46% 62%,#05B56D 62% 74%,#FF0141 74% 84%,#FFE14F 84% 96%,#45203F 96% 100%)}
-#bars i{flex:1;background:rgba(255,255,255,.4);border-radius:5px;overflow:hidden;box-shadow:0 0 0 2px rgba(0,0,0,.15)}#bars b{display:block;height:100%;width:0;background:#fff}
-#sdots i{display:inline-block;width:56px;height:56px;border-radius:50%;margin:0 16px;border:6px solid #fff;box-shadow:5px 5px 0 #1b181d}
-.gcell{background:#fff;border:6px solid #1b181d;box-shadow:10px 10px 0 #1b181d;text-align:center;padding-bottom:12px;color:#1b181d}
-.gph{background-size:cover;background-position:center;border-bottom:6px solid #1b181d}
+#bars i{flex:1;background:rgba(27,24,29,.12);border-radius:5px;overflow:hidden}#bars b{display:block;height:100%;width:0;background:#1b181d}
+#sdots i{display:inline-block;width:52px;height:52px;border-radius:50%;margin:0 16px;border:5px solid #fff;box-shadow:0 6px 14px rgba(0,0,0,.25)}
+.gcell{background:#fff;padding:10px 10px 12px;border-radius:10px;box-shadow:0 14px 30px rgba(27,24,29,.18);text-align:center;color:#1b181d}
+.gph{background-size:cover;background-position:center;border-radius:4px}
 .gnm{font-weight:900;font-size:26px;letter-spacing:1px;margin-top:10px}.gpr{font-weight:900;font-size:34px;color:#D8232A}"""
 def page2(name, cfg):
     open(os.path.join(H, name + '.html'), 'w').write('<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="fonts/local.css"><style>'
@@ -64,6 +64,6 @@ page2('beaded-accessories', dict(
            dict(name='Neck Ring & Tie', chip='HANDMADE', sub='BEADED NECK RING WITH TIE', img=J(ba[3]), price=ba[3]['price'])],
     set=dict(kicker='NECKLACE + BANGLE', title='The matching set', price=ba[4]['price'],
              cols=[dict(name=i['name'], img=J(i), dot=DOT[i['name']]) for i in ba[4:]]),
-    gridTitle='Complete the look.', gridSub='9 PIECES · FROM R50', gridCols=3, cell=250,
+    gridTitle='Complete the look.', gridSub='9 PIECES · FROM R50', gridCols=3, cell=280,
     grid=[dict(name=n, img=J(i), price=i['price']) for n, i in zip(['SMALL', 'MEDIUM', 'LARGE', 'NECK RING', 'BLACK & WHITE SET', 'YELLOW & BLUE SET', 'GREEN SET', 'ORANGE SET', 'BLUE SET'], ba)]))
 print('ok')
