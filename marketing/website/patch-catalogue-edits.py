@@ -28,6 +28,18 @@ split("HNK-002", [("HNK-002", "Plain White", None), ("HNK-003", "Light Checks", 
 split("BNG-004", [("BNG-004", "Gold", None), ("BNG-005", "Silver", None)])
 split("SKA-001", [("SKA-001", "15cm", "15cm"), ("SKA-004", "20cm", "20cm")])
 split("BEL-001", [("BEL-001", "Gold", None), ("BEL-005", "Silver", None)])
+# Colibri guest towel: one product per design, each sold single or as a 10 pack
+if "TWL-004" in by and "TWL-005" not in by:
+    src = by["TWL-004"]; at = P.index(src); photos = src["variants"][0].get("gallery") or [src["img"]]
+    towels = []
+    for n, (pid, colour) in enumerate([("TWL-004", "Blue"), ("TWL-005", "Rust"), ("TWL-006", "Rose")]):
+        x = {k: val for k, val in src.items() if k not in ("variants", "desc")}
+        x["id"] = pid; x["name"] = f"Colibri Guest Towel — {colour}"; x["img"] = photos[n]
+        x["variants"] = [{"id": f"{pid}-01", "label": "Single towel", "price": 35, "img": photos[n]},
+                         {"id": f"{pid}-02", "label": "Pack of 10", "price": 300, "img": photos[n]}]
+        towels.append(x)
+    P[at:at + 1] = towels
+    for x in towels: by[x["id"]] = x
 for i in ("BNG-004", "BNG-005"): by[i]["desc"] = "sold per pair"
 for i in ("BEL-001", "BEL-005"): by[i]["desc"] = "jingle bells"
 
