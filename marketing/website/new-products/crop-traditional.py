@@ -16,6 +16,8 @@ CROPS = {
  'beaded_neck_ring_and_tie_chinese': (.5,.52,1.26),
  'matseka_wire_bangle_hand_thick': (.57,.48,.78), 'matseka_wire_bangle_hand_thin': (.55,.475,.76),
  'stretchy_matseka_bangle_12pkt_maroon': (.5,.42,.82), 'stretchy_matseka_bangle_gold': (.56,.455,.72), 'stretchy_matseka_bangle_silver': (.565,.45,.72),
+ 'beaded_necklace_bangle_1': (.515,.43,.92), 'beaded_necklace_bangle_2': (.525,.445,.94), 'beaded_necklace_bangle_3': (.505,.37,.96),
+ 'beaded_necklace_bangle_4': (.525,.375,.94), 'beaded_necklace_bangle_5': (.515,.425,.96),
  'stretchy_matseka_bangle_12pkt_silver': (.53,.38,.82), 'stretchy_matseka_bangle_12pkt_copper': (.56,.41,.82),
 }
 # dark table edges in the photo: (side, width fraction) replaced by the plain background next to them
