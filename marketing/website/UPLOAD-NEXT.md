@@ -1,6 +1,8 @@
 # Upload status
 
-Nothing waiting. Last upload: 20 Oct 2026 (deploy 6ad76f2f6e05d5a0dcc32d3b): Brooches and Beaded Accessories as their own
+**Waiting for "upload"**: Beaded Knob Stick, Ndebele Painted Wooden Axe and Plain Wooden Axe moved to Traditional Ndebele Accessories.
+
+Last upload: 20 Oct 2026 (deploy 6ad76f2f6e05d5a0dcc32d3b): Brooches and Beaded Accessories as their own
 categories under Clothing & Traditional Wear.
 Before that: 20 Oct 2026 (deploy 6ad76dd86dd95d71a8d8d374): axe colour names, flipped Mapoto photo, shell belt
 and necklace sizes, matseka items to Bangles, new Dimit Coins / Beaded Accessories / Shells categories under Beads, axes to
