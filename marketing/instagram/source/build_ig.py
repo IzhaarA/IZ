@@ -2,6 +2,7 @@ import os
 H=os.path.dirname(os.path.abspath(__file__))
 FONTS="../../calendar-2027/source/fonts/local.css"
 WA="072 323 5469"
+def src(img): return img if '.' in img else img+'.png'      # photos from the website are .jpg, older cut-outs .png
 def dots(n,i,col):
     return f'<div class="dots" style="color:{col}">'+''.join(f'<i class="{"on" if k==i else ""}"></i>' for k in range(n))+'</div>'
 CSS="""*{box-sizing:border-box;margin:0;padding:0}body{background:#777}
@@ -25,11 +26,12 @@ CSS="""*{box-sizing:border-box;margin:0;padding:0}body{background:#777}
 .gi .im{background-size:cover;background-position:center}
 .gi .nm{font-size:21px;font-weight:700;letter-spacing:1px;margin-top:8px;text-transform:uppercase}
 .gi .pr{font-size:26px;font-weight:800;color:#C3312B}
+.grid.sm{gap:12px}.grid.sm .gi{padding-bottom:6px;border-radius:8px}.grid.sm .nm{font-size:15px;margin-top:5px;letter-spacing:0}.grid.sm .pr{font-size:18px}
 """
 def product_slide(n,i,set_,p):
     return f'''<div class="slide" style="--bg:{set_['bg']};--acc:{set_['acc']}">{dots(n,i,set_['acc'])}
 <div class="a eyebrow">{p['eyebrow']}</div><div class="a title" style="font-size:{82 if len(p['name'])<=16 else (66 if len(p['name'])<=22 else 56)}px;top:{120 if len(p['name'])<=16 else 128}px">{p['name']}</div>
-<img class="a bt" src="ph/{set_['bt']}"><div class="a photo"><img src="ph/{p['img']}.png"></div>
+<img class="a bt" src="ph/{set_['bt']}"><div class="a photo"><img src="ph/{src(p['img'])}"></div>
 <div class="a price"><small>{p.get('pre','ONLY')}</small><b>R{p['price']}</b></div>
 <img class="a bb" src="ph/{set_['bb']}"><div class="a foot">Order at makkies.co.za · WhatsApp {WA}</div></div>'''
 def cover(n,set_,c):
@@ -39,17 +41,17 @@ def cover(n,set_,c):
 <div class="a eyebrow" style="top:150px">{c['eyebrow']}</div>
 <div class="a serif" style="left:0;width:100%;top:190px;text-align:center;font-size:84px;line-height:1">{c['title']}</div>
 <img class="a bt" src="ph/{set_['bt']}" style="top:300px">
-<div class="a photo" style="top:420px;height:600px;{c.get('pstyle','')}"><img src="ph/{c['img']}.png"></div>
+<div class="a photo" style="top:420px;height:600px;{c.get('pstyle','')}"><img src="ph/{src(c['img'])}"></div>
 <div class="a price" style="right:120px;top:380px"><small>{c.get('pre','ONLY')}</small><b>R{c['price']}</b></div>
 <div class="a" style="left:0;width:100%;top:1052px;text-align:center"><span class="pill">{c['pill']}</span></div>
 <img class="a bb" src="ph/{set_['bb']}"><div class="a foot">Swipe to see every style →</div></div>'''
-def grid_slide(n,i,set_,g,items,cols,imh):
-    cells=''.join(f'<div class="gi"><div class="im" style="height:{imh}px;background-image:url(ph/{p["img"]}.png)"></div><div class="nm">{p["short"]}</div><div class="pr">{p.get("ptxt","R"+str(p["price"]))}</div></div>' for p in items)
+def grid_slide(n,i,set_,g,items,cols,imh,small=False):
+    cells=''.join(f'<div class="gi"><div class="im" style="height:{imh}px;background-image:url(ph/{src(p["img"])})"></div><div class="nm">{p["short"]}</div><div class="pr">{p.get("ptxt","R"+str(p["price"]))}</div></div>' for p in items)
     return f'''<div class="slide" style="--bg:{set_['bg']};--acc:{set_['acc']}">{dots(n,i,set_['acc'])}
 <div class="a serif" style="left:0;width:100%;top:92px;text-align:center;font-size:78px">{g['title']}</div>
 <div class="a" style="left:0;width:100%;top:190px;text-align:center;font-size:28px;font-weight:600;color:#6b625a">{g['sub']}</div>
 <img class="a bt" src="ph/{set_['bt']}">
-<div class="a grid" style="grid-template-columns:repeat({cols},1fr)">{cells}</div>
+<div class="a grid{' sm' if small else ''}" style="grid-template-columns:repeat({cols},1fr)">{cells}</div>
 <img class="a bb" src="ph/{set_['bb']}"><div class="a foot">{g['foot']}</div></div>'''
 def order_slide(n,set_,o,logo=None):
     lg=logo or '<img class="a" src="ph/logo.png" style="left:340px;top:350px;width:400px">'
@@ -201,6 +203,43 @@ for k,(nm,img,pr,ey) in enumerate(pbs):
 pls.append(grid_slide(NP,NP-2,HATSET,dict(title='Pick your colour.',sub="Plain berets · size 12'' · from R85",foot='Wholesale & retail · bulk buyers, ask us for trade pricing'),
    [dict(short=x[0],img=x[1],price=x[2]) for x in pbs],4,214))
 pls.append(order_slide(NP,HATSET,ORDER,logo=OVAL_ORDER))
+
+# Category ads, Oct 2026 (photos and prices from the website, collected by ../../category-ads-source/collect.py)
+import json, re
+from PIL import Image
+AD=json.load(open(os.path.join(H,'..','..','category-ads-source','ads.json')))
+def size(t): return re.sub(r'(\d)X(\d+)CM',r'\1 × \2 CM',t.upper())
+def cat_set(SET,key,title,eyebrow,pill,gtitle,gsub,cols,imh,show=None,small=False,eye=lambda it:size(it['size'])):
+    items=AD[key]; feat=[items[i] for i in show] if show else items
+    fw,fh=Image.open(os.path.join(H,'ph',key+'_fan.png')).size; fan_h=min(560,int(1000*fh/fw))   # fan fits the slide width
+    N=len(feat)+3; lo=min(it['price'] for it in items); same=all(it['price']==lo for it in items)
+    out=[cover(N,SET,dict(eyebrow=eyebrow,title=title,img=key+'_fan',price=lo,pre='ONLY' if same else 'FROM',pill=pill,logo=OVAL_COVER,pstyle=f'box-shadow:none;border-radius:0;height:{fan_h}px;top:{450+(560-fan_h)//2}px'))]
+    for k,it in enumerate(feat):
+        out.append(product_slide(N,k+1,SET,dict(name=it['name'],img=it['img']+'.jpg',price=it['price'],pre='FROM' if it.get('multi') else 'ONLY',
+            eyebrow=f"{k+1:02d}<span class='ln'></span>{eye(it)}")))
+    out.append(grid_slide(N,N-2,SET,dict(title=gtitle,sub=gsub,foot='Wholesale & retail · bulk buyers, ask us for trade pricing'),
+        [dict(short=it['name'],img=it['img']+'.jpg',price=it['price'],ptxt=('from ' if it.get('multi') else '')+'R'+str(it['price'])) for it in items],cols,imh,small))
+    out.append(order_slide(N,SET,ORDER,logo=OVAL_ORDER))
+    return out
+WSET=dict(bg='#F6F0E9',acc='#8A5A2B',bt='border_shawl_top.png',bb='border_shawl_bot.png')
+cads={
+ 'beaded-accessories':cat_set(HATSET,'beaded','Beaded Accessories','BEADED · HANDMADE','NECKLACES · NECK RINGS · SETS · FROM R50','Complete the look.',
+    'Handmade beaded necklaces, neck rings and sets',5,150,small=True,eye=lambda it:('KIDS SIZE · ' if it['id']=='TRD-010' else '')+(it['size'].upper() or 'HANDMADE')),
+ 'ndebele-hats':cat_set(HATSET,'hats','Ndebele Painted Hats','HATS · HAND-PAINTED','7 STYLES IN STOCK · FROM R150','Pick your style.','Hand-painted Ndebele hats',4,262,
+    eye=lambda it:'SIZE '+it['size'].upper()),
+ 'cloudsoft-shawls':cat_set(SSET,'cloudsoft','Cloudsoft Shawls','SHAWLS · CLOUDSOFT','7 COLOURS · 130 × 130 CM · R175','Pick your colour.','Cloudsoft shawl · 130 × 130 cm · 100% polyester',4,214,
+    eye=lambda it:'130 × 130 CM'),
+ 'chenille-throws':cat_set(SSET,'chenille','Chenille Throws','SHAWLS · THROWS','14 COLOURS · 130 × 180 CM · R175','Pick your colour.','Plain chenille throw · 130 × 180 cm',5,150,small=True,
+    eye=lambda it:'130 × 180 CM'),
+ 'plain-shawls':cat_set(SSET,'plainsh','Plain Shawls','SHAWLS · PLAIN','29 COLOURS IN STOCK · R95 EACH','29 colours.','Plain shawl · 120 × 120 cm · R95 each',6,92,
+    show=[14,9,26,15,20,22,6,12,0,28],small=True,eye=lambda it:'120 × 120 CM'),
+ 'wool':cat_set(WSET,'wool','Rosebud Wool','KNITTING · DOUBLE KNIT','20 COLOURS · R20 A BALL · 5 FOR R95','20 colours.','100g balls · R20 each or R95 for a packet of 5',5,122,
+    show=[1,3,9,5,12,13,18,11],small=True,eye=lambda it:'100G BALL · 5 FOR R95'),
+ 'towels':cat_set(WSET,'towels','Towels','TOWELS · BATH & GUEST','BATH SHEETS · HAND & GUEST TOWELS · FROM R35','Pick your towel.','Bath sheets, hand towels, guest towels and face cloths',3,240,
+    eye=lambda it:{'TWL-001':'10 PER PACK · 30 × 45 OR 37 × 55 CM'}.get(it['id'],size(it['size']))+(' · OR 10 FOR R300' if 'Guest' in it['name'] else '')),
+}
+for name,slides in cads.items():
+    open(os.path.join(H,f'ig_{name}.html'),'w').write(f'<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="{FONTS}"><style>{CSS}</style></head><body>'+''.join(slides)+'</body></html>')
 
 for name,slides in (('hats',hs),('xhosa',xs),('frill',fs),('elizabeth',es),('plain',ps),('soft',ss),('check',cs),('nblankets',nb),('naccess',na),('ntekkies',nt),('wooly',ws),('straw',sts),('pacino',pas),('lamberets',ls),('plainberets',pls)):
     open(os.path.join(H,f'ig_{name}.html'),'w').write(f'<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="{FONTS}"><style>{CSS}</style></head><body>'+''.join(slides)+'</body></html>')
