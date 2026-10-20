@@ -95,6 +95,10 @@ for pid in [b for b in ("TRD-009", "TRD-010", "TRD-011", "TRD-012", "TRD-023", "
             if b in by and by[b]["category"] != "Beaded Accessories"]:
     by[pid].update(category="Beaded Accessories", group="Beads"); P.remove(by[pid])
     last = max(i for i, x in enumerate(P) if x["group"] == "Beads"); P.insert(last + 1, by[pid])
+ska = by["SKA-003"]                                                    # painted and plain wooden axes -> Scissors, Knives & Axes
+for pid in [a for a in ("TRD-016", "TRD-020") if a in by and by[a]["category"] != ska["category"]]:
+    by[pid].update(category=ska["category"], group=ska["group"]); P.remove(by[pid])
+    last = max(i for i, x in enumerate(P) if x["category"] == ska["category"]); P.insert(last + 1, by[pid])
 for x in P:
     pr = [v["price"] for v in x["variants"]]; x["minPrice"], x["maxPrice"] = min(pr), max(pr)
 
