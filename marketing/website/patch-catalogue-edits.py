@@ -73,9 +73,16 @@ for pid, first in FIRST.items():                                       # fishing
         if first in g: v["gallery"] = [first] + [x for x in g if x != first]; v["img"] = first
     by[pid]["img"] = by[pid]["variants"][0]["img"]
 setp("PIN-009", size="3mm & 4mm", desc="Double-ended: 3.0mm hook on one end, 4.0mm on the other.")
+for x in P:                                                            # Berets: every beret except the lamberets -> "Plain Berets"
+    if x["category"] == "Berets": x["category"] = "Berets · Plain Berets"
+ids = [x["id"] for x in P]                                             # ZCC green beret first among the plain berets
+if ids.index("BER-008") > ids.index("BER-001"):
+    P.insert(ids.index("BER-001"), P.pop(ids.index("BER-008")))
 for x in P:
     pr = [v["price"] for v in x["variants"]]; x["minPrice"], x["maxPrice"] = min(pr), max(pr)
 
 h = h[:s] + json.dumps(P, ensure_ascii=False, separators=(",", ":")) + h[s + end:]
+if "'Berets \\u00b7 Plain Berets'" not in h:                          # delivery weight for the new subcategory
+    h = h.replace("'Berets \\u00b7 Lamberets': 0.3,", "'Berets \\u00b7 Lamberets': 0.3, 'Berets \\u00b7 Plain Berets': 0.3,", 1)
 open(p, "w", encoding="utf-8").write(h)
 print("patched", p, "-", len(P), "products")
