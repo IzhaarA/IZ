@@ -14,6 +14,8 @@ CROPS = {
  'plain_wooden_axe': (.48,.46,.96), 'matseka_wire_leg_thick': (.55,.49,.74), 'matseka_wire_leg_thin': (.53,.42,.75),
  'animal_print_beret_beige_black': (.515,.44,.95), 'animal_print_beret_white_black': (.505,.415,.93),
  'beaded_neck_ring_and_tie_chinese': (.5,.52,1.26),
+ 'matseka_wire_bangle_hand_thick': (.57,.48,.78), 'matseka_wire_bangle_hand_thin': (.55,.475,.76),
+ 'stretchy_matseka_bangle_12pkt_maroon': (.5,.42,.82), 'stretchy_matseka_bangle_gold': (.56,.455,.72), 'stretchy_matseka_bangle_silver': (.565,.45,.72),
 }
 # dark table edges in the photo: (side, width fraction) replaced by the plain background next to them
 CLEAN = {'shell_belt': [('l', .05), ('r', .1)], 'poryan_animal_skin': [('l', .1), ('r', .08)], 'mapoto_canvas_apron': [('l', .05)], 'beaded_neck_ring_and_tie_chinese': [('l', .04), ('r', .07)]}
@@ -53,4 +55,5 @@ for k in range(0, len(order), 15):
         t = Image.open(f'{out}/{n}.jpg').resize((240, 240)); x, y = 10 + (i % 5) * 260, 10 + (i // 5) * 280
         sh.paste(t, (x, y)); d.rectangle([x, y, x + 34, y + 24], fill='black'); d.text((x + 6, y + 6), str(k + i + 1), fill='white')
         d.text((x, y + 246), n.replace('_', ' ')[:38], fill='black')
+    rows = (len(order[k:k + 15]) + 4) // 5; sh = sh.crop((0, 0, sh.width, rows * 280 + 20))
     sh.save(f'{out}/../crops-{k // 15 + 1}.jpg', quality=88)
