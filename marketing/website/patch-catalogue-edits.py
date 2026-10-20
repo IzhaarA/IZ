@@ -84,6 +84,10 @@ for x in P:                                                            # Berets:
 ids = [x["id"] for x in P]                                             # ZCC green beret first among the plain berets
 if ids.index("BER-008") > ids.index("BER-001"):
     P.insert(ids.index("BER-001"), P.pop(ids.index("BER-008")))
+MATSEKA = ["TRD-024", "TRD-025", "TRD-026", "TRD-027", "TRD-028", "TRD-029", "TRD-030"]   # matseka bangles -> Bangles
+for pid in [m for m in MATSEKA if m in by and by[m]["category"] != "Bangles"]:
+    by[pid]["category"] = "Bangles"; P.remove(by[pid])
+    last = max(i for i, x in enumerate(P) if x["category"] == "Bangles"); P.insert(last + 1, by[pid])
 for x in P:
     pr = [v["price"] for v in x["variants"]]; x["minPrice"], x["maxPrice"] = min(pr), max(pr)
 
