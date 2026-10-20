@@ -1,0 +1,63 @@
+"""Catalogue edits (20 Oct 2026): split products, renames, sizes, photo order. Safe to re-run.
+Usage: python3 patch-catalogue-edits.py public/index.html"""
+import json, sys
+
+p = sys.argv[1]
+h = open(p, encoding="utf-8").read()
+key = "const PRODUCTS = "; s = h.index(key) + len(key)
+P, end = json.JSONDecoder().raw_decode(h[s:])
+by = {x["id"]: x for x in P}
+
+def split(pid, parts):
+    """One product per option. parts = [(new product id, name suffix, size or None)] in option order.
+    The option codes stay the same, so baskets saved earlier keep working."""
+    if pid not in by or len(by[pid]["variants"]) == 1: return
+    src = by[pid]; base = src["name"]; at = P.index(src)
+    new = []
+    for v, (nid, suffix, size) in zip(src["variants"], parts):
+        x = {k: val for k, val in src.items() if k != "variants"}
+        x["id"] = nid; x["name"] = f"{base} — {suffix}"
+        if size is not None: x["size"] = size
+        v = dict(v); v["label"] = "Standard"
+        x["variants"] = [v]; x["img"] = v["img"]; x["minPrice"] = x["maxPrice"] = v["price"]
+        new.append(x)
+    P[at:at + 1] = new
+    for x in new: by[x["id"]] = x
+
+split("HNK-002", [("HNK-002", "Plain White", None), ("HNK-003", "Light Checks", None), ("HNK-004", "Dark Checks", None)])
+split("BNG-004", [("BNG-004", "Gold", None), ("BNG-005", "Silver", None)])
+split("SKA-001", [("SKA-001", "15cm", "15cm"), ("SKA-004", "20cm", "20cm")])
+split("BEL-001", [("BEL-001", "Gold", None), ("BEL-005", "Silver", None)])
+for i in ("BNG-004", "BNG-005"): by[i]["desc"] = "sold per pair"
+for i in ("BEL-001", "BEL-005"): by[i]["desc"] = "jingle bells"
+
+def setp(pid, **kw):
+    for k, val in kw.items(): by[pid][k] = val
+
+for v in by["TEK-004"]["variants"]: v["price"] = 60                    # White Ladies Canvas Tekkies
+setp("WIR-004", name="711 Copper Wire")
+setp("WHS-001", name="Plastic 2 Pipe Ndebele Whistle", desc="2-pipe plastic whistle")
+setp("WHS-006", size="12cm")                                           # 3 Pipe Metal Whistle
+setp("WHS-005", size="9cm")                                            # 2 Pipe Metal Whistle
+SIZES = {"BEL-002": ["10cm", "12cm", "20cm"], "BEL-004": ["10cm", "12cm", "20cm"], "BEL-003": ["12cm", "24cm", "26cm"]}
+for pid, sz in SIZES.items():
+    for v, s_ in zip(by[pid]["variants"], sz):
+        v["label"] = v["label"].split(" · ")[0] + " · " + s_            # Small · 10cm
+for x in P:                                                            # wool: drop the shared second photo
+    if x["category"] == "Haberdashery · Wool":
+        for v in x["variants"]:
+            if v.get("gallery") and len(v["gallery"]) > 1: v["gallery"] = v["gallery"][:1]
+setp("COT-007", size="1.5mm · 100g")                                   # Kite/Khozo cord
+FIRST = {"BAC-003": "images/6c659f89f09a.jpg", "BAC-004": "images/4a50565238fe.jpg", "BAC-005": "images/57635af1a30d.jpg"}
+for pid, first in FIRST.items():                                       # fishing lines: the (old) second photo goes first
+    for v in by[pid]["variants"]:
+        g = v.get("gallery") or []
+        if first in g: v["gallery"] = [first] + [x for x in g if x != first]; v["img"] = first
+    by[pid]["img"] = by[pid]["variants"][0]["img"]
+setp("PIN-009", size="3mm & 4mm", desc="Double-ended: 3.0mm hook on one end, 4.0mm on the other.")
+for x in P:
+    pr = [v["price"] for v in x["variants"]]; x["minPrice"], x["maxPrice"] = min(pr), max(pr)
+
+h = h[:s] + json.dumps(P, ensure_ascii=False, separators=(",", ":")) + h[s + end:]
+open(p, "w", encoding="utf-8").write(h)
+print("patched", p, "-", len(P), "products")
