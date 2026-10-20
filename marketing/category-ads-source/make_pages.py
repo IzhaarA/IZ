@@ -14,9 +14,6 @@ def page(name, key, title1, title2, tag, hook, shop, sub, fan, per=1, show=None,
     open(os.path.join(H, name + '.html'), 'w').write('<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="fonts/local.css"><style>'
         + CSS + '</style></head><body><script>window.CFG=' + json.dumps(cfg, ensure_ascii=False) + ';</script><script src="ad.js"></script></body></html>')
 
-page('beaded-accessories', 'beaded', 'BEADED', 'ACCESSORIES', 'HANDMADE', 'NECKLACES · SETS · FROM R50', 'Shop Beaded Accessories',
-     lambda i: ('KIDS SIZE · ' if i['id'] == 'TRD-010' else '') + (i['size'].upper() or 'HANDMADE'), [4, 0, 3, 2, 6, 1, 8],
-     gridTitle='Complete the look.', gridSub='NECKLACES · NECK RINGS · SETS')
 page('ndebele-hats', 'hats', 'NDEBELE', 'HATS', 'HAND-PAINTED', '7 STYLES · FROM R150', 'Shop Ndebele Hats',
      lambda i: 'HAND-PAINTED · SIZE ' + i['size'].upper(), [0, 1, 2, 3, 4, 5, 6], gridTitle='Pick your style.', gridSub='HAND-PAINTED · FROM R150')
 page('cloudsoft-shawls', 'cloudsoft', 'CLOUDSOFT', 'SHAWLS', 'IN STOCK', '7 COLOURS · R175', 'Shop Cloudsoft Shawls',
@@ -30,4 +27,43 @@ page('wool', 'wool', 'ROSEBUD', 'WOOL', 'DOUBLE KNIT', '20 COLOURS · R20 A BALL
 page('towels', 'towels', 'TOWELS', 'IN STOCK', 'BATH & GUEST', 'FROM R35', 'Shop Towels',
      lambda i: {'TWL-001': '10 PER PACK · 2 SIZES'}.get(i['id'], size(i['size'])) + (' · OR 10 FOR R300' if 'Guest' in i['name'] else ''),
      [3, 2, 1, 4, 5], per=1.1, gridTitle='Pick your towel.', gridSub='BATH · HAND · GUEST · FACE')
+
+# Version 2 (bolder Ndebele look, ~2.4s per product): ad2.js
+CSS2 = """@font-face{font-family:'DMSerif';src:url(fonts/dmserif.woff2) format('woff2')}
+*{margin:0;padding:0;box-sizing:border-box}
+body{width:1080px;height:1920px;overflow:hidden;background:#1b181d;font-family:Montserrat,sans-serif;color:#fff;position:relative}
+.sc{position:absolute;inset:0;opacity:0}.a{position:absolute}.ctr{left:0;width:100%;text-align:center}.serif{font-family:'DMSerif',serif;font-weight:400}
+.big{font-weight:900;font-size:150px;line-height:1;letter-spacing:1px}
+.chip{display:inline-block;font-weight:900;letter-spacing:6px;font-size:40px;padding:14px 34px;border:5px solid #1b181d;border-radius:14px}
+.hl{display:inline-block;font-weight:900;font-size:150px;line-height:1.05;padding:4px 30px;color:#FFC814;
+  background:linear-gradient(#D8232A,#D8232A) no-repeat left/0% 100%;border-radius:12px}
+.sticker{width:270px;height:270px;border-radius:50%;background:#D8232A;color:#fff;border:9px solid #1b181d;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;box-shadow:12px 12px 0 #1b181d}
+.sticker small{font-size:34px;font-weight:900;letter-spacing:4px}.sticker b{font-size:92px;font-weight:900;line-height:1}
+.frame{background:#1b181d;padding:14px;box-shadow:18px 18px 0 rgba(27,24,29,.35)}
+.fin{width:100%;height:100%;border:12px solid #fff;overflow:hidden}.ph{width:100%;height:100%;background-size:cover;background-position:center}
+.pill{display:inline-block;background:#fff;color:#1b181d;border-radius:80px;font-weight:800}
+.stripes{left:0;width:100%;background:linear-gradient(90deg,#45203F 0 12%,#FFE14F 12% 30%,#0350EA 30% 46%,#FF0141 46% 62%,#05B56D 62% 74%,#FF0141 74% 84%,#FFE14F 84% 96%,#45203F 96% 100%)}
+#bars i{flex:1;background:rgba(255,255,255,.4);border-radius:5px;overflow:hidden;box-shadow:0 0 0 2px rgba(0,0,0,.15)}#bars b{display:block;height:100%;width:0;background:#fff}
+#sdots i{display:inline-block;width:56px;height:56px;border-radius:50%;margin:0 16px;border:6px solid #fff;box-shadow:5px 5px 0 #1b181d}
+.gcell{background:#fff;border:6px solid #1b181d;box-shadow:10px 10px 0 #1b181d;text-align:center;padding-bottom:12px;color:#1b181d}
+.gph{background-size:cover;background-position:center;border-bottom:6px solid #1b181d}
+.gnm{font-weight:900;font-size:26px;letter-spacing:1px;margin-top:10px}.gpr{font-weight:900;font-size:34px;color:#D8232A}"""
+def page2(name, cfg):
+    open(os.path.join(H, name + '.html'), 'w').write('<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="fonts/local.css"><style>'
+        + CSS2 + '</style></head><body><script>window.CFG=' + json.dumps(cfg, ensure_ascii=False) + ';</script><script src="ad2.js"></script></body></html>')
+
+B = {i['img']: i for i in AD['beaded']}; ba = AD['beaded']; J = lambda i: i['img'] + '.jpg'
+DOT = {'Black & White': '#1b181d', 'Yellow & Blue': '#FFC814', 'Green': '#05B56D', 'Orange': '#F07A1A', 'Blue': '#0350EA'}
+page2('beaded-accessories', dict(
+    tag='HANDMADE', title1='BEADED', title2='ACCESSORIES', hookSub='NECKLACES · NECK RINGS · SETS', lowest=min(i['price'] for i in ba), shopLine='Shop Beaded Accessories',
+    hookPhotos=[J(ba[1]), J(ba[3]), J(ba[6])],
+    items=[dict(name='Small', chip='KIDS SIZE', sub='BEADED NECKLACE · 5CM OF BEADS', img=J(ba[0]), price=ba[0]['price']),
+           dict(name='Medium', chip='10CM OF BEADS', sub='BEADED NECKLACE', img=J(ba[1]), price=ba[1]['price']),
+           dict(name='Large', chip='20CM OF BEADS', sub='BEADED NECKLACE', img=J(ba[2]), price=ba[2]['price']),
+           dict(name='Neck Ring & Tie', chip='HANDMADE', sub='BEADED NECK RING WITH TIE', img=J(ba[3]), price=ba[3]['price'])],
+    set=dict(kicker='NECKLACE + BANGLE', title='The matching set', price=ba[4]['price'],
+             cols=[dict(name=i['name'], img=J(i), dot=DOT[i['name']]) for i in ba[4:]]),
+    gridTitle='Complete the look.', gridSub='9 PIECES · FROM R50', gridCols=3, cell=250,
+    grid=[dict(name=n, img=J(i), price=i['price']) for n, i in zip(['SMALL', 'MEDIUM', 'LARGE', 'NECK RING', 'BLACK & WHITE SET', 'YELLOW & BLUE SET', 'GREEN SET', 'ORANGE SET', 'BLUE SET'], ba)]))
 print('ok')
