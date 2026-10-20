@@ -61,10 +61,10 @@ NEW += [
   ti("TRD-012", "Beaded Necklace — Large", "", "unit", [("Standard", 150, ph("beaded_necklace_large"))]),
   ti("TRD-013", "Mini Wooden Knob Stick", "40cm", "unit", [("Standard", 30, ph("mini_wooden_knob"))]),
   ti("TRD-014", "Mini Wooden Spear", "40cm", "unit", [("Standard", 30, ph("mini_wooden_spear"))]),
-  ti("TRD-015", "Shell Belt Set", "", "set", [("Standard", 100, ph("shell_belt"))]),
+  ti("TRD-015", "Shell Belt Set", "65cm & 35cm", "set", [("Standard", 100, ph("shell_belt"))], "2-piece set: one 65cm belt and one 35cm belt."),
   ti("TRD-016", "Ndebele Painted Wooden Axe", "40cm", "unit", [
-      ("Stripes", 100, ph("ndebele_painted_axe_1") + AXE), ("Blue & Pink", 100, ph("ndebele_painted_axe_2") + AXE),
-      ("Red", 100, ph("ndebele_painted_axe_3") + AXE)]),
+      ("Ndebele Stripe", 100, ph("ndebele_painted_axe_1") + AXE), ("Blue & Pink", 100, ph("ndebele_painted_axe_2") + AXE),
+      ("Black & Red", 100, ph("ndebele_painted_axe_3") + AXE)]),
   ti("TRD-017", "Poryan Animal Skin", "", "unit", [("Standard", 200, ph("poryan_animal_skin"))]),
   ti("TRD-018", "Mapoto Canvas Apron", "", "unit",
      [(f"Size {z}", 55, ph("mapoto_canvas_apron")) for z in ("14", "14½", "15", "15½", "16", "16½", "17", "17½", "18")]),

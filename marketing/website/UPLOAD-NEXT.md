@@ -1,6 +1,9 @@
 # Upload status
 
-Nothing waiting. Last upload: 20 Oct 2026 (deploy 6ad764fa39bc0f176a6d826a): Traditional Items category (33 products),
+**Waiting for "upload"**: painted axe colours renamed (Ndebele Stripe / Blue & Pink / Black & Red), Mapoto apron photo
+flipped (same file name, new picture), Shell Belt Set described as a 2-piece set (65cm & 35cm).
+
+Last upload: 20 Oct 2026 (deploy 6ad764fa39bc0f176a6d826a): Traditional Items category (33 products),
 animal print berets, Colibri towels in 3 colours, bangles single/6-pack, whistle sizes swapped, Plain Berets with ZCC first.
 Before that: 20 Oct 2026 — 17 new products, 7 replacement photos, Beverly removed, catalogue edits
 (splits, names, sizes, photo order). See README.md for how to rebuild and upload; the patch order is in the README / below:

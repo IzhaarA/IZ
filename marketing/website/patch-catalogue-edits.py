@@ -54,6 +54,10 @@ def setp(pid, **kw):
 
 for v in by["TEK-004"]["variants"]: v["price"] = 60                    # White Ladies Canvas Tekkies
 setp("WIR-004", name="711 Copper Wire")
+if "TRD-016" in by:                                                     # Ndebele painted axe colour names
+    for v in by["TRD-016"]["variants"]:
+        v["label"] = {"Stripes": "Ndebele Stripe", "Red": "Black & Red"}.get(v["label"], v["label"])
+if "TRD-015" in by: setp("TRD-015", size="65cm & 35cm", desc="2-piece set: one 65cm belt and one 35cm belt.")
 setp("WHS-001", name="Plastic 2 Pipe Ndebele Whistle", desc="2-pipe plastic whistle")
 setp("WHS-006", size="9cm")                                            # 3 Pipe Metal Whistle
 setp("WHS-005", size="12cm")                                           # 2 Pipe Metal Whistle
