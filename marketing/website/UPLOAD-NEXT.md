@@ -1,11 +1,9 @@
 # Upload status
 
-**Waiting for "upload"**: painted axe colours renamed (Ndebele Stripe / Blue & Pink / Black & Red), Mapoto apron photo
-flipped (same file name, new picture), Shell Belt Set described as a 2-piece set (65cm & 35cm),
-beaded necklace sizes (5cm of beads, kids size / 10cm / 20cm), the 7 matseka bangles and 2 matseka leg rings moved to Bangles, dimit coins in their own "Dimit Coins" category under Beads,
-"Beaded Accessories" category under Beads (knob stick, 3 necklaces, neck ring & tie, necklace + bangle), painted and plain wooden axes moved to Scissors, Knives & Axes, brooches in "Haberdashery · Brooches", leopard & cowrie shells in a "Shells" category under Beads.
-
-Last upload: 20 Oct 2026 (deploy 6ad764fa39bc0f176a6d826a): Traditional Items category (33 products),
+Nothing waiting. Last upload: 20 Oct 2026 (deploy 6ad76dd86dd95d71a8d8d374): axe colour names, flipped Mapoto photo, shell belt
+and necklace sizes, matseka items to Bangles, new Dimit Coins / Beaded Accessories / Shells categories under Beads, axes to
+Scissors, Knives & Axes, Haberdashery · Brooches.
+Before that: 20 Oct 2026 (deploy 6ad764fa39bc0f176a6d826a): Traditional Items category (33 products),
 animal print berets, Colibri towels in 3 colours, bangles single/6-pack, whistle sizes swapped, Plain Berets with ZCC first.
 Before that: 20 Oct 2026 — 17 new products, 7 replacement photos, Beverly removed, catalogue edits
 (splits, names, sizes, photo order). See README.md for how to rebuild and upload; the patch order is in the README / below:
