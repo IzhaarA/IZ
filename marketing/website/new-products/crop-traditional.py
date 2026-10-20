@@ -18,6 +18,10 @@ CROPS = {
  'stretchy_matseka_bangle_12pkt_maroon': (.5,.42,.82), 'stretchy_matseka_bangle_gold': (.56,.455,.72), 'stretchy_matseka_bangle_silver': (.565,.45,.72),
  'beaded_necklace_bangle_1': (.515,.43,.92), 'beaded_necklace_bangle_2': (.525,.445,.94), 'beaded_necklace_bangle_3': (.505,.37,.96),
  'beaded_necklace_bangle_4': (.525,.375,.94), 'beaded_necklace_bangle_5': (.515,.425,.96),
+ 'small_rose_brooch_1': (.545,.43,.72), 'small_rose_brooch_2': (.58,.445,.74), 'small_rose_brooch_3': (.57,.41,.74),
+ 'small_rose_brooch_4': (.55,.45,.74), 'small_rose_brooch_5': (.55,.455,.74), 'small_rose_brooch_6': (.55,.435,.68),
+ 'small_flowers_brooch_1': (.545,.445,.72), 'small_flowers_brooch_2': (.535,.46,.74), 'small_flowers_brooch_3': (.575,.475,.72),
+ 'small_flowers_brooch_4': (.57,.465,.72), 'small_flowers_brooch_5': (.56,.475,.7), 'small_flowers_brooch_6': (.575,.475,.72),
  'stretchy_matseka_bangle_12pkt_silver': (.53,.38,.82), 'stretchy_matseka_bangle_12pkt_copper': (.56,.41,.82),
 }
 # dark table edges in the photo: (side, width fraction) replaced by the plain background next to them
