@@ -55,8 +55,8 @@ def setp(pid, **kw):
 for v in by["TEK-004"]["variants"]: v["price"] = 60                    # White Ladies Canvas Tekkies
 setp("WIR-004", name="711 Copper Wire")
 setp("WHS-001", name="Plastic 2 Pipe Ndebele Whistle", desc="2-pipe plastic whistle")
-setp("WHS-006", size="12cm")                                           # 3 Pipe Metal Whistle
-setp("WHS-005", size="9cm")                                            # 2 Pipe Metal Whistle
+setp("WHS-006", size="9cm")                                            # 3 Pipe Metal Whistle
+setp("WHS-005", size="12cm")                                           # 2 Pipe Metal Whistle
 SIZES = {"BEL-002": ["10cm", "12cm", "20cm"], "BEL-004": ["10cm", "12cm", "20cm"], "BEL-003": ["12cm", "24cm", "26cm"]}
 for pid, sz in SIZES.items():
     for v, s_ in zip(by[pid]["variants"], sz):
