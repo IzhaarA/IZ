@@ -1,6 +1,8 @@
 # Upload status
 
-Nothing waiting. Last upload: 20 Oct 2026: Mapoto Canvas Apron moved to Traditional Ndebele Accessories.
+**Waiting for "upload"**: Block Hand Towel renamed Block Bath Towel (70x145cm, R95); thick matseka leg ring and hand bangle R25.
+
+Last upload: 20 Oct 2026: Mapoto Canvas Apron moved to Traditional Ndebele Accessories.
 Before that: 20 Oct 2026: Beaded Knob Stick and both wooden axes moved to Traditional Ndebele Accessories.
 Before that: 20 Oct 2026 (deploy 6ad76f2f6e05d5a0dcc32d3b): Brooches and Beaded Accessories as their own
 categories under Clothing & Traditional Wear.

@@ -59,6 +59,12 @@ if "TRD-016" in by:                                                     # Ndebel
         v["label"] = {"Stripes": "Ndebele Stripe", "Red": "Black & Red"}.get(v["label"], v["label"])
 for pid, sz, d in (("TRD-010", "5cm of beads", "Kids size."), ("TRD-011", "10cm of beads", None), ("TRD-012", "20cm of beads", None)):
     if pid in by: setp(pid, size=sz, **({"desc": d} if d else {}))      # beaded necklaces: depth of the beadwork
+if "TWL-003" in by:                                                     # it is the block bath towel, not a hand towel
+    setp("TWL-003", name="Block Bath Towel", size="70x145cm")
+    for v in by["TWL-003"]["variants"]: v["price"] = 95
+for pid in ("TRD-021", "TRD-024"):                                      # thick matseka leg ring and hand bangle
+    if pid in by:
+        for v in by[pid]["variants"]: v["price"] = 25
 if "TRD-015" in by: setp("TRD-015", size="65cm & 35cm", desc="2-piece set: one 65cm belt and one 35cm belt.")
 setp("WHS-001", name="Plastic 2 Pipe Ndebele Whistle", desc="2-pipe plastic whistle")
 setp("WHS-006", size="9cm")                                            # 3 Pipe Metal Whistle
