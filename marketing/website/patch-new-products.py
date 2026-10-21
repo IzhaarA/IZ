@@ -86,6 +86,8 @@ NEW += [
       enumerate(("Lilac", "Blue", "Copper", "Green", "Pink", "Light Pink"), 1)]),
   ti("TRD-033", "Flowers Brooch", "", "unit", [(c, 20, ph(f"small_flowers_brooch_{i}")) for i, c in
       enumerate(("Blue", "Green", "Pink", "Peach", "Blue & Silver", "Light Pink"), 1)]),
+  ti("TRD-034", "Goleet Rings", "", "set of 4", [("Standard", 250, ph("goleet_rings_1", "goleet_rings_2"))],
+     "Set of 4 matseka wire rings.", cat="Traditional Ndebele Accessories"),
   ti("APB-001", "Animal Print Beret — Beige/Black", "", "unit", [("Standard", 85, ph("animal_print_beret_beige_black"))], cat="Berets · Animal Print Berets"),
   ti("APB-002", "Animal Print Beret — White/Black", "", "unit", [("Standard", 85, ph("animal_print_beret_white_black"))], cat="Berets · Animal Print Berets"),
 ]
@@ -96,7 +98,7 @@ REPLACE = {
   "COT-005": ph("ideel_black_cotton_new"), "COT-004": ph("ideel_white_cotton_new"), "COT-006": ph("ideel_white_cotton_new"),
   "BER-008": ph("new_zcc_green_beret", "new_zcc_green_beret_2"), "WHS-004": ph("police_whistle_new"),
 }
-AFTER = {"PIN-010": "PIN-009", "TWL-003": "TWL-002", "DCE-001": "DOM-003", "COT-010": "COT-009", "TWN-007": "TWN-006", "TRD-001": "NDJ-003", "APB-001": "BER-007"}  # place next to related items
+AFTER = {"PIN-010": "PIN-009", "TWL-003": "TWL-002", "DCE-001": "DOM-003", "COT-010": "COT-009", "TWN-007": "TWN-006", "TRD-001": "NDJ-003", "APB-001": "BER-007", "TRD-034": "NDJ-003"}  # place next to related items
 
 p = sys.argv[1]
 h = open(p, encoding="utf-8").read()

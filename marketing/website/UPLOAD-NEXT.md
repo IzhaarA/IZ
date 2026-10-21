@@ -1,6 +1,6 @@
 # Upload status
 
-**Waiting for "upload"**: Block Hand Towel renamed Block Bath Towel (70x145cm, R95); thick matseka leg ring and hand bangle R25.
+**Waiting for "upload"**: Block Hand Towel renamed Block Bath Towel (70x145cm, R95); thick matseka leg ring and hand bangle R25; new Goleet Rings (TRD-034, set of 4, R250) in Traditional Ndebele Accessories.
 
 Last upload: 20 Oct 2026: Mapoto Canvas Apron moved to Traditional Ndebele Accessories.
 Before that: 20 Oct 2026: Beaded Knob Stick and both wooden axes moved to Traditional Ndebele Accessories.
