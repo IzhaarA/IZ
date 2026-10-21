@@ -6,6 +6,7 @@
 | **Ads (TikTok, Instagram, Facebook, posters, reels, carousels): use only the new MW oval** | `makkies-mw-oval-hires.png` (or the `-1200`, `-600`, `-300` sizes) |
 | Website header, footer and anything on a dark background | `makkies-logo-for-dark-backgrounds.png` |
 | Invoices, letterheads, email and anything on white | `makkies-logo.png` |
+| Same logo with outlined (unfilled) lettering, like the shop's note pads (used on the catalogue cover) | `makkies-logo-outline.png` |
 | Social media profile picture (every platform) | `../profile-picture/makkies-profile-picture.png` |
 | Website icons and share image | `web/` |
 

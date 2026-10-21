@@ -54,7 +54,7 @@ for g in GROUPS:
         cols = 3 if len(items) > 6 else 2
         sections.append(f'<section class="c{cols}"><h2>{e(cat.replace(" · ", " — "))}</h2><div class="grid">{"".join(card(p) for p in items)}</div></section>')
 
-logo = os.path.join(H, '..', 'logo', 'makkies-logo.png')
+logo = os.path.join(H, '..', 'logo', 'makkies-logo-outline.png')   # outlined lettering, like the shop's note pads
 CSS = """@page{size:A4;margin:14mm 12mm 16mm}*{box-sizing:border-box;margin:0;padding:0}
 body{font-family:Arial,'Liberation Sans',sans-serif;color:#222;-webkit-print-color-adjust:exact;print-color-adjust:exact}
 .cover{height:262mm;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;page-break-after:always}
