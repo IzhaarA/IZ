@@ -486,6 +486,7 @@ Complete the look, the Ndebele way 💛💙❤️
 
 • Button Neck Ziela, gold or silver, R150
 • Ndebele Choker R75 · Ndebele Belt R120
+• Beaded Knob Stick, 30cm, R75
 • Goleet Rings, set of 4, R250
 • Ndebele Bracelet, short R40 or long R80
 • Leg Ziela and Thick Ziela, 5m R60 · 10m R120 · 100m R1100
@@ -504,7 +505,7 @@ Buying for a group or your shop? Ask us for wholesale prices.
 
 ## TikTok: Ndebele Accessories video (makkies-ndebele-accessories-tiktok.mp4)
 
-Neck ziela, chokers, belts, goleet rings, bracelets and painted axes 💛 Everything for your Ndebele look, from R40. Shop at makkies.co.za or WhatsApp 072 323 5469 🚚 We deliver across SA
+Neck ziela, beaded knob sticks, belts, goleet rings, bracelets and painted axes 💛 Everything for your Ndebele look, from R40. Shop at makkies.co.za or WhatsApp 072 323 5469 🚚 We deliver across SA
 
 #ndebele #ndebeleculture #traditionalwear #pretoria #southafrica
 
@@ -542,7 +543,7 @@ Copper, brass and matseka bangles from R10 ✨ Singles, 6-packs and 12-packs. Wh
 
 Everything for your beadwork and craft 🧵
 
-Bead twine, 301 cotton twine, sisal twine, Spring Time crochet cotton, bead hand cotton on cones, Ighara Rosebud, khozo cord and shirring elastic. 22 lines in stock, from R10.
+Bead twine, 301 cotton twine, sisal twine, Spring Time crochet cotton, 3 ply hand cotton in black or white, bead hand cotton on cones, Ighara Rosebud, khozo cord and shirring elastic. 22 lines in stock, from R10.
 
 Swipe to see what we keep 👉
 
@@ -556,7 +557,7 @@ Buying for a group or your shop? Ask us for wholesale prices.
 
 ## TikTok: Cotton & Twine video (makkies-cotton-twine-tiktok.mp4)
 
-Twine, bead cotton, crochet cotton and shirring elastic from R10 🧵 22 lines in stock for your beadwork and craft. Shop at makkies.co.za or WhatsApp 072 323 5469 🚚 We deliver across SA
+Twine, hand cotton in black and white, crochet cotton and shirring elastic from R10 🧵 22 lines in stock for your beadwork and craft. Shop at makkies.co.za or WhatsApp 072 323 5469 🚚 We deliver across SA
 
 #beadwork #crochet #crafting #pretoria #southafrica
 
@@ -634,28 +635,72 @@ Preciosa Czech seed beads, strung and loose, from R95 💎 47 colours in stock, 
 
 ---
 
-## 30. Plastic Beads (makkies-plastic-beads-carousel-01..15.jpg)
+## 30. Plastic Beads 3mm (makkies-plastic-beads-3mm-carousel-01..19.jpg)
 
-Plastic beads for every project 🌈
+Tiny 3mm round plastic beads for fine beadwork 🌈
 
-• 3mm round, 250g, R70
-• 6mm round, 250g, R50
-• 8mm oval, 250g, R55
-• Oval necklaces, ±125cm, R25
-• Gold or silver 6mm, 300g, R75
+250g packets, R70 each, in 16 colours: Royal Blue, Red, White, Black, Juba Blue, Green, Dark Yellow and more.
 
-80+ colours in stock. Swipe through the favourites 👉
+Swipe through every colour 👉
 
 🛒 makkies.co.za · 💬 WhatsApp 072 323 5469
 🚚 Delivery across SA · PAXI to any PEP · or collect in Marabastad
 Buying for a group or your shop? Ask us for wholesale prices.
 
-#plasticbeads #beads #beadwork #pretoria #southafrica
+#plasticbeads #beadwork #beads #pretoria #southafrica
 
 ---
 
-## TikTok: Plastic Beads video (makkies-plastic-beads-tiktok.mp4)
+## TikTok: Plastic Beads 3mm video (makkies-plastic-beads-3mm-tiktok.mp4)
 
-Plastic beads from R25 🌈 3mm, 6mm, ovals and ready necklaces, 80+ colours in stock. Shop at makkies.co.za or WhatsApp 072 323 5469 🚚 We deliver across SA
+3mm round plastic beads, 250g packets, R70 🌈 16 colours in stock. Which colours do you need? 👇 Shop at makkies.co.za or WhatsApp 072 323 5469 🚚 We deliver across SA
 
-#plasticbeads #beads #beadwork #pretoria #southafrica
+#plasticbeads #beadwork #beads #pretoria #southafrica
+
+---
+
+## 31. Plastic Beads 6mm (makkies-plastic-beads-6mm-carousel-01..15.jpg)
+
+Our 6mm round plastic beads, 250g packets for only R50 🌈
+
+35 colours, from bright reds and royal blues to clear and cloudy colours. Gold and silver 300g packets too, R75.
+
+Swipe through the favourites 👉 then see every colour at makkies.co.za
+
+🛒 makkies.co.za · 💬 WhatsApp 072 323 5469
+🚚 Delivery across SA · PAXI to any PEP · or collect in Marabastad
+Buying for a group or your shop? Ask us for wholesale prices.
+
+#plasticbeads #beadwork #beads #pretoria #southafrica
+
+---
+
+## TikTok: Plastic Beads 6mm video (makkies-plastic-beads-6mm-tiktok.mp4)
+
+6mm round plastic beads, R50 for 250g 🌈 35 colours plus gold and silver. These are the favourites. Shop at makkies.co.za or WhatsApp 072 323 5469 🚚 We deliver across SA
+
+#plasticbeads #beadwork #beads #pretoria #southafrica
+
+---
+
+## 32. Plastic Beads 8mm Oval (makkies-plastic-beads-oval-carousel-01..14.jpg)
+
+8mm oval plastic beads, 250g packets, R55 🌈
+
+11 colours: Red, Royal Blue, White, Black, Juba Blue, Green, Dark Yellow and more.
+
+Swipe through every colour 👉
+
+🛒 makkies.co.za · 💬 WhatsApp 072 323 5469
+🚚 Delivery across SA · PAXI to any PEP · or collect in Marabastad
+Buying for a group or your shop? Ask us for wholesale prices.
+
+#plasticbeads #beadwork #beads #pretoria #southafrica
+
+---
+
+## TikTok: Plastic Beads 8mm Oval video (makkies-plastic-beads-oval-tiktok.mp4)
+
+8mm oval plastic beads, 250g packets, R55 🌈 11 colours in stock. Which one is yours? 👇 Shop at makkies.co.za or WhatsApp 072 323 5469 🚚 We deliver across SA
+
+#plasticbeads #beadwork #beads #pretoria #southafrica

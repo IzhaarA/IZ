@@ -1633,8 +1633,8 @@
     "Pack of 6"
    ],
    "varies": true,
-   "tint": "#e2e1dd",
-   "ink": "#453f2b"
+   "tint": "#e2e1de",
+   "ink": "#443d2b"
   },
   {
    "id": "BNG-002",
@@ -1649,7 +1649,7 @@
     "Pack of 6"
    ],
    "varies": true,
-   "tint": "#e3e2dd",
+   "tint": "#e2e2dd",
    "ink": "#45412a"
   },
   {
@@ -1680,8 +1680,8 @@
     "Standard"
    ],
    "varies": false,
-   "tint": "#e5e3db",
-   "ink": "#484327"
+   "tint": "#e4e3dc",
+   "ink": "#484427"
   },
   {
    "id": "BNG-005",
@@ -1696,7 +1696,7 @@
    ],
    "varies": false,
    "tint": "#e1e1df",
-   "ink": "#41412e"
+   "ink": "#3f422e"
   },
   {
    "id": "TRD-021",
@@ -2830,8 +2830,8 @@
     "Size 8/0 (±3mm)"
    ],
    "varies": false,
-   "tint": "#e0e1df",
-   "ink": "#3b412e"
+   "tint": "#e3e1dd",
+   "ink": "#453c2a"
   },
   {
    "id": "CH-50B",
@@ -3984,536 +3984,11 @@
    "ink": "#472c28"
   }
  ],
- "plastic": [
-  {
-   "id": "PB6-E06",
-   "name": "Dark Purple",
-   "img": "pb_pb6-e06",
-   "price": 50,
-   "size": "",
-   "multi": false,
-   "desc": "",
-   "labels": [
-    "6mm"
-   ],
-   "varies": false,
-   "tint": "#e2dde2",
-   "ink": "#452a45"
-  },
-  {
-   "id": "PB6-E07",
-   "name": "Light Purple",
-   "img": "pb_pb6-e07",
-   "price": 50,
-   "size": "",
-   "multi": false,
-   "desc": "",
-   "labels": [
-    "6mm"
-   ],
-   "varies": false,
-   "tint": "#e2dfde",
-   "ink": "#432f2c"
-  },
-  {
-   "id": "PB6-E09",
-   "name": "Green",
-   "img": "pb_pb6-e09",
-   "price": 50,
-   "size": "",
-   "multi": false,
-   "desc": "",
-   "labels": [
-    "6mm"
-   ],
-   "varies": false,
-   "tint": "#e4e0db",
-   "ink": "#483727"
-  },
-  {
-   "id": "PB6-E15",
-   "name": "Lime Green",
-   "img": "pb_pb6-e15",
-   "price": 50,
-   "size": "",
-   "multi": false,
-   "desc": "",
-   "labels": [
-    "6mm"
-   ],
-   "varies": false,
-   "tint": "#e2eed2",
-   "ink": "#3c5d13"
-  },
-  {
-   "id": "PB6-E16",
-   "name": "Bottle Green",
-   "img": "pb_pb6-e16",
-   "price": 50,
-   "size": "",
-   "multi": false,
-   "desc": "",
-   "labels": [
-    "6mm"
-   ],
-   "varies": false,
-   "tint": "#e2e1de",
-   "ink": "#44402b"
-  },
-  {
-   "id": "PB6-E17",
-   "name": "Yellow",
-   "img": "pb_pb6-e17",
-   "price": 50,
-   "size": "",
-   "multi": false,
-   "desc": "",
-   "labels": [
-    "6mm"
-   ],
-   "varies": false,
-   "tint": "#eeebd2",
-   "ink": "#6a6005"
-  },
-  {
-   "id": "PB6-E23",
-   "name": "Red",
-   "img": "pb_pb6-e23",
-   "price": 50,
-   "size": "",
-   "multi": false,
-   "desc": "",
-   "labels": [
-    "6mm"
-   ],
-   "varies": false,
-   "tint": "#ebd9d5",
-   "ink": "#54251b"
-  },
-  {
-   "id": "PB6-E29",
-   "name": "Royal Blue",
-   "img": "pb_pb6-e29",
-   "price": 50,
-   "size": "",
-   "multi": false,
-   "desc": "",
-   "labels": [
-    "6mm"
-   ],
-   "varies": false,
-   "tint": "#e4dfdb",
-   "ink": "#483427"
-  },
-  {
-   "id": "PB6-E36",
-   "name": "Turquoise",
-   "img": "pb_pb6-e36",
-   "price": 50,
-   "size": "",
-   "multi": false,
-   "desc": "",
-   "labels": [
-    "6mm"
-   ],
-   "varies": false,
-   "tint": "#e3dfdd",
-   "ink": "#463429"
-  },
-  {
-   "id": "PB6-E37",
-   "name": "Juba Blue",
-   "img": "pb_pb6-e37",
-   "price": 50,
-   "size": "",
-   "multi": false,
-   "desc": "",
-   "labels": [
-    "6mm"
-   ],
-   "varies": false,
-   "tint": "#e2dfde",
-   "ink": "#43302c"
-  },
-  {
-   "id": "PB6-E41",
-   "name": "White",
-   "img": "pb_pb6-e41",
-   "price": 50,
-   "size": "",
-   "multi": false,
-   "desc": "",
-   "labels": [
-    "6mm"
-   ],
-   "varies": false,
-   "tint": "#e1e0de",
-   "ink": "#43392c"
-  },
-  {
-   "id": "PB6-E42",
-   "name": "Golden Brown",
-   "img": "pb_pb6-e42",
-   "price": 50,
-   "size": "",
-   "multi": false,
-   "desc": "",
-   "labels": [
-    "6mm"
-   ],
-   "varies": false,
-   "tint": "#e2e1dd",
-   "ink": "#443f2b"
-  },
-  {
-   "id": "PB6-E46",
-   "name": "Black",
-   "img": "pb_pb6-e46",
-   "price": 50,
-   "size": "",
-   "multi": false,
-   "desc": "",
-   "labels": [
-    "6mm"
-   ],
-   "varies": false,
-   "tint": "#e6dfda",
-   "ink": "#4a3525"
-  },
-  {
-   "id": "PB6-E47",
-   "name": "Dark Brown",
-   "img": "pb_pb6-e47",
-   "price": 50,
-   "size": "",
-   "multi": false,
-   "desc": "",
-   "labels": [
-    "6mm"
-   ],
-   "varies": false,
-   "tint": "#e4e0dc",
-   "ink": "#473828"
-  },
-  {
-   "id": "PB6-E49",
-   "name": "Dark Yellow",
-   "img": "pb_pb6-e49",
-   "price": 50,
-   "size": "",
-   "multi": false,
-   "desc": "",
-   "labels": [
-    "6mm"
-   ],
-   "varies": false,
-   "tint": "#e8e1d8",
-   "ink": "#4f3c20"
-  },
-  {
-   "id": "PB6-E50",
-   "name": "Cream",
-   "img": "pb_pb6-e50",
-   "price": 50,
-   "size": "",
-   "multi": false,
-   "desc": "",
-   "labels": [
-    "6mm"
-   ],
-   "varies": false,
-   "tint": "#eae5d6",
-   "ink": "#53441d"
-  },
-  {
-   "id": "PB6-E60",
-   "name": "Maroon",
-   "img": "pb_pb6-e60",
-   "price": 50,
-   "size": "",
-   "multi": false,
-   "desc": "",
-   "labels": [
-    "6mm"
-   ],
-   "varies": false,
-   "tint": "#e2dede",
-   "ink": "#442f2b"
-  },
-  {
-   "id": "PB6-E61",
-   "name": "Sweet Pink",
-   "img": "pb_pb6-e61",
-   "price": 50,
-   "size": "",
-   "multi": false,
-   "desc": "",
-   "labels": [
-    "6mm"
-   ],
-   "varies": false,
-   "tint": "#eed2d6",
-   "ink": "#5f101a"
-  },
-  {
-   "id": "PB6-E64",
-   "name": "Pink",
-   "img": "pb_pb6-e64",
-   "price": 50,
-   "size": "",
-   "multi": false,
-   "desc": "",
-   "labels": [
-    "6mm"
-   ],
-   "varies": false,
-   "tint": "#e8d8d9",
-   "ink": "#4f2024"
-  },
-  {
-   "id": "PB6-E65",
-   "name": "Peach",
-   "img": "pb_pb6-e65",
-   "price": 50,
-   "size": "",
-   "multi": false,
-   "desc": "",
-   "labels": [
-    "6mm"
-   ],
-   "varies": false,
-   "tint": "#e8ddd8",
-   "ink": "#4f3021"
-  },
-  {
-   "id": "PB6-E66",
-   "name": "Cloudy Orange",
-   "img": "pb_pb6-e66",
-   "price": 50,
-   "size": "",
-   "multi": false,
-   "desc": "",
-   "labels": [
-    "6mm"
-   ],
-   "varies": false,
-   "tint": "#eed9d2",
-   "ink": "#60220f"
-  },
-  {
-   "id": "PB6-E67",
-   "name": "Cloudy Light Green",
-   "img": "pb_pb6-e67",
-   "price": 50,
-   "size": "",
-   "multi": false,
-   "desc": "",
-   "labels": [
-    "6mm"
-   ],
-   "varies": false,
-   "tint": "#dde5db",
-   "ink": "#2d4926"
-  },
-  {
-   "id": "PB6-E68",
-   "name": "Cloudy Lime",
-   "img": "pb_pb6-e68",
-   "price": 50,
-   "size": "",
-   "multi": false,
-   "desc": "",
-   "labels": [
-    "6mm"
-   ],
-   "varies": false,
-   "tint": "#eeecd2",
-   "ink": "#5e5a12"
-  },
-  {
-   "id": "PB6-E77",
-   "name": "Teal",
-   "img": "pb_pb6-e77",
-   "price": 50,
-   "size": "",
-   "multi": false,
-   "desc": "",
-   "labels": [
-    "6mm"
-   ],
-   "varies": false,
-   "tint": "#dbe4e0",
-   "ink": "#274838"
-  },
-  {
-   "id": "PB6-E78",
-   "name": "Baby Pink",
-   "img": "pb_pb6-e78",
-   "price": 50,
-   "size": "",
-   "multi": false,
-   "desc": "",
-   "labels": [
-    "6mm"
-   ],
-   "varies": false,
-   "tint": "#e6dadb",
-   "ink": "#4b2527"
-  },
-  {
-   "id": "PB6-E84",
-   "name": "Beige",
-   "img": "pb_pb6-e84",
-   "price": 50,
-   "size": "",
-   "multi": false,
-   "desc": "",
-   "labels": [
-    "6mm"
-   ],
-   "varies": false,
-   "tint": "#e8e4d8",
-   "ink": "#4e4321"
-  },
-  {
-   "id": "PB6-E04CL",
-   "name": "Clear",
-   "img": "pb_pb6-e04cl",
-   "price": 50,
-   "size": "",
-   "multi": false,
-   "desc": "",
-   "labels": [
-    "6mm"
-   ],
-   "varies": false,
-   "tint": "#e1e1df",
-   "ink": "#42402d"
-  },
-  {
-   "id": "PB6-E07CL",
-   "name": "Clear Purple",
-   "img": "pb_pb6-e07cl",
-   "price": 50,
-   "size": "",
-   "multi": false,
-   "desc": "",
-   "labels": [
-    "6mm"
-   ],
-   "varies": false,
-   "tint": "#dfdee2",
-   "ink": "#2f2c43"
-  },
-  {
-   "id": "PB6-E23CL",
-   "name": "Clear Pink",
-   "img": "pb_pb6-e23cl",
-   "price": 50,
-   "size": "",
-   "multi": false,
-   "desc": "",
-   "labels": [
-    "6mm"
-   ],
-   "varies": false,
-   "tint": "#ebd4d7",
-   "ink": "#551a20"
-  },
-  {
-   "id": "PB6-E29CL",
-   "name": "Clear Navy",
-   "img": "pb_pb6-e29cl",
-   "price": 50,
-   "size": "",
-   "multi": false,
-   "desc": "",
-   "labels": [
-    "6mm"
-   ],
-   "varies": false,
-   "tint": "#e2e0dd",
-   "ink": "#45362a"
-  },
-  {
-   "id": "PB6-E37CL",
-   "name": "Clear Blue",
-   "img": "pb_pb6-e37cl",
-   "price": 50,
-   "size": "",
-   "multi": false,
-   "desc": "",
-   "labels": [
-    "6mm"
-   ],
-   "varies": false,
-   "tint": "#dbdce5",
-   "ink": "#262c49"
-  },
-  {
-   "id": "PB6-E63CL",
-   "name": "Clear Sweet Pink",
-   "img": "pb_pb6-e63cl",
-   "price": 50,
-   "size": "",
-   "multi": false,
-   "desc": "",
-   "labels": [
-    "6mm"
-   ],
-   "varies": false,
-   "tint": "#ebdbd5",
-   "ink": "#542a1c"
-  },
-  {
-   "id": "PB6-E66CL",
-   "name": "Clear Orange",
-   "img": "pb_pb6-e66cl",
-   "price": 50,
-   "size": "",
-   "multi": false,
-   "desc": "",
-   "labels": [
-    "6mm"
-   ],
-   "varies": false,
-   "tint": "#eedad2",
-   "ink": "#66230a"
-  },
-  {
-   "id": "PB6-E67CL",
-   "name": "Clear Green",
-   "img": "pb_pb6-e67cl",
-   "price": 50,
-   "size": "",
-   "multi": false,
-   "desc": "",
-   "labels": [
-    "6mm"
-   ],
-   "varies": false,
-   "tint": "#dce7d9",
-   "ink": "#2d4d23"
-  },
-  {
-   "id": "PB6-E68CL",
-   "name": "Clear Yellow",
-   "img": "pb_pb6-e68cl",
-   "price": 50,
-   "size": "",
-   "multi": false,
-   "desc": "",
-   "labels": [
-    "6mm"
-   ],
-   "varies": false,
-   "tint": "#edeed2",
-   "ink": "#5e600f"
-  },
+ "plastic3": [
   {
    "id": "PB3-E06",
    "name": "Dark Purple",
-   "img": "pb_pb3-e06",
+   "img": "p3_pb3-e06",
    "price": 70,
    "size": "",
    "multi": false,
@@ -4528,7 +4003,7 @@
   {
    "id": "PB3-E09",
    "name": "Green",
-   "img": "pb_pb3-e09",
+   "img": "p3_pb3-e09",
    "price": 70,
    "size": "",
    "multi": false,
@@ -4543,7 +4018,7 @@
   {
    "id": "PB3-E15",
    "name": "Lime Green",
-   "img": "pb_pb3-e15",
+   "img": "p3_pb3-e15",
    "price": 70,
    "size": "",
    "multi": false,
@@ -4558,7 +4033,7 @@
   {
    "id": "PB3-E23",
    "name": "Red",
-   "img": "pb_pb3-e23",
+   "img": "p3_pb3-e23",
    "price": 70,
    "size": "",
    "multi": false,
@@ -4573,7 +4048,7 @@
   {
    "id": "PB3-E29",
    "name": "Royal Blue",
-   "img": "pb_pb3-e29",
+   "img": "p3_pb3-e29",
    "price": 70,
    "size": "",
    "multi": false,
@@ -4588,7 +4063,7 @@
   {
    "id": "PB3-E37",
    "name": "Juba Blue",
-   "img": "pb_pb3-e37",
+   "img": "p3_pb3-e37",
    "price": 70,
    "size": "",
    "multi": false,
@@ -4603,7 +4078,7 @@
   {
    "id": "PB3-E41",
    "name": "White",
-   "img": "pb_pb3-e41",
+   "img": "p3_pb3-e41",
    "price": 70,
    "size": "",
    "multi": false,
@@ -4618,7 +4093,7 @@
   {
    "id": "PB3-E46",
    "name": "Black",
-   "img": "pb_pb3-e46",
+   "img": "p3_pb3-e46",
    "price": 70,
    "size": "",
    "multi": false,
@@ -4633,7 +4108,7 @@
   {
    "id": "PB3-E47",
    "name": "Dark Brown",
-   "img": "pb_pb3-e47",
+   "img": "p3_pb3-e47",
    "price": 70,
    "size": "",
    "multi": false,
@@ -4648,7 +4123,7 @@
   {
    "id": "PB3-E49",
    "name": "Dark Yellow",
-   "img": "pb_pb3-e49",
+   "img": "p3_pb3-e49",
    "price": 70,
    "size": "",
    "multi": false,
@@ -4663,7 +4138,7 @@
   {
    "id": "PB3-E50",
    "name": "Cream",
-   "img": "pb_pb3-e50",
+   "img": "p3_pb3-e50",
    "price": 70,
    "size": "",
    "multi": false,
@@ -4678,7 +4153,7 @@
   {
    "id": "PB3-E61",
    "name": "Sweet Pink",
-   "img": "pb_pb3-e61",
+   "img": "p3_pb3-e61",
    "price": 70,
    "size": "",
    "multi": false,
@@ -4693,7 +4168,7 @@
   {
    "id": "PB3-E66",
    "name": "Cloudy Orange",
-   "img": "pb_pb3-e66",
+   "img": "p3_pb3-e66",
    "price": 70,
    "size": "",
    "multi": false,
@@ -4708,7 +4183,7 @@
   {
    "id": "PB3-E67",
    "name": "Cloudy Light Green",
-   "img": "pb_pb3-e67",
+   "img": "p3_pb3-e67",
    "price": 70,
    "size": "",
    "multi": false,
@@ -4723,7 +4198,7 @@
   {
    "id": "PB3-E68",
    "name": "Cloudy Lime",
-   "img": "pb_pb3-e68",
+   "img": "p3_pb3-e68",
    "price": 70,
    "size": "",
    "multi": false,
@@ -4738,7 +4213,7 @@
   {
    "id": "PB3-E84",
    "name": "Beige",
-   "img": "pb_pb3-e84",
+   "img": "p3_pb3-e84",
    "price": 70,
    "size": "",
    "multi": false,
@@ -4749,491 +4224,538 @@
    "varies": false,
    "tint": "#ebe5d5",
    "ink": "#55451b"
-  },
+  }
+ ],
+ "plastic6": [
   {
-   "id": "PBO-E41",
-   "name": "White",
-   "img": "pb_pbo-e41",
-   "price": 55,
-   "size": "8mm Oval",
-   "multi": false,
-   "desc": "",
-   "labels": [
-    "8mm Oval"
-   ],
-   "varies": false,
-   "tint": "#dfe0e0",
-   "ink": "#2e413c"
-  },
-  {
-   "id": "PBO-E23",
-   "name": "Red",
-   "img": "pb_pbo-e23",
-   "price": 55,
-   "size": "8mm Oval",
-   "multi": false,
-   "desc": "",
-   "labels": [
-    "8mm Oval"
-   ],
-   "varies": false,
-   "tint": "#e6ddda",
-   "ink": "#4b2e24"
-  },
-  {
-   "id": "PBO-E06",
+   "id": "PB6-E06",
    "name": "Dark Purple",
-   "img": "pb_pbo-e06",
-   "price": 55,
-   "size": "8mm Oval",
+   "img": "p6_pb6-e06",
+   "price": 50,
+   "size": "",
    "multi": false,
    "desc": "",
    "labels": [
-    "8mm Oval"
+    "6mm"
    ],
    "varies": false,
-   "tint": "#e3dedd",
-   "ink": "#45302a"
+   "tint": "#e2dde2",
+   "ink": "#452a45"
   },
   {
-   "id": "PBO-E09",
+   "id": "PB6-E07",
+   "name": "Light Purple",
+   "img": "p6_pb6-e07",
+   "price": 50,
+   "size": "",
+   "multi": false,
+   "desc": "",
+   "labels": [
+    "6mm"
+   ],
+   "varies": false,
+   "tint": "#e2dfde",
+   "ink": "#432f2c"
+  },
+  {
+   "id": "PB6-E09",
    "name": "Green",
-   "img": "pb_pbo-e09",
-   "price": 55,
-   "size": "8mm Oval",
+   "img": "p6_pb6-e09",
+   "price": 50,
+   "size": "",
    "multi": false,
    "desc": "",
    "labels": [
-    "8mm Oval"
+    "6mm"
    ],
    "varies": false,
-   "tint": "#e3e4dc",
-   "ink": "#434728"
+   "tint": "#e4e0db",
+   "ink": "#483727"
   },
   {
-   "id": "PBO-E29",
+   "id": "PB6-E15",
+   "name": "Lime Green",
+   "img": "p6_pb6-e15",
+   "price": 50,
+   "size": "",
+   "multi": false,
+   "desc": "",
+   "labels": [
+    "6mm"
+   ],
+   "varies": false,
+   "tint": "#e2eed2",
+   "ink": "#3c5d13"
+  },
+  {
+   "id": "PB6-E16",
+   "name": "Bottle Green",
+   "img": "p6_pb6-e16",
+   "price": 50,
+   "size": "",
+   "multi": false,
+   "desc": "",
+   "labels": [
+    "6mm"
+   ],
+   "varies": false,
+   "tint": "#e2e1de",
+   "ink": "#44402b"
+  },
+  {
+   "id": "PB6-E17",
+   "name": "Yellow",
+   "img": "p6_pb6-e17",
+   "price": 50,
+   "size": "",
+   "multi": false,
+   "desc": "",
+   "labels": [
+    "6mm"
+   ],
+   "varies": false,
+   "tint": "#eeebd2",
+   "ink": "#6a6005"
+  },
+  {
+   "id": "PB6-E23",
+   "name": "Red",
+   "img": "p6_pb6-e23",
+   "price": 50,
+   "size": "",
+   "multi": false,
+   "desc": "",
+   "labels": [
+    "6mm"
+   ],
+   "varies": false,
+   "tint": "#ebd9d5",
+   "ink": "#54251b"
+  },
+  {
+   "id": "PB6-E29",
    "name": "Royal Blue",
-   "img": "pb_pbo-e29",
-   "price": 55,
-   "size": "8mm Oval",
+   "img": "p6_pb6-e29",
+   "price": 50,
+   "size": "",
    "multi": false,
    "desc": "",
    "labels": [
-    "8mm Oval"
+    "6mm"
    ],
    "varies": false,
-   "tint": "#e1dfdf",
-   "ink": "#422d32"
+   "tint": "#e4dfdb",
+   "ink": "#483427"
   },
   {
-   "id": "PBO-E37",
+   "id": "PB6-E36",
+   "name": "Turquoise",
+   "img": "p6_pb6-e36",
+   "price": 50,
+   "size": "",
+   "multi": false,
+   "desc": "",
+   "labels": [
+    "6mm"
+   ],
+   "varies": false,
+   "tint": "#e3dfdd",
+   "ink": "#463429"
+  },
+  {
+   "id": "PB6-E37",
    "name": "Juba Blue",
-   "img": "pb_pbo-e37",
-   "price": 55,
-   "size": "8mm Oval",
+   "img": "p6_pb6-e37",
+   "price": 50,
+   "size": "",
    "multi": false,
    "desc": "",
    "labels": [
-    "8mm Oval"
+    "6mm"
    ],
    "varies": false,
-   "tint": "#e1dfdf",
-   "ink": "#432d2f"
+   "tint": "#e2dfde",
+   "ink": "#43302c"
   },
   {
-   "id": "PBO-E47",
-   "name": "Brown",
-   "img": "pb_pbo-e47",
-   "price": 55,
-   "size": "8mm Oval",
+   "id": "PB6-E41",
+   "name": "White",
+   "img": "p6_pb6-e41",
+   "price": 50,
+   "size": "",
    "multi": false,
    "desc": "",
    "labels": [
-    "8mm Oval"
+    "6mm"
+   ],
+   "varies": false,
+   "tint": "#e1e0de",
+   "ink": "#43392c"
+  },
+  {
+   "id": "PB6-E42",
+   "name": "Golden Brown",
+   "img": "p6_pb6-e42",
+   "price": 50,
+   "size": "",
+   "multi": false,
+   "desc": "",
+   "labels": [
+    "6mm"
+   ],
+   "varies": false,
+   "tint": "#e2e1dd",
+   "ink": "#443f2b"
+  },
+  {
+   "id": "PB6-E46",
+   "name": "Black",
+   "img": "p6_pb6-e46",
+   "price": 50,
+   "size": "",
+   "multi": false,
+   "desc": "",
+   "labels": [
+    "6mm"
+   ],
+   "varies": false,
+   "tint": "#e6dfda",
+   "ink": "#4a3525"
+  },
+  {
+   "id": "PB6-E47",
+   "name": "Dark Brown",
+   "img": "p6_pb6-e47",
+   "price": 50,
+   "size": "",
+   "multi": false,
+   "desc": "",
+   "labels": [
+    "6mm"
    ],
    "varies": false,
    "tint": "#e4e0dc",
-   "ink": "#483827"
+   "ink": "#473828"
   },
   {
-   "id": "PBO-E46",
-   "name": "Black",
-   "img": "pb_pbo-e46",
-   "price": 55,
-   "size": "8mm Oval",
-   "multi": false,
-   "desc": "",
-   "labels": [
-    "8mm Oval"
-   ],
-   "varies": false,
-   "tint": "#e3e0dd",
-   "ink": "#463a29"
-  },
-  {
-   "id": "PBO-E49",
+   "id": "PB6-E49",
    "name": "Dark Yellow",
-   "img": "pb_pbo-e49",
-   "price": 55,
-   "size": "8mm Oval",
+   "img": "p6_pb6-e49",
+   "price": 50,
+   "size": "",
    "multi": false,
    "desc": "",
    "labels": [
-    "8mm Oval"
+    "6mm"
    ],
    "varies": false,
-   "tint": "#e8e3d8",
-   "ink": "#4e4121"
+   "tint": "#e8e1d8",
+   "ink": "#4f3c20"
   },
   {
-   "id": "PBO-E66",
-   "name": "Cloudy Orange",
-   "img": "pb_pbo-e66",
-   "price": 55,
-   "size": "8mm Oval",
+   "id": "PB6-E50",
+   "name": "Cream",
+   "img": "p6_pb6-e50",
+   "price": 50,
+   "size": "",
    "multi": false,
    "desc": "",
    "labels": [
-    "8mm Oval"
+    "6mm"
    ],
    "varies": false,
-   "tint": "#eedad2",
-   "ink": "#5a2815"
+   "tint": "#eae5d6",
+   "ink": "#53441d"
   },
   {
-   "id": "PBO-E67",
-   "name": "Cloudy Green",
-   "img": "pb_pbo-e67",
-   "price": 55,
-   "size": "8mm Oval",
+   "id": "PB6-E60",
+   "name": "Maroon",
+   "img": "p6_pb6-e60",
+   "price": 50,
+   "size": "",
    "multi": false,
    "desc": "",
    "labels": [
-    "8mm Oval"
+    "6mm"
    ],
    "varies": false,
-   "tint": "#dbe8d8",
-   "ink": "#294e21"
+   "tint": "#e2dede",
+   "ink": "#442f2b"
   },
   {
-   "id": "PBN-E17",
-   "name": "Yellow",
-   "img": "pb_pbn-e17",
-   "price": 25,
-   "size": "±125cm",
-   "multi": false,
-   "desc": "pull-over strand · oval beads with white spacers",
-   "labels": [
-    "Standard"
-   ],
-   "varies": false,
-   "tint": "#e4e3dc",
-   "ink": "#474428"
-  },
-  {
-   "id": "PBN-E37",
-   "name": "Juba Blue",
-   "img": "pb_pbn-e37",
-   "price": 25,
-   "size": "±125cm",
-   "multi": false,
-   "desc": "pull-over strand · oval beads with white spacers",
-   "labels": [
-    "Standard"
-   ],
-   "varies": false,
-   "tint": "#e2e2de",
-   "ink": "#44442b"
-  },
-  {
-   "id": "PBN-E09",
-   "name": "Green",
-   "img": "pb_pbn-e09",
-   "price": 25,
-   "size": "±125cm",
-   "multi": false,
-   "desc": "pull-over strand · oval beads with white spacers",
-   "labels": [
-    "Standard"
-   ],
-   "varies": false,
-   "tint": "#e1e2de",
-   "ink": "#3d432c"
-  },
-  {
-   "id": "PBN-04",
-   "name": "Bright Red",
-   "img": "pb_pbn-04",
-   "price": 25,
-   "size": "±125cm",
-   "multi": false,
-   "desc": "pull-over strand · oval beads with white spacers",
-   "labels": [
-    "Standard"
-   ],
-   "varies": false,
-   "tint": "#e7dbd9",
-   "ink": "#4d2923"
-  },
-  {
-   "id": "PBN-05",
-   "name": "Cloudy Royal Blue",
-   "img": "pb_pbn-05",
-   "price": 25,
-   "size": "±125cm",
-   "multi": false,
-   "desc": "pull-over strand · oval beads with white spacers",
-   "labels": [
-    "Standard"
-   ],
-   "varies": false,
-   "tint": "#dfdfe1",
-   "ink": "#2d2d42"
-  },
-  {
-   "id": "PBN-E66CL",
-   "name": "Clear Orange",
-   "img": "pb_pbn-e66cl",
-   "price": 25,
-   "size": "±125cm",
-   "multi": false,
-   "desc": "pull-over strand · oval beads with white spacers",
-   "labels": [
-    "Standard"
-   ],
-   "varies": false,
-   "tint": "#e9ded7",
-   "ink": "#51331f"
-  },
-  {
-   "id": "PBN-07",
-   "name": "Cloudy Light Pink",
-   "img": "pb_pbn-07",
-   "price": 25,
-   "size": "±125cm",
-   "multi": false,
-   "desc": "pull-over strand · oval beads with white spacers",
-   "labels": [
-    "Standard"
-   ],
-   "varies": false,
-   "tint": "#e7d9de",
-   "ink": "#4d2231"
-  },
-  {
-   "id": "PBN-08",
-   "name": "Dark Blue",
-   "img": "pb_pbn-08",
-   "price": 25,
-   "size": "±125cm",
-   "multi": false,
-   "desc": "pull-over strand · oval beads with white spacers",
-   "labels": [
-    "Standard"
-   ],
-   "varies": false,
-   "tint": "#e3e2dd",
-   "ink": "#45432a"
-  },
-  {
-   "id": "PBN-E78",
-   "name": "Baby Pink",
-   "img": "pb_pbn-e78",
-   "price": 25,
-   "size": "±125cm",
-   "multi": false,
-   "desc": "pull-over strand · oval beads with white spacers",
-   "labels": [
-    "Standard"
-   ],
-   "varies": false,
-   "tint": "#e1e1df",
-   "ink": "#42422d"
-  },
-  {
-   "id": "PBN-E77",
-   "name": "Teal",
-   "img": "pb_pbn-e77",
-   "price": 25,
-   "size": "±125cm",
-   "multi": false,
-   "desc": "pull-over strand · oval beads with white spacers",
-   "labels": [
-    "Standard"
-   ],
-   "varies": false,
-   "tint": "#dee2df",
-   "ink": "#2c432f"
-  },
-  {
-   "id": "PBN-E68CL",
-   "name": "Clear Yellow",
-   "img": "pb_pbn-e68cl",
-   "price": 25,
-   "size": "±125cm",
-   "multi": false,
-   "desc": "pull-over strand · oval beads with white spacers",
-   "labels": [
-    "Standard"
-   ],
-   "varies": false,
-   "tint": "#e6e6d9",
-   "ink": "#494c23"
-  },
-  {
-   "id": "PBN-E66",
-   "name": "Cloudy Orange",
-   "img": "pb_pbn-e66",
-   "price": 25,
-   "size": "±125cm",
-   "multi": false,
-   "desc": "pull-over strand · oval beads with white spacers",
-   "labels": [
-    "Standard"
-   ],
-   "varies": false,
-   "tint": "#e8dcd8",
-   "ink": "#4f2c20"
-  },
-  {
-   "id": "PBN-13",
-   "name": "Bottle Green",
-   "img": "pb_pbn-13",
-   "price": 25,
-   "size": "±125cm",
-   "multi": false,
-   "desc": "pull-over strand · oval beads with white spacers",
-   "labels": [
-    "Standard"
-   ],
-   "varies": false,
-   "tint": "#dfe3dd",
-   "ink": "#324629"
-  },
-  {
-   "id": "PBN-E36",
-   "name": "Turquoise",
-   "img": "pb_pbn-e36",
-   "price": 25,
-   "size": "±125cm",
-   "multi": false,
-   "desc": "pull-over strand · oval beads with white spacers",
-   "labels": [
-    "Standard"
-   ],
-   "varies": false,
-   "tint": "#dee2e1",
-   "ink": "#2c4341"
-  },
-  {
-   "id": "PBN-E61",
+   "id": "PB6-E61",
    "name": "Sweet Pink",
-   "img": "pb_pbn-e61",
-   "price": 25,
-   "size": "±125cm",
+   "img": "p6_pb6-e61",
+   "price": 50,
+   "size": "",
    "multi": false,
-   "desc": "pull-over strand · oval beads with white spacers",
+   "desc": "",
    "labels": [
-    "Standard"
+    "6mm"
+   ],
+   "varies": false,
+   "tint": "#eed2d6",
+   "ink": "#5f101a"
+  },
+  {
+   "id": "PB6-E64",
+   "name": "Pink",
+   "img": "p6_pb6-e64",
+   "price": 50,
+   "size": "",
+   "multi": false,
+   "desc": "",
+   "labels": [
+    "6mm"
+   ],
+   "varies": false,
+   "tint": "#e8d8d9",
+   "ink": "#4f2024"
+  },
+  {
+   "id": "PB6-E65",
+   "name": "Peach",
+   "img": "p6_pb6-e65",
+   "price": 50,
+   "size": "",
+   "multi": false,
+   "desc": "",
+   "labels": [
+    "6mm"
+   ],
+   "varies": false,
+   "tint": "#e8ddd8",
+   "ink": "#4f3021"
+  },
+  {
+   "id": "PB6-E66",
+   "name": "Cloudy Orange",
+   "img": "p6_pb6-e66",
+   "price": 50,
+   "size": "",
+   "multi": false,
+   "desc": "",
+   "labels": [
+    "6mm"
+   ],
+   "varies": false,
+   "tint": "#eed9d2",
+   "ink": "#60220f"
+  },
+  {
+   "id": "PB6-E67",
+   "name": "Cloudy Light Green",
+   "img": "p6_pb6-e67",
+   "price": 50,
+   "size": "",
+   "multi": false,
+   "desc": "",
+   "labels": [
+    "6mm"
+   ],
+   "varies": false,
+   "tint": "#dde5db",
+   "ink": "#2d4926"
+  },
+  {
+   "id": "PB6-E68",
+   "name": "Cloudy Lime",
+   "img": "p6_pb6-e68",
+   "price": 50,
+   "size": "",
+   "multi": false,
+   "desc": "",
+   "labels": [
+    "6mm"
+   ],
+   "varies": false,
+   "tint": "#eeecd2",
+   "ink": "#5e5a12"
+  },
+  {
+   "id": "PB6-E77",
+   "name": "Teal",
+   "img": "p6_pb6-e77",
+   "price": 50,
+   "size": "",
+   "multi": false,
+   "desc": "",
+   "labels": [
+    "6mm"
+   ],
+   "varies": false,
+   "tint": "#dbe4e0",
+   "ink": "#274838"
+  },
+  {
+   "id": "PB6-E78",
+   "name": "Baby Pink",
+   "img": "p6_pb6-e78",
+   "price": 50,
+   "size": "",
+   "multi": false,
+   "desc": "",
+   "labels": [
+    "6mm"
    ],
    "varies": false,
    "tint": "#e6dadb",
-   "ink": "#4c2428"
+   "ink": "#4b2527"
   },
   {
-   "id": "PBN-E67CL",
+   "id": "PB6-E84",
+   "name": "Beige",
+   "img": "p6_pb6-e84",
+   "price": 50,
+   "size": "",
+   "multi": false,
+   "desc": "",
+   "labels": [
+    "6mm"
+   ],
+   "varies": false,
+   "tint": "#e8e4d8",
+   "ink": "#4e4321"
+  },
+  {
+   "id": "PB6-E04CL",
+   "name": "Clear",
+   "img": "p6_pb6-e04cl",
+   "price": 50,
+   "size": "",
+   "multi": false,
+   "desc": "",
+   "labels": [
+    "6mm"
+   ],
+   "varies": false,
+   "tint": "#e1e1df",
+   "ink": "#42402d"
+  },
+  {
+   "id": "PB6-E07CL",
+   "name": "Clear Purple",
+   "img": "p6_pb6-e07cl",
+   "price": 50,
+   "size": "",
+   "multi": false,
+   "desc": "",
+   "labels": [
+    "6mm"
+   ],
+   "varies": false,
+   "tint": "#dfdee2",
+   "ink": "#2f2c43"
+  },
+  {
+   "id": "PB6-E23CL",
+   "name": "Clear Pink",
+   "img": "p6_pb6-e23cl",
+   "price": 50,
+   "size": "",
+   "multi": false,
+   "desc": "",
+   "labels": [
+    "6mm"
+   ],
+   "varies": false,
+   "tint": "#ebd4d7",
+   "ink": "#551a20"
+  },
+  {
+   "id": "PB6-E29CL",
+   "name": "Clear Navy",
+   "img": "p6_pb6-e29cl",
+   "price": 50,
+   "size": "",
+   "multi": false,
+   "desc": "",
+   "labels": [
+    "6mm"
+   ],
+   "varies": false,
+   "tint": "#e2e0dd",
+   "ink": "#45362a"
+  },
+  {
+   "id": "PB6-E37CL",
+   "name": "Clear Blue",
+   "img": "p6_pb6-e37cl",
+   "price": 50,
+   "size": "",
+   "multi": false,
+   "desc": "",
+   "labels": [
+    "6mm"
+   ],
+   "varies": false,
+   "tint": "#dbdce5",
+   "ink": "#262c49"
+  },
+  {
+   "id": "PB6-E63CL",
+   "name": "Clear Sweet Pink",
+   "img": "p6_pb6-e63cl",
+   "price": 50,
+   "size": "",
+   "multi": false,
+   "desc": "",
+   "labels": [
+    "6mm"
+   ],
+   "varies": false,
+   "tint": "#ebdbd5",
+   "ink": "#542a1c"
+  },
+  {
+   "id": "PB6-E66CL",
+   "name": "Clear Orange",
+   "img": "p6_pb6-e66cl",
+   "price": 50,
+   "size": "",
+   "multi": false,
+   "desc": "",
+   "labels": [
+    "6mm"
+   ],
+   "varies": false,
+   "tint": "#eedad2",
+   "ink": "#66230a"
+  },
+  {
+   "id": "PB6-E67CL",
    "name": "Clear Green",
-   "img": "pb_pbn-e67cl",
-   "price": 25,
-   "size": "±125cm",
+   "img": "p6_pb6-e67cl",
+   "price": 50,
+   "size": "",
    "multi": false,
-   "desc": "pull-over strand · oval beads with white spacers",
+   "desc": "",
    "labels": [
-    "Standard"
+    "6mm"
    ],
    "varies": false,
-   "tint": "#dfe3dc",
-   "ink": "#354729"
+   "tint": "#dce7d9",
+   "ink": "#2d4d23"
   },
   {
-   "id": "PBN-E23",
-   "name": "Red",
-   "img": "pb_pbn-e23",
-   "price": 25,
-   "size": "±125cm",
+   "id": "PB6-E68CL",
+   "name": "Clear Yellow",
+   "img": "p6_pb6-e68cl",
+   "price": 50,
+   "size": "",
    "multi": false,
-   "desc": "pull-over strand · oval beads with white spacers",
+   "desc": "",
    "labels": [
-    "Standard"
+    "6mm"
    ],
    "varies": false,
-   "tint": "#e4dedc",
-   "ink": "#482e28"
-  },
-  {
-   "id": "PBN-E64",
-   "name": "Pink",
-   "img": "pb_pbn-e64",
-   "price": 25,
-   "size": "±125cm",
-   "multi": false,
-   "desc": "pull-over strand · oval beads with white spacers",
-   "labels": [
-    "Standard"
-   ],
-   "varies": false,
-   "tint": "#e5dbdb",
-   "ink": "#492726"
-  },
-  {
-   "id": "PBN-E06",
-   "name": "Dark Purple",
-   "img": "pb_pbn-e06",
-   "price": 25,
-   "size": "±125cm",
-   "multi": false,
-   "desc": "pull-over strand · oval beads with white spacers",
-   "labels": [
-    "Standard"
-   ],
-   "varies": false,
-   "tint": "#e0dfe0",
-   "ink": "#412e35"
-  },
-  {
-   "id": "PBN-E15",
-   "name": "Lime Green",
-   "img": "pb_pbn-e15",
-   "price": 25,
-   "size": "±125cm",
-   "multi": false,
-   "desc": "pull-over strand · oval beads with white spacers",
-   "labels": [
-    "Standard"
-   ],
-   "varies": false,
-   "tint": "#e2e6da",
-   "ink": "#3e4a25"
-  },
-  {
-   "id": "PBN-E29",
-   "name": "Royal Blue",
-   "img": "pb_pbn-e29",
-   "price": 25,
-   "size": "±125cm",
-   "multi": false,
-   "desc": "pull-over strand · oval beads with white spacers",
-   "labels": [
-    "Standard"
-   ],
-   "varies": false,
-   "tint": "#dfdfe1",
-   "ink": "#2d3342"
+   "tint": "#edeed2",
+   "ink": "#5e600f"
   },
   {
    "id": "PB6-GLD",
    "name": "Gold Plastic Beads 300g",
-   "img": "pb_pb6-gld",
+   "img": "p6_pb6-gld",
    "price": 75,
    "size": "6mm",
    "multi": false,
@@ -5248,7 +4770,7 @@
   {
    "id": "PB6-SLV",
    "name": "Silver Plastic Beads 300g",
-   "img": "pb_pb6-slv",
+   "img": "p6_pb6-slv",
    "price": 75,
    "size": "6mm",
    "multi": false,
@@ -5259,6 +4781,173 @@
    "varies": false,
    "tint": "#e1e2de",
    "ink": "#41442c"
+  }
+ ],
+ "plasticoval": [
+  {
+   "id": "PBO-E41",
+   "name": "White",
+   "img": "po_pbo-e41",
+   "price": 55,
+   "size": "8mm Oval",
+   "multi": false,
+   "desc": "",
+   "labels": [
+    "8mm Oval"
+   ],
+   "varies": false,
+   "tint": "#dfe0e0",
+   "ink": "#2e413c"
+  },
+  {
+   "id": "PBO-E23",
+   "name": "Red",
+   "img": "po_pbo-e23",
+   "price": 55,
+   "size": "8mm Oval",
+   "multi": false,
+   "desc": "",
+   "labels": [
+    "8mm Oval"
+   ],
+   "varies": false,
+   "tint": "#e6ddda",
+   "ink": "#4b2e24"
+  },
+  {
+   "id": "PBO-E06",
+   "name": "Dark Purple",
+   "img": "po_pbo-e06",
+   "price": 55,
+   "size": "8mm Oval",
+   "multi": false,
+   "desc": "",
+   "labels": [
+    "8mm Oval"
+   ],
+   "varies": false,
+   "tint": "#e3dedd",
+   "ink": "#45302a"
+  },
+  {
+   "id": "PBO-E09",
+   "name": "Green",
+   "img": "po_pbo-e09",
+   "price": 55,
+   "size": "8mm Oval",
+   "multi": false,
+   "desc": "",
+   "labels": [
+    "8mm Oval"
+   ],
+   "varies": false,
+   "tint": "#e3e4dc",
+   "ink": "#434728"
+  },
+  {
+   "id": "PBO-E29",
+   "name": "Royal Blue",
+   "img": "po_pbo-e29",
+   "price": 55,
+   "size": "8mm Oval",
+   "multi": false,
+   "desc": "",
+   "labels": [
+    "8mm Oval"
+   ],
+   "varies": false,
+   "tint": "#e1dfdf",
+   "ink": "#422d32"
+  },
+  {
+   "id": "PBO-E37",
+   "name": "Juba Blue",
+   "img": "po_pbo-e37",
+   "price": 55,
+   "size": "8mm Oval",
+   "multi": false,
+   "desc": "",
+   "labels": [
+    "8mm Oval"
+   ],
+   "varies": false,
+   "tint": "#e1dfdf",
+   "ink": "#432d2f"
+  },
+  {
+   "id": "PBO-E47",
+   "name": "Brown",
+   "img": "po_pbo-e47",
+   "price": 55,
+   "size": "8mm Oval",
+   "multi": false,
+   "desc": "",
+   "labels": [
+    "8mm Oval"
+   ],
+   "varies": false,
+   "tint": "#e4e0dc",
+   "ink": "#483827"
+  },
+  {
+   "id": "PBO-E46",
+   "name": "Black",
+   "img": "po_pbo-e46",
+   "price": 55,
+   "size": "8mm Oval",
+   "multi": false,
+   "desc": "",
+   "labels": [
+    "8mm Oval"
+   ],
+   "varies": false,
+   "tint": "#e3e0dd",
+   "ink": "#463a29"
+  },
+  {
+   "id": "PBO-E49",
+   "name": "Dark Yellow",
+   "img": "po_pbo-e49",
+   "price": 55,
+   "size": "8mm Oval",
+   "multi": false,
+   "desc": "",
+   "labels": [
+    "8mm Oval"
+   ],
+   "varies": false,
+   "tint": "#e8e3d8",
+   "ink": "#4e4121"
+  },
+  {
+   "id": "PBO-E66",
+   "name": "Cloudy Orange",
+   "img": "po_pbo-e66",
+   "price": 55,
+   "size": "8mm Oval",
+   "multi": false,
+   "desc": "",
+   "labels": [
+    "8mm Oval"
+   ],
+   "varies": false,
+   "tint": "#eedad2",
+   "ink": "#5a2815"
+  },
+  {
+   "id": "PBO-E67",
+   "name": "Cloudy Green",
+   "img": "po_pbo-e67",
+   "price": 55,
+   "size": "8mm Oval",
+   "multi": false,
+   "desc": "",
+   "labels": [
+    "8mm Oval"
+   ],
+   "varies": false,
+   "tint": "#dbe8d8",
+   "ink": "#294e21"
   }
  ]
 }

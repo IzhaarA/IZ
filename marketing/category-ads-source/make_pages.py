@@ -134,9 +134,9 @@ nd = AD['ndebele']
 page2('ndebele-accessories', dict(
     tag='PROUDLY NDEBELE', title1='NDEBELE', title2='ACCESSORIES', hookSub='ZIELA · CHOKERS · BELTS · RINGS', lowest=min(i['price'] for i in nd[:12]), shopLine='Shop Ndebele Accessories',
     hookPhotos=[J(nd[n]) for n in (2, 7, 4, 6)],
-    items=pick('ndebele', (2, 4, 7, 6, 5, 0, 11), name=lambda i: {'Button Neck Ziela — Gold': 'Neck Ziela', 'Mapoto Canvas Apron': 'Mapoto Apron'}.get(i['name'], i['name'].replace('Ndebele ', '')),
-               chip=lambda i: {'NZL-001': 'GOLD OR SILVER', 'NDJ-002': 'SHORT R40 · LONG R80', 'ZLA-001': '5M · 10M · 100M', 'TRD-018': 'SIZES 14 – 18', 'TRD-034': 'SET OF 4'}.get(i['id'], 'HANDMADE'),
-               sub=lambda i: {'NZL-001': 'BUTTON NECK ZIELA', 'ZLA-001': 'LEG ZIELA · ALSO THICK ZIELA', 'TRD-018': 'CANVAS APRON', 'TRD-034': 'MATSEKA WIRE RINGS'}.get(i['id'], 'TRADITIONAL NDEBELE')),
+    items=pick('ndebele', (2, 8, 7, 6, 5, 0, 11), name=lambda i: {'Button Neck Ziela — Gold': 'Neck Ziela', 'Mapoto Canvas Apron': 'Mapoto Apron'}.get(i['name'], i['name'].replace('Ndebele ', '')),
+               chip=lambda i: {'NZL-001': 'GOLD OR SILVER', 'NDJ-002': 'SHORT R40 · LONG R80', 'ZLA-001': '5M · 10M · 100M', 'TRD-018': 'SIZES 14 – 18', 'TRD-034': 'SET OF 4', 'TRD-009': '30CM'}.get(i['id'], 'HANDMADE'),
+               sub=lambda i: {'NZL-001': 'BUTTON NECK ZIELA', 'ZLA-001': 'LEG ZIELA · ALSO THICK ZIELA', 'TRD-018': 'CANVAS APRON', 'TRD-034': 'MATSEKA WIRE RINGS', 'TRD-009': 'HANDMADE BEADWORK'}.get(i['id'], 'TRADITIONAL NDEBELE')),
     set=dict(kicker='NDEBELE PAINTED AXE', title='Pick a colour', price=100, sub='40 CM · HAND-PAINTED · R100 EACH',
              cols=[dict(name=i['name'], img=J(i), dot=d) for i, d in zip(nd[12:], ('#F2B705', '#2F6FD6', '#C3312B'))]),
     gridTitle='Complete the look.', gridSub='12 TRADITIONAL PIECES', gridCols=4, cell=205,
@@ -163,17 +163,17 @@ page2('bangles', dict(
 
 ct = AD['cotton']
 CTN = {'TWN-007': 'Sisal Twine', 'COT-011': 'Crochet Cotton', 'TWN-006': '301 Cotton Twine', 'TWN-005': 'Bead Twine', 'COT-002': 'Blue Cone Cotton',
-       'COT-008': 'Ighara Rosebud', 'COT-007': 'Khozo Cord', 'COT-014': 'Shirring Elastic', 'COT-001': 'Maroon Cone Cotton', 'COT-004': 'Hand Cotton 3 Ply'}
+       'COT-008': 'Ighara Rosebud', 'COT-007': 'Khozo Cord', 'COT-014': 'Shirring Elastic', 'COT-001': 'Maroon Cone Cotton', 'COT-004': 'Hand Cotton'}
 page2('cotton-twine', dict(
     tag='FOR BEADWORK & CRAFT', title1='COTTON', title2='& TWINE', hookSub='TWINE · BEAD COTTON · ELASTIC', lowest=min(i['price'] for i in ct), shopLine='Shop Cotton & Twine',
     hookPhotos=[J(ct[6])],
-    items=pick('cotton', (6, 7, 5, 4, 10, 16, 15, 21), name=lambda i: CTN.get(i['id'], i['name']), chip=lambda i: i['size'].upper(),
+    items=pick('cotton', (6, 7, 5, 4, 10, 12, 16, 15, 21), name=lambda i: CTN.get(i['id'], i['name']), chip=lambda i: i['size'].upper(),
                sub=lambda i: {'COT-011': 'NO.5 SPRING TIME · BLACK OR WHITE', 'TWN-005': 'WHITE OR BEIGE · 50G R12 · 100G R20', 'COT-008': 'BEAD HAND COTTON · BLACK OR WHITE',
                               'COT-014': 'BLACK OR WHITE · 10G R10', 'COT-002': 'WHITE BEAD HAND COTTON', 'TWN-007': '100% NATURAL FIBRE', 'TWN-006': 'BEADS COTTON TWINE',
-                              'COT-007': 'POLYETHYLENE KITE CORD'}.get(i['id'], '')),
+                              'COT-007': 'POLYETHYLENE KITE CORD', 'COT-004': '3 PLY · BLACK OR WHITE'}.get(i['id'], '')),
     gridTitle='Stock up.', gridSub='22 LINES · FROM R10', gridCols=4, cell=205,
     grid=tiles('cotton', (6, 7, 5, 4, 10, 9, 12, 16, 15, 21, 18), short=lambda i: CTN.get(i['id'], i['name'].split(' — ')[0]).upper(), more=11),
-    citems=pick('cotton', (6, 7, 8, 5, 4, 3, 10, 9, 12, 16, 15, 21, 18), chip=lambda i: i['size'].upper(), sub=lambda i: ''),
+    citems=pick('cotton', (6, 7, 8, 5, 4, 3, 10, 9, 12, 13, 16, 15, 21, 18), chip=lambda i: i['size'].upper(), sub=lambda i: ''),
     look=dict(band='xhosa', hook='hero', enter='zoom', sticker='tag', hl='#0E6E8C', tilt=12,
               pal=[{'bg': '#EEF0EC', 'acc': '#4E6B3A'}, {'bg': '#ECEAE6', 'acc': '#1b181d'}, {'bg': '#F1ECE3', 'acc': '#8A5A2B'}, {'bg': '#E6EEF1', 'acc': '#0E6E8C'}])))
 
@@ -210,18 +210,26 @@ page2('czech-beads', dict(
               pal=[{'bg': '#EEEDEA', 'acc': '#1b181d'}, {'bg': '#E9E9EB', 'acc': '#3A3A44'}, {'bg': '#E6EAF4', 'acc': '#2347A8'}, {'bg': '#E4F0E8', 'acc': '#0E7A4F'},
                    {'bg': '#F7F0D9', 'acc': '#B88A00'}, {'bg': '#F6E4E0', 'acc': '#C2412F'}])))
 
-pb = AD['plastic']
-PBT = lambda i: '3MM ROUND' if i['price'] == 70 else '6MM ROUND' if i['price'] == 50 else '8MM OVAL' if i['price'] == 55 else 'OVAL NECKLACE' if i['price'] == 25 else '6MM · 300G'
-PBF = (39, 6, 10, 56, 65, 83, 30, 23, 52, 70, 84, 47)
-page2('plastic-beads', dict(
-    tag='3MM · 6MM · OVALS · NECKLACES', title1='PLASTIC', title2='BEADS', hookSub='80+ COLOURS · FROM R25', lowest=min(i['price'] for i in pb), shopLine='Shop Plastic Beads',
-    hookPhotos=[J(pb[n]) for n in (6, 65, 83)],
-    items=[dict(name=PBT(pb[n]).title().replace('Mm', 'mm'), chip=pb[n]['name'].upper(), sub='250G PACKET' if pb[n]['price'] != 25 and pb[n]['price'] != 75 else ('±125CM STRING' if pb[n]['price'] == 25 else 'GOLD OR SILVER'),
-                img=J(pb[n]), price=pb[n]['price'], pre='ONLY') for n in PBF[:7]],
-    gridTitle='Pick your beads.', gridSub=f'+{len(pb) - 11} MORE COLOURS', gridCols=4, cell=205,
-    grid=tiles('plastic', PBF[:11], short=lambda i: (i['name'] + ' · ' + PBT(i).split(' ')[0]).upper() if i['price'] != 75 else i['name'].replace(' Plastic Beads', '').upper(), more=len(pb) - 11),
-    citems=[dict(name=pb[n]['name'], chip=PBT(pb[n]), sub='250G PACKET' if pb[n]['price'] not in (25, 75) else ('±125CM STRING' if pb[n]['price'] == 25 else '300G · GOLD OR SILVER'),
-                 img=J(pb[n]), price=pb[n]['price'], pre='ONLY') for n in PBF],
-    look=dict(band='xhosa', hook='fan', enter='left', sticker='tag', hl='#05A463', tilt=10,
-              pal=[{'bg': '#E6EAF4', 'acc': '#2347A8'}, {'bg': '#F6E4E0', 'acc': '#C3312B'}, {'bg': '#EEEDEA', 'acc': '#1b181d'}, {'bg': '#E4EEF2', 'acc': '#0E6E8C'}])))
+def plastic(name, key, kind, title2, fav, more, look, pk='250G PACKET'):
+    its = AD[key]
+    page2(name, dict(
+        tag=pk, title1='PLASTIC BEADS', title2=title2, hookSub=f'{len(its)} COLOURS · FROM R{min(i["price"] for i in its)}', lowest=min(i['price'] for i in its),
+        hookPre='ONLY' if len({i['price'] for i in its}) == 1 else 'FROM', shopLine='Shop Plastic Beads',
+        hookPhotos=[J(its[n]) for n in fav[:4]],
+        items=pick(key, fav[:7], name=lambda i: i['name'].replace(' Plastic Beads 300g', ''), chip=lambda i: '300G PACKET' if '300g' in i['name'] else pk,
+                   sub=lambda i: kind + (' · GOLD OR SILVER' if '300g' in i['name'] else ' PLASTIC BEADS')),
+        gridTitle='Pick your colour.', gridSub=f'{kind} · +{more} MORE COLOURS' if more else f'{kind} · {len(its)} COLOURS', gridCols=4, cell=205,
+        grid=tiles(key, fav[:11] if more else range(len(its)), short=lambda i: i['name'].replace(' Plastic Beads 300g', '').upper(), more=more),
+        citems=pick(key, fav[:12] if more else range(len(its)), name=lambda i: i['name'].replace(' Plastic Beads 300g', ''),
+                    chip=lambda i: '300G PACKET' if '300g' in i['name'] else pk, sub=lambda i: kind + (' · GOLD OR SILVER' if '300g' in i['name'] else ' PLASTIC BEADS')),
+        look=look))
+plastic('plastic-beads-3mm', 'plastic3', '3MM ROUND', '3MM ROUND', (4, 3, 6, 7, 5, 1, 9, 0, 8, 10, 11, 12), 0,
+        dict(band='shawl', hook='fan', enter='right', sticker='circle', hl='#2347A8', tilt=-12,
+             pal=[{'bg': '#E6EAF4', 'acc': '#2347A8'}, {'bg': '#F6E4E0', 'acc': '#C3312B'}, {'bg': '#EEEDEA', 'acc': '#1b181d'}, {'bg': '#E4F0E8', 'acc': '#0E7A4F'}]))
+plastic('plastic-beads-6mm', 'plastic6', '6MM ROUND', '6MM ROUND', (6, 7, 10, 12, 5, 2, 35, 8, 18, 16, 30, 36), len(AD['plastic6']) - 11,
+        dict(band='xhosa', hook='mosaic', enter='up', sticker='tag', hl='#C3312B', tilt=15,
+             pal=[{'bg': '#F6E4E0', 'acc': '#C3312B'}, {'bg': '#E6EAF4', 'acc': '#2347A8'}, {'bg': '#EEEDEA', 'acc': '#1b181d'}, {'bg': '#F7F0D9', 'acc': '#B88A00'}]))
+plastic('plastic-beads-oval', 'plasticoval', '8MM OVAL', '8MM OVALS', (1, 4, 0, 7, 5, 3, 8, 2, 6, 9, 10), 0,
+        dict(band='basotho', hook='hero', enter='left', sticker='circle', hl='#05A463', tilt=-8,
+             pal=[{'bg': '#E4F0E8', 'acc': '#0E7A4F'}, {'bg': '#F6E4E0', 'acc': '#C3312B'}, {'bg': '#E6EAF4', 'acc': '#2347A8'}, {'bg': '#EEEDEA', 'acc': '#1b181d'}]))
 print('ok')
