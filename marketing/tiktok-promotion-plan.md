@@ -21,15 +21,19 @@ Province targeting may need TikTok Ads Manager (ads.tiktok.com); the in-app "Pro
 
 Eastern Cape: none of these 10 videos is aimed at it. Keep it for Xhosa blanket and shawl ads.
 
-## Two-week schedule
+## Schedule
 
-**Week 1 (test), R20 a day each, 7 days:**
-Ndebele Accessories · Mink Blankets · Czech Seed Beads · Chinese Seed Beads · Bangles
+Already posted (22 Oct): Ndebele Accessories, Czech Seed Beads, Chinese Seed Beads. Promote these posts straight away.
+
+**Post one a day:** Mink Blankets → Bangles → Cotton & Twine → Plastic Beads 6mm → Towels → Plastic Beads 3mm → Plastic Beads 8mm Oval.
+
+**Week 1, R20 a day each, 7 days:**
+Ndebele Accessories · Czech Seed Beads · Chinese Seed Beads (from today), then Mink Blankets and Bangles from the day after each is posted.
 
 **Week 2, R20 a day each, 7 days:**
-Cotton & Twine · Plastic Beads 6mm · Towels, plus the 2 best videos from week 1
+Cotton & Twine · Plastic Beads 6mm · Towels, plus the 2 best videos from week 1.
 
-**Post without promoting:** Plastic Beads 3mm and 8mm Oval (promote later if they do well on their own).
+**Don't promote yet:** Plastic Beads 3mm and 8mm Oval. Promote them later if they do well on their own.
 
 ## How to judge each video
 - Count the WhatsApp messages and orders that mention the video, not just views.
