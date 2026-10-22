@@ -84,7 +84,7 @@ ${C.set ? `<div class="sc" id="set">
   <div class="a ctr" id="eh" style="top:1490px;font-size:40px;font-weight:700;letter-spacing:4px;color:#C3312B">@makkiewholesalers</div>
 </div>
 <div class="a" id="wipe" style="left:-200px;top:-200px;width:1480px;height:2320px;background:${STRIPE} left/80px 100% no-repeat,${STRIPE} right/80px 100% no-repeat,#F6F0E9;opacity:0"></div>
-<div class="a" id="bars" style="left:40px;top:${{ ndebele: 116, shawl: 94, straw: 100 }[L.band] || 116}px;width:1000px;height:10px;display:flex;gap:8px"></div>
+<div class="a" id="bars" style="left:40px;top:${{ ndebele: 116, shawl: 94, straw: 100, basotho: 97, xhosa: 138 }[L.band] || 116}px;width:1000px;height:10px;display:flex;gap:8px"></div>
 <div class="a stripes" style="bottom:0;height:16px"></div>`;
 
 // one progress bar segment per product
@@ -92,11 +92,13 @@ const NSEG = C.items.length + (C.set ? 1 : 0);
 for (let i = 0; i < NSEG; i++) $('bars').insertAdjacentHTML('beforeend', `<i id="bar${i}"><b></b></i>`);
 // grid cells
 const GC = C.gridCols || 3, CELL = C.cell || 270, GAP = CELL < 200 ? 18 : 34, ROWH = CELL + (CELL < 200 ? 84 : 120), SM = CELL < 200;
+// a grid item with `more` is a tile saying how many more we keep ("+29") instead of a photo
+const MORE = s => `display:flex;align-items:center;justify-content:center;background:#1b181d;color:#fff;font-weight:900;font-size:${Math.round(s * .3)}px`;
 C.grid.forEach((g, i) => {
   const row = Math.floor(i / GC), inRow = Math.min(GC, C.grid.length - row * GC), col = i % GC;
   const x = (1080 - (inRow * CELL + (inRow - 1) * GAP)) / 2 + col * (CELL + GAP);
   $('gcells').insertAdjacentHTML('beforeend', `<div class="a gcell" id="g${i}" style="left:${x}px;top:${450 + row * ROWH}px;width:${CELL}px${SM ? ';padding:6px 6px 8px' : ''}">
-    <div class="gph" style="height:${CELL - (SM ? 12 : 20)}px;background-image:url(img/${g.img})"></div><div class="gnm"${SM ? ' style="font-size:17px;margin-top:6px"' : ''}>${g.name}</div><div class="gpr"${SM ? ' style="font-size:22px"' : ''}>${g.ptxt || 'R' + g.price}</div></div>`);
+    <div class="gph" style="height:${CELL - (SM ? 12 : 20)}px;${g.more ? MORE(CELL) : `background-image:url(img/${g.img})`}">${g.more ? g.more : ''}</div><div class="gnm"${SM ? ' style="font-size:17px;margin-top:6px"' : ''}>${g.name}</div><div class="gpr"${SM ? ' style="font-size:22px"' : ''}>${g.ptxt || 'R' + g.price}</div></div>`);
 });
 function fit(el, max) { el.style.whiteSpace = 'nowrap'; let f = max; el.style.fontSize = f + 'px'; const r = document.createRange(); r.selectNodeContents(el);
   while (r.getBoundingClientRect().width > 980 && f > 40) { f -= 4; el.style.fontSize = f + 'px'; } }

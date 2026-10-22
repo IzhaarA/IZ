@@ -1,7 +1,7 @@
 # Captions: category ads (20 Oct 2026)
 
 Instagram carousel and TikTok video captions for the 7 category ads. Each has 5 hashtags.
-The same captions are also in captions.md (sections 17–23).
+The same captions are also in captions.md (sections 17–30).
 
 ---
 
@@ -156,7 +156,7 @@ Rosebud double knitting wool in 20 colours 🧶 R20 a ball or 5 for R95. What ar
 Fresh towels for every room 🛁
 
 • White Bath Sheet, 90 × 150 cm, R150
-• Block Hand Towel, 50 × 90 cm, R75
+• Block Bath Towel, 70 × 145 cm, R95
 • Guest Towels in Blue, Rust and Rose, 30 × 50 cm, R35 each or 10 for R300
 • Face Cloths, 10 per pack, from R60
 
@@ -172,6 +172,188 @@ Stocking a guesthouse, salon or shop? Ask us for wholesale prices.
 
 ## TikTok: Towels video (makkies-towels-tiktok.mp4)
 
-Bath sheets, hand towels, guest towels and face cloths, from R35 🛁 Guest towels are 10 for R300. Shop at makkies.co.za or WhatsApp 072 323 5469 🚚 We deliver across SA
+Bath sheets, bath towels, guest towels and face cloths, from R35 🛁 Guest towels are 10 for R300. Shop at makkies.co.za or WhatsApp 072 323 5469 🚚 We deliver across SA
 
 #towels #bathroom #homedecor #pretoria #southafrica
+
+---
+
+## 24. Ndebele Accessories (makkies-ndebele-accessories-carousel-01..17.jpg)
+
+Complete the look, the Ndebele way 💛💙❤️
+
+• Button Neck Ziela, gold or silver, R150
+• Ndebele Choker R75 · Ndebele Belt R120
+• Goleet Rings, set of 4, R250
+• Ndebele Bracelet, short R40 or long R80
+• Leg Ziela and Thick Ziela, 5m R60 · 10m R120 · 100m R1100
+• Mapoto Canvas Apron, sizes 14 to 18, R55
+• Ndebele Painted Wooden Axe in 3 colours, R100
+
+Swipe to see every piece 👉
+
+🛒 makkies.co.za · 💬 WhatsApp 072 323 5469
+🚚 Delivery across SA · PAXI to any PEP · or collect in Marabastad
+Buying for a group or your shop? Ask us for wholesale prices.
+
+#ndebele #ndebeleculture #traditionalwear #pretoria #southafrica
+
+---
+
+## TikTok: Ndebele Accessories video (makkies-ndebele-accessories-tiktok.mp4)
+
+Neck ziela, chokers, belts, goleet rings, bracelets and painted axes 💛 Everything for your Ndebele look, from R40. Shop at makkies.co.za or WhatsApp 072 323 5469 🚚 We deliver across SA
+
+#ndebele #ndebeleculture #traditionalwear #pretoria #southafrica
+
+---
+
+## 25. Bangles (makkies-bangles-carousel-01..17.jpg)
+
+Stack them up ✨
+
+• Copper, Brass and Aluminium Bangles, R20 each or R100 for 6
+• Sleeve Holders, gold or silver, R25 a pair
+• Matseka wire bangles and leg rings, from R10
+• Stretchy Matseka Bangles, gold or silver, R15
+• Stretchy Matseka 12-packs in Maroon, Silver and Copper, R35 a pack
+
+Swipe to pick yours 👉
+
+🛒 makkies.co.za · 💬 WhatsApp 072 323 5469
+🚚 Delivery across SA · PAXI to any PEP · or collect in Marabastad
+Buying for a group or your shop? Ask us for wholesale prices.
+
+#bangles #matseka #traditionalwear #pretoria #southafrica
+
+---
+
+## TikTok: Bangles video (makkies-bangles-tiktok.mp4)
+
+Copper, brass and matseka bangles from R10 ✨ Singles, 6-packs and 12-packs. Which one are you stacking? 👇 Shop at makkies.co.za or WhatsApp 072 323 5469 🚚 We deliver across SA
+
+#bangles #matseka #traditionalwear #pretoria #southafrica
+
+---
+
+## 26. Cotton & Twine (makkies-cotton-twine-carousel-01..16.jpg)
+
+Everything for your beadwork and craft 🧵
+
+Bead twine, 301 cotton twine, sisal twine, Spring Time crochet cotton, bead hand cotton on cones, Ighara Rosebud, khozo cord and shirring elastic. 22 lines in stock, from R10.
+
+Swipe to see what we keep 👉
+
+🛒 makkies.co.za · 💬 WhatsApp 072 323 5469
+🚚 Delivery across SA · PAXI to any PEP · or collect in Marabastad
+Buying for a group or your shop? Ask us for wholesale prices.
+
+#beadwork #crochet #crafting #pretoria #southafrica
+
+---
+
+## TikTok: Cotton & Twine video (makkies-cotton-twine-tiktok.mp4)
+
+Twine, bead cotton, crochet cotton and shirring elastic from R10 🧵 22 lines in stock for your beadwork and craft. Shop at makkies.co.za or WhatsApp 072 323 5469 🚚 We deliver across SA
+
+#beadwork #crochet #crafting #pretoria #southafrica
+
+---
+
+## 27. Mink Blankets (makkies-mink-blankets-carousel-01..19.jpg)
+
+Soft, warm and made to last 🛏️
+
+16 mink blankets in stock, from the Letsatsi at R395 to the Cleopatra fur throw at R1150. Double, queen and king sizes, 1ply and 2ply, many in gift boxes, perfect for weddings and gifts.
+
+Swipe to find yours 👉
+
+🛒 makkies.co.za · 💬 WhatsApp 072 323 5469
+🚚 Delivery across SA · PAXI to any PEP · or collect in Marabastad
+Buying for a group or your shop? Ask us for wholesale prices.
+
+#minkblanket #blankets #weddinggift #pretoria #southafrica
+
+---
+
+## TikTok: Mink Blankets video (makkies-mink-blankets-tiktok.mp4)
+
+16 mink blankets from R395 🛏️ Double, queen and king sizes, gift boxes for weddings. Which one are you taking home? 👇 Shop at makkies.co.za or WhatsApp 072 323 5469 🚚 We deliver across SA
+
+#minkblanket #blankets #weddinggift #pretoria #southafrica
+
+---
+
+## 28. Chinese Seed Beads (makkies-chinese-beads-carousel-01..15.jpg)
+
+450g packets of Chinese glass seed beads, from R40 📿
+
+Here are our favourite colours, and we keep 41 colours in sizes 3/0, 6/0 and 8/0. Stripes and A Grade White too.
+
+Swipe through the favourites 👉 then see every colour at makkies.co.za
+
+🛒 makkies.co.za · 💬 WhatsApp 072 323 5469
+🚚 Delivery across SA · PAXI to any PEP · or collect in Marabastad
+Buying for a group or your shop? Ask us for wholesale prices.
+
+#seedbeads #beadwork #beads #pretoria #southafrica
+
+---
+
+## TikTok: Chinese Seed Beads video (makkies-chinese-beads-tiktok.mp4)
+
+Chinese seed beads, 450g packets from R40 📿 41 colours in stock, these are the favourites. Shop at makkies.co.za or WhatsApp 072 323 5469 🚚 We deliver across SA
+
+#seedbeads #beadwork #beads #pretoria #southafrica
+
+---
+
+## 29. Czech Seed Beads (makkies-czech-beads-carousel-01..15.jpg)
+
+Preciosa Czech glass seed beads, ¼kg, strung and loose 💎
+
+Chalk White, Black, Royal Blue, Green, Yellow, Red Coral and more: 47 colours in stock, from R95.
+
+Swipe through the favourites 👉 then see every colour at makkies.co.za
+
+🛒 makkies.co.za · 💬 WhatsApp 072 323 5469
+🚚 Delivery across SA · PAXI to any PEP · or collect in Marabastad
+Buying for a group or your shop? Ask us for wholesale prices.
+
+#czechbeads #preciosa #beadwork #pretoria #southafrica
+
+---
+
+## TikTok: Czech Seed Beads video (makkies-czech-beads-tiktok.mp4)
+
+Preciosa Czech seed beads, strung and loose, from R95 💎 47 colours in stock, these are the favourites. Shop at makkies.co.za or WhatsApp 072 323 5469 🚚 We deliver across SA
+
+#czechbeads #preciosa #beadwork #pretoria #southafrica
+
+---
+
+## 30. Plastic Beads (makkies-plastic-beads-carousel-01..15.jpg)
+
+Plastic beads for every project 🌈
+
+• 3mm round, 250g, R70
+• 6mm round, 250g, R50
+• 8mm oval, 250g, R55
+• Oval necklaces, ±125cm, R25
+• Gold or silver 6mm, 300g, R75
+
+80+ colours in stock. Swipe through the favourites 👉
+
+🛒 makkies.co.za · 💬 WhatsApp 072 323 5469
+🚚 Delivery across SA · PAXI to any PEP · or collect in Marabastad
+Buying for a group or your shop? Ask us for wholesale prices.
+
+#plasticbeads #beads #beadwork #pretoria #southafrica
+
+---
+
+## TikTok: Plastic Beads video (makkies-plastic-beads-tiktok.mp4)
+
+Plastic beads from R25 🌈 3mm, 6mm, ovals and ready necklaces, 80+ colours in stock. Shop at makkies.co.za or WhatsApp 072 323 5469 🚚 We deliver across SA
+
+#plasticbeads #beads #beadwork #pretoria #southafrica

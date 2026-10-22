@@ -40,7 +40,7 @@ def simple(key, ids, label=lambda p: p['name']):
         if pid in SOLD: continue
         v = p['variants'][0]; nm = f"{key}_{pid.lower()}"; img(v['img'], nm)
         out.append(dict(id=pid, name=label(p), img=nm, price=min(x['price'] for x in p['variants']),
-                        size=p.get('size') or '', multi=len(p['variants']) > 1, desc=p.get('desc', '')))
+                        size=p.get('size') or '', multi=len(p['variants']) > 1, desc=p.get('desc', ''), labels=[x['label'] for x in p['variants']], varies=len({x['price'] for x in p['variants']}) > 1))
     return out
 
 cat = lambda c: [p['id'] for p in P if p['category'] == c]
@@ -55,7 +55,24 @@ add('hats', hats, [x['img'] for x in hats[:6]])
 for key, c in (('cloudsoft', 'Shawls & Throws · Cloudsoft Shawls'), ('chenille', 'Shawls & Throws · Chenille Throws'), ('plainsh', 'Shawls & Throws · Plain Shawls')):
     its = simple(key, cat(c)); add(key, its, [x['img'] for x in its[:7]])
 wool = simple('wool', cat('Haberdashery · Wool')); add('wool', wool, [x['img'] for x in wool[::3][:7]])
-TOWEL = {'TWL-001': 'Face Cloths', 'TWL-002': 'White Bath Sheet', 'TWL-003': 'Block Hand Towel'}
+TOWEL = {'TWL-001': 'Face Cloths', 'TWL-002': 'White Bath Sheet', 'TWL-003': 'Block Bath Towel'}
 tw = simple('towel', cat('Towels'), lambda p: TOWEL.get(p['id'], p['name'].replace('Colibri Guest Towel — ', 'Guest Towel · '))); add('towels', tw, [x['img'] for x in (tw[3], tw[2], tw[1], tw[4], tw[5])])
+nd = simple('nd', cat('Traditional Ndebele Accessories'))
+for v in by['TRD-016']['variants']:                     # painted axe colours for the colour set
+    nm = 'nd_axe_' + v['id'].split('-')[-1]; img(v['img'], nm); nd.append(dict(id='TRD-016', name=v['label'], img=nm, price=v['price'], size='40cm', set=True))
+add('ndebele', nd, [nd[i]['img'] for i in (4, 7, 2, 9, 11, 6)])
+bg = simple('bg', cat('Bangles')); add('bangles', bg, [bg[i]['img'] for i in (0, 9, 5, 3, 13, 1)])
+ct = simple('ct', cat('Haberdashery · Cotton & Twine')); add('cotton', ct, [ct[i]['img'] for i in (6, 7, 4, 9, 16, 15)])
+nd = simple('nd', cat('Traditional Ndebele Accessories'))
+for v in by['TRD-016']['variants']:                     # painted axe colours for the colour set
+    nm = 'nd_axe_' + v['id'].split('-')[-1]; img(v['img'], nm); nd.append(dict(id='TRD-016', name=v['label'], img=nm, price=v['price'], size='40cm', set=True))
+add('ndebele', nd, [nd[i]['img'] for i in (4, 7, 2, 9, 11, 6)])
+bg = simple('bg', cat('Bangles')); add('bangles', bg, [bg[i]['img'] for i in (0, 9, 5, 3, 13, 1)])
+ct = simple('ct', cat('Haberdashery · Cotton & Twine')); add('cotton', ct, [ct[i]['img'] for i in (6, 7, 4, 9, 16, 15)])
+mk = simple('mk', cat('Mink Blankets')); add('mink', mk, [mk[i]['img'] for i in (0, 3, 6, 11, 13, 15)])
+pref = lambda c: [p['id'] for p in P if p['category'].startswith(c)]
+ch = simple('ch', pref('Chinese Glass')); add('chinese', ch, [ch[i]['img'] for i in (4, 12, 18, 25, 30, 36)])
+cz = simple('cz', pref('Czech Glass')); add('czech', cz, [cz[i]['img'] for i in range(0, 42, 7)])
+pb = simple('pb', pref('Plastic Beads')); add('plastic', pb, [pb[i]['img'] for i in range(1, 80, 13)])
 json.dump(ADS, open(os.path.join(H, 'ads.json'), 'w'), indent=1, ensure_ascii=False)
 print({k: len(v) for k, v in ADS.items()})

@@ -19,7 +19,7 @@ const product = (i, p, pal, k, n, label) => slide(i, pal.bg, `<img class="a" src
   ${p.chip ? `<div class="a ctr" style="top:${BAND + 970}px"><span class="chip" style="background:${pal.acc};color:#fff;font-size:32px">${p.chip}</span></div>` : ''}
   <div class="a ctr" style="top:${BAND + 1050}px;font-size:32px;font-weight:700;letter-spacing:4px">${p.sub || ''}</div>
   <div class="a ctr foot">Order at makkies.co.za · WhatsApp 072 323 5469</div>`);
-const BAND = { ndebele: 102, shawl: 80, straw: 86 }[L.band] || 102;
+const BAND = { ndebele: 102, shawl: 80, straw: 86, basotho: 83, xhosa: 124 }[L.band] || 102;
 
 let html = '', s = 0;
 // cover
@@ -39,7 +39,7 @@ const cell = Math.floor(Math.min((960 - (cols - 1) * gap) / cols, (900 - (rows -
 html += slide(s++, CREAM, `<div class="a ctr serif" style="top:80px;font-size:92px">${C.gridTitle}</div>
   <div class="a ctr" style="top:200px;font-size:34px;font-weight:800;letter-spacing:5px;color:#D8232A">${C.gridSub}</div>
   ${G.map((g, i) => { const r = Math.floor(i / cols), inRow = Math.min(cols, G.length - r * cols), c = i % cols, x = (1080 - (inRow * cell + (inRow - 1) * gap)) / 2 + c * (cell + gap);
-    return `<div class="a gcell" style="left:${x}px;top:${290 + r * (cell + txt + gap)}px;width:${cell}px;${sm ? 'padding:6px 6px 8px' : ''}"><div class="gph" style="height:${cell - (sm ? 12 : 20)}px;background-image:url(img/${g.img})"></div>
+    return `<div class="a gcell" style="left:${x}px;top:${290 + r * (cell + txt + gap)}px;width:${cell}px;${sm ? 'padding:6px 6px 8px' : ''}"><div class="gph" style="height:${cell - (sm ? 12 : 20)}px;${g.more ? `display:flex;align-items:center;justify-content:center;background:#1b181d;color:#fff;font-weight:900;font-size:${Math.round(cell * .3)}px` : `background-image:url(img/${g.img})`}">${g.more || ''}</div>
       <div class="gnm" style="${sm ? 'font-size:15px;margin-top:5px' : 'font-size:21px'}">${g.name}</div><div class="gpr" style="${sm ? 'font-size:19px' : 'font-size:28px'}">${g.ptxt || 'R' + g.price}</div></div>`; }).join('')}
   <div class="a ctr foot">Wholesale &amp; retail · bulk buyers, ask us for trade pricing</div>`);
 // order today
