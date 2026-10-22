@@ -55,3 +55,6 @@ marketing/invoices/
 
 # Generated download bundles
 marketing/instagram/zips/
+
+# lead lists contain contact details: keep them out of the repo
+marketing/leads/
