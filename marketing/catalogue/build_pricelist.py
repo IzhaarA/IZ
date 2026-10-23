@@ -85,7 +85,7 @@ today = date.today()
 cover = f'''<div class="cover"><img class="logo" src="file://{os.path.abspath(logo)}"><h1>Price List</h1><div class="date">{today.strftime("%B %Y")}</div>
 <p>WhatsApp 072 323 5469 · Tel 012 323 5469<br>
 orders@makkies.co.za<br>makkies.co.za</p>
-<div class="note"><b>Price</b> is our normal price, the same as on makkies.co.za.<br><b>Stock price</b> is 5% less, for shops and resellers buying stock to sell.<br>
+<div class="note"><b>Price</b> is our normal price, the same as on makkies.co.za.<br><b>Stock price</b> is for a minimum of 10 pieces.<br>
 To order, WhatsApp us the product codes and quantities and we'll send you a quote. We deliver anywhere in South Africa: PAXI to any PEP store or courier (delivery is extra), or collect in Marabastad.
 Prices may change without notice. Stock and colours are subject to availability.</div></div>'''
 open(os.path.join(WORK, 'catalogue.html'), 'w').write(f'<!doctype html><html><head><meta charset="utf-8"><title>Makkie Wholesalers — Price List</title><style>{CSS}</style></head><body>{cover}{"".join(sections)}</body></html>')
