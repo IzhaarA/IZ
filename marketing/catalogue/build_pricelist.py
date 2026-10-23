@@ -1,8 +1,8 @@
 """Builds the Makkie Wholesalers price list (A4 PDF) from the live website's product list.
-Price = website price; Stock price = website price minus 5% (for shops and resellers who buy stock).
+Price = website price; Stock price = website price minus 5%, rounded down to the rand (for shops and resellers who buy stock).
 Usage: python3 build_pricelist.py <site index.html> <site images folder> <work folder>
 Writes <work>/catalogue.html; make_pdf.cjs turns it into the PDF (same footer as the catalogue)."""
-import json, os, re, sys, html
+import json, os, re, sys, html, math
 from datetime import date
 from PIL import Image
 H = os.path.dirname(os.path.abspath(__file__))
@@ -56,7 +56,7 @@ def table(items):
             tr.append('<tr' + (' class="top"' if first else '') + '>'
                       + (f'<td class="ph" rowspan="{len(rs)}"><img src="{photo(p["img"])}"></td><td class="cd" rowspan="{len(rs)}">{e(p["id"])}</td>'
                          f'<td class="nm" rowspan="{len(rs)}"><b>{e(p["name"])}</b>' + (f'<div class="sub">{e(sub)}</div>' if sub else '') + '</td>' if first else '')
-                      + f'<td class="op">{e(opt)}</td><td class="pr">{money(price)}</td><td class="sp">{money(price * (1 - DISCOUNT))}</td></tr>')
+                      + f'<td class="op">{e(opt)}</td><td class="pr">{money(price)}</td><td class="sp">{money(math.floor(price * (1 - DISCOUNT) + 1e-9))}</td></tr>')
     return ('<table><thead><tr><th></th><th>Code</th><th>Product</th><th>Size / option</th><th class="pr">Price</th>'
             '<th class="sp">Stock price</th></tr></thead><tbody>' + ''.join(tr) + '</tbody></table>')
 
