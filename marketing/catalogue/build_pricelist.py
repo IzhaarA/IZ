@@ -83,8 +83,8 @@ td{padding:2px 5px;vertical-align:middle;border-bottom:1px solid #eee}tr{break-i
 th.sp{color:#0a6b3a}"""
 today = date.today()
 cover = f'''<div class="cover"><img class="logo" src="file://{os.path.abspath(logo)}"><h1>Price List</h1><div class="date">{today.strftime("%B %Y")}</div>
-<p>Unit D4, Pretoria Oriental Complex, Entrance 6, 7th Street<br>Marabastad, Pretoria<br>WhatsApp 072 323 5469 · Tel 012 323 5469<br>
-orders@makkies.co.za · blankets@yebo.co.za<br>makkies.co.za</p>
+<p>WhatsApp 072 323 5469 · Tel 012 323 5469<br>
+orders@makkies.co.za<br>makkies.co.za</p>
 <div class="note"><b>Price</b> is our normal price, the same as on makkies.co.za.<br><b>Stock price</b> is 5% less, for shops and resellers buying stock to sell.<br>
 To order, WhatsApp us the product codes and quantities and we'll send you a quote. We deliver anywhere in South Africa: PAXI to any PEP store or courier (delivery is extra), or collect in Marabastad.
 Prices may change without notice. Stock and colours are subject to availability.</div></div>'''
