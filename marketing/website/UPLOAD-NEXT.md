@@ -1,6 +1,7 @@
 # Upload status
 
-Nothing waiting. Last upload: 24 Oct 2026 (deploy 6adc707991f65af146be491a): Ndebele Beaded Hat back in stock;
+Nothing waiting. Last upload: 24 Oct 2026 (deploy 6adc790da89fab7ca23aa4c4): Google Search Console file google406f92a996be65c6.html.
+Before that: 24 Oct 2026 (deploy 6adc707991f65af146be491a): Ndebele Beaded Hat back in stock;
 search-engine pages (589 product pages, 62 category pages, /products/, sitemap.xml, robots.txt, google-products.xml, llms.txt).
 To do: submit https://makkies.co.za/sitemap.xml in Google Search Console and Bing Webmaster Tools, and
 https://makkies.co.za/google-products.xml in Google Merchant Center.

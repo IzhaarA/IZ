@@ -4,6 +4,7 @@ The site's photos and index.html live on Netlify (too big for this repo). These 
 pieces that are not in the downloaded page, so a fresh deploy can be rebuilt from the live site:
 
 - `netlify.toml`, `package.json`, `_redirects` (goes in `public/`)
+- `google406f92a996be65c6.html` — Google Search Console ownership file (goes in `public/`; **keep it on every deploy**)
 - `netlify/functions/next-order.mjs` — MWO-0005, MWO-0006 … order numbers
 - `netlify/functions/payfast-sign.mjs` — signs PayFast card payments on the server
 - `netlify/functions/payfast-itn.mjs` — PayFast payment confirmations: checked with PayFast,
