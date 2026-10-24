@@ -1,6 +1,9 @@
 # Upload status
 
 Waiting (24 Oct 2026): Ndebele Beaded Hat (NDH-006, R200) back in stock (removed from the sold-out list in patch-soldout.py).
+Waiting (24 Oct 2026): search-engine pages: run `python3 make-seo-pages.py public` last (after make-shawl-thumbs.py).
+After the upload: submit https://makkies.co.za/sitemap.xml in Google Search Console and Bing Webmaster Tools, and
+https://makkies.co.za/google-products.xml in Google Merchant Center.
 
 Previous: Last upload: 21 Oct 2026: Block Bath Towel R95, thick matseka R25, new Goleet Rings (R250).
 Before that: 20 Oct 2026: Mapoto Canvas Apron moved to Traditional Ndebele Accessories.
@@ -18,4 +21,4 @@ Before that: 20 Oct 2026 — 17 new products, 7 replacement photos, Beverly remo
 patch-payfast.py, patch-checkout.py, patch-price-changes.py, patch-prices.py, patch-soldout.py, patch-shawlphotos.py,
 patch-chenille.py, patch-shipping.py, patch-courier-rates.py, patch-remove-products.py,
 `patch-new-products.py <index> new-products`, patch-catalogue-edits.py, patch-prices.py, then download photos,
-then make-shawl-thumbs.py.
+then make-shawl-thumbs.py, then `make-seo-pages.py public`.
