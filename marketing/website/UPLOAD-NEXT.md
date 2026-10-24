@@ -1,6 +1,9 @@
 # Upload status
 
-Nothing waiting. Last upload: 24 Oct 2026 (deploy 6adc790da89fab7ca23aa4c4): Google Search Console file google406f92a996be65c6.html.
+Waiting (24 Oct 2026): Delivery & returns, Terms and Privacy as real pages at /returns/, /terms/, /privacy/
+(make-seo-pages.py; public/ in the scratchpad is already built).
+
+Previous: Nothing waiting. Last upload: 24 Oct 2026 (deploy 6adc790da89fab7ca23aa4c4): Google Search Console file google406f92a996be65c6.html.
 Before that: 24 Oct 2026 (deploy 6adc707991f65af146be491a): Ndebele Beaded Hat back in stock;
 search-engine pages (589 product pages, 62 category pages, /products/, sitemap.xml, robots.txt, google-products.xml, llms.txt).
 Done 24 Oct 2026: makkies.co.za verified in Google Search Console (HTML file) and sitemap.xml submitted; Bing Webmaster Tools set up.

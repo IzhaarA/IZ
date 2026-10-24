@@ -5,6 +5,7 @@ Writes into public/:
   p/<name>-<code>/index.html   one real page per product (title, photo, prices, options, Product schema)
   c/<category>/index.html      one page per category, listing its products
   products/index.html          every category and product on one page (linked from the shop footer)
+  returns/, terms/, privacy/   the shop's Delivery & returns, Terms and Privacy pages as real pages
   sitemap.xml, robots.txt      tell Google/Bing which pages exist
   google-products.xml          Google Merchant Center feed (free Shopping listings), one item per option
   llms.txt                     short plain-text summary for AI assistants
@@ -106,7 +107,7 @@ td,th{text-align:left;padding:6px 8px;border-bottom:1px solid #eee}th{font-size:
 .desc{margin-top:12px;font-size:15px}.note{margin-top:10px;font-size:13px;color:#6F6A63}h2{font-size:20px;margin:26px 0 12px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px}.card{background:#fff;border:1px solid #DFDACF;border-radius:10px;padding:8px;text-decoration:none;color:#221F1D}
 .card img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:6px;background:#f2efe9}.card b{display:block;font-size:14px;margin-top:6px}.card span{font-size:13px;color:#6F6A63}
-.intro{font-size:15px;max-width:760px}.cats{columns:3 220px;font-size:15px}.cats li{margin:3px 0;list-style:none}
+.intro{font-size:15px;max-width:760px}.policy h3{margin:16px 0 6px}.policy p,.policy ul{margin-bottom:10px}.policy li{margin:0 0 6px 20px}.cats{columns:3 220px;font-size:15px}.cats li{margin:3px 0;list-style:none}
 footer{margin-top:36px;background:#24211F;color:#ddd;font-size:14px}footer a{color:#F2B90D}footer .w{padding:22px 16px}
 @media(max-width:720px){.prod{grid-template-columns:1fr}h1{font-size:22px}header nav{display:none}}"""
 
@@ -124,7 +125,7 @@ def page(path, ttl, desc, body, ld=(), canonical=None, img=None):
 <footer><div class="w"><b>Makkie Wholesalers</b> · Unit D4, Pretoria Oriental Complex, Entrance 6, 7th Street, Marabastad, Pretoria<br>
 WhatsApp <a href="https://wa.me/{WA}">072 323 5469</a> · Tel 012 323 5469 · <a href="mailto:orders@makkies.co.za">orders@makkies.co.za</a><br>
 Wholesale and retail. Prices include 15% VAT. Delivery anywhere in South Africa by PAXI or courier, or collect in Marabastad.<br>
-<a href="/">Shop online</a> · <a href="/products/">All products</a></div></footer></body></html>"""
+<a href="/">Shop online</a> · <a href="/products/">All products</a> · <a href="/returns/">Delivery &amp; returns</a> · <a href="/terms/">Terms</a> · <a href="/privacy/">Privacy</a></div></footer></body></html>"""
     out = os.path.join(PUB, path.strip('/'), 'index.html')
     os.makedirs(os.path.dirname(out), exist_ok=True)
     open(out, 'w', encoding='utf-8').write(doc)
@@ -205,8 +206,24 @@ for g in GROUPS:
 page('/products/', 'All products | Makkie Wholesalers – Blankets, Beads & Traditional Goods, Pretoria',
      'Every product at Makkie Wholesalers: Basotho, Ndebele and mink blankets, shawls, Czech and Chinese seed beads, traditional goods. Wholesale and retail, Marabastad, Pretoria.', body)
 
+# ---------- policy pages (same text as the shop's Delivery & returns / Terms / Privacy pop-ups) ----------
+cfg = h[h.index('const CONFIG = {'):]
+def cval(key): return re.search(key + r":\s*'([^']*)'", cfg).group(1)
+def cnum(key): return re.search(key + r":\s*([0-9.]+)", cfg).group(1)
+SUBS = {'${CONFIG.business}': cval('business'), '${esc(CONFIG.address)}': cval('address'), '${CONFIG.email}': cval('email'),
+        '${R(CONFIG.shipping.band1)}': 'R' + cnum('band1'), '${CONFIG.shipping.quoteOverKg}': cnum('quoteOverKg')}
+POLICY = {'delivery': '/returns/', 'terms': '/terms/', 'privacy': '/privacy/'}
+for pid, path in POLICY.items():
+    m = re.search(pid + r": \{t: '([^']*)', h: \(\) => `(.*?)`\}", h, re.S)
+    if not m: sys.exit('page not found: ' + pid)
+    ttl, txt = m.group(1), m.group(2)
+    for a, b in SUBS.items(): txt = txt.replace(a, e(b))
+    if '${' in txt: sys.exit(f'unknown value in {pid} page: ' + txt[txt.index('${'):][:60])
+    page(path, f'{ttl} | Makkie Wholesalers', re.sub(r'<[^>]+>|\s+', ' ', txt).strip()[:300],
+         f'<div class="prod" style="display:block"><h1>{e(ttl)}</h1><div class="desc policy">{txt}</div></div>')
+
 # ---------- sitemap, robots, feed, llms.txt ----------
-urls = ['/', '/products/'] + list(CURL.values()) + [p['url'] for p in P]
+urls = ['/', '/products/', '/returns/', '/terms/', '/privacy/'] + list(CURL.values()) + [p['url'] for p in P]
 open(os.path.join(PUB, 'sitemap.xml'), 'w').write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
     + ''.join(f'<url><loc>{SITE}{u}</loc><lastmod>{TODAY}</lastmod></url>\n' for u in urls) + '</urlset>\n')
 open(os.path.join(PUB, 'robots.txt'), 'w').write(f'User-agent: *\nAllow: /\n\nSitemap: {SITE}/sitemap.xml\n')
