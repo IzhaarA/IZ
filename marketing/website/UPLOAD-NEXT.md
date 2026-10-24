@@ -1,6 +1,8 @@
 # Upload status
 
-Nothing waiting. Last upload: 21 Oct 2026: Block Bath Towel R95, thick matseka R25, new Goleet Rings (R250).
+Waiting (24 Oct 2026): Ndebele Beaded Hat (NDH-006, R200) back in stock (removed from the sold-out list in patch-soldout.py).
+
+Previous: Last upload: 21 Oct 2026: Block Bath Towel R95, thick matseka R25, new Goleet Rings (R250).
 Before that: 20 Oct 2026: Mapoto Canvas Apron moved to Traditional Ndebele Accessories.
 Before that: 20 Oct 2026: Beaded Knob Stick and both wooden axes moved to Traditional Ndebele Accessories.
 Before that: 20 Oct 2026 (deploy 6ad76f2f6e05d5a0dcc32d3b): Brooches and Beaded Accessories as their own

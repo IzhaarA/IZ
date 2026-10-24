@@ -40,7 +40,6 @@ SOLD_OUT = [
     # Plastic beads
     "PBO-E61",                                # E61 Sweet Pink, 8mm Oval
     # Ndebele
-    "NDH-006",                                # Ndebele Beaded Hat
     "TEK-001",                                # Beaded Tekkies (all sizes)
 ]
 
