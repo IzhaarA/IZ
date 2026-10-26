@@ -10,7 +10,7 @@ Writes into public/:
   google-products.xml          Google Merchant Center feed (free Shopping listings), one item per option
   llms.txt                     short plain-text summary for AI assistants
 The shop itself is unchanged: every page's "Buy online" button opens the product in the shop (/#p/<code>)."""
-import json, os, re, sys, html
+import json, os, re, sys, html, shutil
 from urllib.parse import quote
 from datetime import date
 from xml.sax.saxutils import escape as xesc
@@ -80,6 +80,7 @@ def describe(p, t):
     if n > 1: bits.append(f'{n} colours/options available' if p['group'] != 'Blankets & Textiles' else 'several colours available')
     return ', '.join(bits) + '. Wholesale and retail, delivered anywhere in South Africa by PAXI or courier.'
 
+for d in ('p', 'c'): shutil.rmtree(os.path.join(PUB, d), ignore_errors=True)   # rebuilt from scratch, so removed products leave no stale pages
 for p in P: p['t'] = title(p)
 seen = {}
 for p in P: seen.setdefault(p['t'], []).append(p)
