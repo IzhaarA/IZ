@@ -132,8 +132,10 @@ Wholesale and retail. Prices include 15% VAT. Delivery anywhere in South Africa 
 
 def crumbs(items):
     html_ = ' › '.join(f'<a href="{u}">{e(n)}</a>' if u else e(n) for n, u in items)
+    # Google needs a link on every breadcrumb except the last, so steps without their own page are left out of the schema
+    steps = [(n, u) for i, (n, u) in enumerate(items) if u or i == len(items) - 1]
     ld = {'@context': 'https://schema.org', '@type': 'BreadcrumbList', 'itemListElement': [
-        {'@type': 'ListItem', 'position': i + 1, 'name': n, **({'item': SITE + u} if u else {})} for i, (n, u) in enumerate(items)]}
+        {'@type': 'ListItem', 'position': i + 1, 'name': n, **({'item': SITE + u} if u else {})} for i, (n, u) in enumerate(steps)]}
     return f'<div class="crumbs">{html_}</div>', ld
 
 def card(p):
@@ -143,6 +145,9 @@ def card(p):
             f'<b>{e(p["t"])}</b><span>{pr}{" · Sold out" if p["soldOut"] else ""}</span></a>')
 
 STORE = {'@type': 'Store', 'name': 'Makkie Wholesalers', 'url': SITE + '/'}
+RETURNS = {'@type': 'MerchantReturnPolicy', 'applicableCountry': 'ZA', 'merchantReturnLink': SITE + '/returns/',   # as on /returns/
+           'returnPolicyCategory': 'https://schema.org/MerchantReturnFiniteReturnWindow', 'merchantReturnDays': 7,
+           'returnMethod': 'https://schema.org/ReturnByMail', 'returnFees': 'https://schema.org/ReturnShippingFees'}
 
 # ---------- product pages ----------
 for p in P:
@@ -175,8 +180,9 @@ for p in P:
             + (f'<h2>More {e(cname(p["category"]))}</h2><div class="grid">{"".join(card(x) for x in others)}</div>' if others else ''))
     offers = [{'@type': 'Offer', 'sku': v['id'], 'name': v['label'], 'price': f'{v["price"]:.2f}', 'priceCurrency': 'ZAR',
                'availability': 'https://schema.org/' + ('OutOfStock' if v['soldOut'] else 'InStock'), 'url': SITE + p['url'],
-               'itemCondition': 'https://schema.org/NewCondition', 'seller': STORE} for v in p['variants'] if v.get('price') is not None]
-    prod = {'@context': 'https://schema.org', '@type': 'Product', 'name': t, 'sku': p['id'], 'description': p['d'],
+               'itemCondition': 'https://schema.org/NewCondition', 'seller': STORE, 'hasMerchantReturnPolicy': RETURNS}
+              for v in p['variants'] if v.get('price') is not None]
+    prod = {'@context': 'https://schema.org', '@type': 'Product', 'name': t, 'sku': p['id'], 'description': p['d'], 'brand': {'@type': 'Brand', 'name': 'Makkie Wholesalers'},
             'image': [img_url(s) for s in imgs[:6]], 'category': p['category'].replace(' · ', ' > '), 'url': SITE + p['url'],
             'offers': offers[0] if len(offers) == 1 else {'@type': 'AggregateOffer', 'priceCurrency': 'ZAR', 'lowPrice': f'{lo:.2f}',
                       'highPrice': f'{hi:.2f}', 'offerCount': len(offers), 'offers': offers}}
