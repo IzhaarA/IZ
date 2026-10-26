@@ -92,7 +92,7 @@ NEW += [
       enumerate(("Green", "Yellow", "Cream", "Blue", "Red"), 1)], cat="Beaded Accessories"),
   ti("TRD-036", "Pedi Necklace", "", "unit", [(c, 70, ph(f"pedi_necklace_{i}")) for i, c in
       enumerate(("Pink", "Cream & Orange", "Yellow"), 1)], cat="Beaded Accessories"),
-  prod("ABT-003", "Star Beads", "Alphabet & Teething Beads", "15mm", "500g packet", [("Standard", 170, ph("star_beads_packet"))],
+  prod("ABT-003", "Star Beads", "Alphabet & Teething Beads", "15mm", "500g packet", [("Standard", 170, ph("star_beads_packet", "star_beads_anklets", "star_beads_closeup"))],
        "Silver star-shaped beads, 15mm across.", group="Beads"),
   ti("APB-001", "Animal Print Beret — Beige/Black", "", "unit", [("Standard", 85, ph("animal_print_beret_beige_black"))], cat="Berets · Animal Print Berets"),
   ti("APB-002", "Animal Print Beret — White/Black", "", "unit", [("Standard", 85, ph("animal_print_beret_white_black"))], cat="Berets · Animal Print Berets"),

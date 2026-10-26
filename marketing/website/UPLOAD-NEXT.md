@@ -1,7 +1,7 @@
 # Upload status
 
 Waiting (26 Oct 2026): Swazi Necklace TRD-035 (R150, 5 colours) and Pedi Necklace TRD-036 (R70, 3 colours) in Beaded Accessories;
-Star Beads ABT-003 (R170, 500g packet, 15mm); category renamed to Alphabet, Teething & Star Beads.
+Star Beads ABT-003 (R170, 500g packet, 15mm; packet, anklets and close-up photos); category renamed to Alphabet, Teething & Star Beads.
 
 Previous: Nothing waiting. Last upload: 26 Oct 2026 (deploy 6adf23f93865a068e2f5b141): breadcrumb fix, brand and return policy in product data.
 Before that: Last upload: 24 Oct 2026 (deploy 6adca5ae9955e6ef79dba0c0): /returns/, /terms/ and /privacy/ pages.
