@@ -111,6 +111,9 @@ for pid in [b for b in ("TRD-032", "TRD-033") if b in by and by[b]["category"] !
 for pid in [b for b in ("TRD-001", "TRD-002", "TRD-004") if b in by and by[b]["category"] != "Shells"]:   # leopard & cowrie shells -> Beads · Shells
     by[pid].update(category="Shells", group="Beads"); P.remove(by[pid])
     last = max(i for i, x in enumerate(P) if x["group"] == "Beads"); P.insert(last + 1, by[pid])
+ABT = "Alphabet, Teething & Star Beads"                                   # renamed when Star Beads were added (26 Oct 2026)
+for x in P:
+    if x["category"] == "Alphabet & Teething Beads": x["category"] = ABT
 for x in P:
     pr = [v["price"] for v in x["variants"]]; x["minPrice"], x["maxPrice"] = min(pr), max(pr)
 
@@ -122,5 +125,6 @@ if "'Brooches'" not in h:
     h = h.replace("'Tekkies/Shoes': 0.8,", "'Tekkies/Shoes': 0.8, 'Brooches': 0.1,", 1)
 if "'Dimit Coins'" not in h:
     h = h.replace("'Beading Accessories': 0.2,", "'Beading Accessories': 0.2, 'Dimit Coins': 0.2, 'Beaded Accessories': 0.4, 'Shells': 0.2,", 1)
+h = h.replace("'Alphabet & Teething Beads':", "'Alphabet, Teething & Star Beads':")   # delivery weight follows the rename
 open(p, "w", encoding="utf-8").write(h)
 print("patched", p, "-", len(P), "products")

@@ -88,6 +88,12 @@ NEW += [
       enumerate(("Blue", "Green", "Pink", "Peach", "Blue & Silver", "Light Pink"), 1)]),
   ti("TRD-034", "Goleet Rings", "", "set of 4", [("Standard", 250, ph("goleet_rings_1", "goleet_rings_2"))],
      "Set of 4 matseka wire rings.", cat="Traditional Ndebele Accessories"),
+  ti("TRD-035", "Swazi Necklace", "", "unit", [(c, 150, ph(f"swazi_necklace_{i}")) for i, c in
+      enumerate(("Green", "Yellow", "Cream", "Blue", "Red"), 1)], cat="Beaded Accessories"),
+  ti("TRD-036", "Pedi Necklace", "", "unit", [(c, 70, ph(f"pedi_necklace_{i}")) for i, c in
+      enumerate(("Pink", "Cream & Orange", "Yellow"), 1)], cat="Beaded Accessories"),
+  prod("ABT-003", "Star Beads", "Alphabet & Teething Beads", "15mm", "500g packet", [("Standard", 170, ph("star_beads_packet"))],
+       "Silver star-shaped beads, 15mm across.", group="Beads"),
   ti("APB-001", "Animal Print Beret — Beige/Black", "", "unit", [("Standard", 85, ph("animal_print_beret_beige_black"))], cat="Berets · Animal Print Berets"),
   ti("APB-002", "Animal Print Beret — White/Black", "", "unit", [("Standard", 85, ph("animal_print_beret_white_black"))], cat="Berets · Animal Print Berets"),
 ]
@@ -98,7 +104,7 @@ REPLACE = {
   "COT-005": ph("ideel_black_cotton_new"), "COT-004": ph("ideel_white_cotton_new"), "COT-006": ph("ideel_white_cotton_new"),
   "BER-008": ph("new_zcc_green_beret", "new_zcc_green_beret_2"), "WHS-004": ph("police_whistle_new"),
 }
-AFTER = {"PIN-010": "PIN-009", "TWL-003": "TWL-002", "DCE-001": "DOM-003", "COT-010": "COT-009", "TWN-007": "TWN-006", "TRD-001": "NDJ-003", "APB-001": "BER-007", "TRD-034": "NDJ-003"}  # place next to related items
+AFTER = {"PIN-010": "PIN-009", "TWL-003": "TWL-002", "DCE-001": "DOM-003", "COT-010": "COT-009", "TWN-007": "TWN-006", "TRD-001": "NDJ-003", "APB-001": "BER-007", "TRD-034": "NDJ-003", "TRD-035": "TRD-031", "ABT-003": "ABT-002"}  # place next to related items
 
 p = sys.argv[1]
 h = open(p, encoding="utf-8").read()
