@@ -174,7 +174,7 @@ Basotho: "Biri Marung" · Umembeso: "Umndeni" (Manqonqo, Manci-Dj, Blaqsiza) · 
 
 Basotho wedding this December? 💍 Seanamarena, Victoria, Morena, Sefate and more, 20 styles from R250. Which one is yours? Comment the number 👇 Order early: makkies.co.za or WhatsApp 072 323 5469 🚚 We deliver across SA
 
-#basothoblanket #seanamarena #basothowedding #traditionalwedding #pretoria #southafrica
+#basothoblanket #seanamarena #basothowedding #traditionalwedding #southafrica
 
 ---
 
@@ -182,7 +182,7 @@ Basotho wedding this December? 💍 Seanamarena, Victoria, Morena, Sefate and mo
 
 Umembeso or lobola this December? 🎁 Mink blankets, Basotho blankets, wedding shawls and throws, from R95. Comment the number of your favourite 👇 Buying for the whole family? WhatsApp 072 323 5469 for a quote. Shop at makkies.co.za 🚚 We deliver across SA
 
-#umembeso #lobola #umabo #minkblanket #traditionalwedding #southafrica
+#umembeso #lobola #minkblanket #traditionalwedding #southafrica
 
 ---
 
@@ -190,7 +190,7 @@ Umembeso or lobola this December? 🎁 Mink blankets, Basotho blankets, wedding 
 
 Xhosa ceremony this December? Xhosa stripe blankets in black, purple and red, R300, plus Italiano, Tivolli and Nu Kelly travelling rugs. Comment your number 👇 Order early: makkies.co.za or WhatsApp 072 323 5469 🚚 We deliver across SA
 
-#xhosa #xhosablanket #xhosaculture #travellingrug #easterncape #southafrica
+#xhosa #xhosablanket #xhosaculture #easterncape #southafrica
 
 ---
 
