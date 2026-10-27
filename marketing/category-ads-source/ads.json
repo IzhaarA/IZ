@@ -4985,7 +4985,7 @@
    ],
    "varies": false,
    "tint": "#e1dfdf",
-   "ink": "#412e2e"
+   "ink": "#422e31"
   },
   {
    "id": "TRB-009",
@@ -5024,8 +5024,8 @@
     "Brown/Cobalt/Gold"
    ],
    "varies": false,
-   "tint": "#e0e0df",
-   "ink": "#413b2e"
+   "tint": "#e0e0e0",
+   "ink": "#41382f"
   },
   {
    "id": "TRB-010",
@@ -5085,7 +5085,7 @@
    ],
    "varies": false,
    "tint": "#e0e3dd",
-   "ink": "#3a4629"
+   "ink": "#394629"
   },
   {
    "id": "TRB-011",
@@ -5138,8 +5138,8 @@
     "Brown/Salmon/Peacock"
    ],
    "varies": false,
-   "tint": "#e0e0e0",
-   "ink": "#3b2e41"
+   "tint": "#e5dbe0",
+   "ink": "#492639"
   },
   {
    "id": "TRB-012",
@@ -5176,8 +5176,8 @@
     "Black/Light Grey/Yolk"
    ],
    "varies": false,
-   "tint": "#dfe1e1",
-   "ink": "#2d423e"
+   "tint": "#dadde5",
+   "ink": "#252f4a"
   },
   {
    "id": "TRB-013",
@@ -5224,8 +5224,8 @@
     "Cobalt/Yolk/Natural"
    ],
    "varies": false,
-   "tint": "#d3e7ed",
-   "ink": "#174959"
+   "tint": "#d2e8ee",
+   "ink": "#144c5b"
   },
   {
    "id": "TRB-015",
@@ -5242,7 +5242,7 @@
    ],
    "varies": false,
    "tint": "#ebd5d5",
-   "ink": "#541b1b"
+   "ink": "#551b1b"
   },
   {
    "id": "TRB-016",
@@ -5271,8 +5271,8 @@
     "Black/Scarlet/Natural"
    ],
    "varies": false,
-   "tint": "#dfd9e7",
-   "ink": "#35234d"
+   "tint": "#ded8e8",
+   "ink": "#33214e"
   },
   {
    "id": "TRB-017",
@@ -5288,7 +5288,7 @@
    ],
    "varies": false,
    "tint": "#dadee6",
-   "ink": "#24314b"
+   "ink": "#24314c"
   },
   {
    "id": "TRB-018",
@@ -5304,7 +5304,7 @@
    ],
    "varies": false,
    "tint": "#dce1e3",
-   "ink": "#293c46"
+   "ink": "#293d46"
   },
   {
    "id": "TRB-019",
@@ -5333,8 +5333,8 @@
     "Emerald/Gold/Black"
    ],
    "varies": false,
-   "tint": "#eee0d2",
-   "ink": "#60370f"
+   "tint": "#eedfd2",
+   "ink": "#61360e"
   },
   {
    "id": "TRB-020",
@@ -5348,8 +5348,8 @@
     "Maroon/Camel"
    ],
    "varies": false,
-   "tint": "#ead8d5",
-   "ink": "#53241c"
+   "tint": "#ebd9d5",
+   "ink": "#54251b"
   },
   {
    "id": "TRB-021",
@@ -5434,8 +5434,8 @@
     "Brown/Pink/Peacock"
    ],
    "varies": false,
-   "tint": "#d9dee7",
-   "ink": "#22324d"
+   "tint": "#d8dee7",
+   "ink": "#22334e"
   },
   {
    "id": "TRB-027",
@@ -5460,8 +5460,8 @@
     "Grape/Aspen Gold"
    ],
    "varies": false,
-   "tint": "#e1e0df",
-   "ink": "#42342d"
+   "tint": "#e1dfdf",
+   "ink": "#42322d"
   },
   {
    "id": "TRB-028",
@@ -5499,8 +5499,8 @@
     "Turquoise"
    ],
    "varies": false,
-   "tint": "#e3dde1",
-   "ink": "#452a3f"
+   "tint": "#e2dde1",
+   "ink": "#452b3e"
   },
   {
    "id": "MNK-011",
@@ -5518,8 +5518,8 @@
     "Natural"
    ],
    "varies": false,
-   "tint": "#e6dadc",
-   "ink": "#4b242b"
+   "tint": "#e6dadd",
+   "ink": "#4b242d"
   },
   {
    "id": "TRB-027",
@@ -5544,8 +5544,8 @@
     "Grape/Aspen Gold"
    ],
    "varies": false,
-   "tint": "#e1e0df",
-   "ink": "#42342d"
+   "tint": "#e1dfdf",
+   "ink": "#42322d"
   },
   {
    "id": "TRB-023",
@@ -5562,7 +5562,7 @@
    ],
    "varies": false,
    "tint": "#e1dfdf",
-   "ink": "#412e2e"
+   "ink": "#422e31"
   },
   {
    "id": "SHW-011",
@@ -5580,19 +5580,19 @@
    "ink": "#453c2a"
   },
   {
-   "id": "SHW-015",
-   "name": "Cotton Wedding Shawl",
-   "img": "um_shw-015",
-   "price": 135,
-   "size": "110x130cm",
+   "id": "GSH-001",
+   "name": "White",
+   "img": "um_gsh-001",
+   "price": 175,
+   "size": "130x130cm",
    "multi": false,
-   "desc": "",
+   "desc": "Cloudsoft shawl. 100% Polyester.",
    "labels": [
-    "Standard"
+    "White"
    ],
    "varies": false,
-   "tint": "#dbdce5",
-   "ink": "#262c49"
+   "tint": "#e2e0de",
+   "ink": "#44392b"
   },
   {
    "id": "CSH-001",

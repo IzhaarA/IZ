@@ -1,6 +1,8 @@
 """Collects the website photos and product details for the category ads into ../instagram/source/ph and ads.json.
-Usage: python3 collect.py <site index.html> <site images folder>"""
-import json, sys, os, re, colorsys
+Usage: python3 collect.py <site index.html> <site images folder> [full-size photo folder]
+With the third folder, the December ads download the suppliers' full-size photos (the website keeps 320px copies of
+some of them, which look soft on a full TikTok screen) into that folder and use those instead."""
+import json, sys, os, re, colorsys, hashlib, subprocess
 from PIL import Image, ImageDraw, ImageFilter
 H = os.path.dirname(os.path.abspath(__file__)); PH = os.path.join(H, '..', 'instagram', 'source', 'ph')
 h = open(sys.argv[1]).read(); k = 'const PRODUCTS = '; P = json.JSONDecoder().raw_decode(h[h.index(k) + len(k):])[0]
@@ -8,7 +10,7 @@ SOLD = set(json.loads(re.search(r'SOLD_OUT\s*=\s*(\[[^\]]*\])', h).group(1)))
 by = {p['id']: p for p in P}
 
 def img(src, name, pad=False):               # site photo -> ph/<name>.jpg; pad=True makes a tall photo square so the frame doesn't crop it
-    im = Image.open(os.path.join(sys.argv[2], os.path.basename(src))).convert('RGB')
+    im = Image.open(src if os.path.isabs(src) else os.path.join(sys.argv[2], os.path.basename(src))).convert('RGB')
     w, hh = im.size
     if pad and abs(w - hh) > max(w, hh) * .1:  # tall or wide photo: stretch its own edges (softly blurred) to make it square
         n = max(w, hh); sq = Image.new('RGB', (n, n)); x0, y0 = (n - w) // 2, (n - hh) // 2; e = max(6, min(w, hh) // 40)
@@ -39,18 +41,28 @@ def fan(names, out, card=380):               # fanned photo cards for the carous
     cv.crop(cv.getbbox()).save(os.path.join(PH, out + '.png'))
 
 ADS = {}
-PHOTO = {'CH-49': 'images/fd6771443e59.jpg',          # Black Chinese beads: the 8/0 packet photo looks better
-         'TRB-011': 'images/c0b051ba921c.jpg', 'TRB-012': 'images/7a9886a68352.jpg'}   # Seanamarena, Victoria: worn, not the flat design
+PHOTO = {'CH-49': 'images/fd6771443e59.jpg'}         # Black Chinese beads: the 8/0 packet photo looks better
+HI = sys.argv[3] if len(sys.argv) > 3 else None
+WORN = {'TRB-011': 'https://cdn.shopify.com/s/files/1/0083/3165/7252/files/518182bc1aa968518b5782a429a281f9_800x.jpg?v=1714374574',   # Seanamarena worn
+        'TRB-012': 'https://cdn.shopify.com/s/files/1/0083/3165/7252/files/dad474e10db96da235b12df85d526da8_800x.jpg?v=1715677764'}   # Victoria worn
+def full(url):                                       # supplier photo at full size (Shopify serves it without the _800x suffix)
+    url = re.sub(r'_\d+x(\.\w+)(\?|$)', r'\1\2', url)
+    out = os.path.join(HI, hashlib.md5(url.encode()).hexdigest()[:12] + '.jpg')
+    if not os.path.exists(out):
+        subprocess.run(['curl', '-sSf', '-m', '60', '-o', out, url], check=True)
+        Image.open(out).verify()
+    return out
 def add(key, items, fan_names):
     for it in items: it['tint'], it['ink'] = tones(Image.open(os.path.join(PH, it['img'] + '.jpg')))
     fan(fan_names, key + '_fan'); ADS[key] = items
 
-def simple(key, ids, label=lambda p: p['name'], pad=False):
+def simple(key, ids, label=lambda p: p['name'], pad=False, hires=False):
     out = []
     for pid in ids:
         p = by[pid]
         if pid in SOLD: continue
-        v = p['variants'][0]; nm = f"{key}_{pid.lower()}"; img(PHOTO.get(pid, v['img']), nm, pad)
+        v = p['variants'][0]; nm = f"{key}_{pid.lower()}"; url = WORN.get(pid) or v.get('url')
+        img(full(url) if hires and HI and url else PHOTO.get(pid, v['img']), nm, pad)
         out.append(dict(id=pid, name=label(p), img=nm, price=min(x['price'] for x in p['variants']),
                         size=p.get('size') or '', multi=len(p['variants']) > 1, desc=p.get('desc', ''), labels=[x['label'] for x in p['variants']], varies=len({x['price'] for x in p['variants']}) > 1))
     return out
@@ -84,10 +96,10 @@ p3 = simple('p3', cat('Plastic Beads · 3mm Round')); add('plastic3', p3, [p3[i]
 p6 = simple('p6', cat('Plastic Beads · 6mm Round')); add('plastic6', p6, [p6[i]['img'] for i in (6, 7, 5, 10, 2, 33)])
 po = simple('po', cat('Plastic Beads · 8mm Oval')); add('plasticoval', po, [po[i]['img'] for i in (1, 4, 3, 8, 0)])
 # December ceremonies (27 Oct 2026)
-bs = simple('bs', cat('Tribal Blankets · Basotho')); add('basotho', bs, [bs[i]['img'] for i in (4, 6, 7, 10, 11, 13)])
-um = simple('um', ['MNK-014', 'MNK-011', 'TRB-027', 'TRB-023', 'SHW-011', 'SHW-015', 'CSH-001', 'PSH-021'])
+bs = simple('bs', cat('Tribal Blankets · Basotho'), hires=True); add('basotho', bs, [bs[i]['img'] for i in (4, 6, 7, 10, 11, 13)])
+um = simple('um', ['MNK-014', 'MNK-011', 'TRB-027', 'TRB-023', 'SHW-011', 'GSH-001', 'CSH-001', 'PSH-021'], hires=True)
 add('umembeso', um, [um[i]['img'] for i in (0, 2, 4, 3, 1)])
-xh = simple('xh', ['RUG-002', 'RUG-001', 'RUG-003'])
+xh = simple('xh', ['RUG-002', 'RUG-001', 'RUG-003'], hires=True)
 for v in by['TRB-029']['variants']:                   # Xhosa stripe blanket colours for the colour set
     nm = 'xh_stripe_' + v['id'].split('-')[-1]; img(v['img'], nm); xh.append(dict(id='TRB-029', name=v['label'], img=nm, price=v['price'], size='', set=True))
 add('xhosa', xh, [xh[i]['img'] for i in (3, 0, 4, 1, 5)])

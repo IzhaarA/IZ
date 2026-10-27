@@ -161,3 +161,41 @@ Preciosa Czech seed beads, strung and loose, from R95 💎 47 colours in stock, 
 8mm oval plastic beads, 250g packets, R55 🌈 11 colours in stock. Which one is yours? 👇 Shop at makkies.co.za or WhatsApp 072 323 5469 🚚 We deliver across SA
 
 #plasticbeads #beadwork #beads #pretoria #southafrica
+
+---
+
+# December ceremony videos (27 Oct 2026)
+
+Sounds: these videos have no audio, so add a sound in TikTok. If you will **promote** a video, pick the sound from TikTok's
+**Commercial Sounds** library (search "amapiano"); popular songs are often not allowed in paid promotions. For normal posts:
+Basotho: "Biri Marung" · Umembeso: "Umndeni" (Manqonqo, Manci-Dj, Blaqsiza) · Xhosa: "Ngibuyela Emakhaya" (Kenton Lee, Eman S, S-Sabadala, Zykes Magida) · Kangas: "Lwetse 2.0" (Xduppy, Uncle Waffles, DJ Maphorisa, Mluusician).
+
+## TikTok: Basotho Blankets video (makkies-basotho-blankets-tiktok.mp4)
+
+Basotho wedding this December? 💍 Seanamarena, Victoria, Morena, Sefate and more, 20 styles from R250. Which one is yours? Comment the number 👇 Order early: makkies.co.za or WhatsApp 072 323 5469 🚚 We deliver across SA
+
+#basothoblanket #seanamarena #basothowedding #traditionalwedding #pretoria #southafrica
+
+---
+
+## TikTok: Umembeso & Lobola Gifts video (makkies-umembeso-gifts-tiktok.mp4)
+
+Umembeso or lobola this December? 🎁 Mink blankets, Basotho blankets, wedding shawls and throws, from R95. Comment the number of your favourite 👇 Buying for the whole family? WhatsApp 072 323 5469 for a quote. Shop at makkies.co.za 🚚 We deliver across SA
+
+#umembeso #lobola #umabo #minkblanket #traditionalwedding #southafrica
+
+---
+
+## TikTok: Xhosa Blankets & Rugs video (makkies-xhosa-blankets-tiktok.mp4)
+
+Xhosa ceremony this December? Xhosa stripe blankets in black, purple and red, R300, plus Italiano, Tivolli and Nu Kelly travelling rugs. Comment your number 👇 Order early: makkies.co.za or WhatsApp 072 323 5469 🚚 We deliver across SA
+
+#xhosa #xhosablanket #xhosaculture #travellingrug #easterncape #southafrica
+
+---
+
+## TikTok: Kangas video (makkies-kangas-tiktok.mp4)
+
+One kanga or one for the whole family? 😄 R35 each, 19 designs: Elephant, Shield, Big Five, Swazi Flag and more. Comment your number 👇 Shop at makkies.co.za or WhatsApp 072 323 5469 🚚 We deliver across SA
+
+#kanga #kangas #traditionalwear #pretoria #southafrica

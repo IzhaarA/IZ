@@ -250,7 +250,7 @@ page2('basotho-blankets', dict(
 um = AD['umembeso']
 UM = [('Paris Mink', '2PLY · 5KG · IN A BOX', 'QUEEN/KING MINK BLANKET'), ('Casa Mink', '1PLY · IN A BAG', 'QUEEN MINK BLANKET'),
       ('Mamohato', '150 × 160 CM', 'BASOTHO BLANKET BY ARANDA · 12 COLOURS'), ('Basotho Frill', '150 × 160 CM', 'FRILLED BASOTHO BLANKET · 3 COLOURS'),
-      ('Wedding Shawl', '150 × 150 CM', 'WHITE WEDDING SHAWL'), ('Cotton Shawl', '110 × 130 CM', 'WHITE COTTON WEDDING SHAWL'),
+      ('Wedding Shawl', '150 × 150 CM', 'WHITE WEDDING SHAWL'), ('Cloudsoft Shawl', '130 × 130 CM', 'WHITE · ALSO IN 6 MORE COLOURS'),
       ('Chenille Throw', '14 COLOURS', '130 × 180 CM · SOFT & WARM'), ('Plain Shawl', '29 COLOURS', '120 × 120 CM · R95 EACH')]
 page2('umembeso-gifts', dict(
     q=['UMEMBESO', 'OR LOBOLA', 'THIS DECEMBER?'], qPhotos=[J(um[n]) for n in (0, 2, 4, 3, 6, 1)],
@@ -278,10 +278,10 @@ page2('xhosa-blankets', dict(
 
 kg = AD['kangas']; KF = (8, 4, 0, 1, 7, 10, 16, 6, 9, 12, 18)
 page2('kangas', dict(
-    q=['ONE KANGA?', 'OR ONE FOR THE', 'WHOLE FAMILY?'], qPhotos=[J(kg[n]) for n in KF[:6]],
+    q=['ONE KANGA?', 'OR ONE FOR THE', 'WHOLE FAMILY?'], qPhotos=[J(kg[n]) for n in (4, 0, 1, 7, 16, 18)],
     tag='1.5M PRINTED CLOTH', title1='KANGAS', title2='R35 EACH', hookSub=f'{len(kg)} DESIGNS · MANY COLOURS', lowest=min(i['price'] for i in kg), hookPre='ONLY',
-    shopLine='Shop Kangas', hookPhotos=[J(kg[n]) for n in (8, 4, 0, 1)],
-    items=pick('kangas', KF[:7], chip=lambda i: '1.5M', sub=lambda i: f"{len(i['labels'])} COLOURS" if len(i['labels']) > 1 else 'KANGA CLOTH'),
+    shopLine='Shop Kangas', hookPhotos=[J(kg[n]) for n in (4, 0, 1, 7)],
+    items=pick('kangas', (4, 0, 1, 7, 10, 16, 18), chip=lambda i: '1.5M', sub=lambda i: f"{len(i['labels'])} COLOURS" if len(i['labels']) > 1 else 'KANGA CLOTH'),
     gridTitle='Pick your design.', gridSub=f'+{len(kg) - 11} MORE DESIGNS · R35 EACH', gridCols=4, cell=205, ask=ASK, endKick='BUY FOR THE FAMILY',
     grid=tiles('kangas', KF, more=len(kg) - 11, label='MORE DESIGNS'),
     look=dict(band='straw', hook='mosaic', enter='up', sticker='circle', hl='#D8232A', tilt=12,
