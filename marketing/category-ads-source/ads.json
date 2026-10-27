@@ -4949,5 +4949,1091 @@
    "tint": "#dbe8d8",
    "ink": "#294e21"
   }
+ ],
+ "basotho": [
+  {
+   "id": "TRB-022",
+   "name": "Elizabeth Basotho Tribal Blanket",
+   "img": "bs_trb-022",
+   "price": 305,
+   "size": "150x160cm",
+   "multi": true,
+   "desc": "",
+   "labels": [
+    "Black/White",
+    "Blue",
+    "Orange",
+    "Red",
+    "Turquoise"
+   ],
+   "varies": false,
+   "tint": "#e8ded8",
+   "ink": "#4f3320"
+  },
+  {
+   "id": "TRB-023",
+   "name": "Basotho Frill",
+   "img": "bs_trb-023",
+   "price": 250,
+   "size": "150x160cm",
+   "multi": true,
+   "desc": "",
+   "labels": [
+    "Black/White",
+    "Red/White",
+    "Grey/White"
+   ],
+   "varies": false,
+   "tint": "#e1dfdf",
+   "ink": "#412e2e"
+  },
+  {
+   "id": "TRB-009",
+   "name": "Mini Khotso",
+   "img": "bs_trb-009",
+   "price": 370,
+   "size": "110x130cm",
+   "multi": true,
+   "desc": "",
+   "labels": [
+    "Black/Natural/Cobalt",
+    "Black/Natural/Cobalt",
+    "Cobalt/Corn/Natural",
+    "Black/Gold/Scarlet",
+    "Black/Corn/Nat.",
+    "Black/Scarlet/Nat",
+    "Black/Cobalt/Gold.",
+    "Black/Corn/White",
+    "Emerald/Corn/White.",
+    "Emerald/Corn/Natural",
+    "Cobalt/Corn/Nat",
+    "Brown/Cobal/Gold",
+    "Cobalt/Pink/Natural.",
+    "Black/Peacock/Scarlet",
+    "Black/Cobalt/Yolk",
+    "Black/Peacock/Scarlet",
+    "Brown/Cobalt/Gold",
+    "Cobalt/Corn/Natural",
+    "Black/Peacock/Scarlet",
+    "Black/Cobalt/Gold",
+    "Black/Natural/Cobalt",
+    "Black/Corn/Nat.",
+    "Cobalt/Corn/Nat.",
+    "Brown/Pink/Peacock",
+    "Brown/Pink/Peacock",
+    "Brown/Cobalt/Gold"
+   ],
+   "varies": false,
+   "tint": "#e0e0df",
+   "ink": "#413b2e"
+  },
+  {
+   "id": "TRB-010",
+   "name": "Khotso",
+   "img": "bs_trb-010",
+   "price": 625,
+   "size": "150x160cm",
+   "multi": true,
+   "desc": "",
+   "labels": [
+    "Emerald/Corn/Natural",
+    "Black/Gold/Scarlet",
+    "Black/Gold/Scarlet",
+    "Black/Corn/Natural",
+    "Brown/Pink/Peacock.",
+    "Cobalt/Pink/Natural.",
+    "Brown/Cobalt/Gold.",
+    "Black/Natural/Cobalt",
+    "Black/Gold/Scarlet",
+    "Black/Light Grey/Scarlet",
+    "Bottle/Gold/Natural",
+    "Black/Natural/Cobalt",
+    "Black/Gold/Scarlet",
+    "Black/Light Grey/Scarlet",
+    "Bottle/Gold/Natural",
+    "Black/Gold/Scarlet",
+    "Black/Grey/Scarlet",
+    "Steel/Black",
+    "Black/Steel",
+    "Cobalt/Pink/Natural.",
+    "Black/Scarlet/Natural.",
+    "Black/Peacock/Scarlet",
+    "Black/Corn/Nat",
+    "Emerald/Corn/Natural",
+    "Cobalt/Pink/Natural",
+    "Bottle/Cobalt/Tangerine",
+    "Peacock/Gold/Corn",
+    "Scarlet/Pink",
+    "Emerald/Corn/Natural",
+    "Cobalt/Pink/Natural",
+    "Brown/Cobalt/Gold",
+    "Brown/Pink/Peacock",
+    "Emerald/Corn/Natural",
+    "Bottle/Gold/Natural",
+    "Black/Scarlet/Natural",
+    "Black/Corn/Nat",
+    "Cobalt/Corn/Natural",
+    "Cobalt/Pink/Natural.",
+    "Black/Cobalt/Gold",
+    "Cobalt/Corn/Nat.",
+    "Black/Cobalt/Gold.",
+    "Black/Cobalt/Gold",
+    "Black/Peacock/Scarlet",
+    "Black/Scarlet/Natural",
+    "Black/Peacock/Scarlet",
+    "Brown/Cobalt/Gold"
+   ],
+   "varies": false,
+   "tint": "#e0e3dd",
+   "ink": "#3a4629"
+  },
+  {
+   "id": "TRB-011",
+   "name": "Seannamarena",
+   "img": "bs_trb-011",
+   "price": 1135,
+   "size": "150x160cm",
+   "multi": true,
+   "desc": "",
+   "labels": [
+    "Black/Natural/Cobalt",
+    "Lilac/Natural/Turquoise",
+    "Scarlet/Natural/Peacock",
+    "Black/Natural/Cobalt",
+    "Scarlet/Cobalt/Black",
+    "Emerald/Yolk/Natural",
+    "Lilac/Natural/Peacock",
+    "Black/Yolk/Natural",
+    "Brown/Pink/Peacock",
+    "Peacock/Yolk/Natural",
+    "Cobalt/Yolk/Natural",
+    "Black/Yolk/Natural",
+    "Scarlet/Emerald/Gold",
+    "Emerald/Natural/Scarlet",
+    "Medium Grey/Silver",
+    "Pink/Cobalt/Brown",
+    "Black/Gold/Scarlet",
+    "Brown/Cobalt/Yolk",
+    "Black/Gold/Scarlet",
+    "Scarlet/Cobalt/Black",
+    "Emerald/Yolk/Natural",
+    "Peacock/Yolk/Natural",
+    "Peacock/Natural/Black",
+    "Black/Emerald/Scarlet",
+    "Scarlet/Yolk/Peacock",
+    "Brown/Pink/Peacock",
+    "Cobalt/Yolk/Natural",
+    "Black/Cobalt/Yolk",
+    "Peacock/Nat/Black",
+    "Black/Scarlet/Natural",
+    "Black/Peacock/Scarlet",
+    "Black/Scarlet/Natural",
+    "Pink/Cobalt/Brown",
+    "Cobalt/Light Powder/Royal",
+    "Cobalt/Natural/Scarlet",
+    "Brown/Cobalt/Yolk",
+    "Black/Peacock/Scarlet",
+    "Black/Cobalt/Yolk",
+    "Brown/Salmon/Peacock",
+    "Brown/Salmon/Peacock"
+   ],
+   "varies": false,
+   "tint": "#e0e0e0",
+   "ink": "#3b2e41"
+  },
+  {
+   "id": "TRB-012",
+   "name": "Victoria",
+   "img": "bs_trb-012",
+   "price": 1135,
+   "size": "150x160cm",
+   "multi": true,
+   "desc": "",
+   "labels": [
+    "Lt Grey/Silver/Peacock",
+    "Cobalt/Yolk/Natural",
+    "Emerald/Gold/Brown",
+    "Black/Cobalt/Gold",
+    "Cobalt/Yolk/Natural",
+    "Black/Cobalt/Gold",
+    "Black/Cobalt/Gold",
+    "Emerald/Yolk/Nat",
+    "Black/Light Grey/Silver",
+    "Black/Scarlet/Natural",
+    "Black/Silver/Peacock",
+    "Brown/Salmon/Peacock",
+    "Black/Peacock/Scarlet",
+    "Brown/Salmon/Peacock",
+    "Scarlet/Gold/Black",
+    "Black/Orange/Yolk",
+    "Brown/Blk/Yolk/Gold",
+    "Black/Peacock/Scarlet",
+    "Black/Silver/Peacock",
+    "Black/Peacock/Scarlet",
+    "Black/Scarlet/Natural",
+    "Cobalt/Yolk/Natural",
+    "Brown/Salmon/Peacock",
+    "Black/Light Grey/Yolk"
+   ],
+   "varies": false,
+   "tint": "#dfe1e1",
+   "ink": "#2d423e"
+  },
+  {
+   "id": "TRB-013",
+   "name": "Morena",
+   "img": "bs_trb-013",
+   "price": 1100,
+   "size": "150x160cm",
+   "multi": true,
+   "desc": "",
+   "labels": [
+    "Black/Yolk/Grey",
+    "Mid Grey/Silver",
+    "Black/Cobalt/Yolk",
+    "Black/Peacock/Scarlet",
+    "Brown/Salmon/Peacock",
+    "Brown/Cobalt/Yolk",
+    "Brown/Cobalt/Yolk",
+    "Black/Cobalt/Yolk",
+    "Black/Peacock/Scarlet",
+    "Brown/Salmon/Peacock",
+    "Cobalt/Yolk/Natural"
+   ],
+   "varies": false,
+   "tint": "#e5e1db",
+   "ink": "#493d26"
+  },
+  {
+   "id": "TRB-014",
+   "name": "Sefate",
+   "img": "bs_trb-014",
+   "price": 1100,
+   "size": "150x160cm",
+   "multi": true,
+   "desc": "",
+   "labels": [
+    "Black/Peacock/Scarlet",
+    "Black/Cobalt/Gold",
+    "Black/Peacock/Scarlet",
+    "Mid Grey/Silver/Peacock",
+    "Brown/Salmon/Peacock",
+    "Mid Grey/Silver/Peacock",
+    "Brown/Cobalt/Yolk",
+    "Brown/Salmon/Peacock",
+    "Cobalt/Yolk/Natural"
+   ],
+   "varies": false,
+   "tint": "#d3e7ed",
+   "ink": "#174959"
+  },
+  {
+   "id": "TRB-015",
+   "name": "Matlama",
+   "img": "bs_trb-015",
+   "price": 1100,
+   "size": "150x160cm",
+   "multi": true,
+   "desc": "",
+   "labels": [
+    "Black/Scarlet",
+    "Black/Light Grey",
+    "Maroon/Light Grey"
+   ],
+   "varies": false,
+   "tint": "#ebd5d5",
+   "ink": "#541b1b"
+  },
+  {
+   "id": "TRB-016",
+   "name": "Motlatsi",
+   "img": "bs_trb-016",
+   "price": 1135,
+   "size": "155x165cm",
+   "multi": true,
+   "desc": "",
+   "labels": [
+    "Lilac/Natural/Peacock",
+    "Pink/Nat/Lilac",
+    "Cobalt/Light Poweder/Royal",
+    "Peacock/Natural/Lilac",
+    "Peacock/Natural/Black",
+    "Scarlet/Yolk/Peacock",
+    "Black/Sahara/Peacock",
+    "Peacock/Gold/Orange",
+    "Black/Peacock/Scarlet",
+    "Lilac/Natural",
+    "Brown/Salmon/Peacock",
+    "Black/Cobalt/Natural",
+    "Black/Nat/Scarlet",
+    "Cobalt/Yolk/Natural",
+    "Black/Natural/Cobalt",
+    "Black/Scarlet/Natural"
+   ],
+   "varies": false,
+   "tint": "#dfd9e7",
+   "ink": "#35234d"
+  },
+  {
+   "id": "TRB-017",
+   "name": "Linare",
+   "img": "bs_trb-017",
+   "price": 1135,
+   "size": "155x165cm",
+   "multi": true,
+   "desc": "",
+   "labels": [
+    "Black/Light Grey/Silver",
+    "Black/Peacock/Natural"
+   ],
+   "varies": false,
+   "tint": "#dadee6",
+   "ink": "#24314b"
+  },
+  {
+   "id": "TRB-018",
+   "name": "Pitseng",
+   "img": "bs_trb-018",
+   "price": 1135,
+   "size": "155x165cm",
+   "multi": true,
+   "desc": "",
+   "labels": [
+    "Black/Aqua/Natural",
+    "Brown/Gold"
+   ],
+   "varies": false,
+   "tint": "#dce1e3",
+   "ink": "#293c46"
+  },
+  {
+   "id": "TRB-019",
+   "name": "Kharetse",
+   "img": "bs_trb-019",
+   "price": 1100,
+   "size": "155x165cm",
+   "multi": true,
+   "desc": "",
+   "labels": [
+    "Yolk/Natural/Cobalt",
+    "Emerald/Natural/Scarlet",
+    "Peacock/Natural/Black",
+    "Black/Peacock/Scarlet",
+    "Black/Peacock/Natural",
+    "Black/Natural/Cobalt",
+    "Brown/Salmon/Peacock",
+    "Black/Yolk/Natural",
+    "Cobalt/Yolk/Natural",
+    "Black/Cobalt/Natural",
+    "Scarlet/Cobalt/Black",
+    "Black/Nat/Scarlet",
+    "Cobalt/Light Powder/Royal",
+    "Black/Lt Aqua/Yolk",
+    "Peacock/Yolk/Natural",
+    "Emerald/Gold/Black"
+   ],
+   "varies": false,
+   "tint": "#eee0d2",
+   "ink": "#60370f"
+  },
+  {
+   "id": "TRB-020",
+   "name": "Moholobela",
+   "img": "bs_trb-020",
+   "price": 605,
+   "size": "155x165cm",
+   "multi": false,
+   "desc": "",
+   "labels": [
+    "Maroon/Camel"
+   ],
+   "varies": false,
+   "tint": "#ead8d5",
+   "ink": "#53241c"
+  },
+  {
+   "id": "TRB-021",
+   "name": "Sangoma",
+   "img": "bs_trb-021",
+   "price": 625,
+   "size": "155x165cm",
+   "multi": true,
+   "desc": "",
+   "labels": [
+    "Royal/Light Grey",
+    "Black/Black/Light Grey/Black",
+    "Black/Maroon/Black-Grey",
+    "Black/Royal/Black Grey",
+    "Bottle/Royal",
+    "Brown/Bottle",
+    "Brown/Royal",
+    "Tobacco",
+    "Brown/Peacock"
+   ],
+   "varies": false,
+   "tint": "#dedfe2",
+   "ink": "#2b3444"
+  },
+  {
+   "id": "TRB-024",
+   "name": "Mohodu",
+   "img": "bs_trb-024",
+   "price": 1135,
+   "size": "155x165cm",
+   "multi": true,
+   "desc": "",
+   "labels": [
+    "Black/Natural",
+    "Brown/Royal",
+    "Black/Royal",
+    "Black/Royal"
+   ],
+   "varies": false,
+   "tint": "#e6e1d9",
+   "ink": "#4c3b23"
+  },
+  {
+   "id": "TRB-025",
+   "name": "Marona",
+   "img": "bs_trb-025",
+   "price": 1135,
+   "size": "155x165cm",
+   "multi": true,
+   "desc": "",
+   "labels": [
+    "Cobalt/Light Powder/Royal",
+    "Black/Peacock/Natural",
+    "Brown/Pink/Peacock",
+    "Peacock/Natural/Black",
+    "Peacock/Yolk/Nat",
+    "Scarlet/Cobalt/Black"
+   ],
+   "varies": false,
+   "tint": "#dce0e4",
+   "ink": "#273848"
+  },
+  {
+   "id": "TRB-026",
+   "name": "Moshoeshoe",
+   "img": "bs_trb-026",
+   "price": 1135,
+   "size": "155x165cm",
+   "multi": true,
+   "desc": "",
+   "labels": [
+    "Black/Cobalt/Yolk",
+    "Black/Peacock/Natural",
+    "Black/Peacock/Scarlet",
+    "Scarlet/Cobalt/Blk/Brown",
+    "Cobalt/Light Aqua/Royal",
+    "Peacock/Natural/Black",
+    "Peacock/Yolk/Natural",
+    "Brown/Cobalt/Yolk",
+    "Cobalt/Yolk/Natural",
+    "Brown/Salmon",
+    "Brown/Pink/Peacock"
+   ],
+   "varies": false,
+   "tint": "#d9dee7",
+   "ink": "#22324d"
+  },
+  {
+   "id": "TRB-027",
+   "name": "Mamohato by Aranda",
+   "img": "bs_trb-027",
+   "price": 375,
+   "size": "150x160cm",
+   "multi": true,
+   "desc": "",
+   "labels": [
+    "Black/Natural",
+    "MME - Teal/Apple/Parrot",
+    "Teal/Apple/Parrot",
+    "Kingfisher/Desert",
+    "Red/Natural",
+    "Bottle/Silver",
+    "Brown/Caramel/Yellow",
+    "Black/Natural (",
+    "Steel/Aspen Gold",
+    "Navy/Eggshell",
+    "Electric Blue/Natural",
+    "Grape/Aspen Gold"
+   ],
+   "varies": false,
+   "tint": "#e1e0df",
+   "ink": "#42342d"
+  },
+  {
+   "id": "TRB-028",
+   "name": "Tlholo - white with blue stripes",
+   "img": "bs_trb-028",
+   "price": 250,
+   "size": "150x160cm",
+   "multi": false,
+   "desc": "",
+   "labels": [
+    "Standard"
+   ],
+   "varies": false,
+   "tint": "#d2e0ee",
+   "ink": "#14375b"
+  }
+ ],
+ "umembeso": [
+  {
+   "id": "MNK-014",
+   "name": "Paris 2ply 5kg in box",
+   "img": "um_mnk-014",
+   "price": 775,
+   "size": "queen/king (220x240cm)",
+   "multi": true,
+   "desc": "Fits a king size bed.",
+   "labels": [
+    "Pink",
+    "Teal Cream",
+    "Black And White",
+    "Blue",
+    "Brown & Beige",
+    "Cream & Grey",
+    "Lion",
+    "Turquoise"
+   ],
+   "varies": false,
+   "tint": "#e3dde1",
+   "ink": "#452a3f"
+  },
+  {
+   "id": "MNK-011",
+   "name": "Casa 1ply in bag",
+   "img": "um_mnk-011",
+   "price": 530,
+   "size": "queen (200x230cm)",
+   "multi": true,
+   "desc": "",
+   "labels": [
+    "Pink",
+    "Turquoise Cream",
+    "Grey",
+    "Blue & Grey",
+    "Natural"
+   ],
+   "varies": false,
+   "tint": "#e6dadc",
+   "ink": "#4b242b"
+  },
+  {
+   "id": "TRB-027",
+   "name": "Mamohato by Aranda",
+   "img": "um_trb-027",
+   "price": 375,
+   "size": "150x160cm",
+   "multi": true,
+   "desc": "",
+   "labels": [
+    "Black/Natural",
+    "MME - Teal/Apple/Parrot",
+    "Teal/Apple/Parrot",
+    "Kingfisher/Desert",
+    "Red/Natural",
+    "Bottle/Silver",
+    "Brown/Caramel/Yellow",
+    "Black/Natural (",
+    "Steel/Aspen Gold",
+    "Navy/Eggshell",
+    "Electric Blue/Natural",
+    "Grape/Aspen Gold"
+   ],
+   "varies": false,
+   "tint": "#e1e0df",
+   "ink": "#42342d"
+  },
+  {
+   "id": "TRB-023",
+   "name": "Basotho Frill",
+   "img": "um_trb-023",
+   "price": 250,
+   "size": "150x160cm",
+   "multi": true,
+   "desc": "",
+   "labels": [
+    "Black/White",
+    "Red/White",
+    "Grey/White"
+   ],
+   "varies": false,
+   "tint": "#e1dfdf",
+   "ink": "#412e2e"
+  },
+  {
+   "id": "SHW-011",
+   "name": "White Wedding Shawl",
+   "img": "um_shw-011",
+   "price": 175,
+   "size": "150x150cm",
+   "multi": false,
+   "desc": "100% Polyester.",
+   "labels": [
+    "Standard"
+   ],
+   "varies": false,
+   "tint": "#e3e1dd",
+   "ink": "#453c2a"
+  },
+  {
+   "id": "SHW-015",
+   "name": "Cotton Wedding Shawl",
+   "img": "um_shw-015",
+   "price": 135,
+   "size": "110x130cm",
+   "multi": false,
+   "desc": "",
+   "labels": [
+    "Standard"
+   ],
+   "varies": false,
+   "tint": "#dbdce5",
+   "ink": "#262c49"
+  },
+  {
+   "id": "CSH-001",
+   "name": "Black",
+   "img": "um_csh-001",
+   "price": 175,
+   "size": "130x180cm",
+   "multi": false,
+   "desc": "Plain chenille throw. 100% Polyester.",
+   "labels": [
+    "Black"
+   ],
+   "varies": false,
+   "tint": "#e1dde3",
+   "ink": "#3d2a45"
+  },
+  {
+   "id": "PSH-021",
+   "name": "Yellow",
+   "img": "um_psh-021",
+   "price": 95,
+   "size": "120x120cm",
+   "multi": false,
+   "desc": "Plain shawl. 100% Polyester.",
+   "labels": [
+    "Yellow"
+   ],
+   "varies": false,
+   "tint": "#eee6d2",
+   "ink": "#604b0f"
+  }
+ ],
+ "xhosa": [
+  {
+   "id": "RUG-002",
+   "name": "Italiano",
+   "img": "xh_rug-002",
+   "price": 650,
+   "size": "180x230cm",
+   "multi": true,
+   "desc": "",
+   "labels": [
+    "Royal/Tabacco",
+    "Royal/Maroon",
+    "Brown/Bottle",
+    "Navy/Kingfisher",
+    "Brown/Kingfisher",
+    "Brown/Royal"
+   ],
+   "varies": false,
+   "tint": "#dee1e2",
+   "ink": "#2c3e43"
+  },
+  {
+   "id": "RUG-001",
+   "name": "Tivolli",
+   "img": "xh_rug-001",
+   "price": 490,
+   "size": "150x200cm",
+   "multi": true,
+   "desc": "",
+   "labels": [
+    "Royal/Tobacco",
+    "Brown/Royal",
+    "Royal/Maroon",
+    "Brown/Bottle",
+    "Kingfisher/Maroon",
+    "Navy/Kingfisher",
+    "Brown/Kingfisher"
+   ],
+   "varies": false,
+   "tint": "#dedee2",
+   "ink": "#2e2c43"
+  },
+  {
+   "id": "RUG-003",
+   "name": "Nu Kelly",
+   "img": "xh_rug-003",
+   "price": 580,
+   "size": "180x230cm",
+   "multi": false,
+   "desc": "",
+   "labels": [
+    "Kingfisher/Turquoise"
+   ],
+   "varies": false,
+   "tint": "#dce2e4",
+   "ink": "#273f48"
+  },
+  {
+   "id": "TRB-029",
+   "name": "Black Stripe",
+   "img": "xh_stripe_01",
+   "price": 300,
+   "size": "",
+   "set": true,
+   "tint": "#e0e0e0",
+   "ink": "#402f2f"
+  },
+  {
+   "id": "TRB-029",
+   "name": "Purple Stripe",
+   "img": "xh_stripe_02",
+   "price": 300,
+   "size": "",
+   "set": true,
+   "tint": "#e1dfe0",
+   "ink": "#422d3e"
+  },
+  {
+   "id": "TRB-029",
+   "name": "Red Stripe",
+   "img": "xh_stripe_03",
+   "price": 300,
+   "size": "",
+   "set": true,
+   "tint": "#edd4d3",
+   "ink": "#581a18"
+  }
+ ],
+ "kangas": [
+  {
+   "id": "KNG-003",
+   "name": "Shield",
+   "img": "kg_kng-003",
+   "price": 35,
+   "size": "1.5m",
+   "multi": true,
+   "desc": "Traditional printed kanga cloth.",
+   "labels": [
+    "Black",
+    "Red",
+    "Maroon",
+    "Blue",
+    "White",
+    "Orange"
+   ],
+   "varies": false,
+   "tint": "#e3ddde",
+   "ink": "#462931"
+  },
+  {
+   "id": "KNG-005",
+   "name": "Guinea Fowl",
+   "img": "kg_kng-005",
+   "price": 35,
+   "size": "1.5m",
+   "multi": true,
+   "desc": "Traditional printed kanga cloth.",
+   "labels": [
+    "Black",
+    "Orange",
+    "Maroon",
+    "Blue",
+    "Red"
+   ],
+   "varies": false,
+   "tint": "#e1dee1",
+   "ink": "#432d3d"
+  },
+  {
+   "id": "KNG-006",
+   "name": "King Mswati Flag",
+   "img": "kg_kng-006",
+   "price": 35,
+   "size": "1.5m",
+   "multi": true,
+   "desc": "Traditional printed kanga cloth.",
+   "labels": [
+    "Orange",
+    "Red",
+    "Blue",
+    "Maroon"
+   ],
+   "varies": false,
+   "tint": "#eed8d2",
+   "ink": "#61200e"
+  },
+  {
+   "id": "KNG-007",
+   "name": "Botswana",
+   "img": "kg_kng-007",
+   "price": 35,
+   "size": "1.5m",
+   "multi": false,
+   "desc": "Traditional printed kanga cloth.",
+   "labels": [
+    "Blue"
+   ],
+   "varies": false,
+   "tint": "#dbe1e5",
+   "ink": "#263b49"
+  },
+  {
+   "id": "KNG-008",
+   "name": "Elephant",
+   "img": "kg_kng-008",
+   "price": 35,
+   "size": "1.5m",
+   "multi": true,
+   "desc": "Traditional printed kanga cloth.",
+   "labels": [
+    "Black",
+    "White",
+    "Blue",
+    "Red"
+   ],
+   "varies": false,
+   "tint": "#e5dbdd",
+   "ink": "#49262c"
+  },
+  {
+   "id": "KNG-009",
+   "name": "Crocodile",
+   "img": "kg_kng-009",
+   "price": 35,
+   "size": "1.5m",
+   "multi": true,
+   "desc": "Traditional printed kanga cloth.",
+   "labels": [
+    "Black",
+    "White"
+   ],
+   "varies": false,
+   "tint": "#e2dfde",
+   "ink": "#44302b"
+  },
+  {
+   "id": "KNG-010",
+   "name": "Standing Leopard",
+   "img": "kg_kng-010",
+   "price": 35,
+   "size": "1.5m",
+   "multi": false,
+   "desc": "Traditional printed kanga cloth.",
+   "labels": [
+    "Standard"
+   ],
+   "varies": false,
+   "tint": "#ede9d3",
+   "ink": "#584e18"
+  },
+  {
+   "id": "KNG-012",
+   "name": "Swazi Flag",
+   "img": "kg_kng-012",
+   "price": 35,
+   "size": "1.5m",
+   "multi": true,
+   "desc": "Traditional printed kanga cloth.",
+   "labels": [
+    "Blue",
+    "Maroon"
+   ],
+   "varies": false,
+   "tint": "#ddd8e8",
+   "ink": "#2e204f"
+  },
+  {
+   "id": "KNG-013",
+   "name": "Lion",
+   "img": "kg_kng-013",
+   "price": 35,
+   "size": "1.5m",
+   "multi": true,
+   "desc": "Traditional printed kanga cloth.",
+   "labels": [
+    "Black",
+    "Blue",
+    "White",
+    "Red"
+   ],
+   "varies": false,
+   "tint": "#e1dfdf",
+   "ink": "#42312d"
+  },
+  {
+   "id": "KNG-014",
+   "name": "Leopard Spot",
+   "img": "kg_kng-014",
+   "price": 35,
+   "size": "1.5m",
+   "multi": true,
+   "desc": "Traditional printed kanga cloth.",
+   "labels": [
+    "Red",
+    "White",
+    "Yellow"
+   ],
+   "varies": false,
+   "tint": "#eed4d2",
+   "ink": "#5c1813"
+  },
+  {
+   "id": "KNG-015",
+   "name": "Sun",
+   "img": "kg_kng-015",
+   "price": 35,
+   "size": "1.5m",
+   "multi": true,
+   "desc": "Traditional printed kanga cloth.",
+   "labels": [
+    "Black",
+    "Red",
+    "White",
+    "Blue"
+   ],
+   "varies": false,
+   "tint": "#e0e0df",
+   "ink": "#41382e"
+  },
+  {
+   "id": "KNG-016",
+   "name": "Leopard — Dark",
+   "img": "kg_kng-016",
+   "price": 35,
+   "size": "1.5m",
+   "multi": true,
+   "desc": "Traditional printed kanga cloth.",
+   "labels": [
+    "Red",
+    "Brown"
+   ],
+   "varies": false,
+   "tint": "#e4e0dc",
+   "ink": "#473828"
+  },
+  {
+   "id": "KNG-017",
+   "name": "Snake",
+   "img": "kg_kng-017",
+   "price": 35,
+   "size": "1.5m",
+   "multi": true,
+   "desc": "Traditional printed kanga cloth.",
+   "labels": [
+    "Black",
+    "Blue",
+    "Red",
+    "White"
+   ],
+   "varies": false,
+   "tint": "#e3dddc",
+   "ink": "#462c29"
+  },
+  {
+   "id": "KNG-018",
+   "name": "Nelson Mandela",
+   "img": "kg_kng-018",
+   "price": 35,
+   "size": "1.5m",
+   "multi": false,
+   "desc": "Traditional printed kanga cloth.",
+   "labels": [
+    "Standard"
+   ],
+   "varies": false,
+   "tint": "#dce3e1",
+   "ink": "#29473b"
+  },
+  {
+   "id": "KNG-019",
+   "name": "Leopard — Light",
+   "img": "kg_kng-019",
+   "price": 35,
+   "size": "1.5m",
+   "multi": true,
+   "desc": "Traditional printed kanga cloth.",
+   "labels": [
+    "Blue",
+    "Red"
+   ],
+   "varies": false,
+   "tint": "#dfe0e1",
+   "ink": "#2e3a41"
+  },
+  {
+   "id": "KNG-020",
+   "name": "Sun New",
+   "img": "kg_kng-020",
+   "price": 35,
+   "size": "1.5m",
+   "multi": true,
+   "desc": "Traditional printed kanga cloth.",
+   "labels": [
+    "Black",
+    "Red",
+    "Blue",
+    "White"
+   ],
+   "varies": false,
+   "tint": "#e1dfe0",
+   "ink": "#422d35"
+  },
+  {
+   "id": "KNG-021",
+   "name": "Big Five",
+   "img": "kg_kng-021",
+   "price": 35,
+   "size": "1.5m",
+   "multi": false,
+   "desc": "Traditional printed kanga cloth.",
+   "labels": [
+    "White"
+   ],
+   "varies": false,
+   "tint": "#e3dddd",
+   "ink": "#452b2a"
+  },
+  {
+   "id": "KNG-022",
+   "name": "Rooster",
+   "img": "kg_kng-022",
+   "price": 35,
+   "size": "1.5m",
+   "multi": true,
+   "desc": "Traditional printed kanga cloth.",
+   "labels": [
+    "Black",
+    "Red",
+    "Blue"
+   ],
+   "varies": false,
+   "tint": "#eed6d2",
+   "ink": "#5a1f16"
+  },
+  {
+   "id": "KNG-023",
+   "name": "Fish",
+   "img": "kg_kng-023",
+   "price": 35,
+   "size": "1.5m",
+   "multi": true,
+   "desc": "Traditional printed kanga cloth.",
+   "labels": [
+    "Red",
+    "Blue"
+   ],
+   "varies": false,
+   "tint": "#e6deda",
+   "ink": "#4b3024"
+  }
  ]
 }

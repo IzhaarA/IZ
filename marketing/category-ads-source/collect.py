@@ -39,7 +39,8 @@ def fan(names, out, card=380):               # fanned photo cards for the carous
     cv.crop(cv.getbbox()).save(os.path.join(PH, out + '.png'))
 
 ADS = {}
-PHOTO = {'CH-49': 'images/fd6771443e59.jpg'}         # Black Chinese beads: the 8/0 packet photo looks better
+PHOTO = {'CH-49': 'images/fd6771443e59.jpg',          # Black Chinese beads: the 8/0 packet photo looks better
+         'TRB-011': 'images/c0b051ba921c.jpg', 'TRB-012': 'images/7a9886a68352.jpg'}   # Seanamarena, Victoria: worn, not the flat design
 def add(key, items, fan_names):
     for it in items: it['tint'], it['ink'] = tones(Image.open(os.path.join(PH, it['img'] + '.jpg')))
     fan(fan_names, key + '_fan'); ADS[key] = items
@@ -61,7 +62,8 @@ for v in by['TRD-031']['variants']:
     nm = 'ba_set_' + v['id'].split('-')[-1]; img(v['img'], nm)
     ba.append(dict(id='TRD-031', name=v['label'], img=nm, price=v['price'], size='Necklace + bangle', set=True))
 add('beaded', ba, [ba[i]['img'] for i in (4, 0, 3, 2, 6)])
-hats = simple('hat', cat('Hats · Ndebele Hats'), lambda p: p['name'].replace('Ndebele Painted ', 'Painted ').replace('Ndebele ', ''))
+hats = simple('hat', [i for i in cat('Hats · Ndebele Hats') if i != 'NDH-006'],   # the hats video was made while the beaded hat was sold out
+             lambda p: p['name'].replace('Ndebele Painted ', 'Painted ').replace('Ndebele ', ''))
 add('hats', hats, [x['img'] for x in hats[:6]])
 for key, c in (('cloudsoft', 'Shawls & Throws · Cloudsoft Shawls'), ('chenille', 'Shawls & Throws · Chenille Throws'), ('plainsh', 'Shawls & Throws · Plain Shawls')):
     its = simple(key, cat(c)); add(key, its, [x['img'] for x in its[:7]])
@@ -81,5 +83,15 @@ cz = simple('cz', pref('Czech Glass')); add('czech', cz, [cz[i]['img'] for i in 
 p3 = simple('p3', cat('Plastic Beads · 3mm Round')); add('plastic3', p3, [p3[i]['img'] for i in (4, 3, 7, 8, 0)])
 p6 = simple('p6', cat('Plastic Beads · 6mm Round')); add('plastic6', p6, [p6[i]['img'] for i in (6, 7, 5, 10, 2, 33)])
 po = simple('po', cat('Plastic Beads · 8mm Oval')); add('plasticoval', po, [po[i]['img'] for i in (1, 4, 3, 8, 0)])
+# December ceremonies (27 Oct 2026)
+bs = simple('bs', cat('Tribal Blankets · Basotho')); add('basotho', bs, [bs[i]['img'] for i in (4, 6, 7, 10, 11, 13)])
+um = simple('um', ['MNK-014', 'MNK-011', 'TRB-027', 'TRB-023', 'SHW-011', 'SHW-015', 'CSH-001', 'PSH-021'])
+add('umembeso', um, [um[i]['img'] for i in (0, 2, 4, 3, 1)])
+xh = simple('xh', ['RUG-002', 'RUG-001', 'RUG-003'])
+for v in by['TRB-029']['variants']:                   # Xhosa stripe blanket colours for the colour set
+    nm = 'xh_stripe_' + v['id'].split('-')[-1]; img(v['img'], nm); xh.append(dict(id='TRB-029', name=v['label'], img=nm, price=v['price'], size='', set=True))
+add('xhosa', xh, [xh[i]['img'] for i in (3, 0, 4, 1, 5)])
+kg = simple('kg', [i for i in cat('Kangas') if i not in ('KNG-001', 'KNG-002', 'KNG-004', 'KNG-011')], pad=True)
+add('kangas', kg, [kg[i]['img'] for i in (1, 3, 8, 4, 12)])
 json.dump(ADS, open(os.path.join(H, 'ads.json'), 'w'), indent=1, ensure_ascii=False)
 print({k: len(v) for k, v in ADS.items()})

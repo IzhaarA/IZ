@@ -118,9 +118,9 @@ page2('towels', dict(
 # Oct 2026, second batch. Big bead ranges show the favourite colours and a "+N more" tile.
 def pick(key, idx, name=lambda i: i['name'], chip=lambda i: '', sub=lambda i: '', pre=lambda i: 'FROM' if i.get('varies') else 'ONLY'):
     return [dict(name=name(AD[key][n]), chip=chip(AD[key][n]), sub=sub(AD[key][n]), img=J(AD[key][n]), price=AD[key][n]['price'], pre=pre(AD[key][n])) for n in idx]
-def tiles(key, idx, short=lambda i: i['name'].upper(), more=None):
+def tiles(key, idx, short=lambda i: i['name'].upper(), more=None, label='MORE COLOURS'):
     g = [dict(name=short(AD[key][n]), img=J(AD[key][n]), price=AD[key][n]['price'], ptxt=('from ' if AD[key][n].get('varies') else '') + 'R' + f"{AD[key][n]['price']:g}") for n in idx]
-    return g + ([dict(name='MORE COLOURS', more=f'+{more}', price=0, ptxt='at makkies.co.za', img='')] if more else [])
+    return g + ([dict(name=label, more=f'+{more}', price=0, ptxt='at makkies.co.za', img='')] if more else [])
 cn = lambda i: ' · '.join(re.sub(r'^Size | \(.*\)$', '', l) for l in i['labels'])
 def cz(i):
     d = {}
@@ -232,4 +232,58 @@ plastic('plastic-beads-6mm', 'plastic6', '6MM ROUND', '6MM ROUND', (6, 7, 10, 12
 plastic('plastic-beads-oval', 'plasticoval', '8MM OVAL', '8MM OVALS', (1, 4, 0, 7, 5, 3, 8, 2, 6, 9, 10), 0,
         dict(band='basotho', hook='hero', enter='left', sticker='circle', hl='#05A463', tilt=-8,
              pal=[{'bg': '#E4F0E8', 'acc': '#0E7A4F'}, {'bg': '#F6E4E0', 'acc': '#C3312B'}, {'bg': '#E6EAF4', 'acc': '#2347A8'}, {'bg': '#EEEDEA', 'acc': '#1b181d'}]))
+
+# December ceremonies (27 Oct 2026): open with a question, number the grid and ask for a comment, end with "order early"
+ASK, KICK = 'COMMENT YOUR NUMBER BELOW', 'ORDER EARLY FOR DECEMBER'
+bs = AD['basotho']; BN = lambda i: i['name'].replace(' Basotho Tribal Blanket', '').replace(' by Aranda', '').replace(' - white with blue stripes', '').replace('Seannamarena', 'Seanamarena')
+page2('basotho-blankets', dict(
+    q=['BASOTHO', 'WEDDING THIS', 'DECEMBER?'], qPhotos=[J(bs[n]) for n in (6, 11, 7, 13, 18, 12)],
+    tag='DECEMBER WEDDINGS', title1='BASOTHO', title2='BLANKETS', hookSub='20 STYLES · SEANAMARENA · VICTORIA', lowest=min(i['price'] for i in bs), hookPre='FROM',
+    shopLine='Shop Basotho Blankets', hookPhotos=[J(bs[n]) for n in (6, 7, 11, 13)],
+    items=pick('basotho', (4, 5, 6, 7, 17, 3, 18, 1), name=BN, chip=lambda i: i['size'].replace('x', ' × ').upper(),
+               sub=lambda i: {'TRB-011': 'WORN BY THE BRIDE & GROOM', 'TRB-012': 'VICTORIA ENGLAND · WEDDING FAVOURITE'}.get(i['id'], f"BASOTHO BLANKET · {len(i['labels'])} COLOURS" if len(i['labels']) > 1 else 'BASOTHO BLANKET')),
+    gridTitle='Pick your blanket.', gridSub='+9 MORE STYLES IN STORE & ONLINE', gridCols=4, cell=198, ask=ASK, endKick=KICK,
+    grid=tiles('basotho', (4, 5, 6, 7, 17, 3, 18, 1, 11, 12, 13), short=lambda i: BN(i).replace('Basotho ', '').upper(), more=9, label='MORE STYLES'),
+    look=dict(band='basotho', hook='mosaic', enter='right', sticker='tag', hl='#1F4FA8', tilt=-12,
+              pal=[{'bg': '#E6EAF4', 'acc': '#1F4FA8'}, {'bg': '#F3E9DE', 'acc': '#9A5A20'}, {'bg': '#EEE6E8', 'acc': '#7A2E3B'}, {'bg': '#E5EEE9', 'acc': '#1E6B4A'}])))
+
+um = AD['umembeso']
+UM = [('Paris Mink', '2PLY · 5KG · IN A BOX', 'QUEEN/KING MINK BLANKET'), ('Casa Mink', '1PLY · IN A BAG', 'QUEEN MINK BLANKET'),
+      ('Mamohato', '150 × 160 CM', 'BASOTHO BLANKET BY ARANDA · 12 COLOURS'), ('Basotho Frill', '150 × 160 CM', 'FRILLED BASOTHO BLANKET · 3 COLOURS'),
+      ('Wedding Shawl', '150 × 150 CM', 'WHITE WEDDING SHAWL'), ('Cotton Shawl', '110 × 130 CM', 'WHITE COTTON WEDDING SHAWL'),
+      ('Chenille Throw', '14 COLOURS', '130 × 180 CM · SOFT & WARM'), ('Plain Shawl', '29 COLOURS', '120 × 120 CM · R95 EACH')]
+page2('umembeso-gifts', dict(
+    q=['UMEMBESO', 'OR LOBOLA', 'THIS DECEMBER?'], qPhotos=[J(um[n]) for n in (0, 2, 4, 3, 6, 1)],
+    tag='GIFT LIST SORTED', title1='UMEMBESO &', title2='LOBOLA GIFTS', hookSub='BLANKETS · SHAWLS · THROWS', lowest=min(i['price'] for i in um), hookPre='FROM',
+    shopLine='Shop Blankets & Shawls', hookPhotos=[J(um[n]) for n in (0, 2, 4)],
+    items=[dict(name=n, chip=c, sub=s, img=J(i), price=i['price'], pre='ONLY') for (n, c, s), i in zip(UM, um)],
+    gridTitle='Your gift list.', gridSub='BUYING MANY? WHATSAPP US FOR A QUOTE', gridCols=4, cell=215, ask=ASK, endKick=KICK,
+    grid=[dict(name=n.upper(), img=J(i), price=i['price']) for (n, c, s), i in zip(UM, um)],
+    look=dict(band='shawl', hook='fan', enter='zoom', sticker='circle', hl='#7A2E3B', tilt=14,
+              pal=[{'bg': '#F2E7E4', 'acc': '#7A2E3B'}, {'bg': '#EEEAE3', 'acc': '#8A6A2E'}, {'bg': '#E8ECF3', 'acc': '#2F4A7A'}, {'bg': '#F4EEE6', 'acc': '#A2532A'}])))
+
+xh = AD['xhosa']; XN = {'RUG-002': 'Italiano', 'RUG-001': 'Tivolli', 'RUG-003': 'Nu Kelly'}
+page2('xhosa-blankets', dict(
+    q=['XHOSA', 'CEREMONY THIS', 'DECEMBER?'], qPhotos=[J(xh[n]) for n in (0, 3, 1, 4, 2, 5)],
+    tag='FOR THE CEREMONY', title1='XHOSA', title2='BLANKETS & RUGS', hookSub='STRIPE BLANKETS · TRAVEL RUGS', lowest=min(i['price'] for i in xh), hookPre='FROM',
+    shopLine='Shop Xhosa Blankets', hookPhotos=[J(xh[n]) for n in (3, 0, 5)],
+    items=[dict(name=XN[i['id']], chip=i['size'].replace('x', ' × ').upper(), sub=f"TRAVELLING RUG · {len(i['labels'])} COLOURS" if len(i['labels']) > 1 else 'TRAVELLING RUG',
+                img=J(i), price=i['price'], pre='ONLY') for i in xh[:3]],
+    set=dict(kicker='XHOSA TRIBAL STRIPE', title='Pick a stripe', price=xh[3]['price'], sub='3 COLOURS · R300 EACH',
+             cols=[dict(name=i['name'], img=J(i), dot=d) for i, d in zip(xh[3:], ('#1b181d', '#5B2A6E', '#D8232A'))]),
+    gridTitle='Pick yours.', gridSub='BLANKETS & RUGS FROM R300', gridCols=3, cell=270, ask=ASK, endKick=KICK,
+    grid=[dict(name=(XN.get(i['id']) or i['name']).upper(), img=J(i), price=i['price']) for i in xh],
+    look=dict(band='xhosa', hook='fan', enter='left', sticker='tag', hl='#C3312B', tilt=-16,
+              pal=[{'bg': '#F4E6E3', 'acc': '#C3312B'}, {'bg': '#EAEAEC', 'acc': '#1b181d'}, {'bg': '#EEE6F0', 'acc': '#5B2A6E'}, {'bg': '#E6ECF2', 'acc': '#2F4A7A'}])))
+
+kg = AD['kangas']; KF = (8, 4, 0, 1, 7, 10, 16, 6, 9, 12, 18)
+page2('kangas', dict(
+    q=['ONE KANGA?', 'OR ONE FOR THE', 'WHOLE FAMILY?'], qPhotos=[J(kg[n]) for n in KF[:6]],
+    tag='1.5M PRINTED CLOTH', title1='KANGAS', title2='R35 EACH', hookSub=f'{len(kg)} DESIGNS · MANY COLOURS', lowest=min(i['price'] for i in kg), hookPre='ONLY',
+    shopLine='Shop Kangas', hookPhotos=[J(kg[n]) for n in (8, 4, 0, 1)],
+    items=pick('kangas', KF[:7], chip=lambda i: '1.5M', sub=lambda i: f"{len(i['labels'])} COLOURS" if len(i['labels']) > 1 else 'KANGA CLOTH'),
+    gridTitle='Pick your design.', gridSub=f'+{len(kg) - 11} MORE DESIGNS · R35 EACH', gridCols=4, cell=205, ask=ASK, endKick='BUY FOR THE FAMILY',
+    grid=tiles('kangas', KF, more=len(kg) - 11, label='MORE DESIGNS'),
+    look=dict(band='straw', hook='mosaic', enter='up', sticker='circle', hl='#D8232A', tilt=12,
+              pal=[{'bg': '#F6E4E0', 'acc': '#C3312B'}, {'bg': '#E6EAF4', 'acc': '#2347A8'}, {'bg': '#F7F0D9', 'acc': '#B88A00'}, {'bg': '#EEEDEA', 'acc': '#1b181d'}])))
 print('ok')

@@ -4,6 +4,8 @@
 // white frame and slowly zooms, and the price lands as a sticker. CFG.per is the time per product, CFG.setPer per colour.
 // CFG.look varies each video: pal (background/accent pairs), band (border images), hook ('fan' | 'hero' | 'mosaic'),
 // enter ('right' | 'left' | 'up' | 'zoom'), sticker ('circle' | 'tag'), hl (title highlight colour), tilt (wipe angle).
+// Optional, to keep viewers watching: CFG.q = ['LINE', 'LINE'] opens with a question over fast-flashing photos (CFG.qPhotos),
+// CFG.ask puts a pulsing 'comment your number' line under the grid (grid tiles get numbers), CFG.endKick a banner on the end card.
 const C = window.CFG, PER = C.per || 2.4, SPER = C.setPer || 1.7;
 const L = Object.assign({ band: 'ndebele', hook: 'fan', enter: 'right', sticker: 'circle', hl: '#D8232A', tilt: -14 }, C.look || {});
 const $ = id => document.getElementById(id);
@@ -25,6 +27,7 @@ const PAT = 'url("data:image/svg+xml,' + encodeURIComponent('<svg xmlns="http://
 
 // timeline
 const T = {}; let t0 = 0;
+if (C.q) T.q = [t0, t0 += 2.1];
 T.hook = [t0, t0 += 3.6];
 C.items.forEach((it, i) => T['i' + i] = [t0, t0 += PER]);
 if (C.set) { T.set = [t0, t0 += .9 + C.set.cols.length * SPER]; }
@@ -40,6 +43,11 @@ const BT = `img/border_${L.band}_top.png`, BB = `img/border_${L.band}_bot.png`;
 const frame = (id, w, extra = '') => `<div class="a frame" id="${id}" style="width:${w}px;height:${w}px;${extra}"><div class="fin"><div class="ph" id="${id}i"></div></div></div>`;
 document.body.innerHTML = `
 <div class="a" id="bg" style="inset:0"></div><div class="a" id="pat" style="inset:-240px;background-image:${PAT};opacity:.05"></div>
+${C.q ? `<div class="sc" id="qs">
+  <div class="a" id="qbg" style="inset:-60px;background-size:cover;background-position:center"></div>
+  <div class="a" style="inset:0;background:linear-gradient(180deg,rgba(27,24,29,.55),rgba(27,24,29,.25) 40%,rgba(27,24,29,.75))"></div>
+  ${C.q.map((w, k) => `<div class="a ctr" id="q${k}" style="top:${760 - (C.q.length - 1) * 95 + k * 190}px"><span class="${k === C.q.length - 1 ? 'hl' : ''}" style="display:inline-block;font-weight:900;font-size:150px;line-height:1.05;color:#fff;padding:4px 30px;${k === C.q.length - 1 ? `background:${L.hl}` : 'text-shadow:0 8px 30px rgba(0,0,0,.5)'}">${w}</span></div>`).join('')}
+</div>` : ''}
 <div class="sc" id="hook">
   <img class="a" id="hlogo" src="img/mw_oval.png" style="left:430px;top:120px;width:220px">
   ${HOOK.map((h, k) => frame('hp' + k, h[2], `left:${h[0]}px;top:${h[1]}px`)).join('')}
@@ -74,8 +82,10 @@ ${C.set ? `<div class="sc" id="set">
   <div class="a ctr serif" id="gt" style="top:170px;font-size:110px;color:#1b181d">${C.gridTitle}</div>
   <div class="a ctr" id="gs" style="top:320px;font-size:42px;font-weight:800;letter-spacing:5px;color:#D8232A">${C.gridSub}</div>
   <div id="gcells"></div>
+  ${C.ask ? `<div class="a ctr" id="gask" style="top:1640px"><span class="pill" style="font-size:46px;padding:22px 46px;background:${L.hl};color:#fff">${C.ask}</span></div>` : ''}
 </div>
 <div class="sc" id="end">
+  ${C.endKick ? `<div class="a ctr" id="ekick" style="top:130px"><span class="chip" style="background:${L.hl};color:#fff;font-size:44px">${C.endKick}</span></div>` : ''}
   <img class="a" id="elogo" src="img/mw_oval.png" style="left:300px;top:250px;width:480px">
   <div class="a ctr serif" id="et" style="top:770px;font-size:100px;color:#1b181d">${C.shopLine}</div>
   <div class="a ctr" id="eurl" style="top:920px"><span class="pill" style="font-size:84px;padding:26px 70px;background:#1b181d;color:#fff">makkies.co.za</span></div>
@@ -98,11 +108,12 @@ C.grid.forEach((g, i) => {
   const row = Math.floor(i / GC), inRow = Math.min(GC, C.grid.length - row * GC), col = i % GC;
   const x = (1080 - (inRow * CELL + (inRow - 1) * GAP)) / 2 + col * (CELL + GAP);
   $('gcells').insertAdjacentHTML('beforeend', `<div class="a gcell" id="g${i}" style="left:${x}px;top:${450 + row * ROWH}px;width:${CELL}px${SM ? ';padding:6px 6px 8px' : ''}">
-    <div class="gph" style="height:${CELL - (SM ? 12 : 20)}px;${g.more ? MORE(CELL) : `background-image:url(img/${g.img})`}">${g.more ? g.more : ''}</div><div class="gnm"${SM ? ' style="font-size:17px;margin-top:6px"' : ''}>${g.name}</div><div class="gpr"${SM ? ' style="font-size:22px"' : ''}>${g.ptxt || 'R' + g.price}</div></div>`);
+    <div class="gph" style="height:${CELL - (SM ? 12 : 20)}px;${g.more ? MORE(CELL) : `background-image:url(img/${g.img})`}">${g.more ? g.more : ''}</div><div class="gnm"${SM ? ' style="font-size:17px;margin-top:6px"' : ''}>${C.ask && !g.more ? `<span style="display:inline-block;background:#1b181d;color:#fff;border-radius:40px;padding:0 ${SM ? 8 : 12}px;margin-right:6px">${i + 1}</span>` : ''}${g.name}</div><div class="gpr"${SM ? ' style="font-size:22px"' : ''}>${g.ptxt || 'R' + g.price}</div></div>`);
 });
 function fit(el, max) { el.style.whiteSpace = 'nowrap'; let f = max; el.style.fontSize = f + 'px'; const r = document.createRange(); r.selectNodeContents(el);
   while (r.getBoundingClientRect().width > 980 && f > 40) { f -= 4; el.style.fontSize = f + 'px'; } }
 fit($('ht1'), 170); fit($('ht2'), 150); fit($('et'), 100);
+(C.q || []).forEach((w, k) => fit($('q' + k).firstChild, 150));
 HOOK.forEach((h, k) => $('hp' + k + 'i').style.backgroundImage = `url(img/${C.hookPhotos[k % C.hookPhotos.length]})`);
 
 const at = (id, t) => t >= T[id][0] && t < T[id][1];
@@ -122,15 +133,22 @@ window.render = function (t) {
   const pal = cur.startsWith('i') && cur !== 'grid' ? PAL[+cur.slice(1) % PAL.length] : cur === 'set' ? PAL[C.items.length % PAL.length] : { bg: CREAM, acc: '#C3312B' };
   $('bg').style.background = `radial-gradient(circle at 50% 30%,#fff 0%,${pal.bg} 62%)`; document.body.style.color = INK;
   $('pat').style.transform = `translate(${(t * 40) % 240}px,${(t * 24) % 240}px)`;
-  ['hook', 'prod', 'set', 'grid', 'end'].forEach(id => $(id) && show($(id), (id === 'prod' ? cur.startsWith('i') && cur !== 'grid' : cur === id) ? 1 : 0));
+  ['qs', 'hook', 'prod', 'set', 'grid', 'end'].forEach(id => $(id) && show($(id), (id === 'prod' ? cur.startsWith('i') && cur !== 'grid' : cur === (id === 'qs' ? 'q' : id)) ? 1 : 0));
   wipe(t);
   // progress bars
   for (let i = 0; i < NSEG; i++) { const id = i < C.items.length ? 'i' + i : 'set', [a, b] = T[id];
     $('bar' + i).firstChild.style.width = cl((t - a) / (b - a)) * 100 + '%'; }
-  $('bars').style.opacity = (cur === 'hook' || cur === 'end' || cur === 'grid') ? 0 : 1;
+  $('bars').style.opacity = (cur === 'q' || cur === 'hook' || cur === 'end' || cur === 'grid') ? 0 : 1;
+  // opening question: photos flash behind words that slam in one by one
+  if (cur === 'q') {
+    const QP = C.qPhotos || C.hookPhotos, n = Math.floor(t / .3) % QP.length;
+    $('qbg').style.backgroundImage = `url(img/${QP[n]})`; $('qbg').style.transform = `scale(${1.15 - .1 * ((t % .3) / .3)})`;
+    C.q.forEach((w, k) => slam($('q' + k), t, .15 + k * .38, .28));
+  }
 
   // hook
   if (cur === 'hook') {
+    t -= T.hook[0];                                   // hook animation times are from the start of the hook
     pop($('hlogo'), t, .05, .4, .3);
     HOOK.forEach((h, k) => { const el = $('hp' + k), st = .2 + k * .16, q = eo((t - st) / .5), r = h[3];
       el.style.opacity = cl((t - st) / .12);
@@ -178,11 +196,12 @@ window.render = function (t) {
     const lt = t - T.grid[0];
     pop($('gt'), lt, .1, .4, .7); rise($('gs'), lt, .3, .3, 40);
     C.grid.forEach((g, i) => pop($('g' + i), lt, .45 + i * Math.min(.12, 1.4 / C.grid.length), .35, .3, [-3, 2, -1, 3][i % 4]));
+    if (C.ask) { pop($('gask'), lt, 1.9, .4, .4); if (lt > 2.3) $('gask').style.transform = `scale(${1 + .07 * Math.pow(Math.sin(Math.PI * (lt - 2.3) / .6), 2)})`; }
   }
   // end card
   if (cur === 'end') {
     const lt = t - T.end[0];
-    pop($('elogo'), lt, .05, .5, .3); rise($('et'), lt, .4, .35, 60); pop($('eurl'), lt, .7, .35, .5);
+    pop($('elogo'), lt, .05, .5, .3); if (C.endKick) pop($('ekick'), lt, .2, .4, .4, -2); rise($('et'), lt, .4, .35, 60); pop($('eurl'), lt, .7, .35, .5);
     if (lt > 1.1) $('eurl').style.transform = `scale(${1 + .14 * Math.pow(Math.sin(Math.PI * (lt - 1.1) / .7), 2)})`;
     rise($('ewa'), lt, 1.0, .3, 40); rise($('ed'), lt, 1.25, .3, 40); rise($('eh'), lt, 1.5, .3, 30);
   }
