@@ -1,5 +1,7 @@
 # Upload status
 
+Waiting (31 Oct 2026): PayFast card payments back on (card: true). Built in /tmp/makkies-deploy; the upload needs the user's approval.
+
 Nothing waiting. Last upload: 26 Oct 2026 (deploy 6adf4a37131486d9c88d90a2): Swazi Necklace TRD-035 (R150), Pedi Necklace TRD-036 (R70),
 Star Beads ABT-003 (R170); category renamed Alphabet, Teething & Star Beads (old /c/ address redirects).
 Before that: Last upload: 26 Oct 2026 (deploy 6adf23f93865a068e2f5b141): breadcrumb fix, brand and return policy in product data.

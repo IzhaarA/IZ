@@ -38,6 +38,10 @@ if "sign_url: '/api/payfast-sign'" not in h:
     cancel_url: location.href.split('#')[0] + '#cancelled'
   }""", regex=True)
 
+# card payments on (PayFast account active, 31 Oct 2026): also flips a page that already has the server signing
+if "payments: { card: false, eft: true, whatsapp: true }," in h:
+  sub("payments: { card: false, eft: true, whatsapp: true },", "payments: { card: true, eft: true, whatsapp: true },")
+
 # 4) payfast(): ask the server to sign, then send the customer to PayFast
 if "async function payfast(o)" not in h:
   start = h.index("function payfast(o) {")

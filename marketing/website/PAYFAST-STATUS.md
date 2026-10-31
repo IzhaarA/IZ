@@ -1,4 +1,10 @@
-# PayFast card payments: paused (15 Oct 2026)
+# PayFast card payments: switching back on (31 Oct 2026)
+
+31 Oct 2026: a R10 test signed by `/api/payfast-sign` now opens PayFast's payment page for Makkie Wholesalers with no
+"not able to receive payments" error, so the account is active. `patch-payfast.py` now sets `card: true` on every build.
+Still to do after the upload: one small real card purchase, check the PAID email and Netlify **payments** entry, then refund it.
+
+## History: paused (15 Oct 2026)
 
 **Status:** everything is built and live, but the card option is **hidden** on makkies.co.za.
 PayFast answered a R10 test with *"This merchant account is currently not able to receive payments"*,
