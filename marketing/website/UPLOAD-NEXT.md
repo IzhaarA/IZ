@@ -1,5 +1,8 @@
 # Upload status
 
+Waiting (31 Oct 2026): Czech beads back in stock: 46112 8/0 loose (new option, R135), 58410 8/0 loose, 98170 8/0 loose, 28020 8/0 loose.
+Built in /tmp/makkies-deploy.
+
 Last upload: 31 Oct 2026 (deploy 6ae5b82b09fec2e4bff0b780): PayFast card payments back on (card: true).
 
 Nothing waiting. Last upload: 26 Oct 2026 (deploy 6adf4a37131486d9c88d90a2): Swazi Necklace TRD-035 (R150), Pedi Necklace TRD-036 (R70),

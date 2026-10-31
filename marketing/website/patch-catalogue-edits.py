@@ -111,6 +111,10 @@ for pid in [b for b in ("TRD-032", "TRD-033") if b in by and by[b]["category"] !
 for pid in [b for b in ("TRD-001", "TRD-002", "TRD-004") if b in by and by[b]["category"] != "Shells"]:   # leopard & cowrie shells -> Beads · Shells
     by[pid].update(category="Shells", group="Beads"); P.remove(by[pid])
     last = max(i for i, x in enumerate(P) if x["group"] == "Beads"); P.insert(last + 1, by[pid])
+if "CZ-46112" in by and not any(v["id"] == "CZ-46112-8/0-L" for v in by["CZ-46112"]["variants"]):   # 8/0 loose added 31 Oct 2026
+    sv = by["CZ-46112"]["variants"][0]
+    by["CZ-46112"]["variants"].append({**{k: v for k, v in sv.items() if k not in ("id", "label", "price", "wholesale")},
+                                       "id": "CZ-46112-8/0-L", "label": "Size 8/0 · ¼kg loose", "price": 135.0})
 ABT = "Alphabet, Teething & Star Beads"                                   # renamed when Star Beads were added (26 Oct 2026)
 for x in P:
     if x["category"] == "Alphabet & Teething Beads": x["category"] = ABT

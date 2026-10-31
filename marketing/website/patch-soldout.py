@@ -17,16 +17,14 @@ SOLD_OUT = [
     "CZ-13600",                               # Opaque Brown (all)
     "CZ-13780-8/0-L", "CZ-13780-11/0-L",      # Opaque Dark Brown 8/0 loose and 11/0 loose
     "CZ-23040-8/0-S",                         # Opaque Dark Violet 8/0 strung
-    "CZ-28020-8/0-L",                         # Opaque Violet Sfinx 8/0 loose
     "CZ-33060-1/0-L",                         # Opaque Royal Blue 1/0 loose
     "CZ-38220",                               # Opaque Teal Sfinx (all)
-    "CZ-46112",                               # Shell Yellow/Brown Luster (all)
+    "CZ-46112-8/0-S",                         # Shell Yellow/Brown Luster 8/0 strung (8/0 loose back 31 Oct)
     "CZ-47185",                               # Shell Yellow/White Luster (all)
     "CZ-49102-8/0-S", "CZ-49102-11/0-S",      # Hematite strung (8/0 and 11/0)
     "CZ-53250-3/0-L", "CZ-53250-5/0-L", "CZ-53250-8/0-L",   # Opaque Bright Green loose (3/0, 5/0, 8/0)
     "CZ-53410-8/0-L",                         # Opaque Light Green 8/0 loose
     "CZ-58230",                               # Opaque Pale Green Sfinx (all)
-    "CZ-58410",                               # Opaque Mint Sfinx (all)
     "CZ-58430-8/0-S",                         # Opaque Olive Green Sfinx 8/0 strung
     "CZ-67150-3/0-S", "CZ-67150-8/0-S",       # Aquamarine Silver Lined 3/0 strung and 8/0 strung
     "CZ-68020", "CZ-68050", "CZ-68130",       # Light Turquoise / Turquoise / Green Turquoise Sfinx (all)
@@ -35,7 +33,7 @@ SOLD_OUT = [
     "CZ-93110",                               # Opaque Orange (all)
     "CZ-93140-11/0-L",                        # Opaque Dark Orange 11/0 loose
     "CZ-98140-8/0-L",                         # Opaque Dark Orange Sfinx 8/0 loose
-    "CZ-98170",                               # Opaque Red Coral Sfinx (all)
+    "CZ-98170-8/0-S",                         # Opaque Red Coral Sfinx 8/0 strung (8/0 loose back 31 Oct)
     "CZ-98190-8/0-S",                         # Opaque Dark Red Coral Sfinx 8/0 strung
     # Plastic beads
     "PBO-E61",                                # E61 Sweet Pink, 8mm Oval
