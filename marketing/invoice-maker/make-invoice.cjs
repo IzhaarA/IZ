@@ -1,6 +1,7 @@
 // Makes a PDF + PNG invoice in the website's invoice style.
 // Usage: node make-invoice.cjs <site index.html> <order.json>   (writes ../invoices/Invoice-<no>.pdf/.png)
-// order.json: {no, date, name, cell, email, mode: 'paxi'|'collect'|'courier', addr, delivery (optional rand), items: [[option code, qty], ...]}
+// order.json: {no, date, name, cell, email, mode: 'paxi'|'collect'|'courier', addr, delivery (optional rand), items: [[option code, qty], ...],
+//              paid (optional: true for EFT, or how it was paid, e.g. "card")}
 const { chromium } = require('/opt/node22/lib/node_modules/playwright');
 const fs = require('fs'), path = require('path');
 const O = JSON.parse(fs.readFileSync(process.argv[3], 'utf8'));
@@ -18,7 +19,9 @@ const FONTCSS = "@font-face {\n  font-family: 'DM Serif Display';\n  font-style:
       bags: O.mode === 'paxi' ? paxiBags(ls).bags : 1,
       lines: ls.map(l => ({ n: fullName(l.p), c: l.p.category + ' · ' + l.v.id, l: vdetail(l.p, l.v), q: l.qty, t: l.total })), sub, sh, tot };
     const css = [...document.querySelectorAll('style')].map(s => s.textContent).join('\n');
-    let html = invoiceHTML(so, false);
+    let html = invoiceHTML(so, !!O.paid);
+    if (O.paid) html = html.replace(/<div class="ipay">[\s\S]*?<\/div><\/div>|<div class="ipay">[\s\S]*?<\/p><\/div>/,     // paid: no bank details, just a thank-you line
+      `<div class="ipay"><h4>Payment</h4><p><b>Paid in full by ${O.paid === true ? 'EFT' : O.paid}</b> into our FNB account. Reference ${so.no}. Thank you.</p></div>`);
     document.documentElement.innerHTML = `<head><meta charset="utf-8"><style>${FONTCSS}
 ${css}
       body{background:#fff;margin:0;padding:18px;font-family:'Source Sans 3',Segoe UI,Helvetica,Arial,sans-serif}
