@@ -1,10 +1,17 @@
 // Makes a PDF + PNG invoice in the website's invoice style.
 // Usage: node make-invoice.cjs <site index.html> <order.json>   (writes ../invoices/Invoice-<no>.pdf/.png)
-// order.json: {no, date, name, cell, email, mode: 'paxi'|'collect'|'courier', addr, delivery (optional rand), items: [[option code, qty], ...],
+// order.json: {no (leave out to take the next number from the website), date, name, cell, email, mode: 'paxi'|'collect'|'courier', addr, delivery (optional rand), items: [[option code, qty], ...],
 //              paid (optional: true for EFT, or how it was paid, e.g. "card")}
 const { chromium } = require('/opt/node22/lib/node_modules/playwright');
 const fs = require('fs'), path = require('path');
 const O = JSON.parse(fs.readFileSync(process.argv[3], 'utf8'));
+// No "no" in the order file: take the next number from the website's counter (/api/next-order, the same one website
+// orders use, so numbers never clash) and save it into the order file, so running this again keeps the same number.
+if (!O.no) {
+  const r = JSON.parse(require('child_process').execFileSync('curl', ['-sSf', '-m', '30', '-X', 'POST', 'https://makkies.co.za/api/next-order'], { encoding: 'utf8' }));
+  if (!/^MWO-\d{4,}$/.test(r.no || '')) throw new Error('no order number from the website: ' + JSON.stringify(r));
+  O.no = r.no; fs.writeFileSync(process.argv[3], JSON.stringify(O, null, 1));
+}
 const FONTCSS = "@font-face {\n  font-family: 'DM Serif Display';\n  font-style: italic;\n  font-weight: 400;\n  font-display: swap;\n  src: url(FONTDIR/f1.woff2) format('woff2');\n  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;\n}\n@font-face {\n  font-family: 'DM Serif Display';\n  font-style: normal;\n  font-weight: 400;\n  font-display: swap;\n  src: url(FONTDIR/f3.woff2) format('woff2');\n  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;\n}\n@font-face {\n  font-family: 'Source Sans 3';\n  font-style: normal;\n  font-weight: 400;\n  font-display: swap;\n  src: url(FONTDIR/f10.woff2) format('woff2');\n  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;\n}\n@font-face {\n  font-family: 'Source Sans 3';\n  font-style: normal;\n  font-weight: 700;\n  font-display: swap;\n  src: url(FONTDIR/f17.woff2) format('woff2');\n  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;\n}\n@font-face {\n  font-family: 'Source Sans 3';\n  font-style: normal;\n  font-weight: 900;\n  font-display: swap;\n  src: url(FONTDIR/f24.woff2) format('woff2');\n  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;\n}\n@font-face {\n  font-family: 'Space Mono';\n  font-style: normal;\n  font-weight: 700;\n  font-display: swap;\n  src: url(FONTDIR/f27.woff2) format('woff2');\n  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;\n}".split('FONTDIR/').join('file://' + __dirname + '/fonts/');
 (async () => {
   const b = await chromium.launch({ executablePath: '/opt/pw-browsers/chromium-1194/chrome-linux/chrome' });
