@@ -1,0 +1,249 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="fonts/local.css">
+<!-- "We now accept online payment" TikTok ad (Oct 2026). 1080×1920, no audio. render(t) draws time t; render with:
+     node render.cjs pay-online full   then ffmpeg (see README). Photos: pay_collect.py -> img/pay_*.jpg -->
+<style>
+@font-face{font-family:'DMSerif';src:url(fonts/dmserif.woff2) format('woff2')}
+*{margin:0;padding:0;box-sizing:border-box}
+body{width:1080px;height:1920px;overflow:hidden;background:#141117;font-family:Montserrat,sans-serif;color:#fff;position:relative}
+.a{position:absolute}.ctr{left:0;width:100%;text-align:center}.serif{font-family:'DMSerif',serif;font-weight:400}
+.sc{position:absolute;inset:0;opacity:0}
+.stripe{background:linear-gradient(90deg,#45203F 0 12%,#FFE14F 12% 30%,#0350EA 30% 46%,#FF0141 46% 62%,#05B56D 62% 74%,#FF0141 74% 84%,#FFE14F 84% 96%,#45203F 96% 100%)}
+/* photo wall behind the hook and the steps */
+#wall{left:-260px;top:-300px;width:1600px;height:2500px;transform:rotate(-9deg);display:flex;gap:26px}
+#wall .col{flex:1;display:flex;flex-direction:column;gap:26px}
+#wall .t{width:100%;aspect-ratio:1;border-radius:26px;background-size:cover;background-position:center}
+#shade{inset:0;background:radial-gradient(ellipse at 50% 46%,rgba(20,17,23,.55) 0%,rgba(20,17,23,.9) 62%,#141117 100%)}
+/* bank card */
+.card{width:700px;height:440px;border-radius:38px;padding:44px 50px;color:#fff;box-shadow:0 40px 90px rgba(0,0,0,.55);
+  background:linear-gradient(135deg,#2a1d33 0%,#45203F 38%,#7a1f3d 70%,#C3312B 100%);overflow:hidden}
+.card .band{position:absolute;left:0;right:0;top:250px;height:26px}
+.card .chip{width:96px;height:72px;border-radius:14px;background:linear-gradient(135deg,#f6dc8a,#c9a23f);position:absolute;left:50px;top:120px}
+.card .chip:after{content:'';position:absolute;inset:16px 22px;border:3px solid rgba(90,60,10,.35);border-radius:8px}
+.card .nm{position:absolute;left:50px;bottom:46px;font-weight:800;font-size:30px;letter-spacing:4px}
+.card .no{position:absolute;left:50px;top:300px;font-weight:700;font-size:40px;letter-spacing:8px;opacity:.95}
+.card img{position:absolute;right:40px;top:36px;width:150px}
+.card .wave{position:absolute;right:56px;bottom:40px;font-weight:800;font-size:46px;letter-spacing:2px}
+.card .shine{position:absolute;top:-100px;width:220px;height:700px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.28),transparent);transform:rotate(20deg)}
+.pill{display:inline-block;border-radius:80px;font-weight:800}
+.big{font-weight:800;font-size:170px;line-height:.98;letter-spacing:-2px}
+.hl{display:inline-block;padding:0 26px 8px;border-radius:18px;background:linear-gradient(#FFE14F,#FFE14F) no-repeat left/0% 100%;color:#141117}
+/* pay methods */
+.meth{width:860px;left:110px;height:190px;border-radius:34px;background:#fff;color:#141117;display:flex;align-items:center;padding:0 44px;gap:34px;box-shadow:0 26px 60px rgba(0,0,0,.4)}
+.meth .ic{width:110px;height:110px;border-radius:26px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:40px;color:#fff;flex:none}
+.meth b{display:block;font-size:58px;font-weight:800;letter-spacing:1px}.meth small{display:block;font-size:30px;font-weight:600;color:#6b625a;margin-top:4px}
+.meth .ok{margin-left:auto;width:92px;height:92px;border-radius:50%;background:#05A463;display:flex;align-items:center;justify-content:center;flex:none}
+/* product scene */
+#pbg{inset:-80px;background-size:cover;background-position:center;filter:blur(46px) saturate(1.25) brightness(.55)}
+.frame{background:#fff;border-radius:40px;padding:22px;box-shadow:0 50px 100px rgba(0,0,0,.5)}
+.fin{width:100%;height:100%;border-radius:24px;overflow:hidden;position:relative;background:#f3efe9}
+.fin .bl{position:absolute;inset:-40px;background-size:cover;background-position:center;filter:blur(30px) brightness(1.05)}
+.fin img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
+.fin img.cover{object-fit:cover}
+.tag{width:250px;height:250px;border-radius:50%;background:#FFE14F;color:#141117;display:flex;flex-direction:column;align-items:center;justify-content:center;border:9px solid #fff;box-shadow:0 20px 40px rgba(0,0,0,.35)}
+.tag small{font-size:32px;font-weight:800;letter-spacing:4px}.tag b{font-size:84px;font-weight:800;line-height:1}
+.buy{display:inline-flex;align-items:center;gap:18px;background:#05A463;color:#fff;border-radius:80px;padding:26px 54px;font-weight:800;font-size:44px;letter-spacing:2px;box-shadow:0 16px 40px rgba(5,164,99,.45)}
+.dots i{display:inline-block;width:18px;height:18px;border-radius:50%;margin:0 9px;background:rgba(255,255,255,.35)}
+/* phone */
+.phone{width:620px;height:1180px;border-radius:84px;background:#0c0b0e;padding:26px;box-shadow:0 60px 120px rgba(0,0,0,.6),inset 0 0 0 4px #2b2730}
+.scr{width:100%;height:100%;border-radius:62px;background:#F8F5EF;overflow:hidden;position:relative;color:#221F1D}
+.row{display:flex;align-items:center;gap:20px;padding:10px 34px}
+.row .th{width:104px;height:104px;border-radius:18px;background-size:cover;background-position:center;flex:none}
+.row b{font-size:30px;font-weight:800;display:block}.row small{font-size:24px;color:#6F6A63;font-weight:600}
+.row .pr{margin-left:auto;font-weight:800;font-size:32px}
+.paybtn{position:absolute;left:34px;right:34px;height:120px;border-radius:30px;background:#221F1D;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:40px;letter-spacing:1px}
+#tap{width:120px;height:120px;border-radius:50%;border:8px solid rgba(255,255,255,.95);box-shadow:0 0 0 6px rgba(0,0,0,.15)}
+.conf{width:22px;height:34px;border-radius:5px}
+</style></head><body>
+<div class="a" id="bg" style="inset:0;background:#141117"></div>
+<div class="a" id="wall"></div><div class="a" id="shade"></div>
+
+<!-- 1 hook -->
+<div class="sc" id="s1">
+  <img class="a" id="h_logo" src="img/mw_oval.png" style="left:440px;top:110px;width:200px">
+  <div class="a card" id="h_card" style="left:190px;top:330px">
+    <div class="shine" id="h_shine"></div><div class="band stripe"></div><div class="chip"></div>
+    <img src="img/mw_oval.png"><div class="no">•••• •••• •••• 2026</div><div class="nm">MAKKIE WHOLESALERS</div><div class="wave">))))</div>
+  </div>
+  <div class="a ctr" id="h_new" style="top:870px"><span class="pill" style="background:#05A463;font-size:40px;padding:14px 40px;letter-spacing:6px">NEW AT MAKKIES</span></div>
+  <div class="a ctr big" id="h_t1" style="top:975px">PAY</div>
+  <div class="a ctr big" id="h_t2" style="top:1150px">ONLINE</div>
+  <div class="a ctr" id="h_t3w" style="top:1345px"><span class="big hl" id="h_t3" style="font-size:150px">NOW!</span></div>
+  <div class="a ctr" id="h_sub" style="top:1575px;font-size:46px;font-weight:700;letter-spacing:2px;color:#e9e3dc">Shop &amp; pay at <b style="color:#FFE14F">makkies.co.za</b></div>
+</div>
+
+<!-- 2 pay methods -->
+<div class="sc" id="s2">
+  <div class="a ctr serif" id="m_t" style="top:250px;font-size:120px">Pay your way</div>
+  <div class="a ctr" id="m_s" style="top:410px;font-size:40px;font-weight:700;letter-spacing:6px;color:#FFE14F">SAFE &amp; SECURE CHECKOUT</div>
+  <div class="a meth" id="m0" style="top:560px"><div class="ic" style="background:#1D339E">💳</div><div><b>CARD</b><small>Visa · Mastercard</small></div><div class="ok"><svg width="54" height="54" viewBox="0 0 24 24"><path d="M4 12.5l5 5 11-11" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+  <div class="a meth" id="m1" style="top:790px"><div class="ic" style="background:#C3312B">EFT</div><div><b>INSTANT EFT</b><small>Straight from your bank</small></div><div class="ok"><svg width="54" height="54" viewBox="0 0 24 24"><path d="M4 12.5l5 5 11-11" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+  <div class="a meth" id="m2" style="top:1020px"><div class="ic" style="background:#05A463;font-size:30px">SCAN</div><div><b>SNAPSCAN</b><small>Scan &amp; pay on your phone</small></div><div class="ok"><svg width="54" height="54" viewBox="0 0 24 24"><path d="M4 12.5l5 5 11-11" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+  <div class="a ctr" id="m_f" style="top:1290px;font-size:40px;font-weight:600;color:#e9e3dc;line-height:1.5">Or EFT &amp; WhatsApp, like always</div>
+</div>
+
+<!-- 3 products -->
+<div class="sc" id="s3">
+  <div class="a" id="pbg"></div><div class="a" style="inset:0;background:linear-gradient(180deg,rgba(20,17,23,.35),rgba(20,17,23,.15) 45%,rgba(20,17,23,.85))"></div>
+  <div class="a ctr" id="p_top" style="top:120px"><span class="pill" style="background:rgba(255,255,255,.14);font-size:34px;padding:14px 34px;letter-spacing:5px;border:2px solid rgba(255,255,255,.35)">ORDER &amp; PAY ONLINE</span></div>
+  <div class="a frame" id="p_fr" style="left:110px;top:230px;width:860px;height:860px"><div class="fin" id="p_fin"></div></div>
+  <div class="a tag" id="p_tag" style="left:770px;top:160px"><small id="p_pre">ONLY</small><b id="p_pr"></b></div>
+  <div class="a ctr big" id="p_nm" style="top:1150px;font-size:120px;white-space:nowrap"></div>
+  <div class="a ctr" id="p_sub" style="top:1300px;font-size:40px;font-weight:700;letter-spacing:4px;color:#FFE14F"></div>
+  <div class="a ctr" id="p_buy" style="top:1420px"><span class="buy"><svg width="46" height="46" viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="3" fill="none" stroke="#fff" stroke-width="2.2"/><path d="M2 10h20" stroke="#fff" stroke-width="2.2"/></svg>PAY ONLINE</span></div>
+  <div class="a ctr dots" id="p_dots" style="top:1620px"></div>
+</div>
+
+<!-- 4 checkout -->
+<div class="sc" id="s4">
+  <div class="a ctr serif" id="c_t" style="top:110px;font-size:104px">Checkout in seconds</div>
+  <div class="a phone" id="c_ph" style="left:230px;top:300px">
+    <div class="scr">
+      <div style="padding:70px 34px 16px;font-weight:800;font-size:44px">Your basket</div>
+      <div id="c_rows"></div>
+      <div style="position:absolute;left:34px;right:34px;top:720px;border-top:3px solid #DFDACF;padding-top:22px;display:flex;font-weight:800;font-size:40px"><span>Total</span><span style="margin-left:auto" id="c_tot"></span></div>
+      <div style="position:absolute;left:34px;right:34px;top:805px;font-size:26px;color:#6F6A63;font-weight:600">Card · Instant EFT · SnapScan</div>
+      <div class="paybtn" id="c_btn" style="top:870px"><span id="c_btnt">Pay now</span></div>
+      <div class="a ctr" id="c_ok" style="top:1012px;font-size:30px;font-weight:800;color:#05A463">✓ Payment received, we're packing your order</div>
+    </div>
+  </div>
+  <div class="a" id="tap" style="left:470px;top:1160px"></div>
+  <div id="conf"></div>
+</div>
+
+<!-- 5 end -->
+<div class="sc" id="s5">
+  <img class="a" id="e_logo" src="img/mw_oval.png" style="left:310px;top:200px;width:460px">
+  <div class="a ctr serif" id="e_t" style="top:660px;font-size:112px">Shop &amp; pay online</div>
+  <div class="a ctr" id="e_url" style="top:830px"><span class="pill" style="font-size:88px;padding:28px 74px;background:#FFE14F;color:#141117">makkies.co.za</span></div>
+  <div class="a ctr" id="e_m" style="top:1050px;font-size:46px;font-weight:800;letter-spacing:3px">CARD · INSTANT EFT · SNAPSCAN</div>
+  <div class="a ctr" id="e_d" style="top:1150px;font-size:40px;font-weight:600;line-height:1.55;color:#e9e3dc">Delivery across South Africa<br>PAXI to any PEP · courier · or collect</div>
+  <div class="a ctr" id="e_wa" style="top:1380px;font-size:52px;font-weight:800"><span style="color:#25D366">●</span> WhatsApp 072 323 5469</div>
+  <div class="a ctr" id="e_sec" style="top:1500px;font-size:32px;font-weight:600;color:#bdb5ad;letter-spacing:2px">🔒 Secure payments by PayFast</div>
+</div>
+
+<div class="a" id="wipe" style="left:-300px;top:-300px;width:1680px;height:2520px;opacity:0"></div>
+<div class="a stripe" style="left:0;bottom:0;width:1080px;height:18px"></div>
+<script>
+const P = [   // products: name, sub line, price text, photos
+  {n: 'CZECH BEADS', s: 'PRECIOSA · ¼KG · 47 COLOURS', pre: 'FROM', pr: 'R95', imgs: ['pay_czech1', 'pay_czech2', 'pay_czech3'], fan: true},
+  {n: 'WEDDING SHAWL', s: 'WHITE · 150 × 150 CM', pre: 'ONLY', pr: 'R175', imgs: ['pay_wedding_shawl'], cover: true, pos: '50% 30%'},
+  {n: 'NECK ZIELA', s: 'GOLD OR SILVER', pre: 'ONLY', pr: 'R150', imgs: ['pay_ziela_gold', 'pay_ziela_silver'], pair: true},
+  {n: 'BEETEE TEKKIES', s: 'HAND-PAINTED · UK3 – UK8', pre: 'ONLY', pr: 'R250', imgs: ['pay_tekkies']},
+  {n: 'UKHAMBA', s: 'NDEBELE BLANKET', pre: 'ONLY', pr: 'R595', imgs: ['pay_ukhamba'], cover: true},
+  {n: 'UMBHALO', s: 'NDEBELE BLANKET · MINI R365', pre: 'ONLY', pr: 'R595', imgs: ['pay_umbhalo'], cover: true},
+  {n: 'ELIZABETH', s: 'BASOTHO BLANKET · 5 COLOURS', pre: 'ONLY', pr: 'R305', imgs: ['pay_elizabeth'], cover: true},
+  {n: 'TRIBAL STRIPE', s: 'XHOSA BLANKET · BLACK STRIPE', pre: 'ONLY', pr: 'R300', imgs: ['pay_xhosa_black'], cover: true},
+];
+const PER = 1.6;
+const T = {s1: [0, 3.2], s2: [3.2, 6.2]}; T.s3 = [6.2, 6.2 + P.length * PER]; T.s4 = [T.s3[1], T.s3[1] + 3.9]; T.s5 = [T.s4[1], T.s4[1] + 4.6];
+window.DURATION = T.s5[1];
+const $ = id => document.getElementById(id), cl = (x, a = 0, b = 1) => Math.max(a, Math.min(b, x));
+const eo = x => 1 - Math.pow(1 - cl(x), 3), eio = x => { x = cl(x); return x < .5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2; };
+const bk = x => { x = cl(x); const c = 1.7; return 1 + (c + 1) * Math.pow(x - 1, 3) + c * Math.pow(x - 1, 2); };
+const pop = (el, t, t0, d = .4, from = .5, rot = 0) => { const k = bk((t - t0) / d); el.style.opacity = cl((t - t0) / (d * .4)); el.style.transform = `scale(${from + (1 - from) * k}) rotate(${rot}deg)`; };
+const rise = (el, t, t0, d = .4, dy = 60) => { const k = eo((t - t0) / d); el.style.opacity = k; el.style.transform = `translateY(${dy * (1 - k)}px)`; };
+const slam = (el, t, t0, d = .28) => { const k = eo((t - t0) / d); el.style.opacity = cl((t - t0) / .07); el.style.transform = `scale(${2.3 - 1.3 * k})`; };
+const img = n => `img/${n}.jpg`;
+
+// photo wall: three columns of product photos, moving in opposite directions
+const WALL = ['pay_czech1', 'pay_ukhamba', 'pay_wedding_shawl', 'pay_elizabeth', 'pay_ziela_gold', 'pay_tekkies', 'pay_umbhalo', 'pay_xhosa_black', 'pay_czech2', 'pay_ziela_silver', 'pay_czech3'];
+for (let c = 0; c < 4; c++) {
+  const col = document.createElement('div'); col.className = 'col'; col.id = 'col' + c;
+  for (let k = 0; k < 10; k++) col.insertAdjacentHTML('beforeend', `<div class="t" style="background-image:url(${img(WALL[(k * 3 + c * 5) % WALL.length])})"></div>`);
+  $('wall').appendChild(col);
+}
+P.forEach((p, i) => $('p_dots').insertAdjacentHTML('beforeend', `<i id="pd${i}"></i>`));
+// product photo frames, built once and shown one at a time
+P.forEach((p, i) => {
+  let h;
+  if (p.fan) h = p.imgs.map((m, k) => `<img src="${img(m)}" style="width:62%;height:82%;left:${[19, 2, 36][k]}%;top:${[9, 14, 14][k]}%;object-fit:cover;border-radius:18px;box-shadow:0 18px 36px rgba(0,0,0,.25);transform:rotate(${[0, -9, 9][k]}deg);z-index:${[3, 1, 2][k]}">`).join('');
+  else if (p.pair) h = p.imgs.map((m, k) => `<img src="${img(m)}" style="width:50%;left:${k * 50}%;object-fit:cover">`).join('');
+  else h = `<div class="bl" style="background-image:url(${img(p.imgs[0])})"></div><img class="${p.cover ? 'cover' : ''}" src="${img(p.imgs[0])}" style="object-position:${p.pos || '50% 50%'}">`;
+  $('p_fin').insertAdjacentHTML('beforeend', `<div class="a" id="pf${i}" style="inset:0;opacity:0">${h}</div>`);
+});
+// checkout basket
+const BASKET = [['pay_ukhamba', 'Ukhamba', 'Ndebele blanket', 595], ['pay_ziela_gold', 'Neck Ziela', 'Gold', 150], ['pay_czech1', 'Czech Beads', 'Dark Orange ¼kg', 120], ['pay_wedding_shawl', 'Wedding Shawl', 'White', 175]];
+BASKET.forEach(([m, n, s, p], k) => $('c_rows').insertAdjacentHTML('beforeend', `<div class="row" id="cr${k}"><div class="th" style="background-image:url(${img(m)})"></div><div><b>${n}</b><small>${s}</small></div><div class="pr">R${p}</div></div>`));
+const TOT = BASKET.reduce((a, b) => a + b[3], 0); $('c_tot').textContent = 'R' + TOT.toLocaleString('en-ZA'); $('c_btnt').textContent = 'Pay R' + TOT.toLocaleString('en-ZA');
+const CC = ['#FFE14F', '#0350EA', '#FF0141', '#05B56D', '#ffffff', '#F07A1A'];
+for (let k = 0; k < 46; k++) $('conf').insertAdjacentHTML('beforeend', `<div class="a conf" id="cf${k}" style="background:${CC[k % CC.length]};opacity:0"></div>`);
+const rnd = s => { const x = Math.sin(s * 999.7) * 43758.5453; return x - Math.floor(x); };
+$('wipe').style.background = `linear-gradient(90deg,#45203F 0 12%,#FFE14F 12% 30%,#0350EA 30% 46%,#FF0141 46% 62%,#05B56D 62% 74%,#FF0141 74% 84%,#FFE14F 84% 96%,#45203F 96% 100%) left/90px 100% no-repeat,#141117`;
+
+function wipe(t) {        // striped panel sweeping across each scene change
+  let best = 1e9; for (const id of ['s2', 's3', 's4', 's5']) if (Math.abs(t - T[id][0]) < .3) best = t - T[id][0];
+  const w = $('wipe'); if (best > 1e8) { w.style.opacity = 0; return; }
+  const k = (best + .3) / .6; w.style.opacity = 1; w.style.transform = `rotate(-12deg) translateX(${(eio(k) * 2 - 1) * 1700}px)`;
+}
+window.render = function (t) {
+  const cur = ['s1', 's2', 's3', 's4', 's5'].find(id => t >= T[id][0] && t < T[id][1]) || 's5';
+  ['s1', 's2', 's3', 's4', 's5'].forEach(id => $(id).style.opacity = id === cur ? 1 : 0);
+  const wallOn = cur === 's1' || cur === 's2' || cur === 's5';
+  $('wall').style.opacity = wallOn ? (cur === 's5' ? .5 : 1) : 0; $('shade').style.opacity = wallOn ? 1 : 0;
+  for (let c = 0; c < 4; c++) $('col' + c).style.transform = `translateY(${(c % 2 ? -1 : 1) * ((t * 70) % 366) - (c % 2 ? 0 : 366)}px)`;
+  wipe(t);
+
+  if (cur === 's1') {                              // hook: card flips in, words slam, NOW! highlight sweeps
+    pop($('h_logo'), t, .05, .4, .3);
+    const k = eo((t - .15) / .7), card = $('h_card');
+    card.style.opacity = cl((t - .15) / .1);
+    card.style.transform = `perspective(1400px) translateY(${(1 - k) * 700}px) rotateX(${(1 - k) * 55}deg) rotateY(${(1 - k) * -40 + 6 * Math.sin(t * 1.6)}deg) rotateZ(${-4 + (1 - k) * 12}deg)`;
+    $('h_shine').style.left = (-300 + ((t * 600) % 1300)) + 'px';
+    pop($('h_new'), t, .85, .35, .3, -2);
+    slam($('h_t1'), t, 1.05); slam($('h_t2'), t, 1.3);
+    $('h_t3w').style.opacity = cl((t - 1.6) / .08); const k3 = eo((t - 1.62) / .35); $('h_t3').style.backgroundSize = `${k3 * 100}% 100%`;
+    $('h_t3').style.transform = `scale(${1 + .06 * Math.sin(Math.max(0, t - 2) * 7) * cl(t - 2)}) rotate(-2deg)`;
+    rise($('h_sub'), t, 2.05, .35, 40);
+  }
+  if (cur === 's2') {                              // payment methods pop in one by one, each gets a tick
+    const lt = t - T.s2[0];
+    pop($('m_t'), lt, .15, .4, .7); rise($('m_s'), lt, .3, .3, 30);
+    [0, 1, 2].forEach(k => { const el = $('m' + k), q = eo((lt - .45 - k * .3) / .45);
+      el.style.opacity = cl((lt - .45 - k * .3) / .12); el.style.transform = `translateX(${(1 - q) * (k % 2 ? -1100 : 1100)}px) rotate(${(1 - q) * (k % 2 ? -6 : 6)}deg)`;
+      const ok = el.querySelector('.ok'), k2 = bk((lt - .85 - k * .3) / .35); ok.style.transform = `scale(${cl(k2, 0, 2)})`; });
+    rise($('m_f'), lt, 1.8, .35, 30);
+  }
+  if (cur === 's3') {                              // products: blurred photo behind, framed photo swipes in, price lands
+    const lt = t - T.s3[0], i = Math.min(P.length - 1, Math.floor(lt / PER)), it = P[i], li = lt - i * PER;
+    $('pbg').style.backgroundImage = `url(${img(it.imgs[0])})`; $('pbg').style.transform = `scale(${1.15 + .05 * li / PER})`;
+    P.forEach((p, k) => $('pf' + k).style.opacity = k === i ? 1 : 0);
+    const q = eo(li / .45), out = eo((li - (PER - .25)) / .25);
+    $('p_fr').style.transform = `translateX(${(1 - q) * (i % 2 ? -1150 : 1150) - out * (i % 2 ? -1150 : 1150)}px) rotate(${(1 - q) * (i % 2 ? -10 : 10) - out * (i % 2 ? -8 : 8)}deg) scale(${1 + .04 * cl(li / PER)})`;
+    const pf = $('pf' + i); pf.style.transform = `scale(${1.02 + .07 * cl(li / PER)})`;
+    $('p_pre').textContent = it.pre; $('p_pr').textContent = it.pr;
+    pop($('p_tag'), li, .3, .4, .2, -12 + 6 * Math.sin(li * 6) * cl(1 - (li - .3) / .9));
+    if ($('p_nm').dataset.i !== String(i)) { $('p_nm').dataset.i = i; $('p_nm').textContent = it.n; $('p_sub').textContent = it.s;
+      $('p_nm').style.fontSize = '120px'; const r = document.createRange(); r.selectNodeContents($('p_nm'));
+      let f = 120; while (r.getBoundingClientRect().width > 980 && f > 60) { f -= 4; $('p_nm').style.fontSize = f + 'px'; } }
+    rise($('p_nm'), li, .2, .3, 70); rise($('p_sub'), li, .35, .3, 30);
+    $('p_buy').style.opacity = cl(lt / .3); $('p_buy').style.transform = `scale(${1 + .06 * Math.pow(Math.sin(Math.PI * ((lt % .8) / .8)), 2)})`;
+    $('p_top').style.opacity = cl(lt / .3);
+    P.forEach((p, k) => { const d = $('pd' + k); d.style.background = k === i ? '#FFE14F' : 'rgba(255,255,255,.35)'; d.style.transform = `scale(${k === i ? 1.35 : 1})`; });
+  }
+  if (cur === 's4') {                              // checkout: basket fills, finger taps Pay, button turns green, confetti
+    const lt = t - T.s4[0];
+    $('bg').style.background = 'radial-gradient(circle at 50% 40%,#3a2140 0%,#141117 70%)';
+    pop($('c_t'), lt, .1, .4, .7);
+    const k = eo((lt - .1) / .5); $('c_ph').style.opacity = cl((lt - .1) / .1); $('c_ph').style.transform = `translateY(${(1 - k) * 900}px) rotate(${(1 - k) * 8}deg)`;
+    BASKET.forEach((b, j) => rise($('cr' + j), lt, .45 + j * .16, .3, 40));
+    const tapAt = 1.75, tp = $('tap');
+    tp.style.opacity = lt > 1.25 && lt < 2.5 ? 1 : 0;
+    tp.style.transform = `translate(${(1 - eo((lt - 1.25) / .45)) * 220}px,${(1 - eo((lt - 1.25) / .45)) * 260}px) scale(${lt > tapAt && lt < tapAt + .2 ? .78 : 1})`;
+    const paid = lt > tapAt + .1;
+    $('c_btn').style.background = paid ? '#05A463' : '#221F1D'; $('c_btnt').textContent = paid ? '✓  Paid' : 'Pay R' + TOT.toLocaleString('en-ZA');
+    $('c_btn').style.transform = `scale(${lt > tapAt && lt < tapAt + .25 ? .95 : 1 + (paid ? .05 * Math.max(0, 1 - (lt - tapAt - .1) / .4) : 0)})`;
+    rise($('c_ok'), lt, tapAt + .3, .3, 20);
+    for (let c = 0; c < 46; c++) { const el = $('cf' + c), d = lt - tapAt - .1;
+      if (d < 0 || d > 1.8) { el.style.opacity = 0; continue; }
+      const ang = rnd(c) * Math.PI * 2, sp = 700 + rnd(c + 7) * 900, x = 540 + Math.cos(ang) * sp * d, y = 1220 + Math.sin(ang) * sp * d * .8 + 1400 * d * d;
+      el.style.opacity = cl(1.8 - d); el.style.left = x + 'px'; el.style.top = y + 'px'; el.style.transform = `rotate(${d * 720 * (rnd(c + 3) - .5)}deg)`; }
+  } else $('bg').style.background = '#141117';
+  if (cur === 's5') {                              // end card
+    const lt = t - T.s5[0];
+    pop($('e_logo'), lt, .05, .5, .3); rise($('e_t'), lt, .35, .35, 60); pop($('e_url'), lt, .6, .35, .5);
+    if (lt > 1.0) $('e_url').style.transform = `scale(${1 + .12 * Math.pow(Math.sin(Math.PI * (lt - 1.0) / .7), 2)})`;
+    rise($('e_m'), lt, .9, .3, 40); rise($('e_d'), lt, 1.1, .3, 40); rise($('e_wa'), lt, 1.3, .3, 40); rise($('e_sec'), lt, 1.5, .3, 30);
+  }
+};
+render(0);
+</script></body></html>

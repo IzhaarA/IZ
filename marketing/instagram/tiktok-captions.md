@@ -199,3 +199,11 @@ Xhosa ceremony this December? Xhosa stripe blankets in black, purple and red, R3
 One kanga or one for the whole family? 😄 R35 each, 19 designs: Elephant, Shield, Big Five, Swazi Flag and more. Comment your number 👇 Shop at makkies.co.za or WhatsApp 072 323 5469 🚚 We deliver across SA
 
 #kanga #kangas #traditionalwear #pretoria #southafrica
+
+---
+
+## TikTok: We now accept online payment (makkies-pay-online-tiktok.mp4)
+
+You can now PAY ONLINE at Makkies! 💳 Card, Instant EFT or SnapScan, safe and secure. Czech beads, wedding shawls, neck ziela, Beetee tekkies, Ukhamba, Umbhalo, Elizabeth and more. Shop at makkies.co.za 🚚 We deliver across SA, PAXI to any PEP
+
+#makkieswholesalers #shoponline #traditionalwear #basothoblanket #southafrica
