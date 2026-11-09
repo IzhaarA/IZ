@@ -14,9 +14,9 @@ SOLD_OUT = [
     "CZ-00050-32/0-L",                        # Transparent Crystal 32/0 loose
     "CZ-03590-1/0-S",                         # Black Stripes on Chalk White 1/0 strung
     "CZ-07631",                               # Rose Terra Sfinx (all)
-    "CZ-13600",                               # Opaque Brown (all)
     "CZ-13780-8/0-L", "CZ-13780-11/0-L",      # Opaque Dark Brown 8/0 loose and 11/0 loose
     "CZ-23040-8/0-S",                         # Opaque Dark Violet 8/0 strung
+    "CZ-28020-8/0-S",                         # Opaque Violet Sfinx 8/0 strung (9 Nov 2026)
     "CZ-33060-1/0-L",                         # Opaque Royal Blue 1/0 loose
     "CZ-38220",                               # Opaque Teal Sfinx (all)
     "CZ-46112-8/0-S",                         # Shell Yellow/Brown Luster 8/0 strung (8/0 loose back 31 Oct)
@@ -32,9 +32,7 @@ SOLD_OUT = [
     "CZ-88130",                               # Opaque Golden Yellow Sfinx (all)
     "CZ-93110",                               # Opaque Orange (all)
     "CZ-93140-11/0-L",                        # Opaque Dark Orange 11/0 loose
-    "CZ-98140-8/0-L",                         # Opaque Dark Orange Sfinx 8/0 loose
     "CZ-98170-8/0-S",                         # Opaque Red Coral Sfinx 8/0 strung (8/0 loose back 31 Oct)
-    "CZ-98190-8/0-S",                         # Opaque Dark Red Coral Sfinx 8/0 strung
     # Plastic beads
     "PBO-E61",                                # E61 Sweet Pink, 8mm Oval
     # Ndebele

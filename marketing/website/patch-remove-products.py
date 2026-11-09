@@ -4,6 +4,7 @@ import json, sys
 
 REMOVE = {
     "MNK-013": "Beverly 1ply double bed size mink",
+    "CZ-98190": "Opaque Dark Red Coral Sfinx (Czech beads, removed 9 Nov 2026)",
 }
 TEXT = [  # chat assistant wording that depends on the removed products
     ("<b>mink blankets</b> (from R375)", "<b>mink blankets</b> (from R395)"),
