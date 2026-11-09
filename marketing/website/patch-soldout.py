@@ -37,6 +37,8 @@ SOLD_OUT = [
     "PBO-E61",                                # E61 Sweet Pink, 8mm Oval
     # Ndebele
     "TEK-001",                                # Beaded Tekkies (all sizes)
+    # Towels
+    "TWL-003",                                # Block Bath Towel (9 Nov 2026)
 ]
 
 p = sys.argv[1]

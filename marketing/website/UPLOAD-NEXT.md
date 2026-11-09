@@ -1,6 +1,6 @@
 # Upload status
 
-Waiting (9 Nov 2026): Czech beads: 28020 loose in stock / strung sold out; 98140 loose back; 13600 back; 98190 removed from the site.
+Waiting (9 Nov 2026): Czech beads: 28020 loose in stock / strung sold out; 98140 loose back; 13600 back; 98190 removed from the site. Block Bath Towel (TWL-003) sold out.
 Waiting (31 Oct 2026): Czech beads back in stock: 46112 8/0 loose (new option, R135), 58410 8/0 loose, 98170 8/0 loose, 28020 8/0 loose.
 Built in /tmp/makkies-deploy.
 
