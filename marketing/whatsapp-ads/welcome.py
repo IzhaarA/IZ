@@ -5,7 +5,7 @@ I = '../category-ads-source/img/'
 FONTS = open(os.path.join(D, '../homepage-mockups/fonts/fonts.css')).read().replace('url(gf', 'url(../homepage-mockups/fonts/gf')
 BIG = [('bs_trb-011.jpg', 'Seannamarena', '50% 25%'), ('pay_ukhamba.jpg', 'Ukhamba', '50% 30%')]
 SMALL = [('pay_czech2.jpg', 'Czech Beads'), ('hat_ndh-002.jpg', 'Ndebele Hats'), ('nd_nzl-001.jpg', 'Neck Ziela'), ('pay_wedding_shawl.jpg', 'Wedding Shawls'), ('pay_umbhalo.jpg', 'Umbhalo'),
-         ('xh_rug-001.jpg', 'Xhosa Rugs'), ('kg_kng-008.jpg', 'Kangas'), ('ba_trd-011.jpg', 'Beadwork'), ('um_mnk-014.jpg', 'Mink Blankets'), ('pay_tekkies.jpg', 'Beetee Painted Tekkies')]
+         ('xh_rug-001.jpg', 'Xhosa Rugs'), ('kg_kng-008.jpg', 'Kangas'), ('ba_trd-011.jpg', 'Beadwork'), ('um_mnk-014.jpg', 'Mink Blankets'), ('pay_tekkies.jpg', 'Painted Tekkies')]
 ic = lambda p: f'<svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="#FFE14F" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">{p}</svg>'
 TRUCK = ic('<path d="M3 6h11v10H3zM14 9h4l3 3v4h-7"/><circle cx="7" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/>')
 CARD = ic('<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18"/>')
