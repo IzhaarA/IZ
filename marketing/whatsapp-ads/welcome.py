@@ -16,11 +16,11 @@ body{width:1080px;height:1920px;background:#1b1714;color:#F6F0E6;font-family:Int
 .stripe{height:16px;background:linear-gradient(90deg,#45203F 0 12%,#FFE14F 12% 30%,#0350EA 30% 46%,#FF0141 46% 62%,#05B56D 62% 74%,#FF0141 74% 84%,#FFE14F 84% 96%,#45203F 96%)}
 .top{display:flex;align-items:center;gap:26px;padding:34px 48px 30px}.top img{width:150px}
 .top b{display:block;font-family:'DM Serif Display',Georgia,serif;font-weight:400;font-size:58px;line-height:1}.top span{display:block;font-size:24px;letter-spacing:.2em;text-transform:uppercase;color:#FFE14F;margin-top:10px;font-weight:600}
-.mos{display:grid;grid-template-columns:repeat(20,1fr);grid-template-rows:530px 240px 240px;gap:8px;padding:0 8px}
+.mos{display:grid;grid-template-columns:repeat(20,1fr);grid-template-rows:470px 240px 240px;gap:8px;padding:0 8px}
 .ph{position:relative;background-size:cover;background-position:center;border-radius:6px}.ph{grid-column:span 4}.ph.big{grid-column:span 10}
 .lb{position:absolute;left:10px;bottom:10px;max-width:calc(100% - 20px);line-height:1.2;background:rgba(255,255,255,.95);color:#1d1b19;font-size:20px;font-weight:600;padding:6px 11px;border-radius:7px;box-shadow:0 2px 10px rgba(0,0,0,.25)}
 .big .lb{font-size:26px;left:18px;bottom:18px;padding:9px 16px}
-.txt{padding:34px 52px 0}
+.more{text-align:center;font-family:'DM Serif Display',Georgia,serif;font-style:italic;font-size:44px;color:#FFE14F;padding:18px 0 0}.txt{padding:22px 52px 0}
 .eb{display:inline-block;background:#FFE14F;color:#1b1714;font-weight:800;font-size:24px;letter-spacing:.14em;text-transform:uppercase;padding:9px 16px;border-radius:6px}
 h1{font-family:'DM Serif Display',Georgia,serif;font-weight:400;font-size:88px;line-height:1.02;letter-spacing:-.5px;margin-top:18px;text-wrap:balance}
 h1 em{font-style:normal;color:#FFE14F}
@@ -35,7 +35,7 @@ big = ''.join(f'<div class="ph big" style="background-image:url({I}{f});backgrou
 small = ''.join(f'<div class="ph" style="background-image:url({I}{f})"><span class="lb">{l}</span></div>' for f, l in SMALL)
 html = f"""<!doctype html><html><head><meta charset="utf-8"><style>{FONTS}{CSS}</style></head><body><div class="stripe"></div>
 <div class="top"><img src="{I}mw_oval.png"><div><b>Makkie Wholesalers</b><span>Blankets · Beads · Traditional Goods</span></div></div>
-<div class="mos">{big}{small}</div>
+<div class="mos">{big}{small}</div><div class="more">...and much more!</div>
 <div class="txt"><span class="eb">New · Shop online 24/7</span><h1>You can now <em>shop online!</em></h1>
 <p class="sub">Browse our blankets, beads and traditional goods on your phone, order any time and pay by card, Instant EFT or SnapScan.</p></div>
 <div class="pts"><div>{TRUCK}<b>Delivery across SA</b></div><div>{CARD}<b>Safe online payment</b></div><div>{SHOP}<b>Or visit our shop</b></div></div>
