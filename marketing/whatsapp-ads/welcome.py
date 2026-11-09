@@ -26,7 +26,7 @@ h1{font-family:'DM Serif Display',Georgia,serif;font-weight:400;font-size:88px;l
 h1 em{font-style:normal;color:#FFE14F}
 p.sub{font-size:29px;line-height:1.42;color:#d9cfc2;margin-top:16px;max-width:960px}
 .pts{display:flex;justify-content:space-between;padding:26px 52px 0;font-size:24px;color:#d9cfc2}.pts div{display:flex;align-items:center;gap:12px}.pts b{color:#fff;font-weight:600}
-.shop{position:absolute;left:52px;right:52px;bottom:150px;background:#fff;color:#1b1714;border-radius:16px;display:flex;align-items:center;justify-content:space-between;padding:22px 34px}
+.shop{position:absolute;left:52px;right:52px;bottom:150px;background:#fff;color:#1b1714;border-radius:16px;display:flex;align-items:center;justify-content:center;text-align:center;padding:22px 34px}
 .shop small{display:block;font-size:24px;font-weight:600;color:#C3312B;letter-spacing:.08em;text-transform:uppercase}.shop b{display:block;font-size:66px;font-weight:800;letter-spacing:-1px;line-height:1.05}
 .shop .go{background:#1b1714;color:#fff;font-size:28px;font-weight:700;border-radius:12px;padding:20px 26px;white-space:nowrap}
 .cta{position:absolute;left:52px;right:52px;bottom:52px;display:flex;align-items:center;justify-content:center;gap:16px;font-size:30px;color:#d9cfc2}.cta b{color:#fff;font-size:34px}
@@ -39,7 +39,7 @@ html = f"""<!doctype html><html><head><meta charset="utf-8"><style>{FONTS}{CSS}<
 <div class="txt"><span class="eb">New · Shop online 24/7</span><h1>You can now <em>shop online!</em></h1>
 <p class="sub">Browse our blankets, beads and traditional goods on your phone, order any time and pay by card, Instant EFT or SnapScan.</p></div>
 <div class="pts"><div>{TRUCK}<b>Delivery across SA</b></div><div>{CARD}<b>Safe online payment</b></div><div>{SHOP}<b>Or visit our shop</b></div></div>
-<div class="shop"><div><small>Visit our website</small><b>makkies.co.za</b></div><span class="go">Shop now →</span></div>
+<div class="shop"><div><small>Shop online at</small><b>makkies.co.za</b></div></div>
 <div class="cta">{WA}<span>Questions? WhatsApp <b>072 323 5469</b></span></div>
 <div class="bot stripe"></div></body></html>"""
 open(os.path.join(D, '00-welcome.html'), 'w').write(html)
