@@ -4,8 +4,8 @@ D = os.path.dirname(os.path.abspath(__file__))
 I = '../category-ads-source/img/'
 FONTS = open(os.path.join(D, '../homepage-mockups/fonts/fonts.css')).read().replace('url(gf', 'url(../homepage-mockups/fonts/gf')
 BIG = [('bs_trb-011.jpg', 'Seannamarena', '50% 25%'), ('pay_ukhamba.jpg', 'Ukhamba', '50% 30%')]
-SMALL = [('pay_czech2.jpg', 'Czech Beads'), ('hat_ndh-002.jpg', 'Ndebele Hats'), ('nd_nzl-001.jpg', 'Neck Ziela'), ('pay_wedding_shawl.jpg', 'Wedding Shawls'),
-         ('xh_rug-001.jpg', 'Xhosa Rugs'), ('kg_kng-008.jpg', 'Kangas'), ('ba_trd-011.jpg', 'Beadwork'), ('um_mnk-014.jpg', 'Mink Blankets')]
+SMALL = [('pay_czech2.jpg', 'Czech Beads'), ('hat_ndh-002.jpg', 'Ndebele Hats'), ('nd_nzl-001.jpg', 'Neck Ziela'), ('pay_wedding_shawl.jpg', 'Wedding Shawls'), ('pay_umbhalo.jpg', 'Umbhalo'),
+         ('xh_rug-001.jpg', 'Xhosa Rugs'), ('kg_kng-008.jpg', 'Kangas'), ('ba_trd-011.jpg', 'Beadwork'), ('um_mnk-014.jpg', 'Mink Blankets'), ('pay_tekkies.jpg', 'Beetee Painted Tekkies')]
 ic = lambda p: f'<svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="#FFE14F" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">{p}</svg>'
 TRUCK = ic('<path d="M3 6h11v10H3zM14 9h4l3 3v4h-7"/><circle cx="7" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/>')
 CARD = ic('<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18"/>')
@@ -16,9 +16,9 @@ body{width:1080px;height:1920px;background:#1b1714;color:#F6F0E6;font-family:Int
 .stripe{height:16px;background:linear-gradient(90deg,#45203F 0 12%,#FFE14F 12% 30%,#0350EA 30% 46%,#FF0141 46% 62%,#05B56D 62% 74%,#FF0141 74% 84%,#FFE14F 84% 96%,#45203F 96%)}
 .top{display:flex;align-items:center;gap:26px;padding:34px 48px 30px}.top img{width:150px}
 .top b{display:block;font-family:'DM Serif Display',Georgia,serif;font-weight:400;font-size:58px;line-height:1}.top span{display:block;font-size:24px;letter-spacing:.2em;text-transform:uppercase;color:#FFE14F;margin-top:10px;font-weight:600}
-.mos{display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:530px 240px 240px;gap:8px;padding:0 8px}
-.ph{position:relative;background-size:cover;background-position:center;border-radius:6px}.big{grid-column:span 2}
-.lb{position:absolute;left:12px;bottom:12px;background:rgba(255,255,255,.95);color:#1d1b19;font-size:21px;font-weight:600;padding:7px 12px;border-radius:7px;box-shadow:0 2px 10px rgba(0,0,0,.25)}
+.mos{display:grid;grid-template-columns:repeat(20,1fr);grid-template-rows:530px 240px 240px;gap:8px;padding:0 8px}
+.ph{position:relative;background-size:cover;background-position:center;border-radius:6px}.ph{grid-column:span 4}.ph.big{grid-column:span 10}
+.lb{position:absolute;left:10px;bottom:10px;max-width:calc(100% - 20px);line-height:1.2;background:rgba(255,255,255,.95);color:#1d1b19;font-size:20px;font-weight:600;padding:6px 11px;border-radius:7px;box-shadow:0 2px 10px rgba(0,0,0,.25)}
 .big .lb{font-size:26px;left:18px;bottom:18px;padding:9px 16px}
 .txt{padding:34px 52px 0}
 .eb{display:inline-block;background:#FFE14F;color:#1b1714;font-weight:800;font-size:24px;letter-spacing:.14em;text-transform:uppercase;padding:9px 16px;border-radius:6px}
