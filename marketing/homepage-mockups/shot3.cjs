@@ -1,5 +1,5 @@
 const { chromium } = require('/opt/node22/lib/node_modules/playwright');
-(async () => { const b = await chromium.launch({ executablePath: '/opt/pw-browsers/chromium-1194/chrome-linux/chrome' });
+(async () => { const b = await chromium.launch();
   for (const l of ['d','e','f']) {
     let p = await b.newPage({ viewport: { width: 390, height: 844 }, deviceScaleFactor: 2 });
     await p.goto(`http://localhost:8788/look-${l}.html`, { waitUntil: 'load' }); await p.waitForTimeout(600);

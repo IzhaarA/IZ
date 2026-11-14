@@ -3,7 +3,7 @@ const { chromium } = require('/opt/node22/lib/node_modules/playwright');
 const path = require('path'), fs = require('fs');
 const NAMES = ['beaded-accessories', 'ndebele-hats', 'cloudsoft-shawls', 'chenille-throws', 'plain-shawls', 'wool', 'towels'];
 (async () => {
-  const b = await chromium.launch({ executablePath: '/opt/pw-browsers/chromium-1194/chrome-linux/chrome' });
+  const b = await chromium.launch();
   const p = await b.newPage({ viewport: { width: 1080, height: 1350 } });
   const out = path.join(__dirname, '..', 'instagram');
   for (const name of process.argv.slice(2).length ? process.argv.slice(2) : NAMES) {
