@@ -2,7 +2,7 @@
 // Usage: node make-invoice.cjs <site index.html> <order.json>   (writes ../invoices/Invoice-<no>.pdf/.png)
 // order.json: {no (leave out to take the next number from the website), date, name, cell, email, mode: 'paxi'|'collect'|'courier', addr, delivery (optional rand), items: [[option code, qty], ...],
 //              paid (optional: true for EFT, or how it was paid, e.g. "card")}
-// Quotation: add "quote": "Q-MWO-1234" (does not use an order number), optional "billTo": [lines], "valid": days, "note",
+// Quotation (optional "unitText" replaces the pack size wording): add "quote": "Q-MWO-1234" (does not use an order number), optional "billTo": [lines], "valid": days, "note",
 //            mode "none" (no delivery row), and a special price as a third item value: [code, qty, price].
 const { chromium } = require('/opt/node22/lib/node_modules/playwright');
 const fs = require('fs'), path = require('path');
@@ -27,7 +27,7 @@ const FONTCSS = "@font-face {\n  font-family: 'DM Serif Display';\n  font-style:
     const sub = ls.reduce((a, l) => a + l.total, 0), sh = O.mode === 'collect' ? 0 : (O.delivery ?? (O.mode === 'paxi' ? paxiBags(ls).cost : null)), tot = sub + (sh || 0);
     const so = { no: O.no, date: O.date, first: O.name, last: '', cell: O.cell || '', email: O.email || '', addr: O.addr, mode: O.mode, pay: 'eft',
       bags: O.mode === 'paxi' ? paxiBags(ls).bags : 1,
-      lines: ls.map(l => ({ n: fullName(l.p), c: l.p.category + ' · ' + l.v.id, l: vdetail(l.p, l.v) + (O.quote && l.p.unit && l.p.unit !== 'unit' ? ' · ' + l.p.unit : ''), q: l.qty, t: l.total })), sub, sh, tot };
+      lines: ls.map(l => ({ n: fullName(l.p), c: l.p.category + ' · ' + l.v.id, l: vdetail(l.p, l.v) + (O.quote && (O.unitText || (l.p.unit && l.p.unit !== 'unit')) ? ' · ' + (O.unitText || l.p.unit) : ''), q: l.qty, t: l.total })), sub, sh, tot };
     const css = [...document.querySelectorAll('style')].map(s => s.textContent).join('\n');
     let html = invoiceHTML(so, !!O.paid);
     if (O.paid) html = html.replace(/<div class="ipay">[\s\S]*?<\/div><\/div>|<div class="ipay">[\s\S]*?<\/p><\/div>/,     // paid: no bank details, just a thank-you line
