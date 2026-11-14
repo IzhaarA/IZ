@@ -4,7 +4,7 @@ const fs = require('fs'), path = require('path');
 (async () => {
   const [work, out] = process.argv.slice(2);
   const oval = fs.readFileSync(path.join(__dirname, '..', 'logo', 'makkies-mw-oval-300.png')).toString('base64');
-  const b = await chromium.launch({ executablePath: '/opt/pw-browsers/chromium-1194/chrome-linux/chrome' });
+  const b = await chromium.launch();
   const p = await b.newPage();
   await p.goto('file://' + path.resolve(work, 'catalogue.html'), { waitUntil: 'load' });
   await p.pdf({ path: out, format: 'A4', printBackground: true, preferCSSPageSize: true, displayHeaderFooter: true, headerTemplate: '<span></span>',
