@@ -1,9 +1,8 @@
 # Upload status
 
-Waiting (9 Nov 2026): Czech beads: 28020 loose in stock / strung sold out; 98140 loose back; 13600 back; 98190 removed from the site. Block Bath Towel (TWL-003) sold out.
-Waiting (31 Oct 2026): Czech beads back in stock: 46112 8/0 loose (new option, R135), 58410 8/0 loose, 98170 8/0 loose, 28020 8/0 loose.
-Built in /tmp/makkies-deploy.
-
+Nothing waiting. Last upload: 16 Nov 2026 (deploy 6afac2f937419ac4b9d32cc0): new home page (Look G, patch-home.py + home-g/ photos),
+easier navigation (patch-nav.py: menu with photos, search suggestions, breadcrumbs, load more); Czech beads 28020/98140/13600/98170/
+58410 loose back, 46112 loose R135 added, 98190 removed; Block Bath Towel (TWL-003) sold out.
 Last upload: 31 Oct 2026 (deploy 6ae5b82b09fec2e4bff0b780): PayFast card payments back on (card: true).
 
 Nothing waiting. Last upload: 26 Oct 2026 (deploy 6adf4a37131486d9c88d90a2): Swazi Necklace TRD-035 (R150), Pedi Necklace TRD-036 (R70),
@@ -31,5 +30,6 @@ Before that: 20 Oct 2026 — 17 new products, 7 replacement photos, Beverly remo
 
 patch-payfast.py, patch-checkout.py, patch-price-changes.py, patch-prices.py, patch-soldout.py, patch-shawlphotos.py,
 patch-chenille.py, patch-shipping.py, patch-courier-rates.py, patch-remove-products.py,
-`patch-new-products.py <index> new-products`, patch-catalogue-edits.py, patch-prices.py, then download photos,
-then make-shawl-thumbs.py, then `make-seo-pages.py public`.
+`patch-new-products.py <index> new-products`, patch-catalogue-edits.py, patch-prices.py,
+then patch-home.py, patch-nav.py, then download photos (all images/ and thumbs/ the page uses),
+then `make-shawl-thumbs.py public`, then `make-seo-pages.py public`.
