@@ -126,7 +126,7 @@ def page(path, ttl, desc, body, ld=(), canonical=None, img=None):
 <footer><div class="w"><b>Makkie Wholesalers</b> · Unit D4, Pretoria Oriental Complex, Entrance 6, 7th Street, Marabastad, Pretoria<br>
 WhatsApp <a href="https://wa.me/{WA}">072 323 5469</a> · Tel 012 323 5469 · <a href="mailto:orders@makkies.co.za">orders@makkies.co.za</a><br>
 Wholesale and retail. Prices include 15% VAT. Delivery anywhere in South Africa by PAXI or courier, or collect in Marabastad.<br>
-<a href="/">Shop online</a> · <a href="/products/">All products</a> · <a href="/returns/">Delivery &amp; returns</a> · <a href="/terms/">Terms</a> · <a href="/privacy/">Privacy</a></div></footer></body></html>"""
+<a href="/">Shop online</a> · <a href="/products/">All products</a> · <a href="/returns/">Delivery &amp; returns</a> · <a href="/terms/">Terms</a> · <a href="/privacy/">Privacy</a></div></footer><script src="/t.js" defer></script></body></html>"""
     out = os.path.join(PUB, path.strip('/'), 'index.html')
     os.makedirs(os.path.dirname(out), exist_ok=True)
     open(out, 'w', encoding='utf-8').write(doc)
@@ -233,7 +233,7 @@ for pid, path in POLICY.items():
 urls = ['/', '/products/', '/returns/', '/terms/', '/privacy/'] + list(CURL.values()) + [p['url'] for p in P]
 open(os.path.join(PUB, 'sitemap.xml'), 'w').write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
     + ''.join(f'<url><loc>{SITE}{u}</loc><lastmod>{TODAY}</lastmod></url>\n' for u in urls) + '</urlset>\n')
-open(os.path.join(PUB, 'robots.txt'), 'w').write(f'User-agent: *\nAllow: /\n\nSitemap: {SITE}/sitemap.xml\n')
+open(os.path.join(PUB, 'robots.txt'), 'w').write(f'User-agent: *\nAllow: /\nDisallow: /stats/\n\nSitemap: {SITE}/sitemap.xml\n')
 
 GPC = {'Blankets & Textiles': 'Home & Garden > Linens & Bedding > Bedding > Blankets', 'Beads': 'Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Art & Crafting Materials > Embellishments & Trims > Beads'}
 items = []

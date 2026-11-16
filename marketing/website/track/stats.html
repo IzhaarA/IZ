@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><title>Makkies visitors</title>
+<style>
+:root{--ink:#221F1D;--muted:#6F6A63;--line:#E4DED4;--bg:#F8F5EF;--red:#C3312B;--green:#0A7A44;--bar:#2F5DA8}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.45 'Segoe UI',Helvetica,Arial,sans-serif}
+.stripe{height:7px;background:linear-gradient(90deg,#45203F 0 12%,#F2B90D 12% 30%,#1D339E 30% 46%,#DA2C28 46% 62%,#0A7A44 62% 74%,#DA2C28 74% 84%,#F2B90D 84% 96%,#45203F 96%)}
+header{background:#24211F;color:#fff;padding:16px 20px}header h1{margin:0;font-size:22px}header p{margin:4px 0 0;color:#cfc7bd;font-size:13px}
+main{max-width:1100px;margin:0 auto;padding:18px 16px 50px}
+.range{display:flex;gap:8px;margin:0 0 16px}.range button{border:1.5px solid var(--line);background:#fff;border-radius:999px;padding:8px 16px;font:600 14px inherit;cursor:pointer}
+.range button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
+.card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px}.card b{display:block;font-size:28px;line-height:1.1}.card span{color:var(--muted);font-size:13px}
+.card small{display:block;color:var(--muted);font-size:12px;margin-top:4px}
+.box{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px;margin-top:14px}.box h2{font-size:16px;margin:0 0 4px}.box p.h{margin:0 0 12px;color:var(--muted);font-size:13px}
+.chart{display:flex;align-items:flex-end;gap:3px;height:170px;padding-top:18px;border-bottom:1px solid var(--line)}
+.chart div{flex:1;background:var(--bar);border-radius:3px 3px 0 0;position:relative;min-height:2px}
+.chart div:hover{background:var(--red)}.chart div span{position:absolute;top:-17px;left:50%;transform:translateX(-50%);font-size:10.5px;color:var(--muted);white-space:nowrap}
+.xl{display:flex;justify-content:space-between;color:var(--muted);font-size:12px;margin-top:4px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}@media(max-width:760px){.grid2{grid-template-columns:1fr}}
+table{width:100%;border-collapse:collapse}td{padding:7px 0;border-bottom:1px solid #f0ece5;font-size:14px;vertical-align:middle}td.n{text-align:right;font-weight:700;width:60px}
+td .b{height:6px;background:#e9e3d9;border-radius:4px;margin-top:4px}td .b i{display:block;height:100%;background:var(--bar);border-radius:4px}
+.funnel div{display:flex;align-items:center;gap:10px;margin:6px 0}.funnel em{font-style:normal;width:170px;font-size:14px}.funnel span{height:26px;background:var(--green);border-radius:6px;min-width:4px}
+.funnel b{font-size:14px}.empty{color:var(--muted);font-size:14px}.err{background:#FBE7E4;border:1px solid #e9b3ac;padding:14px;border-radius:10px}
+</style></head><body>
+<header><h1>Makkies website visitors</h1><p>Private page · counts people, not personal details · updates live</p></header><div class="stripe"></div>
+<main>
+  <div class="range"><button data-d="1">Today</button><button data-d="7" class="on">7 days</button><button data-d="30">30 days</button><button data-d="90">90 days</button></div>
+  <div id="out"><p class="empty">Loading…</p></div>
+</main>
+<script>
+const KEY = location.hash.slice(1), $ = s => document.querySelector(s), esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+let DAYS = 7;
+const sum = (rows, k) => rows.reduce((a, r) => a + (r[k] || 0), 0);
+const merge = (rows, k) => { const o = {}; rows.forEach(r => Object.entries(r[k] || {}).forEach(([a, n]) => o[a] = (o[a] || 0) + n)); return Object.entries(o).sort((a, b) => b[1] - a[1]); };
+const table = (list, max = 12, empty = 'Nothing yet') => { if (!list.length) return `<p class="empty">${empty}</p>`; const top = list[0][1];
+  return '<table>' + list.slice(0, max).map(([k, n]) => `<tr><td>${esc(k)}<div class="b"><i style="width:${Math.round(n / top * 100)}%"></i></div></td><td class="n">${n}</td></tr>`).join('') + '</table>'; };
+const fmtDay = d => new Date(d + 'T12:00:00').toLocaleDateString('en-ZA', { day: 'numeric', month: 'short' });
+async function load() {
+  document.querySelectorAll('.range button').forEach(b => b.classList.toggle('on', +b.dataset.d === DAYS));
+  let rows;
+  try { const r = await fetch(`/api/stats?k=${encodeURIComponent(KEY)}&days=${Math.max(DAYS, 1)}`); if (!r.ok) throw 0; rows = await r.json(); }
+  catch (e) { $('#out').innerHTML = '<div class="err">Could not load the numbers. Check that you opened the full private link (it ends with #…).</div>'; return; }
+  const V = sum(rows, 'visitors'), PV = sum(rows, 'views'), PROD = sum(rows, 'productViewers'), ADD = merge(rows, 'add').reduce((a, x) => a + x[1], 0),
+        CHK = sum(rows, 'checkout'), ORD = sum(rows, 'order'), WA = sum(rows, 'wa'), mx = Math.max(1, ...rows.map(r => r.visitors));
+  const pct = (a, b) => b ? Math.round(a / b * 100) + '%' : '–';
+  $('#out').innerHTML = `
+  <div class="cards">
+    <div class="card"><b>${V}</b><span>Visitors</span><small>people (counted once a day)</small></div>
+    <div class="card"><b>${PV}</b><span>Pages opened</span></div>
+    <div class="card"><b>${PROD}</b><span>Looked at a product</span><small>${pct(PROD, V)} of visitors</small></div>
+    <div class="card"><b>${ADD}</b><span>Added to basket</span></div>
+    <div class="card"><b>${CHK}</b><span>Went to checkout</span></div>
+    <div class="card"><b>${ORD}</b><span>Orders placed</span><small>${pct(ORD, V)} of visitors</small></div>
+    <div class="card"><b>${WA}</b><span>Tapped WhatsApp</span></div>
+  </div>
+  ${DAYS > 1 ? `<div class="box"><h2>Visitors per day</h2><div class="chart">${rows.map(r => `<div style="height:${Math.round(r.visitors / mx * 100)}%" title="${fmtDay(r.day)}: ${r.visitors} visitors, ${r.views} pages">${DAYS <= 31 && r.visitors ? `<span>${r.visitors}</span>` : ''}</div>`).join('')}</div>
+    <div class="xl"><span>${fmtDay(rows[0].day)}</span><span>${fmtDay(rows[rows.length - 1].day)}</span></div></div>` : ''}
+  <div class="box"><h2>From visit to order</h2><p class="h">How many people get to each step</p><div class="funnel">
+    ${[['Visited the site', V], ['Looked at a product', PROD], ['Went to checkout', CHK], ['Placed an order', ORD]].map(([l, n]) => `<div><em>${l}</em><span style="width:${Math.round(n / Math.max(V, 1) * 60)}%"></span><b>${n}</b></div>`).join('')}</div></div>
+  <div class="grid2">
+    <div class="box"><h2>Where visitors come from</h2><p class="h">"direct / WhatsApp" = typed the address or tapped a link in WhatsApp</p>${table(merge(rows, 'src'))}</div>
+    <div class="box"><h2>Phone or computer</h2><p class="h">&nbsp;</p>${table(merge(rows, 'dev'))}</div>
+    <div class="box"><h2>Most viewed products</h2>${table(merge(rows, 'product'), 15)}</div>
+    <div class="box"><h2>Added to basket</h2>${table(merge(rows, 'add'), 15)}</div>
+    <div class="box"><h2>Categories opened</h2>${table(merge(rows, 'cat'), 15)}</div>
+    <div class="box"><h2>What people searched for</h2><p class="h">Searches with few results show what customers want that you may not list</p>${table(merge(rows, 'search'), 15)}</div>
+    <div class="box"><h2>Pages people landed on</h2><p class="h">/p/… = Google product pages</p>${table(merge(rows, 'page'), 15)}</div>
+  </div>`;
+}
+document.querySelectorAll('.range button').forEach(b => b.onclick = () => { DAYS = +b.dataset.d; load(); });
+load(); setInterval(load, 60000);
+</script></body></html>

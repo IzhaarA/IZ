@@ -1,6 +1,7 @@
 # Upload status
 
-Nothing waiting. Last upload: 16 Nov 2026 (deploy 6afb0e7da8018e923d2e0260): product pop-up fits the visible phone screen (buttons reachable).
+WAITING: visitor tracking (patch-track.py, netlify/functions/track.mjs + stats.mjs, private page /stats/#KEY). Built, not uploaded.
+Before that, nothing waiting. Last upload: 16 Nov 2026 (deploy 6afb0e7da8018e923d2e0260): product pop-up fits the visible phone screen (buttons reachable).
 Before that: 16 Nov 2026 (deploy 6afaf0b8928f421ce3c7783d): hover zoom on home circles and main photos.
 Before that: 16 Nov 2026 (deploy 6afaefb895be0e10e963176c): home main picture is 4 blankets (Umbhalo, Khotso,
 Xhosa black stripe, Elizabeth Basotho blue); laptop: sub-categories and home circles wrap (all visible).
@@ -35,5 +36,5 @@ Before that: 20 Oct 2026 — 17 new products, 7 replacement photos, Beverly remo
 patch-payfast.py, patch-checkout.py, patch-price-changes.py, patch-prices.py, patch-soldout.py, patch-shawlphotos.py,
 patch-chenille.py, patch-shipping.py, patch-courier-rates.py, patch-remove-products.py,
 `patch-new-products.py <index> new-products`, patch-catalogue-edits.py, patch-prices.py,
-then patch-home.py, patch-nav.py, then download photos (all images/ and thumbs/ the page uses),
+then patch-home.py, patch-nav.py, patch-track.py, then download photos (all images/ and thumbs/ the page uses),
 then `make-shawl-thumbs.py public`, then `make-seo-pages.py public`.

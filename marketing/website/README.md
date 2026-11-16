@@ -38,3 +38,10 @@ pieces that are not in the downloaded page, so a fresh deploy can be rebuilt fro
 In PayFast → Settings → Developer Settings set a **Salt Passphrase**, then in Netlify →
 Site configuration → Environment variables add `PAYFAST_PASSPHRASE` with the same value and redeploy.
 Both must match, or payments are refused.
+
+## Visitor tracking (Nov 2026)
+- `patch-track.py public/index.html` (after patch-nav.py) adds `track/hooks.js` + `/t.js` to the shop and copies `track/stats.html` to `/stats/`.
+- `make-seo-pages.py` adds `/t.js` to the Google product/category pages; robots.txt hides `/stats/`.
+- `netlify/functions/track.mjs` (POST /api/t) counts visitors, pages, products, categories, searches, basket, checkout, orders, WhatsApp taps
+  per day in the `stats` blob store. No cookies; a visitor is a one-way daily hash, the IP is never stored.
+- `netlify/functions/stats.mjs` (GET /api/stats?k=KEY) feeds the private page `https://makkies.co.za/stats/#KEY` (key in stats.mjs, or env STATS_KEY).
