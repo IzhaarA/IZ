@@ -109,7 +109,7 @@ CSS = r'''
 .hg-li{display:flex;gap:12px;align-items:center;background:#fff;border-radius:8px;padding:8px;margin-bottom:8px;color:var(--ink);text-decoration:none}
 .hg-li span{width:56px;height:56px;border-radius:6px;flex:none;background:center/cover}.hg-li b{display:block;font-size:14px}.hg-li small{color:var(--muted);font-size:13px}.hg-li em{margin-left:auto;font-style:normal;font-weight:700;white-space:nowrap}
 .hg-bulk{border:1.5px solid var(--ink);border-radius:12px;padding:22px 20px;margin-top:32px}
-@media(min-width:900px){.hg-chips{gap:30px}.hg-chips a:first-child{margin-left:auto}.hg-chips a:last-child{margin-right:auto}.hg-chips a{width:84px;font-size:13px}.hg-chips span{width:84px;height:84px}
+@media(min-width:900px){.hg-chips{flex-wrap:wrap;justify-content:center;gap:16px 18px;overflow:visible}.hg-chips a{width:78px;font-size:13px}.hg-chips span{width:78px;height:78px}
 .hg-hero{grid-template-columns:1.25fr 1fr;align-items:center}.hg-hp{aspect-ratio:auto;height:500px}.hg-ht{padding:48px 56px}.hg-ht h1{font-size:44px}
 .hg-trust{grid-template-columns:repeat(4,1fr)}.hg-cats{grid-template-columns:repeat(4,1fr);gap:16px}.hg-prods{grid-template-columns:repeat(4,1fr);gap:28px 16px}
 .hg-look{display:grid;grid-template-columns:1.2fr 1fr;align-items:center}.hg-lp{aspect-ratio:auto;height:440px}.hg-lt{padding:40px}

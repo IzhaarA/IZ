@@ -122,6 +122,7 @@ CSS = r'''
 .lbar{height:4px;background:var(--line);border-radius:4px;max-width:240px;margin:0 auto 14px;overflow:hidden}.lbar span{display:block;height:100%;background:var(--ink)}
 .lmore button{background:#fff;border:1.5px solid var(--ink);border-radius:8px;padding:12px 34px;font:700 15px var(--body);cursor:pointer}
 @media(max-width:700px){.brand.newlogo .full{max-width:50vw;height:auto}.mbtn span{display:none}}
+@media(min-width:901px){.subcats{flex-wrap:wrap!important;overflow:visible}}
 @media(max-width:900px){.mbtn{display:flex}aside.filters{display:none!important}.toolbar #sort{margin-left:auto}}
 '''
 sub(r"(</style>\s*</head>)", CSS.replace('\\', '\\\\') + r"\1")
