@@ -27,11 +27,17 @@ const FONTCSS = "@font-face {\n  font-family: 'DM Serif Display';\n  font-style:
     const sub = ls.reduce((a, l) => a + l.total, 0), sh = O.mode === 'collect' ? 0 : (O.delivery ?? (O.mode === 'paxi' ? paxiBags(ls).cost : null)), tot = sub + (sh || 0);
     const so = { no: O.no, date: O.date, first: O.name, last: '', cell: O.cell || '', email: O.email || '', addr: O.addr, mode: O.mode, pay: 'eft',
       bags: O.mode === 'paxi' ? paxiBags(ls).bags : 1,
-      lines: ls.map(l => ({ n: fullName(l.p), c: l.p.category + ' · ' + l.v.id, l: vdetail(l.p, l.v) + (O.quote && (O.unitText || (l.p.unit && l.p.unit !== 'unit')) ? ' · ' + (O.unitText || l.p.unit) : ''), q: l.qty, t: l.total })), sub, sh, tot };
+      lines: ls.map(l => ({ n: fullName(l.p), c: l.p.category + ' · ' + l.v.id, l: vdetail(l.p, l.v) + ((O.quote || O.unitText) && (O.unitText || (l.p.unit && l.p.unit !== 'unit')) ? ' · ' + (O.unitText || l.p.unit) : ''), q: l.qty, t: l.total })), sub, sh, tot };
     const css = [...document.querySelectorAll('style')].map(s => s.textContent).join('\n');
     let html = invoiceHTML(so, !!O.paid);
     if (O.paid) html = html.replace(/<div class="ipay">[\s\S]*?<\/div><\/div>|<div class="ipay">[\s\S]*?<\/p><\/div>/,     // paid: no bank details, just a thank-you line
       `<div class="ipay"><h4>Payment</h4><p><b>Paid in full by ${O.paid === true ? 'EFT' : O.paid}</b> into our FNB account. Reference ${so.no}. Thank you.</p></div>`);
+    if (!O.quote) {                      // invoice: optional billTo lines, no delivery row (mode "none"), extra note in the footer
+      if (O.billTo) html = html.replace(/(<h4>Billed to<\/h4>)[\s\S]*?(<\/div>)/, `$1${O.billTo.map((x, i) => i ? x : '<b>' + x + '</b>').join('<br>')}${O.cell ? '<br>Cell ' + O.cell : ''}$2`);
+      if (O.mode === 'none') html = html.replace(/<div class="ibox"><h4>(Collection|PAXI point|Deliver to)<\/h4>[\s\S]*?<\/div>/, '')
+        .replace(/<tr><td class="it">Delivery[\s\S]*?<\/tr>/, '').replace(/(<div class="ifoot">All prices include 15% VAT\. )[^G]*/, '$1');
+      if (O.note) html = html.replace(/(<div class="ifoot">All prices include 15% VAT\. )/, `$1${O.note} `);
+    }
     if (O.quote) {                       // quotation: same look, quote wording, no delivery unless asked, bank details kept
       html = html.replace(/>Invoice /, '>Quotation ').replace('>INVOICE<', '>QUOTATION<')
         .replace(/<div class="istatus[^"]*">[^<]*<\/div>/, `<div class="istatus">VALID FOR ${O.valid || 14} DAYS</div>`)
