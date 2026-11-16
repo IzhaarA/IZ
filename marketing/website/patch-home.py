@@ -64,7 +64,7 @@ function renderHomeG() {
     ['Chinese Beads', 'Chinese Glass Seed Beads', HG + 'c-chinese.jpg'], ['Ndebele', 'col:ndebele', HG + 'c-ndebele.jpg'], ['Hats & Tekkies', 'col:tekkies-hats', HG + 'c-hats.jpg'], ['Kangas', 'Kangas', HG + 'c-kangas.jpg'],
     ['Mink', 'Mink Blankets', HG + 'c-mink.jpg'], ['Berets', 'Berets', th('BER-008')], ['Bangles', 'Bangles', th('BNG-001')], ['Haberdashery', 'Haberdashery', th((PRODUCTS.find(p => p.category.startsWith('Haberdashery') && p.img) || {}).id)]];
   document.getElementById('hgChips').innerHTML = CH.map(([l, c, i]) => `<a href="#" onclick="${go2(c)}"><span style="background-image:url('${i}')"></span>${esc(l)}</a>`).join('');
-  document.getElementById('hgHero').innerHTML = [['TRB-002', 'Umbhalo', 'h-umbhalo'], ['TRB-010', 'Khotso', 'h-khotso'], ['TRB-029', 'Xhosa Tribal Stripe', 'h-xhosa'], ['TRB-022', 'Elizabeth', 'h-elizabeth']].map(([id, l, i]) =>
+  document.getElementById('hgHero').innerHTML = [['TRB-002', 'Umbhalo', 'h-umbhalo'], ['TRB-010', 'Khotso', 'h-khotso'], ['TRB-029', 'Xhosa Tribal Stripe', 'h-xhosa'], ['TRB-022', 'Elizabeth Basotho', 'h-elizabeth']].map(([id, l, i]) =>
     `<a href="#" onclick="openProduct('${id}');return false" style="background-image:url('${HG}${i}.jpg')" aria-label="${esc(l)}"><span>${esc(l)}</span></a>`).join('');
   document.getElementById('hgLookPic').style.backgroundImage = `url('${HG}look.jpg')`;
   const CATS = [['Tribal Blankets', 'Tribal Blankets', 'c-tribal'], ['Mink Blankets', 'Mink Blankets', 'c-mink'], ['Shawls & Throws', 'Shawls & Throws', 'c-shawls'], ['Czech Beads', 'Czech Glass Seed Beads', 'c-czech'],
