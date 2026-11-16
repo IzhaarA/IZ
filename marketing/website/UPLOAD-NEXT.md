@@ -1,7 +1,7 @@
 # Upload status
 
-WAITING: visitor tracking (patch-track.py, netlify/functions/track.mjs + stats.mjs, private page /stats/#KEY). Built, not uploaded.
-Before that, nothing waiting. Last upload: 16 Nov 2026 (deploy 6afb0e7da8018e923d2e0260): product pop-up fits the visible phone screen (buttons reachable).
+Nothing waiting. Last upload: 16 Nov 2026 (deploy 6afb1123869fd1f72b295255): visitor tracking (patch-track.py, track.mjs + stats.mjs, private page /stats/#KEY).
+Before that: Last upload: 16 Nov 2026 (deploy 6afb0e7da8018e923d2e0260): product pop-up fits the visible phone screen (buttons reachable).
 Before that: 16 Nov 2026 (deploy 6afaf0b8928f421ce3c7783d): hover zoom on home circles and main photos.
 Before that: 16 Nov 2026 (deploy 6afaefb895be0e10e963176c): home main picture is 4 blankets (Umbhalo, Khotso,
 Xhosa black stripe, Elizabeth Basotho blue); laptop: sub-categories and home circles wrap (all visible).
