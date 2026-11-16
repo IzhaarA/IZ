@@ -1,6 +1,7 @@
 # Upload status
 
-Nothing waiting. Last upload: 16 Nov 2026 (deploy 6afaf0b8928f421ce3c7783d): hover zoom on home circles and main photos.
+Nothing waiting. Last upload: 16 Nov 2026 (deploy 6afb0e7da8018e923d2e0260): product pop-up fits the visible phone screen (buttons reachable).
+Before that: 16 Nov 2026 (deploy 6afaf0b8928f421ce3c7783d): hover zoom on home circles and main photos.
 Before that: 16 Nov 2026 (deploy 6afaefb895be0e10e963176c): home main picture is 4 blankets (Umbhalo, Khotso,
 Xhosa black stripe, Elizabeth Basotho blue); laptop: sub-categories and home circles wrap (all visible).
 Before that: 16 Nov 2026 (deploy 6afac2f937419ac4b9d32cc0): new home page (Look G, patch-home.py + home-g/ photos),
