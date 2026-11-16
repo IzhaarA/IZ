@@ -115,6 +115,10 @@ CSS = r'''
 .hg-trust{grid-template-columns:repeat(4,1fr)}.hg-cats{grid-template-columns:repeat(4,1fr);gap:16px}.hg-prods{grid-template-columns:repeat(4,1fr);gap:28px 16px}
 .hg-look{display:grid;grid-template-columns:1.2fr 1fr;align-items:center}.hg-lp{aspect-ratio:auto;height:440px}.hg-lt{padding:40px}
 .hg-bulk{display:flex;align-items:center;justify-content:space-between;gap:24px}.hg-bulk .hg-btn{margin:0}}
+/* hover: circles and main photos grow slightly */
+.hg-chips span{transition:transform .25s ease,box-shadow .25s ease}.hg-chips a:hover span,.hg-chips a:focus-visible span{transform:scale(1.12);box-shadow:0 6px 16px rgba(0,0,0,.18)}
+.hg-chips{padding-top:18px;padding-bottom:18px}
+.hg-hp{overflow:hidden}.hg-hp a{overflow:hidden;background-size:0 0!important}.hg-hp a:before{content:"";position:absolute;inset:0;background-image:inherit;background-size:cover;background-position:center;transition:transform .4s ease}.hg-hp a:hover:before,.hg-hp a:focus-visible:before{transform:scale(1.08)}.hg-hp span{z-index:1}
 /* slimmer header and round help buttons on phones, so products get the screen */
 @media(max-width:700px){header.top .bar{padding-top:8px;padding-bottom:8px;gap:8px;row-gap:8px}
 .brand.newlogo{flex:1 1 auto;width:auto}.brand.newlogo .full{height:40px;width:auto;max-width:62vw}
