@@ -207,3 +207,15 @@ One kanga or one for the whole family? 😄 R35 each, 19 designs: Elephant, Shie
 You can now PAY ONLINE at Makkies! 💳 Card, Instant EFT or SnapScan, safe and secure. Czech beads, wedding shawls, neck ziela, Beetee tekkies, Ukhamba, Umbhalo, Elizabeth and more. Shop at makkies.co.za 🚚 We deliver across SA, PAXI to any PEP
 
 #makkieswholesalers #shoponline #traditionalwear #basothoblanket #southafrica
+
+## Bangles (Nov 2026) — makkies-bangles-new-tiktok.mp4
+Copper, brass & silver bangles from R10 ✨ Matseka 12-packs, leg rings, sleeve holders. Shop online at makkies.co.za or WhatsApp 072 323 5469 🚚 We deliver across SA
+#bangles #matseka #traditionalwear #makkies #southafrica
+
+## Beadwork supplies (Nov 2026) — makkies-beadwork-supplies-new-tiktok.mp4
+Twine, bead cotton, crochet cotton & shirring elastic from R10 🧵 Everything for your beadwork. Shop at makkies.co.za 🚚 Delivery across SA
+#beadwork #beading #crafting #makkies #southafrica
+
+## Sewing & craft (Nov 2026) — makkies-sewing-craft-new-tiktok.mp4
+Pins, needles, wool & chair nails from R5 🪡 Stock up and save. Shop at makkies.co.za or WhatsApp 072 323 5469 🚚 We deliver across SA
+#sewing #haberdashery #wool #makkies #southafrica

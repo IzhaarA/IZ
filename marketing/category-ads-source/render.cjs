@@ -2,7 +2,7 @@ const { chromium } = require('/opt/node22/lib/node_modules/playwright');
 const path=require('path'), fs=require('fs');
 (async()=>{
   const page=process.argv[2], mode=process.argv[3]||'full', dir=__dirname;
-  const b=await chromium.launch({executablePath:'/opt/pw-browsers/chromium-1194/chrome-linux/chrome'});
+  const b=await chromium.launch();
   const p=await b.newPage({viewport:{width:1080,height:1920}});
   const errs=[]; p.on('pageerror',e=>errs.push(e.message));
   await p.goto('file://'+path.join(dir,page+'.html')); await p.evaluate(()=>document.fonts.ready); await p.waitForTimeout(700);
