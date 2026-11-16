@@ -95,6 +95,9 @@ renderPager = function (total, pages, start, count) {
 sub(r"(\nbuildNav\(\); renderCart\(\); renderGrid\(\);)", JS.replace('\\', '\\\\') + r"\1")
 
 CSS = r'''
+/* product pop-up on phones: fit the visible screen (iPhone toolbars), scroll smoothly, buttons reachable */
+@media(max-width:900px){.overlay{padding:8px;align-items:flex-start}.modal{max-height:calc(100vh - 16px);max-height:calc(100dvh - 16px);-webkit-overflow-scrolling:touch;overscroll-behavior:contain}
+.modal .pic{min-height:0}.modal .pic img{max-height:52vh;max-height:52dvh}.modal .info{padding-bottom:calc(32px + env(safe-area-inset-bottom))}.ovx{top:14px!important;right:14px!important}}
 /* ---------- easier navigation ---------- */
 .mbtn{display:none;background:transparent;border:0;color:#fff;align-items:center;gap:6px;font:700 14px var(--body);padding:4px 6px 4px 0;cursor:pointer}
 .mbtn svg{width:26px;height:26px;fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round}
