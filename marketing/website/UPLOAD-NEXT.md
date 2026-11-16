@@ -1,6 +1,8 @@
 # Upload status
 
-Nothing waiting. Last upload: 16 Nov 2026 (deploy 6afac2f937419ac4b9d32cc0): new home page (Look G, patch-home.py + home-g/ photos),
+Nothing waiting. Last upload: 16 Nov 2026 (deploy 6afaefb895be0e10e963176c): home main picture is 4 blankets (Umbhalo, Khotso,
+Xhosa black stripe, Elizabeth Basotho blue); laptop: sub-categories and home circles wrap (all visible).
+Before that: 16 Nov 2026 (deploy 6afac2f937419ac4b9d32cc0): new home page (Look G, patch-home.py + home-g/ photos),
 easier navigation (patch-nav.py: menu with photos, search suggestions, breadcrumbs, load more); Czech beads 28020/98140/13600/98170/
 58410 loose back, 46112 loose R135 added, 98190 removed; Block Bath Towel (TWL-003) sold out.
 Last upload: 31 Oct 2026 (deploy 6ae5b82b09fec2e4bff0b780): PayFast card payments back on (card: true).
