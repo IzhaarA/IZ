@@ -22,7 +22,7 @@ sub(r"const TILE_IMGS = \{.*?\};\n", "const TILE_IMGS = {};\n")
 # 2) new home markup
 HOME = r'''<section id="home"><div id="homeg">
   <div class="hg-w"><div class="hg-chips" id="hgChips"></div></div>
-  <div class="hg-hero"><div class="hg-hp" role="img" aria-label="Basotho blanket" id="hgHero"></div>
+  <div class="hg-hero"><div class="hg-hp" id="hgHero"></div>
     <div class="hg-ht"><small>December weddings &amp; ceremonies</small><h1>Traditional blankets, beads &amp; more, delivered to your door</h1>
     <p>Basotho, Ndebele and Xhosa blankets, wedding shawls and Czech beads. Wholesale prices, delivered anywhere in South Africa.</p>
     <a class="hg-btn" href="#" onclick="state.cat='Tribal Blankets';state.q='';go('shop');return false">Shop blankets</a><a class="hg-btn o" href="#" onclick="state.cat='Czech Glass Seed Beads';state.q='';go('shop');return false">Shop beads</a></div></div>
@@ -64,7 +64,8 @@ function renderHomeG() {
     ['Chinese Beads', 'Chinese Glass Seed Beads', HG + 'c-chinese.jpg'], ['Ndebele', 'col:ndebele', HG + 'c-ndebele.jpg'], ['Hats & Tekkies', 'col:tekkies-hats', HG + 'c-hats.jpg'], ['Kangas', 'Kangas', HG + 'c-kangas.jpg'],
     ['Mink', 'Mink Blankets', HG + 'c-mink.jpg'], ['Berets', 'Berets', th('BER-008')], ['Bangles', 'Bangles', th('BNG-001')], ['Haberdashery', 'Haberdashery', th((PRODUCTS.find(p => p.category.startsWith('Haberdashery') && p.img) || {}).id)]];
   document.getElementById('hgChips').innerHTML = CH.map(([l, c, i]) => `<a href="#" onclick="${go2(c)}"><span style="background-image:url('${i}')"></span>${esc(l)}</a>`).join('');
-  document.getElementById('hgHero').style.backgroundImage = `url('${HG}hero.jpg')`;
+  document.getElementById('hgHero').innerHTML = [['TRB-002', 'Umbhalo', 'h-umbhalo'], ['TRB-010', 'Khotso', 'h-khotso'], ['TRB-029', 'Xhosa Tribal Stripe', 'h-xhosa'], ['TRB-022', 'Elizabeth', 'h-elizabeth']].map(([id, l, i]) =>
+    `<a href="#" onclick="openProduct('${id}');return false" style="background-image:url('${HG}${i}.jpg')" aria-label="${esc(l)}"><span>${esc(l)}</span></a>`).join('');
   document.getElementById('hgLookPic').style.backgroundImage = `url('${HG}look.jpg')`;
   const CATS = [['Tribal Blankets', 'Tribal Blankets', 'c-tribal'], ['Mink Blankets', 'Mink Blankets', 'c-mink'], ['Shawls & Throws', 'Shawls & Throws', 'c-shawls'], ['Czech Beads', 'Czech Glass Seed Beads', 'c-czech'],
     ['Chinese Beads', 'Chinese Glass Seed Beads', 'c-chinese'], ['Ndebele', 'col:ndebele', 'c-ndebele'], ['Hats & Tekkies', 'col:tekkies-hats', 'c-hats'], ['Kangas', 'Kangas', 'c-kangas']];
@@ -88,7 +89,7 @@ CSS = r'''
 .hg-chips{display:flex;gap:16px;overflow-x:auto;scrollbar-width:none;padding:14px 2px 14px}.hg-chips::-webkit-scrollbar{display:none}
 .hg-chips a{flex:none;width:72px;text-align:center;font-size:12.5px;font-weight:600;line-height:1.25;color:var(--ink);text-decoration:none}
 .hg-chips span{display:block;width:72px;height:72px;border-radius:50%;background:#F4EFE8 center/cover;border:1px solid var(--line);margin-bottom:6px}
-.hg-hero{display:grid;background:#F4EFE8}.hg-hp{aspect-ratio:5/4;background:#ddd 50% 25%/cover}.hg-ht{padding:24px 20px 28px}
+.hg-hero{display:grid;background:#F4EFE8}.hg-hp{display:grid;grid-template-columns:1fr 1fr;gap:4px;background:#F4EFE8}.hg-hp a{position:relative;aspect-ratio:1;background:#ddd center/cover;display:block}.hg-hp span{position:absolute;left:8px;bottom:8px;background:rgba(255,255,255,.94);color:var(--ink);font-size:13px;font-weight:700;padding:5px 10px;border-radius:6px;box-shadow:0 2px 8px rgba(0,0,0,.15)}.hg-ht{padding:24px 20px 28px}
 .hg-ht small{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--scarlet)}
 .hg-ht h1{font-family:var(--body);font-size:30px;line-height:1.12;font-weight:700;letter-spacing:-.02em;margin:8px 0 10px}.hg-ht p{color:var(--muted);margin:0 0 20px}
 .hg-btn{display:inline-block;background:var(--ink);color:#fff!important;border-radius:8px;padding:13px 22px;font-weight:700;font-size:15px;margin:0 8px 8px 0;text-decoration:none;border:1.5px solid var(--ink);cursor:pointer}
@@ -110,7 +111,7 @@ CSS = r'''
 .hg-li span{width:56px;height:56px;border-radius:6px;flex:none;background:center/cover}.hg-li b{display:block;font-size:14px}.hg-li small{color:var(--muted);font-size:13px}.hg-li em{margin-left:auto;font-style:normal;font-weight:700;white-space:nowrap}
 .hg-bulk{border:1.5px solid var(--ink);border-radius:12px;padding:22px 20px;margin-top:32px}
 @media(min-width:900px){.hg-chips{flex-wrap:wrap;justify-content:center;gap:16px 18px;overflow:visible}.hg-chips a{width:78px;font-size:13px}.hg-chips span{width:78px;height:78px}
-.hg-hero{grid-template-columns:1.25fr 1fr;align-items:center}.hg-hp{aspect-ratio:auto;height:500px}.hg-ht{padding:48px 56px}.hg-ht h1{font-size:44px}
+.hg-hero{grid-template-columns:1.25fr 1fr;align-items:center}.hg-hp{grid-template-rows:280px 280px}.hg-hp a{aspect-ratio:auto}.hg-hp span{font-size:14px;left:12px;bottom:12px}.hg-ht{padding:48px 56px}.hg-ht h1{font-size:44px}
 .hg-trust{grid-template-columns:repeat(4,1fr)}.hg-cats{grid-template-columns:repeat(4,1fr);gap:16px}.hg-prods{grid-template-columns:repeat(4,1fr);gap:28px 16px}
 .hg-look{display:grid;grid-template-columns:1.2fr 1fr;align-items:center}.hg-lp{aspect-ratio:auto;height:440px}.hg-lt{padding:40px}
 .hg-bulk{display:flex;align-items:center;justify-content:space-between;gap:24px}.hg-bulk .hg-btn{margin:0}}
