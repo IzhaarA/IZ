@@ -17,8 +17,9 @@ def sub(old, new):
 
 # gift choice inside the green "free gift" box (basket and checkout)
 sub("(left <= 0 ? `<div class=\"giftrow ok\">\\ud83c\\udf81 Your order gets ${SALE.giftName}!</div>`",
-    "(left <= 0 ? `<div class=\"giftrow ok\">\\ud83c\\udf81 Your order gets a free gift! <b class=\"gq\">Choose one:</b>${GIFTS.map((g, i) => `<label class=\"gopt\"><input type=\"radio\" name=\"giftpick\" value=\"${esc(g)}\" ${state.gift === g ? 'checked' : ''} onchange=\"state.gift=this.value;document.querySelectorAll('input[name=giftpick]').forEach(x=>x.checked=x.value===state.gift)\">${esc(g)}</label>`).join('')}</div>`")
-sub("function saleRows(ls, sub, part) {", "const GIFTS = ['10 blanket pins', '2 flag whistles', 'Beaded oval necklace (colour as available)'];\nfunction saleRows(ls, sub, part) {")
+    "(left <= 0 ? `<div class=\"giftrow ok\">\\ud83c\\udf81 Your order gets a free gift! <b class=\"gq\">Choose one:</b>${GIFTS.map((g, i) => `<label class=\"gopt\"><input type=\"radio\" name=\"giftpick\" value=\"${esc(g)}\" ${state.gift === g ? 'checked' : ''} onchange=\"state.gift=this.value;document.querySelectorAll('input[name=giftpick]').forEach(x=>x.checked=x.value===state.gift)\"><span class="gpic" style="background-image:url('${tn((byId[GIFT_PICS[g]] || {}).img || '')}')"></span>${esc(g)}</label>`).join('')}</div>`")
+sub("function saleRows(ls, sub, part) {", "const GIFTS = ['10 blanket pins', '2 flag whistles', 'Beaded oval necklace (colour as available)'];
+const GIFT_PICS = {'10 blanket pins': 'PIN-001', '2 flag whistles': 'WHS-001', 'Beaded oval necklace (colour as available)': 'PBN-E29'};\nfunction saleRows(ls, sub, part) {")
 # order message: say which gift
 sub("FREE GIFT: yes (Black Friday, order over R' + SALE.gift + ')'",
     "FREE GIFT: ' + (state.gift || 'not chosen') + ' (Black Friday, order over R' + SALE.gift + ')'")
@@ -60,7 +61,7 @@ CSS = '''
 .gopt{display:flex!important;flex-direction:row!important;justify-content:flex-start!important;text-align:left!important;align-items:center;gap:10px;background:#fff;border:1px solid #9fd0b1;border-radius:8px;padding:8px 10px;margin-top:6px;font-weight:600;color:#1d1b19;cursor:pointer}
 .gopt input{display:inline-block!important;position:static!important;opacity:1!important;appearance:auto!important;-webkit-appearance:radio!important;width:18px!important;height:18px!important;margin:0!important;flex:none;accent-color:#0A7A44}
 .giftrow.need{box-shadow:0 0 0 3px #C3312B}
-#coTotals .gq,#coTotals .gopt{display:none}#giftPick{margin:0 0 12px}
+#coTotals .gq,#coTotals .gopt{display:none}.gpic{width:54px;height:54px;flex:none;border-radius:8px;background:#F4EFE8 center/cover;border:1px solid #e2dbd0}#giftPick{margin:0 0 12px}
 '''
 sub("/* ---------- Black Friday sale ---------- */\n.salebar{", "/* ---------- Black Friday sale ---------- */" + CSS + ".salebar{")
 open(P, 'w', encoding='utf-8').write(s)
