@@ -42,7 +42,6 @@ body{width:1080px;height:1920px;overflow:hidden;background:#0b0b0c;color:#fff;fo
   <div class="a ctr cond" id="i_friday" style="top:600px">FRIDAY</div>
   <div class="a ctr" id="i_salew" style="top:900px"><span id="i_sale">SALE</span></div>
   <div class="a ctr" id="i_lim" style="top:1340px"><span class="chip" style="background:#E1251B">LIMITED TIME · ENDS 30 NOV</span></div>
-  <div class="a ctr" id="i_up" style="top:1470px;font-weight:800;font-size:58px">Save up to <span style="color:#FFE14F">R79</span> on blankets</div>
 </div>
 <!-- 2 products -->
 <div class="sc" id="s2">
@@ -122,7 +121,7 @@ window.render = function (t) {
     const k = eo((t - .9) / .25); $('i_salew').style.opacity = cl((t - .9) / .05);
     $('i_sale').style.transform = `scale(${3 - 2 * k}) rotate(${-4 + 4 * Math.sin(Math.max(0, t - 1.2) * 9) * cl(1.6 - t)}deg)`;
     document.body.style.transform = shake(t, .9, 26) || shake(t, .4, 14) || '';
-    pop($('i_lim'), t, 1.5, .35, .4, -2); rise($('i_up'), t, 1.85, .3, 40);
+    pop($('i_lim'), t, 1.5, .35, .4, -2);
   } else document.body.style.transform = '';
   if (cur === 's2') {
     const lt = t - T.s2[0], i = Math.min(P.length - 1, Math.floor(lt / PER)), p = P[i], li = lt - i * PER;
