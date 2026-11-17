@@ -1,4 +1,4 @@
-# Black Friday sale (Nov 2026): prices cut ~5% for everyone (no code), old price crossed out + "Save Rxx",
+# Black Friday sale (Nov 2026): prices cut 7% (5% on a few) for everyone (no code), old price crossed out + "Save Rxx",
 # free gift on orders of R1,000 or more (after sale prices, before delivery). Switches itself off after SALE.end.
 # Items already priced the same online as in the shop are left out, so nothing drops below shop retail.
 # Usage: python3 patch-promo.py public/index.html   (run after patch-nav.py / patch-track.py)
@@ -10,7 +10,8 @@ if 'const SALE =' in s:
 
 SALE = {
     'name': 'BLACK FRIDAY SALE',
-    'pct': 5,                                  # never shown to customers; sale prices are rounded UP to whole rands
+    'pct': 7,                                  # never shown to customers; sale prices are rounded UP to whole rands
+    'keep5': r'^(SHW-002|TRB-005|MNK-003|MNK-005|CHS-001)',  # only 5% off: 7% would be at or within 1% of shop retail
     'end': '2026-12-01T00:00:00+02:00',        # off from 1 December, SA time
     'gift': 1000,                              # free gift threshold (rand)
     'giftName': 'a free gift',
@@ -31,7 +32,7 @@ const SALE_ON = Date.now() < Date.parse(SALE.end);
 if (SALE_ON) {
   const ex = new RegExp(SALE.exclude);
   PRODUCTS.forEach(p => {
-    p.variants.forEach(v => { if (v.price == null || ex.test(v.id)) return; const n = Math.ceil(v.price * (100 - SALE.pct) / 100 - 1e-9); if (n < v.price) { v.was = v.price; v.price = n; } });
+    p.variants.forEach(v => { if (v.price == null || ex.test(v.id)) return; const k5 = new RegExp(SALE.keep5), pc = k5.test(v.id) ? 5 : SALE.pct, n = Math.ceil(v.price * (100 - pc) / 100 - 1e-9); if (n < v.price) { v.was = v.price; v.price = n; } });
     const av = p.variants.filter(v => !v.soldOut), vs = av.length ? av : p.variants, lo = vs.reduce((a, v) => v.price < a.price ? v : a, vs[0]);
     p.minPrice = Math.min(...vs.map(v => v.price)); p.maxPrice = Math.max(...vs.map(v => v.price)); p.wasMin = lo.was || null; p.saveMin = lo.was ? lo.was - lo.price : 0;
   });

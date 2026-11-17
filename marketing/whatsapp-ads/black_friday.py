@@ -2,8 +2,8 @@
 import os
 D = os.path.dirname(os.path.abspath(__file__)); I = '../category-ads-source/img/'
 FONTS = open(os.path.join(D, '../homepage-mockups/fonts/fonts.css')).read().replace('url(gf', 'url(../homepage-mockups/fonts/gf')
-ITEMS = [('bs_trb-011.jpg', 'Seannamarena', 'R1,135', 'R1,079', '50% 25%'), ('um_mnk-014.jpg', 'Paris Mink', 'R775', 'R737', '50% 50%'),
-         ('pay_ukhamba.jpg', 'Ukhamba', 'R595', 'R566', '50% 30%'), ('bf_khotso.jpg', 'Khotso', 'R625', 'R594', '50% 50%')]
+ITEMS = [('bs_trb-011.jpg', 'Seannamarena', 'R1,135', 'R1,056', '50% 25%'), ('um_mnk-014.jpg', 'Paris Mink', 'R775', 'R721', '50% 50%'),
+         ('pay_ukhamba.jpg', 'Ukhamba', 'R595', 'R554', '50% 30%'), ('bf_khotso.jpg', 'Khotso', 'R625', 'R582', '50% 50%')]
 tiles = ''.join(f'''<div class="t"><div class="ph" style="background-image:url({I}{f});background-position:{pos}"></div>
 <div class="tag"><s>{w}</s><b>{n}</b></div><div class="lb">{l}</div></div>''' for f, l, w, n, pos in ITEMS)
 html = f"""<!doctype html><html><head><meta charset="utf-8"><style>{FONTS}
