@@ -1,0 +1,159 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../homepage-mockups/fonts/fonts.css">
+<!-- Black Friday 2026 TikTok ad, "loud" style (different from the category ads). 1080x1920, no audio.
+     render(t) draws time t. Render: node render.cjs bf2 full, then ffmpeg (see README). -->
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{width:1080px;height:1920px;overflow:hidden;background:#0b0b0c;color:#fff;font-family:Archivo,Arial,sans-serif;position:relative}
+.a{position:absolute}.sc{position:absolute;inset:0;opacity:0}.ctr{left:0;width:100%;text-align:center}
+.cond{font-family:Oswald,Impact,sans-serif;text-transform:uppercase}
+/* caution-tape bands */
+.tape{position:absolute;left:-300px;width:1700px;height:120px;display:flex;align-items:center;white-space:nowrap;overflow:hidden;box-shadow:0 14px 40px rgba(0,0,0,.5);z-index:5}
+.tape span{font-family:Oswald,Impact,sans-serif;font-weight:700;font-size:64px;letter-spacing:6px;text-transform:uppercase;padding-left:40px}
+.ty{background:#FFE14F;color:#0b0b0c}.tr{background:#E1251B;color:#fff}
+/* intro */
+#i_black,#i_friday{font-weight:700;font-size:290px;line-height:.86;letter-spacing:-4px}
+#i_sale{font-weight:900;font-size:330px;line-height:1;letter-spacing:-10px;color:#0b0b0c;background:#FFE14F;padding:0 46px 18px;display:inline-block;transform-origin:50% 50%}
+.chip{display:inline-block;font-weight:800;font-size:40px;letter-spacing:5px;padding:16px 34px;border-radius:12px}
+/* product */
+#pph{left:0;top:0;width:1080px;height:1260px;overflow:hidden;background:#F4EFE8}
+#pimg{position:absolute;inset:0;background-size:cover;background-position:center}
+#pshade{position:absolute;left:0;right:0;bottom:0;height:420px;background:linear-gradient(transparent,#0b0b0c)}
+#pbar{left:40px;right:40px;top:36px;display:flex;gap:8px;z-index:6}#pbar i{flex:1;height:9px;border-radius:5px;background:rgba(255,255,255,.35);overflow:hidden}#pbar i b{display:block;height:100%;background:#fff;width:0}
+#pname{left:60px;right:60px;top:1150px;font-weight:700;font-size:132px;line-height:.9;letter-spacing:-1px;z-index:4}
+#psub{left:64px;top:1300px;font-weight:700;font-size:36px;letter-spacing:5px;color:#FFE14F}
+#pold{left:64px;top:1390px;font-weight:800;font-size:92px;color:#cfc9c2}
+#pslash{position:absolute;left:-10px;top:52%;height:12px;background:#E1251B;border-radius:6px;transform:rotate(-8deg);transform-origin:0 50%;box-shadow:0 2px 8px rgba(0,0,0,.4)}
+#pnew{left:56px;top:1495px;background:#FFE14F;color:#0b0b0c;font-weight:900;font-size:170px;line-height:1;padding:10px 34px 18px;border-radius:18px;letter-spacing:-4px;transform-origin:0 50%}
+#psave{right:56px;top:1405px;width:270px;height:270px;border-radius:50%;background:#E1251B;border:10px solid #fff;display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 20px 50px rgba(0,0,0,.5);z-index:6}
+#psave small{font-weight:800;font-size:42px;letter-spacing:4px}#psave b{font-weight:900;font-size:86px;line-height:1}
+#flash{inset:0;background:#fff;opacity:0;z-index:20;pointer-events:none}
+/* gift */
+#s3{background:#FFE14F;color:#0b0b0c}
+#g_box{font-size:420px;line-height:1}
+#g_t{font-weight:700;font-size:250px;line-height:.86}
+#g_s{font-weight:800;font-size:66px}
+/* end */
+#e_url{display:inline-block;background:#FFE14F;color:#0b0b0c;font-weight:900;font-size:100px;padding:22px 64px;border-radius:90px;letter-spacing:-2px}
+.conf{position:absolute;width:24px;height:36px;border-radius:5px}
+</style></head><body>
+<!-- 1 intro -->
+<div class="sc" id="s1">
+  <div class="a ctr cond" id="i_black" style="top:330px">BLACK</div>
+  <div class="a ctr cond" id="i_friday" style="top:600px">FRIDAY</div>
+  <div class="a ctr" id="i_salew" style="top:900px"><span id="i_sale">SALE</span></div>
+  <div class="a ctr" id="i_lim" style="top:1340px"><span class="chip" style="background:#E1251B">LIMITED TIME · ENDS 30 NOV</span></div>
+  <div class="a ctr" id="i_up" style="top:1470px;font-weight:800;font-size:58px">Save up to <span style="color:#FFE14F">R79</span> on blankets</div>
+</div>
+<!-- 2 products -->
+<div class="sc" id="s2">
+  <div class="a" id="pph"><div id="pimg"></div><div id="pshade"></div></div>
+  <div class="a" id="pbar"></div>
+  <div class="a cond" id="pname"></div>
+  <div class="a" id="psub"></div>
+  <div class="a" id="pold"><span id="poldt"></span><span id="pslash"></span></div>
+  <div class="a" id="pnew"></div>
+  <div class="a" id="psave"><small>SAVE</small><b id="psavet"></b></div>
+</div>
+<!-- 3 gift -->
+<div class="sc" id="s3">
+  <div class="a ctr" id="g_box" style="top:300px">🎁</div>
+  <div class="a ctr cond" id="g_t" style="top:820px">FREE<br>GIFT</div>
+  <div class="a ctr" id="g_s" style="top:1290px">with orders over R1,000</div>
+  <div class="a ctr" id="g_x" style="top:1420px;font-weight:700;font-size:44px">+ prices cut on almost everything</div>
+  <div id="conf"></div>
+</div>
+<!-- 4 end -->
+<div class="sc" id="s4">
+  <img class="a" id="e_logo" src="img/mw_oval.png" style="left:340px;top:230px;width:400px">
+  <div class="a ctr cond" id="e_t" style="top:640px;font-weight:700;font-size:150px;line-height:.9">BLACK FRIDAY<br><span style="color:#FFE14F">SALE</span></div>
+  <div class="a ctr" id="e_u" style="top:1000px"><span id="e_url">makkies.co.za</span></div>
+  <div class="a ctr" id="e_g" style="top:1200px;font-weight:800;font-size:50px">🎁 Free gift over R1,000</div>
+  <div class="a ctr" id="e_d" style="top:1290px;font-weight:600;font-size:40px;color:#cfc9c2">Delivery across South Africa · Card, EFT, SnapScan</div>
+  <div class="a ctr" id="e_w" style="top:1390px;font-weight:800;font-size:50px"><span style="color:#25D366">●</span> WhatsApp 072 323 5469</div>
+  <div class="a ctr" id="e_e" style="top:1500px"><span class="chip" style="background:#E1251B;font-size:46px">ENDS 30 NOVEMBER</span></div>
+</div>
+<div class="tape ty" id="tape1" style="top:110px;transform:rotate(-7deg)"><span id="tape1t"></span></div>
+<div class="tape tr" id="tape2" style="top:1775px;transform:rotate(5deg)"><span id="tape2t"></span></div>
+<div class="a" id="flash"></div>
+<script>
+const P = [  // name, sub, was, now, save, photo, mode (cover photo or cut-out), focus
+  ['SEANNAMARENA', 'BASOTHO BLANKET', 'R1,135', 'R1,056', 'R79', 'bs_trb-011', 'cover', '50% 22%'],
+  ['PARIS MINK', '2 PLY · QUEEN/KING · IN BOX', 'R775', 'R721', 'R54', 'um_mnk-014', 'cover', '50% 55%'],
+  ['KHOTSO', 'BASOTHO BLANKET', 'R625', 'R582', 'R43', 'bf_khotso', 'cover', '50% 50%'],
+  ['UKHAMBA', 'NDEBELE BLANKET', 'R595', 'R554', 'R41', 'pay_ukhamba', 'cover', '50% 25%'],
+  ['UMBHALO', 'NDEBELE BLANKET', 'R595', 'R554', 'R41', 'pay_umbhalo', 'cover', '50% 50%'],
+  ['ELIZABETH', 'BASOTHO BLANKET · 5 COLOURS', 'R305', 'R284', 'R21', 'pay_elizabeth', 'cover', '50% 50%'],
+  ['TRIBAL STRIPE', 'XHOSA BLANKET', 'R300', 'R279', 'R21', 'pay_xhosa_black', 'cover', '50% 50%'],
+  ['BEADED NECK RING', 'NDEBELE BEADWORK · WITH TIE', 'R350', 'R326', 'R24', 'bf_neckring_c', 'cut', '50% 45%'],
+  ['NECK ZIELA', 'BUTTON NECK ZIELA · GOLD', 'R150', 'R140', 'R10', 'bf_ziela_c', 'cut', '50% 45%'],
+  ['ZCC GREEN BERET', 'LAMBSWOOL BERET', 'R105', 'R98', 'R7', 'bf_beret_c', 'cut', '50% 45%'],
+];
+const PER = 1.55;
+const T = {s1: [0, 2.9]}; T.s2 = [2.9, 2.9 + P.length * PER]; T.s3 = [T.s2[1], T.s2[1] + 2.7]; T.s4 = [T.s3[1], T.s3[1] + 3.8];
+window.DURATION = T.s4[1];
+const $ = id => document.getElementById(id), cl = (x, a = 0, b = 1) => Math.max(a, Math.min(b, x));
+const eo = x => 1 - Math.pow(1 - cl(x), 3), bk = x => { x = cl(x); const c = 1.9; return 1 + (c + 1) * Math.pow(x - 1, 3) + c * Math.pow(x - 1, 2); };
+const slam = (el, t, t0, d = .22, from = 2.4) => { const k = eo((t - t0) / d); el.style.opacity = cl((t - t0) / .05); el.style.transform = `scale(${from - (from - 1) * k})`; };
+const pop = (el, t, t0, d = .35, from = .3, rot = 0) => { const k = bk((t - t0) / d); el.style.opacity = cl((t - t0) / .1); el.style.transform = `scale(${from + (1 - from) * k}) rotate(${rot}deg)`; };
+const rise = (el, t, t0, d = .3, dy = 60) => { const k = eo((t - t0) / d); el.style.opacity = k; el.style.transform = `translateY(${dy * (1 - k)}px)`; };
+const img = n => `img/${n}.jpg`;
+$('tape1t').textContent = 'BLACK FRIDAY ★ SALE ★ '.repeat(12); $('tape2t').textContent = 'SAVE NOW ★ FREE GIFT OVER R1,000 ★ '.repeat(8);
+P.forEach(() => $('pbar').insertAdjacentHTML('beforeend', '<i><b></b></i>'));
+P.forEach(p => { const im = new Image(); im.src = img(p[5]); });
+for (let k = 0; k < 50; k++) $('conf').insertAdjacentHTML('beforeend', `<div class="conf" id="cf${k}" style="background:${['#E1251B', '#0b0b0c', '#ffffff', '#0350EA', '#05B56D'][k % 5]}"></div>`);
+const rnd = s => { const x = Math.sin(s * 999.7) * 43758.5453; return x - Math.floor(x); };
+const shake = (t, t0, amp = 22) => { const d = t - t0; if (d < 0 || d > .25) return ''; const f = 1 - d / .25; return `translate(${Math.sin(d * 90) * amp * f}px,${Math.cos(d * 70) * amp * f}px)`; };
+
+window.render = function (t) {
+  const cur = ['s1', 's2', 's3', 's4'].find(id => t >= T[id][0] && t < T[id][1]) || 's4';
+  ['s1', 's2', 's3', 's4'].forEach(id => $(id).style.opacity = id === cur ? 1 : 0);
+  // tapes scroll all the time (opposite directions); hidden on the gift screen
+  $('tape1t').style.transform = `translateX(${-((t * 260) % 700)}px)`; $('tape2t').style.transform = `translateX(${-700 + ((t * 300) % 700)}px)`;
+  const tapeOn = cur !== 's3';
+  $('tape1').style.opacity = tapeOn && (cur !== 's1' || t > 1.15) ? 1 : 0; $('tape2').style.opacity = tapeOn && (cur !== 's1' || t > 1.3) ? 1 : 0;
+  if (cur === 's1') { $('tape1').style.transform = `rotate(-7deg) translateX(${(1 - eo((t - 1.15) / .3)) * -1400}px)`; $('tape2').style.transform = `rotate(5deg) translateX(${(1 - eo((t - 1.3) / .3)) * 1400}px)`; }
+  else { $('tape1').style.transform = 'rotate(-7deg)'; $('tape2').style.transform = 'rotate(5deg)'; }
+  // white flash at every cut
+  let fl = 0; const cuts = [T.s2[0], ...P.map((_, i) => T.s2[0] + i * PER), T.s3[0], T.s4[0], .9];
+  cuts.forEach(c => { const d = t - c; if (d >= 0 && d < .16) fl = Math.max(fl, .85 * (1 - d / .16)); }); $('flash').style.opacity = fl;
+
+  if (cur === 's1') {
+    slam($('i_black'), t, .1); slam($('i_friday'), t, .4);
+    const k = eo((t - .9) / .25); $('i_salew').style.opacity = cl((t - .9) / .05);
+    $('i_sale').style.transform = `scale(${3 - 2 * k}) rotate(${-4 + 4 * Math.sin(Math.max(0, t - 1.2) * 9) * cl(1.6 - t)}deg)`;
+    document.body.style.transform = shake(t, .9, 26) || shake(t, .4, 14) || '';
+    pop($('i_lim'), t, 1.5, .35, .4, -2); rise($('i_up'), t, 1.85, .3, 40);
+  } else document.body.style.transform = '';
+  if (cur === 's2') {
+    const lt = t - T.s2[0], i = Math.min(P.length - 1, Math.floor(lt / PER)), p = P[i], li = lt - i * PER;
+    const im = $('pimg');
+    if (im.dataset.i !== String(i)) { im.dataset.i = i;
+      im.style.backgroundImage = `url(${img(p[5])})`; im.style.backgroundSize = p[6] === 'cut' ? 'contain' : 'cover'; im.style.backgroundPosition = p[7];
+      $('pph').style.background = p[6] === 'cut' ? '#F4EFE8' : '#111';
+      $('pname').textContent = p[0]; $('psub').textContent = p[1]; $('poldt').textContent = p[2]; $('pnew').textContent = p[3]; $('psavet').textContent = p[4];
+      $('pname').style.fontSize = '132px'; let f = 132; const r = document.createRange(); r.selectNodeContents($('pname'));
+      while (r.getBoundingClientRect().width > 960 && f > 70) { f -= 4; $('pname').style.fontSize = f + 'px'; }
+      $('pslash').style.width = ($('poldt').getBoundingClientRect().width + 20) + 'px'; }
+    im.style.transform = `scale(${(p[6] === 'cut' ? 1.12 : 1.28) - .2 * eo(li / .35) + .04 * (li / PER)})`;      // zoom punch, then slow push
+    rise($('pname'), li, .05, .25, 90); rise($('psub'), li, .15, .25, 30);
+    $('pold').style.opacity = cl((li - .2) / .1); $('pslash').style.transform = `rotate(-8deg) scaleX(${eo((li - .35) / .22)})`;
+    slam($('pnew'), li, .55, .22, 2); pop($('psave'), li, .75, .35, .2, -12 + 5 * Math.sin(li * 8));
+    $('pbar').querySelectorAll('i b').forEach((b, k) => b.style.width = (k < i ? 100 : k === i ? cl(li / PER) * 100 : 0) + '%');
+  }
+  if (cur === 's3') {
+    const lt = t - T.s3[0];
+    pop($('g_box'), lt, .05, .45, .2, -8 + 10 * Math.sin(lt * 6)); $('g_box').style.transform += ` translateY(${-40 * Math.abs(Math.sin(lt * 5))}px)`;
+    slam($('g_t'), lt, .35, .22, 2.2); rise($('g_s'), lt, .65, .3, 40); rise($('g_x'), lt, .85, .3, 30);
+    for (let c = 0; c < 50; c++) { const el = $('cf' + c), d = lt - .4; if (d < 0) { el.style.opacity = 0; continue; }
+      const ang = rnd(c) * Math.PI * 2, sp = 600 + rnd(c + 7) * 900, x = 540 + Math.cos(ang) * sp * d, y = 560 + Math.sin(ang) * sp * d * .8 + 1300 * d * d;
+      el.style.opacity = cl(2.2 - d); el.style.left = x + 'px'; el.style.top = y + 'px'; el.style.transform = `rotate(${d * 720 * (rnd(c + 3) - .5)}deg)`; }
+  }
+  if (cur === 's4') {
+    const lt = t - T.s4[0];
+    pop($('e_logo'), lt, .05, .45, .3); slam($('e_t'), lt, .3, .25, 1.8); pop($('e_u'), lt, .6, .35, .4);
+    if (lt > 1) $('e_u').style.transform = `scale(${1 + .1 * Math.pow(Math.sin(Math.PI * (lt - 1) / .6), 2)})`;
+    rise($('e_g'), lt, .9, .3, 40); rise($('e_d'), lt, 1.05, .3, 40); rise($('e_w'), lt, 1.2, .3, 40); pop($('e_e'), lt, 1.4, .35, .4, -2);
+  }
+};
+render(0);
+</script></body></html>
