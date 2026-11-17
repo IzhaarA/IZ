@@ -1,6 +1,9 @@
 # Upload status
 
-Nothing waiting. Last upload: 16 Nov 2026 (deploy 6afb1123869fd1f72b295255): visitor tracking (patch-track.py, track.mjs + stats.mjs, private page /stats/#KEY).
+Nothing waiting. Last upload: 17 Nov 2026 (deploy 6afc6ad966932895503e4b29): BLACK FRIDAY SALE (patch-promo.py): 7% off (5% on SHW-002, TRB-005,
+MNK-003, MNK-005, CHS-001; none on steeltrunks, brass bells, 100m ziela), crossed-out prices + Save, free gift over R1,000, banner.
+Switches itself off 1 Dec 2026 00:00 SA time. Remove patch-promo.py from the build after that.
+Before that: 16 Nov 2026 (deploy 6afb1123869fd1f72b295255): visitor tracking (patch-track.py, track.mjs + stats.mjs, private page /stats/#KEY).
 Before that: Last upload: 16 Nov 2026 (deploy 6afb0e7da8018e923d2e0260): product pop-up fits the visible phone screen (buttons reachable).
 Before that: 16 Nov 2026 (deploy 6afaf0b8928f421ce3c7783d): hover zoom on home circles and main photos.
 Before that: 16 Nov 2026 (deploy 6afaefb895be0e10e963176c): home main picture is 4 blankets (Umbhalo, Khotso,
@@ -36,5 +39,5 @@ Before that: 20 Oct 2026 — 17 new products, 7 replacement photos, Beverly remo
 patch-payfast.py, patch-checkout.py, patch-price-changes.py, patch-prices.py, patch-soldout.py, patch-shawlphotos.py,
 patch-chenille.py, patch-shipping.py, patch-courier-rates.py, patch-remove-products.py,
 `patch-new-products.py <index> new-products`, patch-catalogue-edits.py, patch-prices.py,
-then patch-home.py, patch-nav.py, patch-track.py, then download photos (all images/ and thumbs/ the page uses),
+then patch-home.py, patch-nav.py, patch-track.py, patch-promo.py (Black Friday only, until 30 Nov 2026), then download photos (all images/ and thumbs/ the page uses),
 then `make-shawl-thumbs.py public`, then `make-seo-pages.py public`.
