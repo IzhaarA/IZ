@@ -38,12 +38,12 @@ if (SALE_ON) {
   });
 }
 const PP = p => (p.wasMin && SALE_ON ? `<s class="was">${R(p.wasMin)}</s> ` : '') + (p.minPrice === p.maxPrice ? '' : 'from ') + R(p.minPrice) + (p.wasMin && SALE_ON ? `<span class="save">Save ${R(p.saveMin)}</span>` : '');
-function saleRows(ls, sub) {
+function saleRows(ls, sub, part) {
   if (!SALE_ON || !ls.length) return '';
   const saved = ls.reduce((a, l) => a + (l.v.was ? (l.v.was - l.v.price) * l.qty : 0), 0);
   const left = SALE.gift - sub;
-  return (saved ? `<div class="salerow"><span>Black Friday savings</span><b class="num">\u2212${R(saved)}</b></div>` : '')
-    + (left <= 0 ? `<div class="giftrow ok">\ud83c\udf81 Your order gets ${SALE.giftName}!</div>`
+  if (part === 'top') return saved ? `<div><span>Price before sale</span><b class="num">${R(sub + saved)}</b></div><div class="salerow"><span>Black Friday savings</span><b class="num">\u2212${R(saved)}</b></div>` : '';
+  return (left <= 0 ? `<div class="giftrow ok">\ud83c\udf81 Your order gets ${SALE.giftName}!</div>`
                  : `<div class="giftrow">\ud83c\udf81 Add ${R(left)} more to get ${SALE.giftName}<i><b style="width:${Math.round(sub / SALE.gift * 100)}%%"></b></i></div>`);
 }
 ''' % json.dumps(SALE)
@@ -58,9 +58,9 @@ sub("${R(v.price)}${v.soldOut ? '<span class=\"soldtag\">Sold out</span>' : ''}"
 sub("${esc(vdetail(l.p, l.v))} · ${R(l.v.price)}", "${esc(vdetail(l.p, l.v))} · ${l.v.was && SALE_ON ? `<s class=\"was\">${R(l.v.was)}</s> ` : ''}${R(l.v.price)}")
 # basket totals + checkout totals
 sub("`<div><span>Subtotal</span><b class=\"num\">${R(sub)}</b></div><div><span>Delivery</span><b class=\"num\">${(s =>",
-    "`<div><span>Subtotal</span><b class=\"num\">${R(sub)}</b></div>${saleRows(ls, sub)}<div><span>Delivery</span><b class=\"num\">${(s =>")
+    "`${saleRows(ls, sub, 'top')}<div><span>Subtotal</span><b class=\"num\">${R(sub)}</b></div>${saleRows(ls, sub, 'gift')}<div><span>Delivery</span><b class=\"num\">${(s =>")
 sub("`<div><span>Subtotal</span><b class=\"num\">${R(sub)}</b></div>${disc ?",
-    "`<div><span>Subtotal</span><b class=\"num\">${R(sub)}</b></div>${saleRows(ls, sub)}${disc ?")
+    "`${saleRows(ls, sub, 'top')}<div><span>Subtotal</span><b class=\"num\">${R(sub)}</b></div>${saleRows(ls, sub, 'gift')}${disc ?")
 # order message to the shop: remind to pack the gift
 sub("\\nSubtotal ${R(o.sub)}", "\\nSubtotal ${R(o.sub)}${SALE_ON && o.sub >= SALE.gift ? '\\n\\ud83c\\udf81 FREE GIFT: yes (Black Friday, order over R' + SALE.gift + ')' : ''}")
 
