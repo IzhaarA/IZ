@@ -28,6 +28,23 @@ for p in P:
     for v in p['variants']: v['soldOut'] = p['id'] in SOLD or v['id'] in SOLD
     p['soldOut'] = all(v['soldOut'] for v in p['variants'])
 e = html.escape
+# ---------- sale (from patch-promo.py's SALE in index.html): sale prices on the pages, in Product data and in the Google feed ----------
+import math, datetime as _dt
+SALE = None
+_m = re.search(r'const SALE = (\{.*?\});', h)
+if _m:
+    _s = json.loads(_m.group(1)); _end = _dt.datetime.fromisoformat(_s['end'])
+    if _dt.datetime.now(_end.tzinfo) < _end:
+        SALE = _s; SALE['last_day'] = (_end - _dt.timedelta(seconds=1)).date()
+        _ex, _k5 = re.compile(SALE['exclude']), re.compile(SALE.get('keep5') or '$^')
+        for p in P:
+            for v in p['variants']:
+                if v.get('price') is None or _ex.search(v['id']): continue
+                n = math.ceil(v['price'] * (100 - (5 if _k5.search(v['id']) else SALE['pct'])) / 100 - 1e-9)
+                if n < v['price']: v['was'] = v['price']; v['price'] = n
+WAS = lambda w: f'<s style="color:#8a837c;font-weight:normal;font-size:.75em">{money(w)}</s> ' if w else ''
+SALE_TXT = (f"Black Friday online sale until {SALE['last_day'].day} {SALE['last_day'].strftime('%B')}: prices cut on almost everything, "
+            f"plus a free gift on orders over R{SALE['gift']:,}." if SALE else '')
 GROUPS = ['Blankets & Textiles', 'Beads', 'Clothing & Traditional Wear', 'Haberdashery & General Goods']
 
 def slug(s):
@@ -160,7 +177,7 @@ for p in P:
     if p['img'] in imgs: imgs.remove(p['img'])
     imgs = [p['img']] + imgs
     show_opts = not (len(p['variants']) == 1 and p['variants'][0]['label'] in ('Standard', p['name']))
-    rows = ''.join(f'<tr><td>{e(v["label"])}</td><td>{money(v["price"])}</td><td>{"<span class=so>Sold out</span>" if v["soldOut"] else "In stock"}</td></tr>'
+    rows = ''.join(f'<tr><td>{e(v["label"])}</td><td>{(f"<s>{money(v['was'])}</s> " if v.get('was') else "") + money(v["price"])}</td><td>{"<span class=so>Sold out</span>" if v["soldOut"] else "In stock"}</td></tr>'
                    for v in p['variants'] if v.get('price') is not None) if show_opts else ''
     size = p.get('size') or ''
     facts = ' · '.join(x for x in [('Size ' + size) if size else '', p['unit'] if p['unit'] not in ('unit', 'pair') else '', 'Code ' + p['id']] if x)
@@ -168,10 +185,12 @@ for p in P:
     buy = f'{SITE}/#p/{quote(p["id"])}'
     wa = f'https://wa.me/{WA}?text=' + quote(f"Hi, I'd like to order {t} ({p['id']})")
     others = [x for x in cats[p['category']] if x is not p][:8]
+    wlo = next((v['was'] for v in p['variants'] if v.get('price') == lo and v.get('was')), None)
     body = (cb + f'<div class="prod"><div><img class="main" src="/{imgs[0].lstrip("/")}" alt="{e(t)}">'
             + (f'<div class="thumbs">' + ''.join(f'<img src="/{s.lstrip("/")}" alt="{e(t)}" loading="lazy">' for s in imgs[1:9]) + '</div>' if len(imgs) > 1 else '')
             + f'</div><div><h1>{e(t)}</h1><div class="code">{e(facts)}</div>'
-            + f'<div class="price">{"From " if lo != hi else ""}{money(lo)}</div>'
+            + f'<div class="price">{"From " if lo != hi else ""}{WAS(wlo)}{money(lo)}</div>'
+            + (f'<div class="ins" style="color:#C3312B;font-weight:bold">{e(SALE_TXT)}</div>' if SALE and any(v.get('was') for v in p['variants']) else '')
             + ('<span class="so">Sold out</span>' if p['soldOut'] else '<span class="ins">In stock · delivery anywhere in South Africa</span>')
             + f'<div class="btns"><a class="btn buy" href="{buy}">Buy online</a><a class="btn wa" href="{wa}">Order on WhatsApp</a></div>'
             + f'<div class="desc">{e(p["d"])}</div>'
@@ -179,7 +198,7 @@ for p in P:
             + (f'<div class="note">{e(p["note"])}</div>' if p.get('note') else '')
             + '<div class="note">Bulk and trade buyers: WhatsApp us for wholesale pricing. Prices include 15% VAT.</div></div></div>'
             + (f'<h2>More {e(cname(p["category"]))}</h2><div class="grid">{"".join(card(x) for x in others)}</div>' if others else ''))
-    offers = [{'@type': 'Offer', 'sku': v['id'], 'name': v['label'], 'price': f'{v["price"]:.2f}', 'priceCurrency': 'ZAR',
+    offers = [{'@type': 'Offer', 'sku': v['id'], 'name': v['label'], 'price': f'{v["price"]:.2f}', 'priceCurrency': 'ZAR', **({'priceValidUntil': SALE['last_day'].isoformat()} if SALE and v.get('was') else {}),
                'availability': 'https://schema.org/' + ('OutOfStock' if v['soldOut'] else 'InStock'), 'url': SITE + p['url'],
                'itemCondition': 'https://schema.org/NewCondition', 'seller': STORE, 'hasMerchantReturnPolicy': RETURNS}
               for v in p['variants'] if v.get('price') is not None]
@@ -244,7 +263,7 @@ for p in P:
         items.append('<item>' + ''.join(f'<{t}>{xesc(str(x))}</{t}>' for t, x in [
             ('g:id', v['id']), ('g:item_group_id', p['id']), ('title', (p['t'] + lab)[:150]), ('description', p['d'][:5000]),
             ('link', SITE + p['url']), ('g:image_link', img_url(v.get('img') or p['img'])),
-            ('g:availability', 'out_of_stock' if v['soldOut'] else 'in_stock'), ('g:price', f'{v["price"]:.2f} ZAR'),
+            ('g:availability', 'out_of_stock' if v['soldOut'] else 'in_stock'), ('g:price', f'{v.get("was", v["price"]):.2f} ZAR')] + ([('g:sale_price', f'{v["price"]:.2f} ZAR'), ('g:sale_price_effective_date', f'{TODAY}T00:00+02:00/{SALE["end"][:16]}+02:00')] if v.get('was') else []) + [
             ('g:condition', 'new'), ('g:identifier_exists', 'no'), ('g:brand', 'Makkie Wholesalers'),
             ('g:product_type', p['category'].replace(' · ', ' > '))] + ([('g:google_product_category', GPC[p['group']])] if p['group'] in GPC else [])) + '</item>')
 open(os.path.join(PUB, 'google-products.xml'), 'w', encoding='utf-8').write(
@@ -257,6 +276,7 @@ llms = ['# Makkie Wholesalers', '',
         'Online shop at https://makkies.co.za with delivery anywhere in South Africa (PAXI to any PEP store, or courier), or collect in store.', '',
         'Address: Unit D4, Pretoria Oriental Complex, Entrance 6, 7th Street, Marabastad, Pretoria. WhatsApp 072 323 5469 (+27 72 323 5469). '
         'Tel 012 323 5469. Email orders@makkies.co.za. Prices in South African rand, including 15% VAT. Bulk and trade buyers get wholesale pricing on request.', '',
+        ] + ([f'## Current promotion', '', SALE_TXT + ' Sale prices are shown on the website and product pages.', ''] if SALE else []) + [
         '## Categories', ''] + [f'- [{c.replace(" · ", " – ")}]({SITE}{CURL[c]}): {len(cats[c])} products from {money(min(prices(x)[0] for x in cats[c]))}'
                                 for g in GROUPS for c in sorted([c for c in cats if cats[c][0]['group'] == g], key=str.lower)] + \
        ['', '## More', '', f'- [All products]({SITE}/products/)', f'- [Sitemap]({SITE}/sitemap.xml)', '']
@@ -269,4 +289,10 @@ if LINK not in h:
     if h.count(old) != 1: sys.exit('footer not found')
     h = h.replace(old, old + '\n      ' + LINK)
     open(os.path.join(PUB, 'index.html'), 'w', encoding='utf-8').write(h)
+# ---------- home page: say there is a sale in the description Google and AI assistants read ----------
+if SALE and 'Black Friday online sale' not in h:
+    h2 = re.sub(r'(<meta name="description" content=")', lambda m: m.group(1) + html.escape(SALE_TXT) + ' ', h, count=1)
+    h2 = re.sub(r'(<meta property="og:description" content=")', lambda m: m.group(1) + html.escape(SALE_TXT) + ' ', h2, count=1)
+    h2 = h2.replace('<title>Makkie Wholesalers |', '<title>Black Friday Sale | Makkie Wholesalers |', 1)
+    if h2 != h: h = h2; open(os.path.join(PUB, 'index.html'), 'w', encoding='utf-8').write(h)
 print(f'{len(P)} product pages, {len(cats)} category pages, {len(urls)} sitemap URLs, {len(items)} feed items')
