@@ -41,7 +41,9 @@ body{width:1080px;height:1920px;overflow:hidden;background:#0b0b0c;color:#fff;fo
   <div class="a ctr cond" id="i_black" style="top:330px">BLACK</div>
   <div class="a ctr cond" id="i_friday" style="top:600px">FRIDAY</div>
   <div class="a ctr" id="i_salew" style="top:900px"><span id="i_sale">SALE</span></div>
-  <div class="a ctr" id="i_lim" style="top:1340px"><span class="chip" style="background:#E1251B">LIMITED TIME · ENDS 30 NOV</span></div>
+  <div class="a ctr cond" id="i_site" style="top:1300px;font-weight:700;font-size:110px;line-height:1">SITEWIDE SALE</div>
+  <div class="a ctr" id="i_site2" style="top:1425px;font-weight:700;font-size:44px;color:#cfc9c2">on almost everything online</div>
+  <div class="a ctr" id="i_lim" style="top:1520px"><span class="chip" style="background:#E1251B">LIMITED TIME · ENDS 30 NOV</span></div>
 </div>
 <!-- 2 products -->
 <div class="sc" id="s2">
@@ -58,7 +60,7 @@ body{width:1080px;height:1920px;overflow:hidden;background:#0b0b0c;color:#fff;fo
   <div class="a ctr" id="g_box" style="top:300px">🎁</div>
   <div class="a ctr cond" id="g_t" style="top:820px">FREE<br>GIFT</div>
   <div class="a ctr" id="g_s" style="top:1290px">with orders over R1,000</div>
-  <div class="a ctr" id="g_x" style="top:1420px;font-weight:700;font-size:44px">+ prices cut on almost everything</div>
+  <div class="a ctr" id="g_x" style="top:1420px;font-weight:700;font-size:44px">+ sitewide sale on almost everything</div>
   <div id="conf"></div>
 </div>
 <!-- 4 end -->
@@ -66,7 +68,7 @@ body{width:1080px;height:1920px;overflow:hidden;background:#0b0b0c;color:#fff;fo
   <img class="a" id="e_logo" src="img/mw_oval.png" style="left:340px;top:230px;width:400px">
   <div class="a ctr cond" id="e_t" style="top:640px;font-weight:700;font-size:150px;line-height:.9">BLACK FRIDAY<br><span style="color:#FFE14F">SALE</span></div>
   <div class="a ctr" id="e_u" style="top:1000px"><span id="e_url">makkies.co.za</span></div>
-  <div class="a ctr" id="e_g" style="top:1200px;font-weight:800;font-size:50px">🎁 Free gift over R1,000</div>
+  <div class="a ctr" id="e_g" style="top:1200px;font-weight:800;font-size:50px">Sitewide sale · 🎁 Free gift over R1,000</div>
   <div class="a ctr" id="e_d" style="top:1290px;font-weight:600;font-size:40px;color:#cfc9c2">Delivery across South Africa · Card, EFT, SnapScan</div>
   <div class="a ctr" id="e_w" style="top:1390px;font-weight:800;font-size:50px"><span style="color:#25D366">●</span> WhatsApp 072 323 5469</div>
   <div class="a ctr" id="e_e" style="top:1500px"><span class="chip" style="background:#E1251B;font-size:46px">ENDS 30 NOVEMBER</span></div>
@@ -88,7 +90,7 @@ const P = [  // name, sub, was, now, save, photo, mode (cover photo or cut-out),
   ['ZCC GREEN BERET', 'LAMBSWOOL BERET', 'R105', 'R98', 'R7', 'bf_beret_c', 'cut', '50% 45%'],
 ];
 const PER = 1.55;
-const T = {s1: [0, 2.9]}; T.s2 = [2.9, 2.9 + P.length * PER]; T.s3 = [T.s2[1], T.s2[1] + 2.7]; T.s4 = [T.s3[1], T.s3[1] + 3.8];
+const T = {s1: [0, 3.3]}; T.s2 = [3.3, 3.3 + P.length * PER]; T.s3 = [T.s2[1], T.s2[1] + 2.7]; T.s4 = [T.s3[1], T.s3[1] + 3.8];
 window.DURATION = T.s4[1];
 const $ = id => document.getElementById(id), cl = (x, a = 0, b = 1) => Math.max(a, Math.min(b, x));
 const eo = x => 1 - Math.pow(1 - cl(x), 3), bk = x => { x = cl(x); const c = 1.9; return 1 + (c + 1) * Math.pow(x - 1, 3) + c * Math.pow(x - 1, 2); };
@@ -96,7 +98,7 @@ const slam = (el, t, t0, d = .22, from = 2.4) => { const k = eo((t - t0) / d); e
 const pop = (el, t, t0, d = .35, from = .3, rot = 0) => { const k = bk((t - t0) / d); el.style.opacity = cl((t - t0) / .1); el.style.transform = `scale(${from + (1 - from) * k}) rotate(${rot}deg)`; };
 const rise = (el, t, t0, d = .3, dy = 60) => { const k = eo((t - t0) / d); el.style.opacity = k; el.style.transform = `translateY(${dy * (1 - k)}px)`; };
 const img = n => `img/${n}.jpg`;
-$('tape1t').textContent = 'BLACK FRIDAY ★ SALE ★ '.repeat(12); $('tape2t').textContent = 'SAVE NOW ★ FREE GIFT OVER R1,000 ★ '.repeat(8);
+$('tape1t').textContent = 'BLACK FRIDAY ★ SITEWIDE SALE ★ '.repeat(10); $('tape2t').textContent = 'SAVE NOW ★ FREE GIFT OVER R1,000 ★ '.repeat(8);
 P.forEach(() => $('pbar').insertAdjacentHTML('beforeend', '<i><b></b></i>'));
 P.forEach(p => { const im = new Image(); im.src = img(p[5]); });
 for (let k = 0; k < 50; k++) $('conf').insertAdjacentHTML('beforeend', `<div class="conf" id="cf${k}" style="background:${['#E1251B', '#0b0b0c', '#ffffff', '#0350EA', '#05B56D'][k % 5]}"></div>`);
@@ -121,7 +123,7 @@ window.render = function (t) {
     const k = eo((t - .9) / .25); $('i_salew').style.opacity = cl((t - .9) / .05);
     $('i_sale').style.transform = `scale(${3 - 2 * k}) rotate(${-4 + 4 * Math.sin(Math.max(0, t - 1.2) * 9) * cl(1.6 - t)}deg)`;
     document.body.style.transform = shake(t, .9, 26) || shake(t, .4, 14) || '';
-    pop($('i_lim'), t, 1.5, .35, .4, -2);
+    slam($('i_site'), t, 1.45, .22, 1.8); $('i_site').style.color = Math.floor(Math.max(0, t - 1.6) * 6) % 2 ? '#FFE14F' : '#fff'; rise($('i_site2'), t, 1.7, .3, 30); pop($('i_lim'), t, 2.0, .35, .4, -2);
   } else document.body.style.transform = '';
   if (cur === 's2') {
     const lt = t - T.s2[0], i = Math.min(P.length - 1, Math.floor(lt / PER)), p = P[i], li = lt - i * PER;
