@@ -1,6 +1,6 @@
 # Upload status
 
-WAITING: Cloudsoft Shawl G (GSH-*) and Plain Chenille Throw C (CSH-*) TEMPORARILY off the site (HIDE_PREFIXES in patch-remove-products.py + 302s at the end of _redirects). Built, not uploaded.
+WAITING: Cloudsoft Shawl G (GSH-*) and Plain Chenille Throw C (CSH-*) TEMPORARILY off the site (HIDE_PREFIXES in patch-remove-products.py + 302s at the end of _redirects). LIVE since 18 Nov 2026 (deploy 6afd80713929aec8a9d2dd3a).
 To bring back: empty HIDE_PREFIXES, delete the TEMPORARY block in _redirects, rebuild and upload.
 
 TO DO 1 DEC 2026: rebuild and upload WITHOUT patch-promo.py / patch-gift.py so Google pages and feed show normal prices.
