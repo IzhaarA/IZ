@@ -5,7 +5,8 @@ To bring back: empty HIDE_PREFIXES, delete the TEMPORARY block in _redirects, re
 
 TO DO 1 DEC 2026: rebuild and upload WITHOUT patch-promo.py / patch-gift.py so Google pages and feed show normal prices.
 
-Last upload: 17 Nov 2026 (deploy 6afc716a934ea492532a1f1f): free gift choice with photos (patch-gift.py), clearer sale totals, sale prices on Google pages/feed/llms.txt.
+Last upload: 18 Nov 2026 (deploy 6afd8a1933f212664ab55726): gift box layout fix on laptops.
+Before that: 17 Nov 2026 (deploy 6afc716a934ea492532a1f1f): free gift choice with photos (patch-gift.py), clearer sale totals, sale prices on Google pages/feed/llms.txt.
 Before that: 17 Nov 2026 (deploy 6afc6ad966932895503e4b29): BLACK FRIDAY SALE (patch-promo.py): 7% off (5% on SHW-002, TRB-005,
 MNK-003, MNK-005, CHS-001; none on steeltrunks, brass bells, 100m ziela), crossed-out prices + Save, free gift over R1,000, banner.
 Switches itself off 1 Dec 2026 00:00 SA time. Remove patch-promo.py from the build after that.
