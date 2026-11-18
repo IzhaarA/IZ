@@ -61,7 +61,7 @@ CSS = '''
 .gopt{display:flex!important;flex-direction:row!important;justify-content:flex-start!important;text-align:left!important;align-items:center;gap:10px;background:#fff;border:1px solid #9fd0b1;border-radius:8px;padding:8px 10px;margin-top:6px;font-weight:600;color:#1d1b19;cursor:pointer}
 .gopt input{display:inline-block!important;position:static!important;opacity:1!important;appearance:auto!important;-webkit-appearance:radio!important;width:18px!important;height:18px!important;margin:0!important;flex:none;accent-color:#0A7A44}
 .giftrow.need{box-shadow:0 0 0 3px #C3312B}
-#coTotals .gq,#coTotals .gopt{display:none}.gpic{width:54px;height:54px;flex:none;border-radius:8px;background:#F4EFE8 center/cover;border:1px solid #e2dbd0}#giftPick{margin:0 0 12px}
+#coTotals .giftrow .gq,#coTotals .giftrow .gopt{display:none!important}.giftrow{display:block!important}.giftrow .gopt{width:100%}.gpic{width:54px;height:54px;flex:none;border-radius:8px;background:#F4EFE8 center/cover;border:1px solid #e2dbd0}#giftPick{margin:0 0 12px}
 '''
 sub("/* ---------- Black Friday sale ---------- */\n.salebar{", "/* ---------- Black Friday sale ---------- */" + CSS + ".salebar{")
 open(P, 'w', encoding='utf-8').write(s)
