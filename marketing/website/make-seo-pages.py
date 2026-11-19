@@ -162,6 +162,8 @@ def crumbs(items):
 def card(p):
     lo, hi = prices(p)
     pr = ('From ' if lo != hi else '') + money(lo)
+    w = next((v.get('was') for v in p['variants'] if v.get('price') == lo and v.get('was')), None)
+    if w: pr = ('From ' if lo != hi else '') + f'<s>{money(w)}</s> ' + money(lo)
     return (f'<a class="card" href="{p["url"]}"><img src="/{p["img"].lstrip("/")}" alt="{e(p["t"])}" loading="lazy">'
             f'<b>{e(p["t"])}</b><span>{pr}{" · Sold out" if p["soldOut"] else ""}</span></a>')
 
@@ -252,7 +254,37 @@ for pid, path in POLICY.items():
          f'<div class="prod" style="display:block"><h1>{e(ttl)}</h1><div class="desc policy">{txt}</div></div>')
 
 # ---------- sitemap, robots, feed, llms.txt ----------
-urls = ['/', '/products/', '/returns/', '/terms/', '/privacy/'] + list(CURL.values()) + [p['url'] for p in P]
+# ---------- Black Friday landing page (only while the sale is on): ranks for "black friday blankets / beads" ----------
+BF = []
+shutil.rmtree(os.path.join(PUB, 'black-friday'), ignore_errors=True)
+if SALE:
+    def onsale(p): return (not p['soldOut']) and any(v.get('was') for v in p['variants'])
+    def pick(pred, n): return sorted([x for x in P if pred(x) and onsale(x)], key=lambda x: -max(v['was'] - v['price'] for v in x['variants'] if v.get('was')))[:n]
+    blank = pick(lambda x: x['category'].startswith(('Tribal Blankets', 'Mink Blankets', 'Hotel Blankets', 'Travelling Rugs', 'Budget')), 16)
+    shawl = pick(lambda x: x['category'].startswith('Shawls & Throws'), 8)
+    beads = pick(lambda x: x['group'] == 'Beads', 16)
+    acc = pick(lambda x: x['group'] == 'Clothing & Traditional Wear', 8)
+    ld = SALE['last_day']; end = f"{ld.day} {ld.strftime('%B %Y')}"
+    sec = lambda h2, items, link: (f'<h2>{e(h2)}</h2><div class="grid">{"".join(card(x) for x in items)}</div>'
+                                   f'<p><a href="{link}">See all {e(h2.lower())} on sale →</a></p>') if items else ''
+    body = (crumbs([('Home', '/'), ('Black Friday Sale', None)])[0]
+        + f'<div class="prod" style="display:block"><h1>Black Friday Sale: Blankets &amp; Beads</h1>'
+        + f'<p class="ins" style="color:#C3312B;font-weight:bold">On until {e(end)}. Prices cut on almost everything online, plus a free gift on orders over R{SALE["gift"]:,}.</p>'
+        + '<div class="desc">Black Friday deals on Basotho blankets, Ndebele blankets, Xhosa blankets, mink blankets, shawls, '
+          'Czech and Chinese glass seed beads, plastic beads and traditional goods from Makkie Wholesalers in Marabastad, Pretoria. '
+          'Sale prices are already shown, no code needed. We deliver anywhere in South Africa by courier or PAXI to any PEP store, '
+          'or collect in store. Pay by card, Instant EFT or SnapScan.</div>'
+        + '<div class="btns"><a class="btn buy" href="/">Shop the sale</a>'
+        + f'<a class="btn wa" href="https://wa.me/{WA}?text=' + quote('Hi, I saw your Black Friday sale') + '">Ask on WhatsApp</a></div></div>'
+        + sec('Black Friday blankets', blank, '/#c/Tribal%20Blankets') + sec('Black Friday shawls and throws', shawl, '/#c/Shawls%20%26%20Throws')
+        + sec('Black Friday beads', beads, '/#c/Czech%20Glass%20Seed%20Beads') + sec('Black Friday traditional wear and accessories', acc, '/#c/all'))
+    il = {'@context': 'https://schema.org', '@type': 'ItemList', 'name': 'Black Friday blankets and beads sale',
+          'itemListElement': [{'@type': 'ListItem', 'position': i + 1, 'url': SITE + x['url'], 'name': x['t']} for i, x in enumerate(blank + shawl + beads + acc)]}
+    page('/black-friday/', f'Black Friday Blankets & Beads Sale {ld.year} | Makkie Wholesalers, Pretoria',
+         f'Black Friday sale on blankets and beads until {end}: Basotho, Ndebele, Xhosa and mink blankets, shawls, Czech and Chinese seed beads. '
+         f'Free gift over R{SALE["gift"]:,}. Delivery across South Africa.', body, [il])
+    BF = ['/black-friday/']
+urls = ['/', '/products/', '/returns/', '/terms/', '/privacy/'] + BF + list(CURL.values()) + [p['url'] for p in P]
 open(os.path.join(PUB, 'sitemap.xml'), 'w').write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
     + ''.join(f'<url><loc>{SITE}{u}</loc><lastmod>{TODAY}</lastmod></url>\n' for u in urls) + '</urlset>\n')
 open(os.path.join(PUB, 'robots.txt'), 'w').write(f'User-agent: *\nAllow: /\nDisallow: /stats/\n\nSitemap: {SITE}/sitemap.xml\n')
@@ -279,7 +311,7 @@ llms = ['# Makkie Wholesalers', '',
         'Online shop at https://makkies.co.za with delivery anywhere in South Africa (PAXI to any PEP store, or courier), or collect in store.', '',
         'Address: Unit D4, Pretoria Oriental Complex, Entrance 6, 7th Street, Marabastad, Pretoria. WhatsApp 072 323 5469 (+27 72 323 5469). '
         'Tel 012 323 5469. Email orders@makkies.co.za. Prices in South African rand, including 15% VAT. Bulk and trade buyers get wholesale pricing on request.', '',
-        ] + ([f'## Current promotion', '', SALE_TXT + ' Sale prices are shown on the website and product pages.', ''] if SALE else []) + [
+        ] + ([f'## Current promotion', '', SALE_TXT + ' Sale prices are shown on the website and product pages. All Black Friday deals: ' + SITE + '/black-friday/', ''] if SALE else []) + [
         '## Categories', ''] + [f'- [{c.replace(" · ", " – ")}]({SITE}{CURL[c]}): {len(cats[c])} products from {money(min(prices(x)[0] for x in cats[c]))}'
                                 for g in GROUPS for c in sorted([c for c in cats if cats[c][0]['group'] == g], key=str.lower)] + \
        ['', '## More', '', f'- [All products]({SITE}/products/)', f'- [Sitemap]({SITE}/sitemap.xml)', '']

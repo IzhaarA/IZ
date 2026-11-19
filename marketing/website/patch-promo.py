@@ -64,7 +64,7 @@ sub("`<div><span>Subtotal</span><b class=\"num\">${R(sub)}</b></div>${disc ?",
 # order message to the shop: remind to pack the gift
 sub("\\nSubtotal ${R(o.sub)}", "\\nSubtotal ${R(o.sub)}${SALE_ON && o.sub >= SALE.gift ? '\\n\\ud83c\\udf81 FREE GIFT: yes (Black Friday, order over R' + SALE.gift + ')' : ''}")
 
-BANNER = '''<div class="salebar" id="salebar"><b>BLACK FRIDAY SALE</b><span>Prices cut on almost everything</span><span>\U0001F381 Free gift with orders over R1,000</span><em>Ends 30 November</em></div>
+BANNER = '''<div class="salebar" id="salebar"><b>BLACK FRIDAY SALE</b><span>Prices cut on almost everything</span><span>\U0001F381 Free gift with orders over R1,000</span><em>Ends 30 November</em><a href="/black-friday/" style="color:#fff;text-decoration:underline;font-weight:700">See all deals</a></div>
 <script>if(Date.now()>=Date.parse("%s"))document.getElementById('salebar').remove()</script>''' % SALE['end']
 sub('<body>\n<header class="top">', '<body>\n' + BANNER + '<header class="top">')
 
