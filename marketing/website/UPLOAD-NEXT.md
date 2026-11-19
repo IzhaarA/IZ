@@ -1,5 +1,7 @@
 # Upload status
 
+WAITING: Google tag GTM-KK4T2JZF (Google Ads account 475-869-5333) on all pages + add_to_cart/begin_checkout/purchase events (patch-gtag.py), privacy notice line. Built, not uploaded.
+
 WAITING: Cloudsoft Shawl G (GSH-*) and Plain Chenille Throw C (CSH-*) TEMPORARILY off the site (HIDE_PREFIXES in patch-remove-products.py + 302s at the end of _redirects). LIVE since 18 Nov 2026 (deploy 6afd80713929aec8a9d2dd3a).
 To bring back: empty HIDE_PREFIXES, delete the TEMPORARY block in _redirects, rebuild and upload.
 
@@ -46,5 +48,5 @@ Before that: 20 Oct 2026 — 17 new products, 7 replacement photos, Beverly remo
 patch-payfast.py, patch-checkout.py, patch-price-changes.py, patch-prices.py, patch-soldout.py, patch-shawlphotos.py,
 patch-chenille.py, patch-shipping.py, patch-courier-rates.py, patch-remove-products.py,
 `patch-new-products.py <index> new-products`, patch-catalogue-edits.py, patch-prices.py,
-then patch-home.py, patch-nav.py, patch-track.py, patch-promo.py + patch-gift.py (Black Friday only, until 30 Nov 2026; make-seo-pages.py then shows sale prices to Google. RE-UPLOAD ON 1 DEC without them so Google pages show normal prices), then download photos (all images/ and thumbs/ the page uses),
+then patch-home.py, patch-nav.py, patch-track.py, patch-gtag.py, patch-promo.py + patch-gift.py (Black Friday only, until 30 Nov 2026; make-seo-pages.py then shows sale prices to Google. RE-UPLOAD ON 1 DEC without them so Google pages show normal prices), then download photos (all images/ and thumbs/ the page uses),
 then `make-shawl-thumbs.py public`, then `make-seo-pages.py public`.

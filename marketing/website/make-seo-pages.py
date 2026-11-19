@@ -129,10 +129,13 @@ td,th{text-align:left;padding:6px 8px;border-bottom:1px solid #eee}th{font-size:
 footer{margin-top:36px;background:#24211F;color:#ddd;font-size:14px}footer a{color:#F2B90D}footer .w{padding:22px 16px}
 @media(max-width:720px){.prod{grid-template-columns:1fr}h1{font-size:22px}header nav{display:none}}"""
 
+_g = re.search(r'gtm\.js\?id=(GTM-[A-Z0-9]+)', h)
+GTAG = ('<script async src="https://www.googletagmanager.com/gtm.js?id=' + _g.group(1) + '"></script><script>window.dataLayer=window.dataLayer||[];'
+        "function gtag(){dataLayer.push(arguments);}gtag('js',new Date());</script>") if _g else ''
 def page(path, ttl, desc, body, ld=(), canonical=None, img=None):
     canonical = canonical or SITE + path
     lds = ''.join(f'<script type="application/ld+json">{json.dumps(x, ensure_ascii=False)}</script>' for x in ld)
-    doc = f"""<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+    doc = f"""<!doctype html><html lang="en"><head><meta charset="utf-8">{GTAG}<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{e(ttl)}</title><meta name="description" content="{e(desc[:300])}"><link rel="canonical" href="{canonical}">
 <meta property="og:type" content="website"><meta property="og:site_name" content="Makkie Wholesalers"><meta property="og:title" content="{e(ttl)}">
 <meta property="og:description" content="{e(desc[:300])}"><meta property="og:url" content="{canonical}"><meta property="og:image" content="{img or SITE + '/og.jpg'}">
