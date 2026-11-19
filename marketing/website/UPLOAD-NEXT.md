@@ -9,7 +9,7 @@ LIVE: Black Friday landing page /black-friday/ (make-seo-pages.py, only while SA
 WAITING: Cloudsoft Shawl G (GSH-*) and Plain Chenille Throw C (CSH-*) TEMPORARILY off the site (HIDE_PREFIXES in patch-remove-products.py + 302s at the end of _redirects). LIVE since 18 Nov 2026 (deploy 6afd80713929aec8a9d2dd3a).
 To bring back: empty HIDE_PREFIXES, delete the TEMPORARY block in _redirects, rebuild and upload.
 
-WAITING (not uploaded): basket fixes (patch-basket.py): drawer scrolls as one with Checkout always on screen, quantity -/+ and Remove on the checkout summary, narrow phones no longer side-scroll.
+LIVE since 19 Nov 2026 (deploy 6afebe3bac22755e116a1589): basket fixes (patch-basket.py): drawer scrolls as one with Checkout always on screen, quantity -/+ and Remove on the checkout summary, narrow phones no longer side-scroll.
 
 TO DO 1 DEC 2026: rebuild and upload WITHOUT patch-promo.py / patch-gift.py so Google pages and feed show normal prices.
 
