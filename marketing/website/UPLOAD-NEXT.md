@@ -13,7 +13,7 @@ LIVE since 19 Nov 2026 (deploy 6afebe3bac22755e116a1589): basket fixes (patch-ba
 
 LIVE since 19 Nov 2026 (deploy 6afecbd6cc5ee5e8fe7e779d): shop grid photos (patch-images.py): first 8 load straight away, failed photos retried once (customer from TikTok saw grey boxes on Mirrors).
 
-WAITING (not uploaded): PAXI allowed for mirrors + real mirror weights (patch-paxi.py).
+LIVE since 19 Nov 2026 (deploy 6afed3e4806d8932d241decf): PAXI allowed for mirrors + real mirror weights (patch-paxi.py).
 
 TO DO 1 DEC 2026: rebuild and upload WITHOUT patch-promo.py / patch-gift.py so Google pages and feed show normal prices.
 
