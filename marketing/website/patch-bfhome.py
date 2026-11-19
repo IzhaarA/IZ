@@ -2,6 +2,8 @@
 # Shows: BLACK FRIDAY SALE heading, free gift over R1,000, live countdown to the end, 4 featured deals with
 # old price crossed out, and buttons to /black-friday/ and all products. Hides itself when the sale ends (SALE_ON).
 # Black Friday only: run after patch-promo.py + patch-gift.py, and leave out on the 1 Dec rebuild.
+# 'Shop all deals' and the top banner's 'See all deals' open the shop showing every sale item, grouped: Shawls & Throws,
+# Blankets, Beads, then the rest (needs patch-images.py first: it adds the grid index gi).
 # Usage: python3 patch-bfhome.py public/index.html
 import sys, re
 P = sys.argv[1]
@@ -27,6 +29,46 @@ HTML = '''<div class="bfh" id="bfHome" style="display:none"><div class="bfh-in">
 anchor = '<div class="hg-w"><div class="hg-chips" id="hgChips"></div></div>'
 if s.count(anchor) != 1: raise SystemExit('home anchor not found')
 s = s.replace(anchor, anchor + '\n  ' + HTML)
+
+
+# ---------- "Shop all deals": every sale item in the shop, grouped (shawls, blankets, beads, then the rest) ----------
+DEALS_JS = """/* Black Friday deals collection (patch-bfhome.py) */
+const DEAL_GROUPS = ['Shawls & Throws', 'Blankets', 'Beads', 'Traditional wear & accessories', 'Kangas, towels & textiles', 'Haberdashery & more'];
+function dealGroup(p) { const c = String(p.category);
+  if (c.startsWith('Shawls & Throws')) return 0; if (/Blanket|Rugs/.test(c)) return 1; if (p.group === 'Beads') return 2;
+  if (p.group === 'Clothing & Traditional Wear') return 3; if (p.group === 'Blankets & Textiles') return 4; return 5; }
+const DEAL_CAT_FIRST = ['Tribal Blankets', 'Mink Blankets', 'Hotel Blankets', 'Czech Glass Seed Beads', 'Chinese Glass Seed Beads', 'Plastic Beads'];   // popular first within a group
+function catRank(p) { const k = DEAL_CAT_FIRST.findIndex(c => p.category.startsWith(c)); return k < 0 ? 99 : k; }
+if (typeof SALE_ON !== 'undefined' && SALE_ON) {
+  const ids = PRODUCTS.map((p, i) => [p, i]).filter(([p]) => !p.soldOut && p.variants.some(v => v.was && !v.soldOut))
+    .sort((a, b) => dealGroup(a[0]) - dealGroup(b[0]) || catRank(a[0]) - catRank(b[0]) || a[0].category.localeCompare(b[0].category) || a[1] - b[1]).map(([p]) => p.id);
+  COLLECTIONS['col:deals'] = {label: 'Black Friday deals', ids};
+}
+function dealHead(p, gi, shown) { if (state.cat !== 'col:deals' || state.q.trim() || state.sort !== 'rel') return '';
+  const g = dealGroup(p); if (gi > 0 && dealGroup(shown[gi - 1]) === g) return '';
+  const nav = gi === 0 ? `<div class="dealnav">${[...new Set(COLLECTIONS['col:deals'].ids.map(id => dealGroup(byId[id])))].map(k =>
+    `<button type="button" onclick="dealJump(${k})">${esc(DEAL_GROUPS[k])}</button>`).join('')}</div>` : '';
+  return nav + `<h3 class="dealh" data-g="${g}">${esc(DEAL_GROUPS[g])}</h3>`; }
+function dealJump(g) { if (state.per !== 'all') { state.per = 'all'; const ps = document.getElementById('perSel'); if (ps) ps.value = 'all'; renderGrid(); }
+  const h = document.querySelector('#grid .dealh[data-g="' + g + '"]'); if (h) window.scrollTo({top: h.getBoundingClientRect().top + scrollY - 140, behavior: 'smooth'}); }
+function openDeals() { state.cat = 'col:deals'; state.q = ''; state.sort = 'rel'; const si = document.querySelector('select#sort, #sortSel'); if (si) si.value = 'rel'; go('shop'); window.scrollTo({top: 0}); }
+"""
+def sub(old, new):
+    global s
+    if s.count(old) != 1: raise SystemExit(f'pattern found {s.count(old)} times: ' + old[:80])
+    s = s.replace(old, new)
+sub('/* shareable links: makkies.co.za/#p/PRODUCT-ID', DEALS_JS + '/* shareable links: makkies.co.za/#p/PRODUCT-ID')
+# #c/col:deals link opens the deals
+sub("else if (h.startsWith('#c/')) { const c = h.slice(3); const all = [...new Set(PRODUCTS.map(p => p.category))]; if (all.includes(c)",
+    "else if (h.startsWith('#c/')) { const c = h.slice(3); const all = [...new Set(PRODUCTS.map(p => p.category))]; if (c === 'col:deals' && COLLECTIONS[c]) { openDeals(); } else if (all.includes(c)")
+# keep the grouped order (the default "relevance" sort would move beads first)
+sub("if (state.sort === 'rel') list.sort(", "if (state.sort === 'rel' && state.cat !== 'col:deals') list.sort(")
+# group headings in the grid
+sub("document.getElementById('grid').innerHTML = shown.map((p, gi) => `<article", "document.getElementById('grid').innerHTML = shown.map((p, gi) => `${dealHead(p, gi, shown)}<article")
+# buttons: Shop all deals + top banner "See all deals"
+sub('<a class="bfh-btn y" href="/black-friday/">Shop all deals</a>', '<a class="bfh-btn y" href="/#c/col:deals" onclick="event.preventDefault();openDeals()">Shop all deals</a>')
+sub('<a href="/black-friday/" style="color:#fff;text-decoration:underline;font-weight:700">See all deals</a>',
+    '<a href="/#c/col:deals" onclick="event.preventDefault();openDeals()" style="color:#fff;text-decoration:underline;font-weight:700">See all deals</a>')
 
 JS = '''<script>
 /* Black Friday home section */
@@ -70,6 +112,8 @@ CSS = '''
 .bfh-pic{position:relative;display:block;aspect-ratio:1;background:#F4EFE8 center/cover}
 .bfh-pic em{position:absolute;left:8px;top:8px;background:#C3312B;color:#fff;font-style:normal;font-size:12px;font-weight:800;padding:4px 8px;border-radius:4px}
 .bfh-n{font-weight:700;font-size:14px;padding:8px 10px 0;line-height:1.2}
+.dealh{grid-column:1/-1;margin:18px 0 0;padding:10px 14px;background:#141117;color:#FFE14F;border-radius:8px;font-size:20px;letter-spacing:.04em;text-transform:uppercase}.dealh:first-child,.dealnav+.dealh{margin-top:0}
+.dealnav{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:8px;margin-bottom:4px}.dealnav button{border:1.5px solid #141117;background:#fff;color:#141117;border-radius:999px;padding:8px 14px;font:700 14px var(--body);cursor:pointer}.dealnav button:hover{background:#FFE14F}
 .bfh-p{padding:2px 10px 10px;font-size:15px}.bfh-p s{color:#8a837c;margin-right:6px;font-size:13px}.bfh-p b{color:#C3312B;font-weight:900}
 @media(min-width:900px){.bfh-in{grid-template-columns:1.05fr 1fr;padding:44px 24px;gap:40px}.bfh-d{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:700px){.bfh-s{font-size:16px}.bfh-g{font-size:16px}.bfh-c span{min-width:58px}.bfh-c b{font-size:26px}.bfh-btn{flex:1;text-align:center}}

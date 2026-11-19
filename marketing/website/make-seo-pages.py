@@ -274,7 +274,7 @@ if SALE:
           'Czech and Chinese glass seed beads, plastic beads and traditional goods from Makkie Wholesalers in Marabastad, Pretoria. '
           'Sale prices are already shown, no code needed. We deliver anywhere in South Africa by courier or PAXI to any PEP store, '
           'or collect in store. Pay by card, Instant EFT or SnapScan.</div>'
-        + '<div class="btns"><a class="btn buy" href="/">Shop the sale</a>'
+        + '<div class="btns"><a class="btn buy" href="/#c/col:deals">Shop all deals</a>'
         + f'<a class="btn wa" href="https://wa.me/{WA}?text=' + quote('Hi, I saw your Black Friday sale') + '">Ask on WhatsApp</a></div></div>'
         + sec('Black Friday blankets', blank, '/#c/Tribal%20Blankets') + sec('Black Friday shawls and throws', shawl, '/#c/Shawls%20%26%20Throws')
         + sec('Black Friday beads', beads, '/#c/Czech%20Glass%20Seed%20Beads') + sec('Black Friday traditional wear and accessories', acc, '/#c/all'))
