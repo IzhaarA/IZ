@@ -2,6 +2,8 @@
 
 WAITING: Google tag GTM-KK4T2JZF (Google Ads account 475-869-5333) on all pages + add_to_cart/begin_checkout/purchase events (patch-gtag.py), privacy notice line. LIVE since 19 Nov 2026 (deploy 6afeacff76728373e4262552).
 
+
+LIVE: Czech seed bead feed images (feed-img/, square, Google only) + Plaid Throw (SHW-014) photos restored (images/*.JPG uppercase, from the supplier). LIVE since 19 Nov 2026 (deploy 6afeb8b990b64b001e77b8f3).
 LIVE: Black Friday landing page /black-friday/ (make-seo-pages.py, only while SALE is on) + "See all deals" link in the sale banner. LIVE since 19 Nov 2026 (deploy 6afeb18eed6cccc962def814). Request indexing in Search Console. Removed automatically by the Dec 1 rebuild (then 302 to /).
 
 WAITING: Cloudsoft Shawl G (GSH-*) and Plain Chenille Throw C (CSH-*) TEMPORARILY off the site (HIDE_PREFIXES in patch-remove-products.py + 302s at the end of _redirects). LIVE since 18 Nov 2026 (deploy 6afd80713929aec8a9d2dd3a).
