@@ -15,7 +15,7 @@ LIVE since 19 Nov 2026 (deploy 6afecbd6cc5ee5e8fe7e779d): shop grid photos (patc
 
 LIVE since 19 Nov 2026 (deploy 6afed3e4806d8932d241decf): PAXI allowed for mirrors + real mirror weights (patch-paxi.py).
 
-WAITING (not uploaded): big Black Friday section on the home page (patch-bfhome.py): heading, free gift, countdown, 4 deals, Shop all deals.
+LIVE since 19 Nov 2026 (deploy 6afed9967e3be68d42355d39): big Black Friday section on the home page (patch-bfhome.py, white, the 4 home blankets): heading, free gift, countdown, 4 deals, Shop all deals.
 
 TO DO 1 DEC 2026: rebuild and upload WITHOUT patch-promo.py / patch-gift.py / patch-bfhome.py so Google pages and feed show normal prices.
 
