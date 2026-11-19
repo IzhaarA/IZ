@@ -10,7 +10,8 @@ if 'id="bfHome"' in s:
     print('bf home already patched'); sys.exit()
 if 'const SALE =' not in s:
     raise SystemExit('run patch-promo.py first')
-DEALS = [['TRB-002', 'Umbhalo Blanket'], ['MNK-014', 'Paris Mink Blanket'], ['PSH-016', 'Plain Shawl'], ['BER-008', 'ZCC Green Beret']]
+# the same 4 blankets and photos as the big home page photos (patch-home.py), with their sale prices
+DEALS = [['TRB-002', 'Umbhalo', 'h-umbhalo'], ['TRB-010', 'Khotso', 'h-khotso'], ['TRB-029', 'Xhosa Tribal Stripe', 'h-xhosa'], ['TRB-022', 'Elizabeth Basotho', 'h-elizabeth']]
 
 HTML = '''<div class="bfh" id="bfHome" style="display:none"><div class="bfh-in">
   <div class="bfh-t">
@@ -33,8 +34,8 @@ JS = '''<script>
   const box = document.getElementById('bfHome'); if (!box || typeof SALE_ON === 'undefined' || !SALE_ON) return;
   box.style.display = '';
   const DEALS = __DEALS__;
-  document.getElementById('bfhDeals').innerHTML = DEALS.map(([id, nm]) => [byId[id], nm]).filter(([p]) => p && p.variants).map(([p, nm]) =>
-    `<a class="bfh-card" href="#" onclick="event.preventDefault();openProduct('${p.id}')"><span class="bfh-pic" style="background-image:url('${tn(p.img)}')">${p.saveMin ? `<em>SAVE ${R(p.saveMin)}</em>` : ''}</span>
+  document.getElementById('bfhDeals').innerHTML = DEALS.map(([id, nm, ph]) => [byId[id], nm, ph]).filter(([p]) => p && p.variants).map(([p, nm, ph]) =>
+    `<a class="bfh-card" href="#" onclick="event.preventDefault();openProduct('${p.id}')"><span class="bfh-pic" style="background-image:url('/home-g/${ph}.jpg')">${p.saveMin ? `<em>SAVE ${R(p.saveMin)}</em>` : ''}</span>
      <span class="bfh-n">${esc(nm)}</span><span class="bfh-p">${p.wasMin ? `<s>${R(p.wasMin)}</s>` : ''}<b>${p.minPrice === p.maxPrice ? '' : 'from '}${R(p.minPrice)}</b></span></a>`).join('');
   const end = Date.parse(SALE.end), el = document.getElementById('bfhCount');
   const tick = () => { let d = Math.max(0, end - Date.now()); if (!d) { box.style.display = 'none'; return; }
