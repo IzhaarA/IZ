@@ -47,24 +47,24 @@ i = s.rfind('</body>'); s = s[:i] + JS + s[i:]
 
 CSS = '''
 /* ---------- Black Friday home section ---------- */
-.bfh{background:#141117;color:#fff;position:relative;overflow:hidden}
-.bfh:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 85% 20%,rgba(255,225,79,.18),transparent 45%),radial-gradient(circle at 10% 90%,rgba(195,49,43,.25),transparent 40%);pointer-events:none}
+.bfh{background:#fff;color:#141117;position:relative;overflow:hidden;border-top:1px solid #eee7dc;border-bottom:1px solid #eee7dc}
+.bfh:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 88% 15%,rgba(255,225,79,.22),transparent 40%),radial-gradient(circle at 5% 95%,rgba(195,49,43,.08),transparent 40%);pointer-events:none}
 .bfh-in{position:relative;max-width:1240px;margin:0 auto;padding:34px 20px;display:grid;gap:26px}
-.bfh-k{display:inline-block;font-size:13px;font-weight:800;letter-spacing:.14em;color:#141117;background:#FFE14F;padding:6px 12px;border-radius:4px}
+.bfh-k{display:inline-block;font-size:13px;font-weight:800;letter-spacing:.14em;color:#FFE14F;background:#141117;padding:6px 12px;border-radius:4px}
 .bfh h2{margin:14px 0 8px;line-height:.9;font-family:var(--body);font-weight:900;letter-spacing:-.02em}
-.bfh h2 span{display:block;font-size:clamp(46px,9vw,92px);color:#fff}
+.bfh h2 span{display:block;font-size:clamp(46px,9vw,92px);color:#141117}
 .bfh h2 b{display:inline-block;font-size:clamp(58px,12vw,124px);color:#141117;background:#FFE14F;padding:0 .18em .04em;margin-top:6px;transform:rotate(-2deg);border-radius:6px}
-.bfh-s{font-size:18px;line-height:1.45;color:#ddd6cc;max-width:520px;margin:14px 0 12px}
+.bfh-s{font-size:18px;line-height:1.45;color:#5f5952;max-width:520px;margin:14px 0 12px}
 .bfh-g{display:inline-block;background:#C3312B;color:#fff;font-size:18px;font-weight:700;padding:10px 16px;border-radius:999px}
 .bfh-c{display:flex;align-items:flex-end;gap:8px;margin:18px 0 20px;flex-wrap:wrap}
-.bfh-c small{width:100%;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:#bdb5aa;font-weight:700}
-.bfh-c span{background:#26222a;border:1px solid #3a3440;border-radius:10px;min-width:64px;padding:8px 6px;text-align:center}
+.bfh-c small{width:100%;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:#6f6a63;font-weight:700}
+.bfh-c span{background:#141117;border:1px solid #141117;border-radius:10px;min-width:64px;padding:8px 6px;text-align:center}
 .bfh-c b{display:block;font-size:30px;font-weight:900;color:#FFE14F;font-variant-numeric:tabular-nums;line-height:1}.bfh-c i{font-style:normal;font-size:12px;color:#bdb5aa;text-transform:uppercase;letter-spacing:.08em}
 .bfh-b{display:flex;gap:10px;flex-wrap:wrap}
 .bfh-btn{display:inline-block;padding:14px 22px;border-radius:8px;font-weight:800;font-size:16px;text-decoration:none}
-.bfh-btn.y{background:#FFE14F;color:#141117}.bfh-btn.o{border:1.5px solid #fff;color:#fff}
+.bfh-btn.y{background:#141117;color:#FFE14F}.bfh-btn.o{border:1.5px solid #141117;color:#141117}
 .bfh-d{display:grid;grid-template-columns:1fr 1fr;gap:12px;align-self:center}
-.bfh-card{background:#fff;color:#1d1b19;border-radius:12px;overflow:hidden;text-decoration:none;display:flex;flex-direction:column;transition:transform .15s}
+.bfh-card{background:#fff;color:#1d1b19;border:1px solid #e6dfd4;box-shadow:0 6px 18px rgba(40,30,10,.08);border-radius:12px;overflow:hidden;text-decoration:none;display:flex;flex-direction:column;transition:transform .15s}
 .bfh-card:hover{transform:translateY(-3px)}
 .bfh-pic{position:relative;display:block;aspect-ratio:1;background:#F4EFE8 center/cover}
 .bfh-pic em{position:absolute;left:8px;top:8px;background:#C3312B;color:#fff;font-style:normal;font-size:12px;font-weight:800;padding:4px 8px;border-radius:4px}
