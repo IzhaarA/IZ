@@ -290,6 +290,23 @@ open(os.path.join(PUB, 'sitemap.xml'), 'w').write('<?xml version="1.0" encoding=
 open(os.path.join(PUB, 'robots.txt'), 'w').write(f'User-agent: *\nAllow: /\nDisallow: /stats/\n\nSitemap: {SITE}/sitemap.xml\n')
 
 GPC = {'Blankets & Textiles': 'Home & Garden > Linens & Bedding > Bedding > Blankets', 'Beads': 'Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Art & Crafting Materials > Embellishments & Trims > Beads'}
+# Google needs product images of at least 100x100. Czech seed bead colours only have thin strips (about 250x35),
+# so the feed gets a square picture made by stacking that strip into rows (feed-img/, Google only; the shop is unchanged).
+def feed_img(src):
+    try:
+        from PIL import Image
+        fp = os.path.join(PUB, src.lstrip('/'))
+        im = Image.open(fp).convert('RGB'); w, h = im.size
+        if min(w, h) >= 100: return img_url(src)
+        k = max(1, -(-600 // w)); big = im.resize((w * k, h * k), Image.LANCZOS); W = w * k
+        sq = Image.new('RGB', (W, W), 'white')
+        for y in range(0, W, h * k): sq.paste(big, (0, y))
+        name = 'feed-img/' + os.path.splitext(os.path.basename(src))[0] + '.jpg'
+        os.makedirs(os.path.join(PUB, 'feed-img'), exist_ok=True); sq.save(os.path.join(PUB, name), quality=90)
+        return img_url(name)
+    except Exception:
+        return img_url(src)
+shutil.rmtree(os.path.join(PUB, 'feed-img'), ignore_errors=True)
 items = []
 for p in P:
     for v in p['variants']:
@@ -297,7 +314,7 @@ for p in P:
         lab = '' if v['label'] in ('Standard', p['name']) else ' – ' + v['label']
         items.append('<item>' + ''.join(f'<{t}>{xesc(str(x))}</{t}>' for t, x in [
             ('g:id', v['id']), ('g:item_group_id', p['id']), ('title', (p['t'] + lab)[:150]), ('description', p['d'][:5000]),
-            ('link', SITE + p['url']), ('g:image_link', img_url(v.get('img') or p['img'])),
+            ('link', SITE + p['url']), ('g:image_link', feed_img(v.get('img') or p['img'])),
             ('g:availability', 'out_of_stock' if v['soldOut'] else 'in_stock'), ('g:price', f'{v.get("was", v["price"]):.2f} ZAR')] + ([('g:sale_price', f'{v["price"]:.2f} ZAR'), ('g:sale_price_effective_date', f'{TODAY}T00:00+02:00/{SALE["end"][:16]}+02:00')] if v.get('was') else []) + [
             ('g:condition', 'new'), ('g:identifier_exists', 'no'), ('g:brand', 'Makkie Wholesalers'),
             ('g:product_type', p['category'].replace(' · ', ' > '))] + ([('g:google_product_category', GPC[p['group']])] if p['group'] in GPC else [])) + '</item>')
