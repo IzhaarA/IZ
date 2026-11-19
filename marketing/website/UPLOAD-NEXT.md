@@ -9,6 +9,8 @@ LIVE: Black Friday landing page /black-friday/ (make-seo-pages.py, only while SA
 WAITING: Cloudsoft Shawl G (GSH-*) and Plain Chenille Throw C (CSH-*) TEMPORARILY off the site (HIDE_PREFIXES in patch-remove-products.py + 302s at the end of _redirects). LIVE since 18 Nov 2026 (deploy 6afd80713929aec8a9d2dd3a).
 To bring back: empty HIDE_PREFIXES, delete the TEMPORARY block in _redirects, rebuild and upload.
 
+WAITING (not uploaded): basket fixes (patch-basket.py): drawer scrolls as one with Checkout always on screen, quantity -/+ and Remove on the checkout summary, narrow phones no longer side-scroll.
+
 TO DO 1 DEC 2026: rebuild and upload WITHOUT patch-promo.py / patch-gift.py so Google pages and feed show normal prices.
 
 Last upload: 18 Nov 2026 (deploy 6afd8a1933f212664ab55726): gift box layout fix on laptops.
@@ -52,5 +54,5 @@ Before that: 20 Oct 2026 — 17 new products, 7 replacement photos, Beverly remo
 patch-payfast.py, patch-checkout.py, patch-price-changes.py, patch-prices.py, patch-soldout.py, patch-shawlphotos.py,
 patch-chenille.py, patch-shipping.py, patch-courier-rates.py, patch-remove-products.py,
 `patch-new-products.py <index> new-products`, patch-catalogue-edits.py, patch-prices.py,
-then patch-home.py, patch-nav.py, patch-track.py, patch-gtag.py, patch-promo.py + patch-gift.py (Black Friday only, until 30 Nov 2026; make-seo-pages.py then shows sale prices to Google. RE-UPLOAD ON 1 DEC without them so Google pages show normal prices), then download photos (all images/ and thumbs/ the page uses),
+then patch-home.py, patch-nav.py, patch-track.py, patch-gtag.py, patch-promo.py + patch-gift.py (Black Friday only, until 30 Nov 2026; make-seo-pages.py then shows sale prices to Google. RE-UPLOAD ON 1 DEC without them so Google pages show normal prices), then patch-basket.py (always, after patch-gift if used), then download photos (all images/ and thumbs/ the page uses),
 then `make-shawl-thumbs.py public`, then `make-seo-pages.py public`.
