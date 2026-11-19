@@ -1,0 +1,138 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../homepage-mockups/fonts/fonts.css">
+<!-- "What does R1,000 get you?" TikTok (Black Friday, Nov 2026). Products and sale prices come from make_trio.py. -->
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{width:1080px;height:1920px;overflow:hidden;background:#FFF4E2;color:#1d1b19;font-family:Archivo,Arial,sans-serif;position:relative}
+.a{position:absolute}.sc{position:absolute;inset:0;opacity:0}.ctr{left:0;width:100%;text-align:center}
+.cond{font-family:Oswald,Impact,sans-serif;text-transform:uppercase}
+.stripe{position:absolute;left:0;right:0;height:16px;background:repeating-linear-gradient(90deg,#0A5A33 0 60px,#FFE14F 60px 120px,#E1251B 120px 180px,#1d1b19 180px 240px)}
+.chip{display:inline-block;font-weight:800;font-size:40px;letter-spacing:4px;padding:16px 34px;border-radius:999px}
+/* intro */
+#i1{top:330px;font-weight:700;font-size:120px;letter-spacing:2px}
+#i2{top:500px;font-weight:900;font-size:280px;letter-spacing:-10px;color:#0A5A33;line-height:1}
+#i3{top:830px;font-weight:700;font-size:112px;line-height:.95}
+#i4{top:1120px}
+#i5{top:1290px;font-size:220px;line-height:1}
+/* product card */
+#card{left:90px;top:150px;width:900px;height:800px;transform-origin:50% 50%}
+#ph{width:900px;height:800px;border-radius:40px;overflow:hidden;background:#fff;box-shadow:0 30px 60px rgba(60,40,10,.25);position:relative}
+#phi{position:absolute;inset:0;background-size:cover;background-position:center}
+#pn{margin-top:26px;font-weight:700;font-size:92px;line-height:.95;white-space:nowrap}
+#ps{margin-top:8px;font-weight:700;font-size:34px;letter-spacing:4px;color:#0A5A33}
+#pp{position:absolute;right:-20px;top:620px;background:#E1251B;color:#fff;border-radius:28px;padding:16px 30px 20px;text-align:center;box-shadow:0 18px 40px rgba(0,0,0,.3);transform-origin:50% 50%}
+#pp s{display:block;font-size:44px;font-weight:700;opacity:.85;text-decoration-thickness:4px}#pp b{display:block;font-size:110px;font-weight:900;line-height:1;letter-spacing:-3px}
+#plus{left:60px;top:80px;font-weight:900;font-size:56px;color:#0A5A33}
+/* basket */
+#slots{left:50px;top:1345px;display:flex;gap:20px}
+#slots div{width:180px;height:180px;border-radius:24px;border:4px dashed #d9c9a8;background-size:cover;background-position:center;background-color:transparent}
+#slots div.on{border:5px solid #fff;box-shadow:0 10px 24px rgba(60,40,10,.25)}
+#tot{left:60px;top:1560px;font-weight:900;font-size:76px;letter-spacing:-1px}
+#tot small{font-size:40px;font-weight:700;letter-spacing:3px;color:#6f6a63;margin-right:16px}
+#goal{right:60px;top:1585px;font-weight:800;font-size:40px;color:#0A5A33}
+#meter{left:60px;top:1670px;width:960px;height:64px;border-radius:40px;background:#efe2c8;overflow:hidden}
+#mfill{height:100%;width:0;background:linear-gradient(90deg,#E1251B,#FFB000);border-radius:40px}
+#mgift{left:978px;top:1650px;font-size:90px;line-height:1;transform-origin:50% 50%}
+/* unlocked */
+#s3{background:#0A5A33;color:#fff}
+#u1{top:170px;font-size:230px;line-height:1}
+#u2{top:430px;font-weight:700;font-size:150px;line-height:.9;color:#FFE14F}
+#u3{top:740px;font-weight:700;font-size:46px;letter-spacing:3px}
+#gifts{left:60px;top:840px;width:960px;display:flex;flex-direction:column;gap:26px}
+.g{display:flex;align-items:center;gap:34px;background:#fff;color:#1d1b19;border-radius:30px;padding:20px 30px;font-weight:800;font-size:54px;box-shadow:0 14px 36px rgba(0,0,0,.3)}
+.g i{width:190px;height:190px;border-radius:20px;background:#F4EFE8 center/cover;flex:none}
+#u4{top:1640px;font-weight:700;font-size:44px}
+.conf{position:absolute;width:24px;height:36px;border-radius:5px}
+/* end */
+#e_url{display:inline-block;background:#0A5A33;color:#fff;font-weight:900;font-size:100px;padding:22px 64px;border-radius:90px;letter-spacing:-2px}
+</style></head><body>
+<div class="stripe" style="top:0"></div><div class="stripe" style="bottom:0"></div>
+<div class="sc" id="s1">
+  <div class="a ctr cond" id="i1">WHAT DOES</div>
+  <div class="a ctr" id="i2">R1,000</div>
+  <div class="a ctr cond" id="i3">GET YOU AT<br>MAKKIES?</div>
+  <div class="a ctr" id="i4"><span class="chip" style="background:#1d1b19;color:#FFE14F">BLACK FRIDAY PRICES</span></div>
+  <div class="a ctr" id="i5">🛒</div>
+</div>
+<div class="sc" id="s2">
+  <div class="a cond" id="plus"></div>
+  <div class="a" id="card"><div id="ph"><div id="phi"></div></div><div class="cond" id="pn"></div><div id="ps"></div>
+    <div id="pp"><s id="ppw"></s><b id="ppn"></b></div></div>
+  <div class="a" id="slots"></div>
+  <div class="a" id="tot"><small>BASKET</small><span id="tott">R0</span></div>
+  <div class="a" id="goal">R1,000 = FREE GIFT</div>
+  <div class="a" id="meter"><div id="mfill"></div></div>
+  <div class="a" id="mgift">🎁</div>
+</div>
+<div class="sc" id="s3">
+  <div class="a ctr" id="u1">🎁</div>
+  <div class="a ctr cond" id="u2">FREE GIFT<br>UNLOCKED!</div>
+  <div class="a ctr" id="u3">ORDER R1,000+ AND CHOOSE ONE:</div>
+  <div class="a" id="gifts"></div>
+  <div class="a ctr" id="u4">Your basket: <b id="u4t" style="color:#FFE14F"></b> · on sale online now</div>
+  <div id="conf"></div>
+</div>
+<div class="sc" id="s4">
+  <img class="a" id="e_logo" src="img/mw_oval.png" style="left:340px;top:250px;width:400px">
+  <div class="a ctr cond" id="e_t" style="top:650px;font-weight:700;font-size:130px;line-height:.92">FILL YOUR BASKET<br><span style="color:#E1251B">GET A FREE GIFT</span></div>
+  <div class="a ctr" id="e_u" style="top:1000px"><span id="e_url">makkies.co.za</span></div>
+  <div class="a ctr" id="e_g" style="top:1200px;font-weight:800;font-size:48px">Black Friday sale · 🎁 Free gift over R1,000</div>
+  <div class="a ctr" id="e_d" style="top:1290px;font-weight:600;font-size:40px;color:#6f6a63">Delivery across South Africa · Card, EFT, SnapScan</div>
+  <div class="a ctr" id="e_w" style="top:1390px;font-weight:800;font-size:50px"><span style="color:#25D366">●</span> WhatsApp 072 323 5469</div>
+  <div class="a ctr" id="e_e" style="top:1500px"><span class="chip" style="background:#E1251B;color:#fff;font-size:46px">ENDS 30 NOVEMBER</span></div>
+</div>
+<script src="trio.js"></script>
+<script>
+const C = {"P": [{"id": "TRB-002", "n": "UMBHALO", "s": "NDEBELE BLANKET", "now": "R554", "was": "R595", "v": 554, "img": "pay_umbhalo", "mode": "cover", "pos": "50% 50%"}, {"id": "SHW-011", "n": "WHITE WEDDING SHAWL", "s": "FOR THE BRIDE", "now": "R163", "was": "R175", "v": 163, "img": "t_wedding", "mode": "cover", "pos": "50% 35%"}, {"id": "PSH-016", "n": "PLAIN SHAWL", "s": "29 COLOURS", "now": "R89", "was": "R95", "v": 89, "img": "t_plain_red", "mode": "cover", "pos": "50% 35%"}, {"id": "BER-008", "n": "ZCC GREEN BERET", "s": "LAMBSWOOL BERET", "now": "R98", "was": "R105", "v": 98, "img": "bf_beret_c", "mode": "cut", "pos": "50% 50%"}, {"id": "NZL-001", "n": "NECK ZIELA", "s": "BUTTON NECK ZIELA · GOLD", "now": "R140", "was": "R150", "v": 140, "img": "bf_ziela_c", "mode": "cut", "pos": "50% 50%"}], "G": [{"n": "10 blanket pins", "img": "t_g_pins"}, {"n": "2 flag whistles", "img": "t_g_whistle"}, {"n": "Beaded oval necklace", "img": "t_n_pbn-e29_c"}]};
+const P = C.P, PER = 2.0;
+const T = scenes([['s1', 2.8], ['s2', P.length * PER + .5], ['s3', 4.2], ['s4', 4]]); window.DURATION = T.end;
+preload(P.map(p => p.img).concat(C.G.map(g => g.img)));
+P.forEach(() => $('slots').insertAdjacentHTML('beforeend', '<div></div>'));
+C.G.forEach(g => $('gifts').insertAdjacentHTML('beforeend', `<div class="g"><i style="background-image:url(${img(g.img)})"></i>${g.n}</div>`));
+makeConf($('conf'), 60, ['#FFE14F', '#E1251B', '#ffffff', '#FFB000', '#7fd3a3']);
+const totals = P.reduce((a, p) => a.concat([a[a.length - 1] + p.v]), [0]);
+const total = totals[totals.length - 1];
+$('u4t').textContent = Rf(total);
+window.render = function (t) {
+  const [cur, lt] = show(T, t);
+  if (cur === 's1') { slam($('i1'), lt, .1, .2, 1.8); slam($('i2'), lt, .35, .25, 2.6); rise($('i3'), lt, .8, .3, 60); pop($('i4'), lt, 1.2, .35, .4, -2);
+    pop($('i5'), lt, 1.5, .4, .2, 0); $('i5').style.transform += ` translateX(${Math.sin(lt * 6) * 40 * cl(lt - 1.5)}px)`; }
+  if (cur === 's2') {
+    const i = Math.min(P.length - 1, Math.floor(lt / PER)), p = P[i], li = lt - i * PER, done = lt >= P.length * PER;
+    const ph = $('phi');
+    if (ph.dataset.i !== String(i)) { ph.dataset.i = i;
+      ph.style.backgroundImage = `url(${img(p.img)})`; ph.style.backgroundSize = p.mode === 'cut' ? 'contain' : 'cover'; ph.style.backgroundPosition = p.pos;
+      $('pn').textContent = p.n; $('ps').textContent = p.s; $('ppw').textContent = p.was; $('ppn').textContent = p.now; fit($('pn'), 900, 92);
+      $('plus').textContent = `ITEM ${i + 1} OF ${P.length}`; }
+    // card: slide in, hold, then shrink into its basket slot
+    const sl = $('slots').children[i].getBoundingClientRect(), k = eio((li - 1.45) / .4);
+    const sx = sl.left + 90 - (90 + 450), sy = sl.top + 90 - (150 + 400), sc = 1 - k * (1 - 180 / 900);
+    const inX = (1 - eo(li / .35)) * 1100;
+    $('card').style.opacity = done ? 0 : 1;
+    $('card').style.transform = `translate(${inX + sx * k}px,${sy * k}px) scale(${sc}) rotate(${(1 - eo(li / .35)) * 8}deg)`;
+    ['pn', 'ps', 'pp'].forEach(id => $(id).style.visibility = k > .05 ? 'hidden' : 'visible');
+    rise($('pn'), li, .2, .25, 50); rise($('ps'), li, .3, .25, 30);
+    if (k <= .05) pop($('pp'), li, .5, .35, .3, -6);
+    $('plus').style.opacity = done ? 0 : 1;
+    // slots filled so far
+    [...$('slots').children].forEach((s, j) => { const on = j < i || (j === i && li >= 1.85) || done;
+      s.className = on ? 'on' : ''; s.style.backgroundImage = on ? `url(${img(P[j].img)})` : 'none'; s.style.backgroundSize = P[j].mode === 'cut' ? 'contain' : 'cover'; s.style.backgroundColor = on ? '#fff' : 'transparent'; });
+    // running total + meter
+    const v = done ? total : (li < 1.6 ? totals[i] : count(li, 1.6, 1.95, totals[i], totals[i + 1]));
+    $('tott').textContent = Rf(v); $('mfill').style.width = Math.min(100, v / 10) + '%';
+    const full = v >= 1000; $('mfill').style.background = full ? '#0A5A33' : 'linear-gradient(90deg,#E1251B,#FFB000)';
+    $('mgift').style.transform = full ? `scale(${1.15 + .15 * Math.sin(t * 12)}) rotate(${Math.sin(t * 9) * 12}deg)` : 'scale(1)';
+  }
+  if (cur === 's3') {
+    pop($('u1'), lt, .05, .45, .2, -8 + 10 * Math.sin(lt * 6)); $('u1').style.transform += ` translateY(${-40 * Math.abs(Math.sin(lt * 5))}px)`;
+    slam($('u2'), lt, .3, .22, 2); rise($('u3'), lt, .7, .3, 30);
+    [...$('gifts').children].forEach((g, j) => rise(g, lt, .9 + j * .25, .35, 120));
+    rise($('u4'), lt, 1.8, .3, 30); conf($('conf'), lt - .35, 540, 420);
+  }
+  if (cur === 's4') {
+    pop($('e_logo'), lt, .05, .45, .3); slam($('e_t'), lt, .3, .25, 1.8); pop($('e_u'), lt, .6, .35, .4);
+    if (lt > 1) $('e_u').style.transform = `scale(${1 + .08 * Math.pow(Math.sin(Math.PI * (lt - 1) / .6), 2)})`;
+    rise($('e_g'), lt, .9, .3, 40); rise($('e_d'), lt, 1.05, .3, 40); rise($('e_w'), lt, 1.2, .3, 40); pop($('e_e'), lt, 1.4, .35, .4, -2);
+  }
+};
+render(0);
+</script></body></html>

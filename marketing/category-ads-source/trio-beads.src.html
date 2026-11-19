@@ -1,0 +1,126 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../homepage-mockups/fonts/fonts.css">
+<!-- "Pick your colour" beads TikTok (Black Friday, Nov 2026). Necklaces, beads and sale prices come from make_trio.py. -->
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{width:1080px;height:1920px;overflow:hidden;background:#fff;color:#1d1b19;font-family:Archivo,Arial,sans-serif;position:relative}
+.a{position:absolute}.sc{position:absolute;inset:0;opacity:0}.ctr{left:0;width:100%;text-align:center}
+.cond{font-family:Oswald,Impact,sans-serif;text-transform:uppercase}
+/* intro: falling necklaces behind big words */
+#rain{position:absolute;inset:0;overflow:hidden}
+#rain i{position:absolute;width:150px;height:430px;background:center/contain no-repeat;opacity:.9}
+#w1,#w2,#w3{font-weight:700;font-size:270px;line-height:.86;letter-spacing:-2px;-webkit-text-stroke:8px #fff;paint-order:stroke fill}
+#w1{top:420px;color:#E1251B}#w2{top:660px;color:#0350EA}#w3{top:900px;color:#05A660}
+#wsub{top:1220px}
+.chip{display:inline-block;font-weight:800;font-size:40px;letter-spacing:4px;padding:16px 34px;border-radius:999px}
+/* wall */
+#wall{left:40px;top:330px;width:1000px;display:grid;grid-template-columns:repeat(7,1fr);gap:8px 6px}
+#wall i{height:400px;background:center/contain no-repeat}
+#cnt{top:110px;font-weight:700;font-size:150px;line-height:1}
+#cnt b{color:#E1251B}
+#tag{right:56px;top:1640px;width:300px;height:300px;margin-top:-150px;border-radius:50%;background:#FFE14F;display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 20px 50px rgba(0,0,0,.25);border:8px solid #1d1b19}
+#tag s{font-size:44px;font-weight:700;color:#6f6a63;text-decoration-thickness:4px}#tag b{font-size:110px;font-weight:900;line-height:.95;letter-spacing:-3px}#tag small{font-size:34px;font-weight:800;letter-spacing:3px}
+#wtxt{left:60px;top:1630px;font-weight:700;font-size:70px;line-height:1}
+/* zoom on single colours */
+#zbg{position:absolute;inset:0}
+#zimg{left:315px;top:130px;width:450px;height:1280px;background:center/contain no-repeat}
+#zname{top:1470px;z-index:2;font-weight:700;font-size:150px;line-height:1;}
+#zprice{top:1650px;z-index:2;font-weight:800;font-size:54px;letter-spacing:3px}
+/* bead packets */
+#s4{background:#1d1b19;color:#fff}
+#m1{top:110px;font-weight:700;font-size:120px;line-height:1}
+#bph{left:90px;top:300px;width:900px;height:1000px;border-radius:40px;overflow:hidden;background:#333}
+#bphi{position:absolute;inset:0;background-size:cover;background-position:center}
+#bn{top:1340px;font-weight:700;font-size:100px;line-height:1}
+#bs{top:1460px;font-weight:700;font-size:36px;letter-spacing:5px;color:#FFE14F}
+#bp{top:1540px}
+#bp s{font-size:60px;font-weight:700;opacity:.6;margin-right:26px;text-decoration-thickness:4px}#bp b{display:inline-block;font-size:150px;font-weight:900;letter-spacing:-4px;background:#FFE14F;color:#1d1b19;padding:0 30px 10px;border-radius:20px}
+/* end */
+#e_url{display:inline-block;background:#1d1b19;color:#fff;font-weight:900;font-size:100px;padding:22px 64px;border-radius:90px;letter-spacing:-2px}
+.rb{position:absolute;left:0;right:0;height:18px;background:linear-gradient(90deg,#E1251B,#FF7A00,#FFD200,#7AC70C,#05A660,#00B3C7,#0350EA,#6B2FB3,#E0218A)}
+</style></head><body>
+<div class="rb" style="top:0;z-index:5"></div><div class="rb" style="bottom:0;z-index:5"></div>
+<div class="sc" id="s1">
+  <div id="rain"></div>
+  <div class="a ctr cond" id="w1">PICK</div>
+  <div class="a ctr cond" id="w2">YOUR</div>
+  <div class="a ctr cond" id="w3">COLOUR</div>
+  <div class="a ctr" id="wsub"><span class="chip" style="background:#1d1b19;color:#FFE14F">BEADS · BLACK FRIDAY PRICES</span></div>
+</div>
+<div class="sc" id="s2">
+  <div class="a ctr cond" id="cnt"><b id="cntn">0</b> COLOURS</div>
+  <div class="a" id="wall"></div>
+  <div class="a cond" id="wtxt">OVAL BEAD<br>NECKLACES</div>
+  <div class="a" id="tag"><s id="tagw"></s><b id="tagn"></b><small>EACH</small></div>
+</div>
+<div class="sc" id="s3">
+  <div id="zbg"></div>
+  <div class="a" id="zimg"></div>
+  <div class="a ctr cond" id="zname"></div>
+  <div class="a ctr" id="zprice"></div>
+</div>
+<div class="sc" id="s4">
+  <div class="a ctr cond" id="m1">MAKE YOUR OWN</div>
+  <div class="a" id="bph"><div id="bphi"></div></div>
+  <div class="a ctr cond" id="bn"></div>
+  <div class="a ctr" id="bs"></div>
+  <div class="a ctr" id="bp"><s id="bpw"></s><b id="bpn"></b></div>
+</div>
+<div class="sc" id="s5">
+  <img class="a" id="e_logo" src="img/mw_oval.png" style="left:340px;top:250px;width:400px">
+  <div class="a ctr cond" id="e_t" style="top:650px;font-weight:700;font-size:150px;line-height:.9">EVERY COLOUR<br><span style="color:#E1251B">ON SALE</span></div>
+  <div class="a ctr" id="e_u" style="top:1000px"><span id="e_url">makkies.co.za</span></div>
+  <div class="a ctr" id="e_g" style="top:1200px;font-weight:800;font-size:48px">Black Friday sale · 🎁 Free gift over R1,000</div>
+  <div class="a ctr" id="e_d" style="top:1290px;font-weight:600;font-size:40px;color:#6f6a63">Delivery across South Africa · Card, EFT, SnapScan</div>
+  <div class="a ctr" id="e_w" style="top:1390px;font-weight:800;font-size:50px"><span style="color:#25D366">●</span> WhatsApp 072 323 5469</div>
+  <div class="a ctr" id="e_e" style="top:1500px"><span class="chip" style="background:#E1251B;color:#fff;font-size:46px">ENDS 30 NOVEMBER</span></div>
+</div>
+<script src="trio.js"></script>
+<script>
+const C = /*CFG*/{};
+const N = C.N, B = C.P;
+// colours to zoom on (index into N) and their background tints
+const Z = [[0, '#E1251B'], [4, '#C99700'], [8, '#0E9A4B'], [11, '#13A9BF'], [14, '#2148C9'], [18, '#E0218A']].filter(z => z[0] < N.length);
+const ZP = .55, BP = 2.2;
+const T = scenes([['s1', 2.6], ['s2', 4.4], ['s3', Z.length * ZP + .2], ['s4', B.length * BP], ['s5', 4]]); window.DURATION = T.end;
+preload(N.map(n => n.img).concat(B.map(b => b.img)));
+N.forEach(n => $('wall').insertAdjacentHTML('beforeend', `<i style="background-image:url(${img(n.img)})"></i>`));
+for (let k = 0; k < 14; k++) $('rain').insertAdjacentHTML('beforeend', `<i style="background-image:url(${img(N[(k * 5) % N.length].img)})"></i>`);
+$('tagw').textContent = C.was; $('tagn').textContent = C.now;
+window.render = function (t) {
+  const [cur, lt] = show(T, t);
+  if (cur === 's1') {
+    [...$('rain').children].forEach((el, k) => { const x = (k % 7) * 155 - 10 + rnd(k) * 30, sp = 700 + rnd(k + 3) * 500, y = -500 + ((lt * sp + rnd(k + 9) * 2400) % 2500);
+      el.style.left = x + 'px'; el.style.top = y + 'px'; el.style.transform = `rotate(${(rnd(k + 5) - .5) * 40 + lt * 30 * (rnd(k) - .5)}deg)`; el.style.opacity = .35; });
+    slam($('w1'), lt, .1); slam($('w2'), lt, .4); slam($('w3'), lt, .7); pop($('wsub'), lt, 1.2, .4, .4, -2);
+  }
+  if (cur === 's2') {
+    const each = 2.2 / N.length;
+    [...$('wall').children].forEach((el, j) => { const k = bk((lt - j * each) / .35); el.style.opacity = cl((lt - j * each) / .08);
+      el.style.transform = `translateY(${(1 - k) * -260}px) rotate(${(1 - cl(k)) * (j % 2 ? 14 : -14)}deg)`; });
+    $('cntn').textContent = Math.min(N.length, Math.max(0, Math.floor(lt / each)));
+    rise($('wtxt'), lt, 2.3, .3, 40); pop($('tag'), lt, 2.5, .4, .2, -10 + 6 * Math.sin(lt * 5));
+  }
+  if (cur === 's3') {
+    const i = Math.min(Z.length - 1, Math.floor(lt / ZP)), [ni, col] = Z[i], li = lt - i * ZP;
+    $('zbg').style.background = col + '33'; $('zname').style.color = col; $('zprice').style.color = col; const z = $('zimg');
+    if (z.dataset.i !== String(i)) { z.dataset.i = i; z.style.backgroundImage = `url(${img(N[ni].img)})`; $('zname').textContent = N[ni].n; }
+    z.style.transform = `scale(${1.25 - .25 * eo(li / .25)})`; z.style.mixBlendMode = 'multiply';
+    slam($('zname'), li, .03, .18, 1.6); $('zprice').textContent = `${C.now} EACH · 21 COLOURS`.replace('21', N.length); fade($('zprice'), lt, .1, .2);
+  }
+  if (cur === 's4') {
+    const i = Math.min(B.length - 1, Math.floor(lt / BP)), b = B[i], li = lt - i * BP;
+    const ph = $('bphi');
+    if (ph.dataset.i !== String(i)) { ph.dataset.i = i; ph.style.backgroundImage = `url(${img(b.img)})`;
+      $('bn').textContent = b.n; $('bs').textContent = b.s; $('bpw').textContent = b.was; $('bpn').textContent = b.now; fit($('bn'), 980, 100); }
+    rise($('m1'), lt, .05, .3, 30);
+    ph.style.transform = `scale(${1.25 - .2 * eo(li / .4) + .03 * li})`; $('bph').style.opacity = eo(li / .2);
+    rise($('bn'), li, .15, .25, 60); rise($('bs'), li, .25, .25, 30); $('bp').style.opacity = 1; slam($('bpn'), li, .5, .22, 2); fade($('bpw'), li, .4, .1);
+  }
+  if (cur === 's5') {
+    pop($('e_logo'), lt, .05, .45, .3); slam($('e_t'), lt, .3, .25, 1.8); pop($('e_u'), lt, .6, .35, .4);
+    if (lt > 1) $('e_u').style.transform = `scale(${1 + .08 * Math.pow(Math.sin(Math.PI * (lt - 1) / .6), 2)})`;
+    rise($('e_g'), lt, .9, .3, 40); rise($('e_d'), lt, 1.05, .3, 40); rise($('e_w'), lt, 1.2, .3, 40); pop($('e_e'), lt, 1.4, .35, .4, -2);
+  }
+};
+render(0);
+</script></body></html>
