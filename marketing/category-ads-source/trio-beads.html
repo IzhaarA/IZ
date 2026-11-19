@@ -33,7 +33,7 @@ body{width:1080px;height:1920px;overflow:hidden;background:#fff;color:#1d1b19;fo
 #bn{top:1340px;left:60px;width:960px;white-space:nowrap;font-weight:700;font-size:100px;line-height:1}
 #bs{top:1460px;font-weight:700;font-size:36px;letter-spacing:5px;color:#FFE14F}
 #bp{top:1540px}
-#bp s{font-size:60px;font-weight:700;opacity:.6;margin-right:26px;text-decoration-thickness:4px}#bp b{display:inline-block;font-size:150px;font-weight:900;letter-spacing:-4px;background:#FFE14F;color:#1d1b19;padding:0 30px 10px;border-radius:20px}
+#bp em{font-style:normal;font-family:Oswald,Impact,sans-serif;font-weight:700;font-size:64px;margin-right:16px;vertical-align:20px}#bp s{font-size:60px;font-weight:700;opacity:.6;margin-right:26px;text-decoration-thickness:4px}#bp b{display:inline-block;font-size:150px;font-weight:900;letter-spacing:-4px;background:#FFE14F;color:#1d1b19;padding:0 30px 10px;border-radius:20px}
 /* end */
 #e_url{display:inline-block;background:#1d1b19;color:#fff;font-weight:900;font-size:100px;padding:22px 64px;border-radius:90px;letter-spacing:-2px}
 .rb{position:absolute;left:0;right:0;height:18px;background:linear-gradient(90deg,#E1251B,#FF7A00,#FFD200,#7AC70C,#05A660,#00B3C7,#0350EA,#6B2FB3,#E0218A)}
@@ -63,7 +63,7 @@ body{width:1080px;height:1920px;overflow:hidden;background:#fff;color:#1d1b19;fo
   <div class="a" id="bph"><div id="bphi"></div></div>
   <div class="a ctr cond" id="bn"></div>
   <div class="a ctr" id="bs"></div>
-  <div class="a ctr" id="bp"><s id="bpw"></s><b id="bpn"></b></div>
+  <div class="a ctr" id="bp"><s id="bpw"></s><em id="bpf"></em><b id="bpn"></b></div>
 </div>
 <div class="sc" id="s5">
   <img class="a" id="e_logo" src="img/mw_oval.png" style="left:340px;top:250px;width:400px">
@@ -76,7 +76,7 @@ body{width:1080px;height:1920px;overflow:hidden;background:#fff;color:#1d1b19;fo
 </div>
 <script src="trio.js"></script>
 <script>
-const C = {"N": [{"id": "PBN-04", "n": "Bright Red", "img": "t_n_pbn-04_c"}, {"id": "PBN-E23", "n": "Red", "img": "t_n_pbn-e23_c"}, {"id": "PBN-E66", "n": "Cloudy Orange", "img": "t_n_pbn-e66_c"}, {"id": "PBN-E66CL", "n": "Clear Orange", "img": "t_n_pbn-e66cl_c"}, {"id": "PBN-E17", "n": "Yellow", "img": "t_n_pbn-e17_c"}, {"id": "PBN-E68CL", "n": "Clear Yellow", "img": "t_n_pbn-e68cl_c"}, {"id": "PBN-E15", "n": "Lime Green", "img": "t_n_pbn-e15_c"}, {"id": "PBN-E67CL", "n": "Clear Green", "img": "t_n_pbn-e67cl_c"}, {"id": "PBN-E09", "n": "Green", "img": "t_n_pbn-e09_c"}, {"id": "PBN-13", "n": "Bottle Green", "img": "t_n_pbn-13_c"}, {"id": "PBN-E77", "n": "Teal", "img": "t_n_pbn-e77_c"}, {"id": "PBN-E36", "n": "Turquoise", "img": "t_n_pbn-e36_c"}, {"id": "PBN-E37", "n": "Juba Blue", "img": "t_n_pbn-e37_c"}, {"id": "PBN-05", "n": "Cloudy Royal Blue", "img": "t_n_pbn-05_c"}, {"id": "PBN-E29", "n": "Royal Blue", "img": "t_n_pbn-e29_c"}, {"id": "PBN-08", "n": "Dark Blue", "img": "t_n_pbn-08_c"}, {"id": "PBN-E06", "n": "Dark Purple", "img": "t_n_pbn-e06_c"}, {"id": "PBN-E61", "n": "Sweet Pink", "img": "t_n_pbn-e61_c"}, {"id": "PBN-E64", "n": "Pink", "img": "t_n_pbn-e64_c"}, {"id": "PBN-07", "n": "Cloudy Light Pink", "img": "t_n_pbn-07_c"}, {"id": "PBN-E78", "n": "Baby Pink", "img": "t_n_pbn-e78_c"}], "now": "R24", "was": "R25", "P": [{"id": "CZ-63030", "n": "CZECH GLASS SEED BEADS", "s": "PRECIOSA · ¼KG · SIZE 8/0 · 59 COLOURS", "now": "R131", "was": "R140", "v": 131, "img": "x", "mode": "cover", "pos": "50% 50%", "imgs": ["t_cz1", "t_cz2", "t_cz3"]}, {"id": "CH-28", "n": "CHINESE GLASS SEED BEADS", "s": "450G PACKET · 40+ COLOURS", "now": "R42", "was": "R45", "v": 42, "img": "x", "mode": "cover", "pos": "50% 50%", "imgs": ["t_ch1", "t_ch2", "t_ch"]}, {"id": "PB6-E23", "n": "6MM PLASTIC BEADS", "s": "250G PACKET · 37 COLOURS", "now": "R47", "was": "R50", "v": 47, "img": "x", "mode": "cover", "pos": "50% 50%", "imgs": ["t_pb6", "t_pb6b", "t_pb6c"]}]};
+const C = {"N": [{"id": "PBN-04", "n": "Bright Red", "img": "t_n_pbn-04_c"}, {"id": "PBN-E23", "n": "Red", "img": "t_n_pbn-e23_c"}, {"id": "PBN-E66", "n": "Cloudy Orange", "img": "t_n_pbn-e66_c"}, {"id": "PBN-E66CL", "n": "Clear Orange", "img": "t_n_pbn-e66cl_c"}, {"id": "PBN-E17", "n": "Yellow", "img": "t_n_pbn-e17_c"}, {"id": "PBN-E68CL", "n": "Clear Yellow", "img": "t_n_pbn-e68cl_c"}, {"id": "PBN-E15", "n": "Lime Green", "img": "t_n_pbn-e15_c"}, {"id": "PBN-E67CL", "n": "Clear Green", "img": "t_n_pbn-e67cl_c"}, {"id": "PBN-E09", "n": "Green", "img": "t_n_pbn-e09_c"}, {"id": "PBN-13", "n": "Bottle Green", "img": "t_n_pbn-13_c"}, {"id": "PBN-E77", "n": "Teal", "img": "t_n_pbn-e77_c"}, {"id": "PBN-E36", "n": "Turquoise", "img": "t_n_pbn-e36_c"}, {"id": "PBN-E37", "n": "Juba Blue", "img": "t_n_pbn-e37_c"}, {"id": "PBN-05", "n": "Cloudy Royal Blue", "img": "t_n_pbn-05_c"}, {"id": "PBN-E29", "n": "Royal Blue", "img": "t_n_pbn-e29_c"}, {"id": "PBN-08", "n": "Dark Blue", "img": "t_n_pbn-08_c"}, {"id": "PBN-E06", "n": "Dark Purple", "img": "t_n_pbn-e06_c"}, {"id": "PBN-E61", "n": "Sweet Pink", "img": "t_n_pbn-e61_c"}, {"id": "PBN-E64", "n": "Pink", "img": "t_n_pbn-e64_c"}, {"id": "PBN-07", "n": "Cloudy Light Pink", "img": "t_n_pbn-07_c"}, {"id": "PBN-E78", "n": "Baby Pink", "img": "t_n_pbn-e78_c"}], "now": "R24", "was": "R25", "P": [{"now": "R89", "was": "R95", "v": 89, "n": "CZECH GLASS SEED BEADS", "s": "PRECIOSA · ¼KG PACKS · 59 COLOURS", "pre": "FROM", "imgs": ["t_cz1", "t_cz2", "t_cz3"]}, {"id": "CH-28", "n": "CHINESE GLASS SEED BEADS", "s": "450G PACKET · 40+ COLOURS", "now": "R42", "was": "R45", "v": 42, "img": "x", "mode": "cover", "pos": "50% 50%", "imgs": ["t_ch1", "t_ch2", "t_ch"]}, {"id": "PB6-E23", "n": "6MM PLASTIC BEADS", "s": "250G PACKET · 37 COLOURS", "now": "R47", "was": "R50", "v": 47, "img": "x", "mode": "cover", "pos": "50% 50%", "imgs": ["t_pb6", "t_pb6b", "t_pb6c"]}]};
 const N = C.N, B = C.P;
 // colours to zoom on (index into N) and their background tints
 const Z = [[0, '#E1251B'], [8, '#0E9A4B'], [14, '#2148C9']].filter(z => z[0] < N.length);
@@ -113,7 +113,7 @@ window.render = function (t) {
     const k = Math.min(b.imgs.length - 1, Math.floor(Math.max(0, li - .15) / ((BP - .15) / b.imgs.length)));   // flick through a few colours
     if (ph.dataset.k !== i + '-' + k) { ph.dataset.k = i + '-' + k; ph.style.backgroundImage = `url(${img(b.imgs[k])})`; }
     if (ph.dataset.i !== String(i)) { ph.dataset.i = i;
-      $('bn').textContent = b.n; $('bs').textContent = b.s; $('bpw').textContent = b.was; $('bpn').textContent = b.now; fit($('bn'), 960, 100); }
+      $('bn').textContent = b.n; $('bs').textContent = b.s; $('bpw').textContent = b.was; $('bpn').textContent = b.now; $('bpf').textContent = b.pre || ''; fit($('bn'), 960, 100); }
     rise($('m1'), lt, .05, .3, 30);
     ph.style.transform = `scale(${1.15 - .1 * eo(li / .4) + .02 * li})`; $('bph').style.opacity = eo(li / .2);
     rise($('bn'), li, .15, .25, 60); rise($('bs'), li, .25, .25, 30); $('bp').style.opacity = 1; slam($('bpn'), li, .5, .22, 2); fade($('bpw'), li, .4, .1);

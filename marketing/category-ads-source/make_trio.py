@@ -35,6 +35,10 @@ def neck(pid):   # oval necklaces: cut-outs on white from cut_necklaces.py (img/
 def vidx(pid, label):   # index of the variant whose label contains `label`
     return next(k for k, v in enumerate(BY[pid]['variants']) if label in v['label'])
 def vpic(name, pid, label): return pic(name, pid, vidx(pid, label))
+def czfrom():   # cheapest Czech (Preciosa) pack on sale, for "FROM Rxx"
+    n, w = min(price(p['id'], k) for p in BY.values() if p['category'] == 'Czech Glass Seed Beads'
+               for k, v in enumerate(p['variants']) if v.get('price') is not None and not v.get('soldOut'))
+    return dict(now=R(n), was=R(w) if w else '', v=n)
 def item(pid, name, sub, photo, mode='cover', pos='50% 50%', vi=0):
     n, w = price(pid, vi); return dict(id=pid, n=name, s=sub, now=R(n), was=R(w) if w else '', v=n, img=photo, mode=mode, pos=pos)
 
@@ -59,7 +63,7 @@ CFG = {
       dict(item('KNG-005', 'KANGAS', 'MANY PRINTS', pic('kanga', 'KNG-005'), 'cut'), who='For everyone'),
       dict(item('TWL-003', 'BATH TOWELS', 'SOFT & THICK', pic('towel', 'TWL-003'), 'cut'), who='For the home')]),
   'beads': dict(N=[dict(id=x, n=BY[x]['name'], img=neck(x)) for x in NECKS], now=R(price('PBN-E29')[0]), was=R(price('PBN-E29')[1]),
-                P=[dict(item('CZ-63030', 'CZECH GLASS SEED BEADS', 'PRECIOSA · ¼KG · SIZE 8/0 · 59 COLOURS', 'x', vi=vidx('CZ-63030', '8/0 · ¼kg strung')),
+                P=[dict(czfrom(), n='CZECH GLASS SEED BEADS', s='PRECIOSA · ¼KG PACKS · 59 COLOURS', pre='FROM',
                         imgs=[vpic('cz1', 'CZ-63030', '8/0 · ¼kg strung'), vpic('cz2', 'CZ-33060', '8/0 · ¼kg strung'), vpic('cz3', 'CZ-53250', '8/0 · ¼kg strung')]),
                    dict(item('CH-28', 'CHINESE GLASS SEED BEADS', '450G PACKET · 40+ COLOURS', 'x'),
                         imgs=[pic('ch1', 'CH-42B'), pic('ch2', 'CH-5009'), pic('ch', 'CH-28')]),

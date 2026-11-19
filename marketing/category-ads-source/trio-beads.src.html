@@ -33,7 +33,7 @@ body{width:1080px;height:1920px;overflow:hidden;background:#fff;color:#1d1b19;fo
 #bn{top:1340px;left:60px;width:960px;white-space:nowrap;font-weight:700;font-size:100px;line-height:1}
 #bs{top:1460px;font-weight:700;font-size:36px;letter-spacing:5px;color:#FFE14F}
 #bp{top:1540px}
-#bp s{font-size:60px;font-weight:700;opacity:.6;margin-right:26px;text-decoration-thickness:4px}#bp b{display:inline-block;font-size:150px;font-weight:900;letter-spacing:-4px;background:#FFE14F;color:#1d1b19;padding:0 30px 10px;border-radius:20px}
+#bp em{font-style:normal;font-family:Oswald,Impact,sans-serif;font-weight:700;font-size:64px;margin-right:16px;vertical-align:20px}#bp s{font-size:60px;font-weight:700;opacity:.6;margin-right:26px;text-decoration-thickness:4px}#bp b{display:inline-block;font-size:150px;font-weight:900;letter-spacing:-4px;background:#FFE14F;color:#1d1b19;padding:0 30px 10px;border-radius:20px}
 /* end */
 #e_url{display:inline-block;background:#1d1b19;color:#fff;font-weight:900;font-size:100px;padding:22px 64px;border-radius:90px;letter-spacing:-2px}
 .rb{position:absolute;left:0;right:0;height:18px;background:linear-gradient(90deg,#E1251B,#FF7A00,#FFD200,#7AC70C,#05A660,#00B3C7,#0350EA,#6B2FB3,#E0218A)}
@@ -63,7 +63,7 @@ body{width:1080px;height:1920px;overflow:hidden;background:#fff;color:#1d1b19;fo
   <div class="a" id="bph"><div id="bphi"></div></div>
   <div class="a ctr cond" id="bn"></div>
   <div class="a ctr" id="bs"></div>
-  <div class="a ctr" id="bp"><s id="bpw"></s><b id="bpn"></b></div>
+  <div class="a ctr" id="bp"><s id="bpw"></s><em id="bpf"></em><b id="bpn"></b></div>
 </div>
 <div class="sc" id="s5">
   <img class="a" id="e_logo" src="img/mw_oval.png" style="left:340px;top:250px;width:400px">
@@ -113,7 +113,7 @@ window.render = function (t) {
     const k = Math.min(b.imgs.length - 1, Math.floor(Math.max(0, li - .15) / ((BP - .15) / b.imgs.length)));   // flick through a few colours
     if (ph.dataset.k !== i + '-' + k) { ph.dataset.k = i + '-' + k; ph.style.backgroundImage = `url(${img(b.imgs[k])})`; }
     if (ph.dataset.i !== String(i)) { ph.dataset.i = i;
-      $('bn').textContent = b.n; $('bs').textContent = b.s; $('bpw').textContent = b.was; $('bpn').textContent = b.now; fit($('bn'), 960, 100); }
+      $('bn').textContent = b.n; $('bs').textContent = b.s; $('bpw').textContent = b.was; $('bpn').textContent = b.now; $('bpf').textContent = b.pre || ''; fit($('bn'), 960, 100); }
     rise($('m1'), lt, .05, .3, 30);
     ph.style.transform = `scale(${1.15 - .1 * eo(li / .4) + .02 * li})`; $('bph').style.opacity = eo(li / .2);
     rise($('bn'), li, .15, .25, 60); rise($('bs'), li, .25, .25, 30); $('bp').style.opacity = 1; slam($('bpn'), li, .5, .22, 2); fade($('bpw'), li, .4, .1);
