@@ -17,7 +17,7 @@ LIVE since 19 Nov 2026 (deploy 6afed3e4806d8932d241decf): PAXI allowed for mirro
 
 LIVE since 19 Nov 2026 (deploy 6afed9967e3be68d42355d39): big Black Friday section on the home page (patch-bfhome.py, white, the 4 home blankets): heading, free gift, countdown, 4 deals, Shop all deals.
 
-WAITING (not uploaded): 'Shop all deals' / 'See all deals' open the shop with all sale items grouped (Shawls, Blankets, Beads, rest) + jump buttons (patch-bfhome.py); /black-friday/ button goes there too (make-seo-pages.py).
+LIVE since 19 Nov 2026 (deploy 6afedef20d9667e9e2b431a0): 'Shop all deals' / 'See all deals' open the shop with all sale items grouped (Shawls, Blankets, Beads, rest) + jump buttons (patch-bfhome.py); /black-friday/ button goes there too (make-seo-pages.py).
 
 TO DO 1 DEC 2026: rebuild and upload WITHOUT patch-promo.py / patch-gift.py / patch-bfhome.py so Google pages and feed show normal prices.
 
