@@ -13,6 +13,8 @@ LIVE since 19 Nov 2026 (deploy 6afebe3bac22755e116a1589): basket fixes (patch-ba
 
 LIVE since 19 Nov 2026 (deploy 6afecbd6cc5ee5e8fe7e779d): shop grid photos (patch-images.py): first 8 load straight away, failed photos retried once (customer from TikTok saw grey boxes on Mirrors).
 
+WAITING (not uploaded): PAXI allowed for mirrors + real mirror weights (patch-paxi.py).
+
 TO DO 1 DEC 2026: rebuild and upload WITHOUT patch-promo.py / patch-gift.py so Google pages and feed show normal prices.
 
 Last upload: 18 Nov 2026 (deploy 6afd8a1933f212664ab55726): gift box layout fix on laptops.
@@ -56,5 +58,5 @@ Before that: 20 Oct 2026 — 17 new products, 7 replacement photos, Beverly remo
 patch-payfast.py, patch-checkout.py, patch-price-changes.py, patch-prices.py, patch-soldout.py, patch-shawlphotos.py,
 patch-chenille.py, patch-shipping.py, patch-courier-rates.py, patch-remove-products.py,
 `patch-new-products.py <index> new-products`, patch-catalogue-edits.py, patch-prices.py,
-then patch-home.py, patch-nav.py, patch-track.py, patch-gtag.py, patch-promo.py + patch-gift.py (Black Friday only, until 30 Nov 2026; make-seo-pages.py then shows sale prices to Google. RE-UPLOAD ON 1 DEC without them so Google pages show normal prices), then patch-basket.py and patch-images.py (always, after patch-gift if used), then download photos (all images/ and thumbs/ the page uses),
+then patch-home.py, patch-nav.py, patch-track.py, patch-gtag.py, patch-promo.py + patch-gift.py (Black Friday only, until 30 Nov 2026; make-seo-pages.py then shows sale prices to Google. RE-UPLOAD ON 1 DEC without them so Google pages show normal prices), then patch-basket.py, patch-images.py and patch-paxi.py (always, after patch-gift if used), then download photos (all images/ and thumbs/ the page uses),
 then `make-shawl-thumbs.py public`, then `make-seo-pages.py public`.
