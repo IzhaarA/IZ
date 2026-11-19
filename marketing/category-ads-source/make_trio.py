@@ -32,6 +32,9 @@ def neck(pid):   # oval necklaces: cut-outs on white from cut_necklaces.py (img/
     a = np.clip(a * (255 / np.maximum(bg - 6, 1)), 0, 255); a[a.min(-1) > 228] = 255
     Image.fromarray(a.astype('uint8')).save(os.path.join(PH, f't_n_{pid.lower()}.jpg'), quality=92)
     return f't_n_{pid.lower()}'
+def vidx(pid, label):   # index of the variant whose label contains `label`
+    return next(k for k, v in enumerate(BY[pid]['variants']) if label in v['label'])
+def vpic(name, pid, label): return pic(name, pid, vidx(pid, label))
 def item(pid, name, sub, photo, mode='cover', pos='50% 50%', vi=0):
     n, w = price(pid, vi); return dict(id=pid, n=name, s=sub, now=R(n), was=R(w) if w else '', v=n, img=photo, mode=mode, pos=pos)
 
@@ -56,8 +59,12 @@ CFG = {
       dict(item('KNG-005', 'KANGAS', 'MANY PRINTS', pic('kanga', 'KNG-005'), 'cut'), who='For everyone'),
       dict(item('TWL-003', 'BATH TOWELS', 'SOFT & THICK', pic('towel', 'TWL-003'), 'cut'), who='For the home')]),
   'beads': dict(N=[dict(id=x, n=BY[x]['name'], img=neck(x)) for x in NECKS], now=R(price('PBN-E29')[0]), was=R(price('PBN-E29')[1]),
-                P=[item('PB6-E23', '6MM PLASTIC BEADS', '250G PACKET · 37 COLOURS', pic('pb6', 'PB6-E23')),
-                   item('CH-28', 'GLASS SEED BEADS', '450G PACKET · 40+ COLOURS', pic('ch', 'CH-28'))]),
+                P=[dict(item('CZ-63030', 'CZECH GLASS SEED BEADS', 'PRECIOSA · ¼KG · SIZE 8/0 · 59 COLOURS', 'x', vi=vidx('CZ-63030', '8/0 · ¼kg strung')),
+                        imgs=[vpic('cz1', 'CZ-63030', '8/0 · ¼kg strung'), vpic('cz2', 'CZ-33060', '8/0 · ¼kg strung'), vpic('cz3', 'CZ-53250', '8/0 · ¼kg strung')]),
+                   dict(item('CH-28', 'CHINESE GLASS SEED BEADS', '450G PACKET · 40+ COLOURS', 'x'),
+                        imgs=[pic('ch1', 'CH-42B'), pic('ch2', 'CH-5009'), pic('ch', 'CH-28')]),
+                   dict(item('PB6-E23', '6MM PLASTIC BEADS', '250G PACKET · 37 COLOURS', 'x'),
+                        imgs=[pic('pb6', 'PB6-E23'), pic('pb6b', 'PB6-E17'), pic('pb6c', 'PB6-E29')])]),
 }
 for name, c in CFG.items():
     t = open(os.path.join(H, f'trio-{name}.src.html'), encoding='utf-8').read()
