@@ -15,7 +15,9 @@ LIVE since 19 Nov 2026 (deploy 6afecbd6cc5ee5e8fe7e779d): shop grid photos (patc
 
 LIVE since 19 Nov 2026 (deploy 6afed3e4806d8932d241decf): PAXI allowed for mirrors + real mirror weights (patch-paxi.py).
 
-TO DO 1 DEC 2026: rebuild and upload WITHOUT patch-promo.py / patch-gift.py so Google pages and feed show normal prices.
+WAITING (not uploaded): big Black Friday section on the home page (patch-bfhome.py): heading, free gift, countdown, 4 deals, Shop all deals.
+
+TO DO 1 DEC 2026: rebuild and upload WITHOUT patch-promo.py / patch-gift.py / patch-bfhome.py so Google pages and feed show normal prices.
 
 Last upload: 18 Nov 2026 (deploy 6afd8a1933f212664ab55726): gift box layout fix on laptops.
 Before that: 17 Nov 2026 (deploy 6afc716a934ea492532a1f1f): free gift choice with photos (patch-gift.py), clearer sale totals, sale prices on Google pages/feed/llms.txt.
@@ -58,5 +60,5 @@ Before that: 20 Oct 2026 — 17 new products, 7 replacement photos, Beverly remo
 patch-payfast.py, patch-checkout.py, patch-price-changes.py, patch-prices.py, patch-soldout.py, patch-shawlphotos.py,
 patch-chenille.py, patch-shipping.py, patch-courier-rates.py, patch-remove-products.py,
 `patch-new-products.py <index> new-products`, patch-catalogue-edits.py, patch-prices.py,
-then patch-home.py, patch-nav.py, patch-track.py, patch-gtag.py, patch-promo.py + patch-gift.py (Black Friday only, until 30 Nov 2026; make-seo-pages.py then shows sale prices to Google. RE-UPLOAD ON 1 DEC without them so Google pages show normal prices), then patch-basket.py, patch-images.py and patch-paxi.py (always, after patch-gift if used), then download photos (all images/ and thumbs/ the page uses),
+then patch-home.py, patch-nav.py, patch-track.py, patch-gtag.py, patch-promo.py + patch-gift.py + patch-bfhome.py (Black Friday only, until 30 Nov 2026; make-seo-pages.py then shows sale prices to Google. RE-UPLOAD ON 1 DEC without them so Google pages show normal prices), then patch-basket.py, patch-images.py and patch-paxi.py (always, after patch-gift if used), then download photos (all images/ and thumbs/ the page uses),
 then `make-shawl-thumbs.py public`, then `make-seo-pages.py public`.
