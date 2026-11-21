@@ -21,6 +21,8 @@ LIVE since 19 Nov 2026 (deploy 6afedef20d9667e9e2b431a0): 'Shop all deals' / 'Se
 
 LIVE since 21 Nov 2026 (deploy 6b0152ac6ddd826ae01069f6): WebSite structured data on the home page so Google shows 'Makkie Wholesalers' above results (patch-sitename.py).
 
+WAITING (not uploaded): Google feed: 'Tobacco'->'Tan', 'Champagne'->'Pale Beige' in feed titles, Smoking Pipes left out (make-seo-pages.py) - Merchant Center tobacco/alcohol policy flags.
+
 TO DO 1 DEC 2026: rebuild and upload WITHOUT patch-promo.py / patch-gift.py / patch-bfhome.py so Google pages and feed show normal prices.
 
 Last upload: 18 Nov 2026 (deploy 6afd8a1933f212664ab55726): gift box layout fix on laptops.

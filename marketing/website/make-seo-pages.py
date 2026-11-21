@@ -307,13 +307,22 @@ def feed_img(src):
     except Exception:
         return img_url(src)
 shutil.rmtree(os.path.join(PUB, 'feed-img'), ignore_errors=True)
+# Google policy words in colour names: Google read "Tobacco" (a brown) and "Champagne" (a beige) as tobacco and
+# alcohol and blocked those shawls from Shopping. Feed titles only use plain colour words; the shop keeps its names.
+# Smoking pipes can never be advertised on Google Shopping (tobacco accessories), so they stay out of the feed.
+FEED_WORDS = [(re.compile(r'\bTobacco\b'), 'Tan'), (re.compile(r'\bChampagne\b'), 'Pale Beige')]
+FEED_SKIP_CATS = ('Smoking Pipes',)
+def feed_title(t):
+    for rx, w in FEED_WORDS: t = rx.sub(w, t)
+    return t
 items = []
 for p in P:
+    if p['category'].startswith(FEED_SKIP_CATS): continue
     for v in p['variants']:
         if v.get('price') is None: continue
         lab = '' if v['label'] in ('Standard', p['name']) else ' – ' + v['label']
         items.append('<item>' + ''.join(f'<{t}>{xesc(str(x))}</{t}>' for t, x in [
-            ('g:id', v['id']), ('g:item_group_id', p['id']), ('title', (p['t'] + lab)[:150]), ('description', p['d'][:5000]),
+            ('g:id', v['id']), ('g:item_group_id', p['id']), ('title', feed_title(p['t'] + lab)[:150]), ('description', p['d'][:5000]),
             ('link', SITE + p['url']), ('g:image_link', feed_img(v.get('img') or p['img'])),
             ('g:availability', 'out_of_stock' if v['soldOut'] else 'in_stock'), ('g:price', f'{v.get("was", v["price"]):.2f} ZAR')] + ([('g:sale_price', f'{v["price"]:.2f} ZAR'), ('g:sale_price_effective_date', f'{TODAY}T00:00+02:00/{SALE["end"][:16]}+02:00')] if v.get('was') else []) + [
             ('g:condition', 'new'), ('g:identifier_exists', 'no'), ('g:brand', 'Makkie Wholesalers'),
