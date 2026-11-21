@@ -19,7 +19,7 @@ LIVE since 19 Nov 2026 (deploy 6afed9967e3be68d42355d39): big Black Friday secti
 
 LIVE since 19 Nov 2026 (deploy 6afedef20d9667e9e2b431a0): 'Shop all deals' / 'See all deals' open the shop with all sale items grouped (Shawls, Blankets, Beads, rest) + jump buttons (patch-bfhome.py); /black-friday/ button goes there too (make-seo-pages.py).
 
-WAITING (not uploaded): WebSite structured data on the home page so Google shows 'Makkie Wholesalers' above results (patch-sitename.py).
+LIVE since 21 Nov 2026 (deploy 6b0152ac6ddd826ae01069f6): WebSite structured data on the home page so Google shows 'Makkie Wholesalers' above results (patch-sitename.py).
 
 TO DO 1 DEC 2026: rebuild and upload WITHOUT patch-promo.py / patch-gift.py / patch-bfhome.py so Google pages and feed show normal prices.
 
