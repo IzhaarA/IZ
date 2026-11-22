@@ -23,6 +23,8 @@ LIVE since 21 Nov 2026 (deploy 6b0152ac6ddd826ae01069f6): WebSite structured dat
 
 WAITING (not uploaded): Google feed: 'Tobacco'->'Tan', 'Champagne'->'Pale Beige' in feed titles, Smoking Pipes left out (make-seo-pages.py) - Merchant Center tobacco/alcohol policy flags.
 
+WAITING (not uploaded): card sales counted after PayFast return (patch-paidflag.py + track/t.js): Google Ads purchase conversion + stats 'order' were never sent because the page cleared #paid first.
+
 TO DO 1 DEC 2026: rebuild and upload WITHOUT patch-promo.py / patch-gift.py / patch-bfhome.py so Google pages and feed show normal prices.
 
 Last upload: 18 Nov 2026 (deploy 6afd8a1933f212664ab55726): gift box layout fix on laptops.
@@ -66,5 +68,5 @@ Before that: 20 Oct 2026 — 17 new products, 7 replacement photos, Beverly remo
 patch-payfast.py, patch-checkout.py, patch-price-changes.py, patch-prices.py, patch-soldout.py, patch-shawlphotos.py,
 patch-chenille.py, patch-shipping.py, patch-courier-rates.py, patch-remove-products.py,
 `patch-new-products.py <index> new-products`, patch-catalogue-edits.py, patch-prices.py,
-then patch-home.py, patch-nav.py, patch-track.py, patch-gtag.py, patch-promo.py + patch-gift.py + patch-bfhome.py (Black Friday only, until 30 Nov 2026; make-seo-pages.py then shows sale prices to Google. RE-UPLOAD ON 1 DEC without them so Google pages show normal prices), then patch-basket.py, patch-images.py, patch-paxi.py and patch-sitename.py (always, after patch-gift if used), then download photos (all images/ and thumbs/ the page uses),
+then patch-home.py, patch-nav.py, patch-track.py, patch-gtag.py, patch-promo.py + patch-gift.py + patch-bfhome.py (Black Friday only, until 30 Nov 2026; make-seo-pages.py then shows sale prices to Google. RE-UPLOAD ON 1 DEC without them so Google pages show normal prices), then patch-basket.py, patch-images.py, patch-paxi.py, patch-sitename.py and patch-paidflag.py (always, after patch-gift if used), then download photos (all images/ and thumbs/ the page uses),
 then `make-shawl-thumbs.py public`, then `make-seo-pages.py public`.
