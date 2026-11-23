@@ -25,7 +25,7 @@ LIVE since 22 Nov 2026 (deploy 6b03611da079c05879134b18): Google feed: 'Tobacco'
 
 LIVE since 22 Nov 2026 (deploy 6b03611da079c05879134b18): card sales counted after PayFast return (patch-paidflag.py + track/t.js): Google Ads purchase conversion + stats 'order' were never sent because the page cleared #paid first.
 
-WAITING (not uploaded): CZ-46112 8/0 loose real pack photo (patch-czphotos.py); phone product pop-up photo no longer squashed (patch-modalpic.py); patch-sitename.py now inserts right after <head> (it had pushed later CSS patches into the invoice template).
+LIVE since 23 Nov 2026 (deploy 6b043164c213f11a9b9028a6): CZ-46112 8/0 loose real pack photo (patch-czphotos.py); phone product pop-up photo no longer squashed (patch-modalpic.py); patch-sitename.py now inserts right after <head> (it had pushed later CSS patches into the invoice template).
 
 TO DO 1 DEC 2026: rebuild and upload WITHOUT patch-promo.py / patch-gift.py / patch-bfhome.py so Google pages and feed show normal prices.
 
