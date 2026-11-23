@@ -22,7 +22,7 @@ SOLD_OUT = [
     "CZ-46112-8/0-S",                         # Shell Yellow/Brown Luster 8/0 strung (8/0 loose back 31 Oct)
     "CZ-47185",                               # Shell Yellow/White Luster (all)
     "CZ-49102-8/0-S", "CZ-49102-11/0-S",      # Hematite strung (8/0 and 11/0)
-    "CZ-53250-3/0-L", "CZ-53250-5/0-L", "CZ-53250-8/0-L",   # Opaque Bright Green loose (3/0, 5/0, 8/0)
+    # CZ-53250 Opaque Bright Green loose 3/0, 5/0, 8/0: back in stock 23 Nov 2026
     "CZ-53410-8/0-L",                         # Opaque Light Green 8/0 loose
     "CZ-58230",                               # Opaque Pale Green Sfinx (all)
     "CZ-58430-8/0-S",                         # Opaque Olive Green Sfinx 8/0 strung

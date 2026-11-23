@@ -27,6 +27,8 @@ LIVE since 22 Nov 2026 (deploy 6b03611da079c05879134b18): card sales counted aft
 
 LIVE since 23 Nov 2026 (deploy 6b043164c213f11a9b9028a6): CZ-46112 8/0 loose real pack photo (patch-czphotos.py); phone product pop-up photo no longer squashed (patch-modalpic.py); patch-sitename.py now inserts right after <head> (it had pushed later CSS patches into the invoice template).
 
+WAITING (not uploaded): CZ-53250 Opaque Bright Green loose 3/0, 5/0, 8/0 back in stock (patch-soldout.py).
+
 TO DO 1 DEC 2026: rebuild and upload WITHOUT patch-promo.py / patch-gift.py / patch-bfhome.py so Google pages and feed show normal prices.
 
 Last upload: 18 Nov 2026 (deploy 6afd8a1933f212664ab55726): gift box layout fix on laptops.
