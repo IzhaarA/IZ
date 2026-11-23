@@ -19,7 +19,7 @@ SOLD_OUT = [
     "CZ-28020-8/0-S",                         # Opaque Violet Sfinx 8/0 strung (9 Nov 2026)
     "CZ-33060-1/0-L",                         # Opaque Royal Blue 1/0 loose
     "CZ-38220",                               # Opaque Teal Sfinx (all)
-    # CZ-46112 Shell Yellow/Brown Luster 8/0 strung: back in stock 23 Nov 2026
+    "CZ-46112-8/0-S",                         # Shell Yellow/Brown Luster 8/0 strung (8/0 loose in stock)
     "CZ-47185",                               # Shell Yellow/White Luster (all)
     "CZ-49102-8/0-S", "CZ-49102-11/0-S",      # Hematite strung (8/0 and 11/0)
     # CZ-53250 Opaque Bright Green loose 3/0, 5/0, 8/0: back in stock 23 Nov 2026
