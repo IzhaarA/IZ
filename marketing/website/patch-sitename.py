@@ -12,8 +12,8 @@ LD = {"@context": "https://schema.org", "@type": "WebSite", "name": "Makkie Whol
       "publisher": {"@type": "Organization", "name": "Makkie Wholesalers", "url": "https://makkies.co.za/",
                     "logo": "https://makkies.co.za/apple-touch-180.png"}}
 tag = '<script type="application/ld+json">' + json.dumps(LD, ensure_ascii=False) + '</script>\n'
-i = s.find('</head>')   # the page's own head (a later '</head>' sits inside the invoice template)
-if i < 0: raise SystemExit('</head> not found')
-s = s[:i] + tag + s[i:]
+i = s.find('<head>')   # straight after <head>, so other patches that add CSS before '</style></head>' still find it
+if i < 0: raise SystemExit('<head> not found')
+s = s[:i + 6] + '\n' + tag + s[i + 6:]
 open(P, 'w', encoding='utf-8').write(s)
 print('WebSite site name added')
