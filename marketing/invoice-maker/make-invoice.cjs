@@ -4,6 +4,7 @@
 //              paid (optional: true for EFT, or how it was paid, e.g. "card")}
 // Quotation (optional "unitText" replaces the pack size wording): add "quote": "Q-MWO-1234" (does not use an order number), optional "billTo": [lines], "valid": days, "note",
 //            mode "none" (no delivery row), and a special price as a third item value: [code, qty, price].
+// Items not on the website: {"n": name, "c": grey line, "l": detail, "qty": 30, "price": 230}.
 const { chromium } = require('/opt/node22/lib/node_modules/playwright');
 const fs = require('fs'), path = require('path');
 const O = JSON.parse(fs.readFileSync(process.argv[3], 'utf8'));
@@ -23,11 +24,13 @@ const FONTCSS = "@font-face {\n  font-family: 'DM Serif Display';\n  font-style:
   await p.goto('file://' + path.resolve(process.argv[2]), { waitUntil: 'domcontentloaded' });
   await p.waitForTimeout(800);
   const info = await p.evaluate(([FONTCSS, O]) => {
-    const ls = O.items.map(([vid, q, price]) => { const p = PRODUCTS.find(x => x.variants.some(v => v.id === vid)), v = p.variants.find(x => x.id === vid); return { p, v, qty: q, total: (price ?? v.price) * q }; });
-    const sub = ls.reduce((a, l) => a + l.total, 0), sh = O.mode === 'collect' ? 0 : (O.delivery ?? (O.mode === 'paxi' ? paxiBags(ls).cost : null)), tot = sub + (sh || 0);
+    // an item is [option code, qty, price?] for website products, or {n, c, l, qty, price} for things not on the website
+    const ls = O.items.map(it => { if (!Array.isArray(it)) return { free: it, qty: it.qty, total: it.price * it.qty };
+      const [vid, q, price] = it; const p = PRODUCTS.find(x => x.variants.some(v => v.id === vid)), v = p.variants.find(x => x.id === vid); return { p, v, qty: q, total: (price ?? v.price) * q }; });
+    const sub = ls.reduce((a, l) => a + l.total, 0), sh = O.mode === 'collect' ? 0 : (O.delivery ?? (O.mode === 'paxi' ? paxiBags(ls.filter(l => !l.free)).cost : null)), tot = sub + (sh || 0);
     const so = { no: O.no, date: O.date, first: O.name, last: '', cell: O.cell || '', email: O.email || '', addr: O.addr, mode: O.mode, pay: 'eft',
-      bags: O.mode === 'paxi' ? paxiBags(ls).bags : 1,
-      lines: ls.map(l => ({ n: fullName(l.p), c: l.p.category + ' · ' + l.v.id, l: vdetail(l.p, l.v) + ((O.quote || O.unitText) && (O.unitText || (l.p.unit && l.p.unit !== 'unit')) ? ' · ' + (O.unitText || l.p.unit) : ''), q: l.qty, t: l.total })), sub, sh, tot };
+      bags: O.mode === 'paxi' ? paxiBags(ls.filter(l => !l.free)).bags : 1,
+      lines: ls.map(l => l.free ? ({ n: l.free.n, c: l.free.c || '', l: l.free.l || '', q: l.qty, t: l.total }) : ({ n: fullName(l.p), c: l.p.category + ' · ' + l.v.id, l: vdetail(l.p, l.v) + ((O.quote || O.unitText) && (O.unitText || (l.p.unit && l.p.unit !== 'unit')) ? ' · ' + (O.unitText || l.p.unit) : ''), q: l.qty, t: l.total })), sub, sh, tot };
     const css = [...document.querySelectorAll('style')].map(s => s.textContent).join('\n');
     let html = invoiceHTML(so, !!O.paid);
     if (O.paid) html = html.replace(/<div class="ipay">[\s\S]*?<\/div><\/div>|<div class="ipay">[\s\S]*?<\/p><\/div>/,     // paid: no bank details, just a thank-you line
