@@ -60,7 +60,11 @@ ${css}
   console.log(JSON.stringify(info));
   await p.evaluate(() => document.fonts.ready); await p.waitForTimeout(600);
   const out = path.join(__dirname, '..', 'invoices', (O.quote ? 'Quote-' : 'Invoice-') + info.no);
-  await p.pdf({ path: out + '.pdf', format: 'A4', printBackground: true, margin: { top: '12mm', bottom: '12mm', left: '10mm', right: '10mm' } });
+  // always one A4 page: long invoices are scaled down to fit (A4 printable height at 96dpi with these margins is about 1032px)
+  const pageW = 794 - 2 * 37.8, pageH = 1123 - 2 * 45.4;
+  const size = await p.evaluate(() => ({ w: document.documentElement.scrollWidth, h: document.documentElement.scrollHeight }));
+  const scale = Math.max(0.5, Math.min(1, pageW / size.w, pageH / size.h));
+  await p.pdf({ path: out + '.pdf', format: 'A4', printBackground: true, scale, pageRanges: '1', margin: { top: '12mm', bottom: '12mm', left: '10mm', right: '10mm' } });
   await p.screenshot({ path: out + '.png', fullPage: true });
   await b.close();
 })();
