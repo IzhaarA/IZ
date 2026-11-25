@@ -29,7 +29,7 @@ LIVE since 23 Nov 2026 (deploy 6b043164c213f11a9b9028a6): CZ-46112 8/0 loose rea
 
 LIVE since 23 Nov 2026 (deploy 6b0452f78640106ad58ec661): back in stock (patch-soldout.py): CZ-53250 Opaque Bright Green loose 3/0, 5/0, 8/0.
 
-WAITING (not uploaded): PAXI big bag (R125) whenever a blanket is in the basket (patch-paxi.py); mink blankets still off PAXI.
+LIVE since 25 Nov 2026 (deploy 6b06a48fb33a5d4a3e8a3e10): PAXI big bag (R125) whenever a blanket is in the basket (patch-paxi.py); mink blankets still off PAXI.
 
 TO DO 1 DEC 2026: rebuild and upload WITHOUT patch-promo.py / patch-gift.py / patch-bfhome.py so Google pages and feed show normal prices.
 
