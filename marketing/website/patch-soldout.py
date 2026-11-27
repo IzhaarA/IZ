@@ -33,6 +33,8 @@ SOLD_OUT = [
     "CZ-93110",                               # Opaque Orange (all)
     "CZ-93140-11/0-L",                        # Opaque Dark Orange 11/0 loose
     "CZ-98170-8/0-S",                         # Opaque Red Coral Sfinx 8/0 strung (8/0 loose back 31 Oct)
+    # Tribal blankets
+    "TRB-015-01", "TRB-015-03",               # Matlama Black/Scarlet and Maroon/Light Grey (27 Nov 2026; only Black/Light Grey left)
     # Plastic beads
     "PBO-E61",                                # E61 Sweet Pink, 8mm Oval
     # Ndebele
